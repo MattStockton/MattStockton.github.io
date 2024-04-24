@@ -4,15 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hey there, I'm Matt Stockton. I'm based in Milwaukee, WI. I've been building software professionally for 20+ years, mostly at small VC-backed startup companies. My current interests are around Data and Artificial Intelligence. I'll store my thoughts here when I can. How can I help you? Send me an email and let's talk.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Other things I care about: Family, Reading, Writing, Running, Stretching, Technology, History, Coffee, Happiness

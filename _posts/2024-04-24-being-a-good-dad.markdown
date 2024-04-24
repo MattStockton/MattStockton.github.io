@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Being a good dad"
+---
+
+I want to be a great dad. It’s not easy. Being a dad is the biggest privilege and opportunity in my life. As a parent, you have huge responsibility in the actions you take —  and do not take — to help your kids thrive. It’s easy for me to feel like I am failing. Being a dad is the hardest thing I’ve ever done. It’s filled with a ton of joy, awe, laughter, surprise, memories, giggles, happy tears, and unfiltered overwhelming love. There’s also moments of tiredness, frustration, irrationality, anger followed by shame, overwhelming emotions, and slog.  Reading books is my primary means to learn and grow. Recently, I discovered two books that have helped me shape my role as a dad.
+
+- [The Book You Wish Your Parents Had Read](https://www.goodreads.com/book/show/42348818-the-book-you-wish-your-parents-had-read)
+- [Good Inside](https://www.goodreads.com/book/show/59627738-good-inside)
+
+These books detail simple yet powerful behavioral models and ways to re-think how you can partner with your kids. Same team, same goal. I’m trying to practice some of these behaviors more frequently with my kids, and I’ve already felt positive results — both with how I feel as a dad, and how my kids respond to me. These books have changed my perception on how to interact with my kids to play the ‘long game’.  What can I do to give them the best chance to be happy, successful, collaborative, confident, emotionally balanced human beings?
+
+Here are some key take-aways:
+
+- All feelings are ok. Kids are just doing their job when they are feeling their feelings. Feeling something and being in that feeling is the only way a kid is ever going to learn to regulate that feeling. The things your kid is feeling are real. You have to be in it with them, even if you think the events leading to the feeling are silly.
+- Kids are constantly asking themselves - “Am I real? Am I safe?” - A lot of behaviors and emotions stem from this thought pattern. Kids need to feel seen and understood just like everyone else. One of the best things you can do for them is to see them — even when what you’re seeing doesn’t make any rational sense to you.
+- When kids know they are seen, they feel safe. Being seen and safe helps them regulate their emotions. You should be as explicit and clear as possible with them about this. Say things like “I believe you” in response to their emotions, and mean it when you say it. Tell them that you see the specific emotion they are feeling, and don’t trivialize it, even if the cause makes no sense to you.
+- Kids don’t have the words to process everything they are feeling. You are their partner to help them process. Processing in an alone-ness is a terrible feeling. Do everything you can so that your children don’t have to process in an alone-ness. Be the words that they don’t have to describe their lived experience.
+- Having boundaries for your kids — **and** having empathy for their reactions to those boundaries — need to come as a pair. It’s not either or. Boundaries without empathy, and empathy without boundaries — neither combination works. Mentally separating out these two concepts — **and** actively doing both of them —  will not only help your kid, it’ll help you respond in a healthier way. Rules are fine. Your kids responding emotionally to those rules are fine too. Treating these two things as separate but jointly necessary has made it easier for me as a parent and allows my kids to feel believed and seen.
+- You will screw things up. Everyone does. Do not underestimate the need to repair the ruptures you create. Say I am sorry and be specific — talk to your kids about where you screwed up, and do it in a timely fashion. Repairing the rupture is also a way for you to get past the self-blame and self-doubt. It also models the behaviors we know deep down we want our kids to have when they grow up. Your kids will not remember when you yelled at them, but they will remember that they never understood why or what you were feeling. The first time I really tried to lean in and do this with my daughter — look her in the eyes and tell her I was sorry for raising my voice — the weight lifted almost immediately from both of us.
+
+The best gift I can give to my children is the chance to grow into emotionally healthy and confident adults. I look forward to learning more about these topics in the future.
