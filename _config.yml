@@ -27,6 +27,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mstockton
 linkedin_username: MattStockton
 
+google_analytics: G-HFEW5N1H7X
+
 # Build settings
 theme: minima
 plugins:
