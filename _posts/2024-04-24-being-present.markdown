@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Being present"
+---
+
+Last month, during a visit to the Apple Store, I experienced an unexpected nudge towards being present — a concept I encounter frequently in books I’ve read. The idea of living the present moment conceptually resonates with me. I make attempts to integrate it into my daily life — but applying consistently often proves challenging. It's easy to drift away from the now, to fret over the future, or to dwell on past mistakes, particularly when life's demands and distractions get our attention. This lapse can fill me with regret and disappointment. My oldest daughter is six. We're already 1/3rd through the years she'll spend at home. This realization is startling.
+
+During the Vision Pro demo, I was virtually transported to a girl's birthday party, complete with balloons, cake, and a beaming mother. It felt incredibly real - it made me want to capture similar moments with my own children — to have the optionality of this re-lived experience in the future. I found myself contemplating the purchase, enticed by the possibility of being an old man but still seeing the smile on my young daughter’s face. Then I remembered the key insight, which is easy to agree with yet so hard to internalize and live by: Every day offers opportunities to connect with my children on a much deeper level. By simply being present — observing their smiles, listening to their laughter, and looking into their eyes with undivided attention. My own senses, brain, and heart offer a far more authentic and meaningful experience than any technology ever could. Each thing in life happens once, which feels like a downside — but it’s also kind of the point.
+
+This served as a powerful reminder to be fully present with mine. Fight the resistance and do the work. Precious moments can't truly be replicated or enhanced by technology — they are best lived through genuine engagement with the world at that moment in time. I still want to re-live them in the future, and think the technology is astounding, but let me do the work to be better at enjoying and appreciating them today.
