@@ -18,8 +18,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+
 title: Matt Stockton
-email: mattstockton@gmail.com
+
+author:
+  name: Matt Stockton
+  email: mattstockton@gmail.com
+
+minima:
+  social_links:
+    - { platform: linkedin,  user_url: "https://www.linkedin.com/in/mattstockton/" }
+    - { platform: twitter, user_url: "https://twitter.com/mstockton" }
+
 description: >- # this means to ignore newlines until "baseurl:"
   Storing my thoughts here
 baseurl: "" # the subpath of your site, e.g. /blog
