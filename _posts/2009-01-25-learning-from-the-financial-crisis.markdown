@@ -1,0 +1,33 @@
+---
+layout: post
+title: Learning from the Financial Crisis
+---
+
+Over the last 5 years since I began working full-time, I have developed a strong interest in investing in the stock market. I started investing in mutual funds, and gradually started investing in individual stocks. I even helped to form a (now defunct) Investment Club in order to learn more about investing in stocks with other young professionals who shared the same interest. What drew me to investing was the same things that drew me to playing Poker - in investing, you can use your analytical thinking skills, math prowess, and intuition to have an advantage over the competition, and make a lot of money....and in hindsight, it is ridiculous that a part of me actually thought it was as easy as that.
+
+As I started to have more income available for investing, I started steering away from mutual funds, and started loading up on individual stocks. At one point, I owned ~15-20 different individual stocks. In hindsight, this is too many stocks for me to properly follow on a weekly basis - I didn't have enough time to perform the necessary research into the stocks to understand if I should buy, sell or hold them. Even if I did have enough time, I didn't have the proper knowledge to understand if I should buy, sell, or hold them--- this was not investing, this was speculating.
+
+I saw a lot of my picks do fairly well, and so I continued to pick new ones. My sense of performance was most definitely skewed though, as I never took the time to reasonably evaluate my performance against the industry benchmarks or indexes - all I saw was the positive gains, and that was good enough for me to 'think' that my picks were paying off. Then, you know what happened next...
+
+Slowly and steadily, I saw a lot of my gains erode....some seemingly much faster than the market index. Then in 2008, I saw my gains erode quite quickly. Two of my picks were down *more than 95%!!!* So what did this cause me to do? Did I immediately re-evaluate my holdings, and try to understand where I went wrong? Did I admit to myself that some of my picks were bad, and then go out to try to find the real values in this market using fundamental analysis rather than speculation? No, what I did was *absolutely nothing!* I was like a deer caught in headlights - I found myself wanting to simply ignore the situation entirely, and let the stock market run its course on my hobby of speculation. When talking to some of my friends, they have had the exact same reaction to the markets lately...it's better just not to look.
+
+I regularly follow [PFBlog](http://pfblog.com/), a personal finance blog whose author has a goal of hitting a million before 36. He had regular, very interesting posts...until about the middle of 2008, and then all the posts abruptly stopped. It seemed that he was having the same sort of 'deer caught in headlights' behavior that I was having - his holdings were heavily weighted towards financial stocks, so he probably took a large hit. He recently started posting again, and one of his [recent posts](http://www.pfblog.com/archives/6379_why_did_i_sell_all_my_stock_and_not.shtml) really struck a chord for me. In the post, he reveals the lessons he learned from his individual stock picking:
+
+> In retrospect, the biggest lesson I learned from loading more and more financial stocks between 2007 and 2008 is: I acted blindly. With 60-hour work weeks, I should have known that I cannot dedicate enough time to study each company and keep track of all developments."
+
+He publicly admitted his mistakes, and made a plan for his investments to get back on the right track - He *sold all* of his individual stocks except [Berkshire Hathaway](http://finance.yahoo.com/q?s=BRK-A), and plans to invest in mutual funds using an automatic investment plan.
+
+I am using this blog post to do the same thing that he did -- Admit my investing mistakes, and make a plan to change them -- My basic plans are similar to the author of PFBlog. They are:
+* __Invest in mutual / index funds using an automatic investment plan__ -  My wife and I have made a big push to automate most of our other finances (bills, savings account, etc.) We plan to automate our investing in the same way.
+* __Simplify mutual fund / index fund holdings__ - It is important to follow your mutual fund holdings on a regular basis. Maybe not with the same rigor as your stock holdings, but you need to know when one of the apples in your basket turns bad...and if you have a lot of apples, one could stick around with bruises for a long time. We had a bunch of mutual funds (15-20), and we have started to scale this down to a few index funds and between 5-10 mutual funds - this will keep things a lot simpler.
+* __Hold only 2-5 individual stocks at any time, and do the due diligence in researching them__ - This was my biggest problem. Why did I own so many individual stocks? There were a lot of factors, but I am committing to owning only a few going forward. As far as 'due diligence' research -- I have a lot to learn, and I can't tell you exactly what 'due diligence' research means,*but I can surely tell you what it does not mean* -- It means not speculating like I was doing previously. As far as learning about the necessary research, there are several books on my bookshelf that I have read and have found to be valuable in growing my ability to evaluate stocks. The books are:
+
+#Books
+* [The Warren Buffet Way](http://www.amazon.com/Warren-Buffett-Way-Second/dp/0471743674/)- Robert G. Hagstrom
+* [One up on Wall Street](http://www.amazon.com/Wall-Street-Peter-Rothchild-Lynch/dp/B001I7L8BE/) - Peter Lynch
+* [Common Stocks and Uncommon Profits](http://www.amazon.com/Uncommon-Profits-Writings-Investment-Classics/dp/0471445509/) - Phillip A. Fisher
+* [You can be a Stock Market Genius](http://www.amazon.com/You-Can-Stock-Market-Genius/dp/0684840073/) - Joel Greenblat
+
+Do you have additional recommendations for good investing books?
+
+So that's it, my personal finance confessions and my resolutions to fix them all in one blog post. One thing I can certainly say is that I find myself *fortunate* to experience this type of financial crisis this early in my investing career. Every generation will go through them, some more than one, some more severe than others, but it will surely happen to everyone. Having it happen at an early age has allowed me to start learning the tough financial lessons without suffering a huge amount of losses -- this will surely help me make more prudent financial decisions in the future.

@@ -1,0 +1,24 @@
+---
+layout: post
+title: Reflections on reading 'business books' as an Engineer
+---
+
+I've always appreciated a good non-fiction book. My preferred reading 'categories' are behavioral economics (e.g. Ariely, Thaler, Dubner, Gladwell), analyses of critical thinking, particularly in medicine (Gawande, Groopman), and timeless investment strategy (Lynch, Graham, Buffett, Fisher). I read somewhat passively (maybe 1-3 books per month), and mostly during vacations and travel. A month ago I took a train ride back to Ann Arbor to visit my family for the weekend (my brother moved to Rwanda for a year, so I was seeing him off). I found myself at the last minute without any reading material for the trip. 
+
+My wife and I have plenty of books at our house that I've yet to read, but not many in my preferred categories --- Most of them are management and leadership books. There are books that my wife was assigned in business school at Chicago Booth, books that we've been given as part of work leadership programs (General Electric), and even books from undergrad which were assigned Senior capstone reading (I'm pretty sure I at least skimmed them at the time!). I grabbed a few of these and headed to the train station. I am very glad I made that decision. 
+
+I powered through several of them on the trip (The 7 Habits of Highly Effective People, Getting to Yes, and The 21 Irrefutable Laws of Leadership) --- I had trouble putting them down! It was a fascinating experience --- I had found a new subject that was deeply interesting to me, yet on the surface I wasn't so sure it would be. These types of discoveries seem to happen more infrequently the older you get and it was a pleasant surprise. I took a step back to reflect on a single key reason why I enjoyed these books: 
+
+# They take some skill or concept (leadership, negotiation, influence) which on the surface appears to be largely subjective, and provide objective examples of successful implementation tactics rooted in critical / analytical thinking
+
+__subjectivity__ - judgment based on individual personal impressions and feelings and opinions rather than external facts
+
+I am a Software Engineer. I love to solve problems with computers. This is my day job and also my hobby. As an Engineer, objectivity and logical thinking are critical. If a piece of my code is behaving 'unexpectedly', I know that my code is actually behaving just as expected --- it's just that I have set the expectations incorrectly. I have well-defined mechanisms to understand the incorrect expectations in my code (debugging, unit testing, etc.) . Using these mechanisms to find my incorrect expectations is part of the fun of being an Engineer. __Subjectivity is a core enemy of working code__ --- you have to get past your feelings and opinions to reach the facts.
+
+__objectivity__ - judgment based on observable phenomena and uninfluenced by emotions or personal prejudices.
+
+In programming, __objectivity is a reality__. The computer has no other choice but to do what you tell it to do in the code you give to it. With leadership, negotiation, and influence --- __objectivity is an impossibility__. You are dealing with humans, which by definition (and out of necessity for survival), have to make judgements based on impressions, feelings and opinions. objectivity is a core enemy of successful leadership, negotiation, and influence --- everybody's viewpoint for solving problems is different --- and it is deeply rooted in their experiences. When you feel like you are being objective in leadership, negotiation, or influence, you are wrong, because it doesn't exist. This Friedrich Nietzsche quote explains it perfectly: *"There are no facts, only interpretations"*
+
+It is difficult as a programmer to live in these two disparate worlds and jump between them. In one world (the people world), there are 'no facts, only interpretations.' In the other world (computers / working code), there are no interpretations, only facts. Reading these books has given me a framework to resolve this disparity between the two worlds I live in. The books have given me some nuggets of advice (through examples, case studies, tactics, and stories) on __how to apply analytical / critical thinking to a task that is inherently subjective__. In the computer world, being objective is critical. In the people world, losing sight of the inherent subjectivity can be toxic (e.g don't be known as the asshole programmer to the rest of your company). However, recognizing the subjectivity of it all does not mean you have to stop using your critical / analytical thinking. 
+
+In the future, I plan to store the key nuggets of information I learn from these books on this site. It will help me keep record of what I've learned (instead of simply returning a library book with many earmarked pages!). Hopefully, it may also inspire some of you Engineers out there to expand your area of learning.
