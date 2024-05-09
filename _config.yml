@@ -79,7 +79,7 @@ footer:
       url: "https://www.linkedin.com/in/mattstockton/"
 
 analytics:
-  provider: "google"
+  provider: "google-gtag"
   google:
     tracking_id: "G-HFEW5N1H7X"
     anonymize_ip: false # default
