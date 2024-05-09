@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Leadership in startup companies"
 ---
 

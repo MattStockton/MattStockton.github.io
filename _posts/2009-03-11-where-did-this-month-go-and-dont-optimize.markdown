@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Where did this month go? And don't optimize!
 ---
 People have told me that it isn't easy to keep up a blog. Now I know what they mean! Somehow, I've gone an entire month without posting anything --- time seems to have flown by! I will try to be better at this, and post here at least 1 time a week (2 may have been a bit of an ambitious start)

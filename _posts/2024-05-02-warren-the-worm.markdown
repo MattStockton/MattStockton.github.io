@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Warren The Worm: A Children's Book by ChatGPT and me"
 ---
 

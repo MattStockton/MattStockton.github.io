@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Minimum Viable Competence"
 ---
 

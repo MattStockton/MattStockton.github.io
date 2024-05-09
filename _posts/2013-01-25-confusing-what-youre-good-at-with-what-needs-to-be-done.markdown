@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Confusing what you're good at with what needs to be done
 ---
 

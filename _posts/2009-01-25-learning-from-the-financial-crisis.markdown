@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Learning from the Financial Crisis
 ---
 

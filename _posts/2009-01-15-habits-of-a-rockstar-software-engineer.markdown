@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Habits of a Rockstar Software Engineer
 ---
 Every day, a software project dies.  Some die a [slow, painful, expensive](http://news.cnet.com/IBM-nabs-California-welfare-contract/2100-1011), death.  Others die a quick, not painless, and relatively [embarrassing death](http://www.techcrunch.com/2009/01/03/journalspace-drama-all-data-lost-without-backup-company-deadpooled/). As Software Engineers, we never want our own projects to die. As individual contributors the livelihood of our projects are often times outside the realm of our control. At the same time, there are many things that are within our control that can help the projects that we work on be a success.  This is a list of several habits of Rockstar Software Engineers -- habits that when practiced, will not guarantee success in a software project...but will greatly limit the possibility for failure.

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Reflections on reading 'business books' as an Engineer
 ---
 

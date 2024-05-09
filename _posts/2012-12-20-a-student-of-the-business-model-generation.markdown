@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A Student of the Business Model Generation
 ---
 

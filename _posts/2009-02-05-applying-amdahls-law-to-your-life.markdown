@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Applying Amdahl's Law to Your Life
 ---
 Ok, I admit it...this may qualify as the nerdiest / lamest name for a blog post...ever...in the history of the blogosphere...but hear me out on this one, because I'm going to make a point that might help you focus your energies in work and life to achieve more with the same amount of effort.

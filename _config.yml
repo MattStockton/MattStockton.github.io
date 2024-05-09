@@ -25,25 +25,17 @@ author:
   name: Matt Stockton
   email: mattstockton@gmail.com
 
-minima:
-  social_links:
-    - { platform: linkedin,  user_url: "https://www.linkedin.com/in/mattstockton/" }
-    - { platform: twitter, user_url: "https://twitter.com/mstockton" }
-
 description: >- # this means to ignore newlines until "baseurl:"
-  Storing my thoughts here
+  Matt Stockton's Personal Site
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: mstockton
-linkedin_username: MattStockton
-
-google_analytics: G-HFEW5N1H7X
 
 # Build settings
-remote_theme: jekyll/minima
+remote_theme: "mmistakes/minimal-mistakes@4.26.0"
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -64,3 +56,30 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+minimal_mistakes_skin: "dirt"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      show_date: true
+      read_time: true
+      layout: single
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mstockton"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/mattstockton/"
+
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "G-HFEW5N1H7X"
+    anonymize_ip: false # default

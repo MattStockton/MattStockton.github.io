@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My bank password is 'sort-of' hashed
 ---
 

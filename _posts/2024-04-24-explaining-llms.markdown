@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Explaining LLMs to non-technical people"
 ---
 

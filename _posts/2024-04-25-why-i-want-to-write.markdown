@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Why I want to write"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Seeking affirmation of your product idea can be dangerous
 ---
 

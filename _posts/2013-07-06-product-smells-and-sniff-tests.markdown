@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Product smells and sniff tests
 ---
 

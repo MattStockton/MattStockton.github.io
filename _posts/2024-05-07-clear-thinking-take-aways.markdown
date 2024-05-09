@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Clear Thinking : Take-Aways"
 ---
 

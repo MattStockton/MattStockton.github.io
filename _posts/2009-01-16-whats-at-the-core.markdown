@@ -1,5 +1,4 @@
 ---
-layout: post
 title: What's at the CORE
 ---
 The bloggers over at [Newly Corporate](http://newlycorporate.com/) are asking "What 1 or 2 CORE traits get you noticed at work or help you succeed in your day-to-day operations" Here is the [blog post](http://newlycorporate.com/2009/01/09/working-your-core-at-work/)
