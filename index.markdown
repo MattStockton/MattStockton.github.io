@@ -12,6 +12,8 @@ I live in Shorewood, WI (just outside of Milwaukee). I've been building software
 
 I'm writing about what I'm learning [here](/writing.html)
 
-How can I help you? Send me an email and let's talk (mattstockton@gmail.com)
+Want to work with me? Read more about what I am interested in, and [what I can offer](/work-with-me.html) 
+
+If what I'm writing about and working on is interesting to you, I'm eager to hear about what you're wortking on too. Drop me a note: mattstockton@gmail.com
 
 You can also find me on [Twitter](https://twitter.com/mstockton) or [LinkedIn](https://www.linkedin.com/in/mattstockton/)
