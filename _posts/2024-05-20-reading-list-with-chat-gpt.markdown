@@ -3,7 +3,6 @@ layout: single
 title:  "Summarizing and creating a reading list with ChatGPT"
 ---
 
-## Summary
 I like to read books. I'm always looking for ways to discover new titles. I mainly use Goodreads and Twitter as a discovery mechanism, and I use Goodreads to track my reading queue. I love when I find lists of books that others are reading, particularly when I discover a book I hadn't come across yet. It's been a while, but I shared my [top books from 2013](/2014/01/12/top-books-from-2013.html). I've read a lot between then and now, but haven't shared any of my lists. I wanted to see how I could use ChatGPT to build a similar summary list, with limited manual effort. I also wanted to see how I could use ChatGPT to find new recommendations based on books I've enjoyed.
 
 Below, I'll share some learnings from this experiment, along with my reading list, and a new list of books recommended through using ChatGPT
