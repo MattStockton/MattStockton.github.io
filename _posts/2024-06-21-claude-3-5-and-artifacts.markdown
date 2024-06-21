@@ -17,9 +17,9 @@ Claude responded with a basic Flask web application template. From there, I refi
 
 >Thanks for the great start! Here's what I want the API to do:
 >
->    - Implement a get request that receives an encoded version of an image
->    - Decide if that image is a dog or a cat, and return True or False, with probabilities of each class
->	 - Use a trained PyTorch library to do the classification on the backend
+>   - Implement a get request that receives an encoded version of an image
+>   - Decide if that image is a dog or a cat, and return True or False, with probabilities of each class
+>   - Use a trained PyTorch library to do the classification on the backend
 >	
 >Can you modify the code to do that?
 
