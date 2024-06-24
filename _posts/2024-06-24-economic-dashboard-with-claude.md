@@ -10,7 +10,7 @@ I wanted to see if I could use Claude Sonnet to build an interactive dashboard t
 
 I am in awe over how good Claude is at building code. The dashboard isn’t complex, but it would have taken me a few hours to build if I didn’t have help. Getting working code that I could build off of -- and being able to iterate on it with prompting -- is amazing. I didn’t need to remember anything about how Streamlit works, how the Fred API works, how Pandas does interpolation, etc. -- Claude just remembers it for me. 
 
-Claude build an app with clean and succinct python code, had no issues using any libraries or APIs, provided clear comments and descriptions, has a fantastic UX for downloading the code, and provided useful explanations and context in the prompt responses. Claude feels like a game-changer for building software.
+Claude build an app with clean and succinct python code, had no issues using any libraries or APIs, provided clear comments and descriptions, has a fantastic UX for downloading the code, and provided useful explanations and context in the prompt responses. Claude feels like a game-changer for building software. Check out the video demo below, take a look at the code, and check out a few things I learned about Claude along the way.
 
 ### Watch a Demo
 
