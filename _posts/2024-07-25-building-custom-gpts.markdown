@@ -4,7 +4,7 @@ title:  "Building Custom GPTs"
 ---
 
 
-Building Custom GPTs is an interesting way to create customized LLM chat functionality with limited effort. I've observed that most people using LLMs tend to use the standard interaces provided by Claude, OpenAI, etc. These interfaces are easy to use, yet there is still adoption friction, simply because people don't know how to get started, or what prompt context to provide. Custom GPTs allow you to add customized context to a chatbot, and allow you to add buttons to get the conversation started without typing. It's an interesting paradigm that could lessen adoption friction amongst teams.
+Building Custom GPTs is an interesting way to create customized LLM chat functionality with limited effort. I've observed that most people using LLMs tend to use the standard interfaces provided by Claude, OpenAI, etc. These interfaces are easy to use, yet there is still adoption friction, simply because people don't know how to get started, or what prompt context to provide. Custom GPTs allow you to add customized context to a chatbot, and allow you to add buttons to get the conversation started without typing. It's an interesting paradigm that could lessen adoption friction amongst teams.
 
 <img src="/docs/assets/images/custom-gpts/1.png" width="600px" height="400px"/>
 
