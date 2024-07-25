@@ -11,7 +11,7 @@ Building Custom GPTs is an interesting way to create customized LLM chat functio
 
 Here's a video demo of a Custom GPT I built to help guide leadership decisions. I read a lot. I enjoy reading leadership / management books. I take notes and highlight aspects I find interesting, but like any information that I don't use regularly, it disappears from my brain over time. I've wondered if GPTs are well-suited to solve this retention problem, by being able to access the context and learnings from books I've found interesting **in the context** of a specific decision I'm trying to make. This Custom GPT was my 'attempt to prototype a solution in 10 minutes'
 
-If you want to try out the Leadership Decieion Mentor GPT, you can [use it here](https://chatgpt.com/g/g-Z94a9Qz8a-leadership-decision-mentor)
+If you want to try out the Leadership Decision Mentor GPT, you can [use it here](https://chatgpt.com/g/g-Z94a9Qz8a-leadership-decision-mentor)
 
 ### Video Walkthrough
 
@@ -31,6 +31,6 @@ In the video, I go into detail on what I find most interesting about the custom 
 ### Final Thoughts
 Creating custom GPTs is a valuable, low-effort way to build curated functionality for your team. With just a bit of setup, you can embed specific instructions and references, making these tools more tailored for your specific needs. This paradigm is a nice middle-ground between using the generic LLM UIs, and building custom software. Building something custom takes more effort -- and you'll have more control over it -- but using a custom GPT is so much lower friction, with some clear upsides. I'm eager to continue prototyping a few ideas I have with this technology. Reach out to me if you have questions, or if you are building anything cool with LLMs and want to chat. I'm happy to help you out.
 
-Here's one more screenshot from the GPT I built:
+Here's one more screenshot from the custom GPT I built:
 
 <img src="/docs/assets/images/custom-gpts/2.png" width="600px" height="400px"/>
