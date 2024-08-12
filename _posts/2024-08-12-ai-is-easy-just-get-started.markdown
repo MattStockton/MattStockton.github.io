@@ -23,7 +23,7 @@ For me, the experimentation workflow looks something like this:
 1. Find a new tool or concept I find interesting on Twitter (there are many great folks in this space sharing content every day, like [Ethan Mollick](https://x.com/emollick))
 1. Figure out how to use the tool (either from the Twitter post, or by using a tool like [Perplexity](https://perplexity.ai)) to guide me
 1. Try out the tool
-1. Through the above steps, I usually find a handful of other things I want to try out - the branches apprear :)
+1. Through the above steps, I usually find a handful of other things I want to try out - the branches appear :)
 
 Lots of people I talk to aren't really experimenting with this stuff yet -- and I always nudge them to just try something out to help them in their day-to-day work. There are lots of reasons to not try (as [Ben Tossel highlights in this post](https://x.com/bentossell/status/1822933481384460724)). I believe those that try will discover capabilities that help them in their work, and will soon have a meaningful advantage over those that don't try. Ethan Mollick writes about this concept in his Co-Intelligence book -- which is a fantastic read, and a good way to learn a bit more about the space as well. I wrote about my take-aways from that book [in this post](/2024/04/29/cointelligence-take-aways.html) 
 
