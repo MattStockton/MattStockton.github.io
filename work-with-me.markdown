@@ -1,41 +1,74 @@
 ---
 layout: splash
 ---
+<br/>
+# AI and Data Consulting Services
 
-### How I Can Help You
+With over two decades of experience building software — and over a decade in data strategy, data engineering, machine learning, and AI — I help businesses unlock the full potential of their data. Whether you’re building data infrastructure from scratch or just starting to explore new Large Language Model tools, I tailor my approach to your specific challenges. From startups to established companies, I can deliver AI and data solutions that drive results — across industries like tech, healthcare, finance, SMB, and more.
 
-I have a unique mix of **technology, leadership, and strategy** skills. I’ve led large software teams as a Director/VP of Engineering, and I’ve also been a solo Engineer building systems / applications / platforms from scratch. I enjoy this mix of role and impact. I am comfortable being in the weeds building, and I also enjoy drilling out to work on the long-term business strategy. Ultimately, what I care most about is doing **high-impact work and solving hard problems alongside other motivated and curious people** who want to learn and make an impact as well. Maybe I can bring some of my hard-won insights to the problems you want to solve at your company?
+***Here are three ways I can support your company:***
+---
+### **AI / Data Strategy Development (4-8 weeks)**
 
-Here are some things I can do for you:
+I collaborate with your team to create a comprehensive data strategy that aligns with your business goals.
 
-- **Build your product** - I can transform your ideas into reality with expert prototype development, technical guidance, or both.
-- **Be your fractional CTO** - I can lead the overall technology / software / data efforts at your company.
-- **Guide you on using Large Language Models and AI for your business objectives** - I can teach your team about how these technologies work, and work with you to implement them in your current business processes.
-- **Create your data strategy** - I can help develop a comprehensive data strategy to enhance decision-making across your company. 
-- **Be your coach** - I can enhance your Engineering leadership with expert coaching and mentoring.
-- **Design and build your team** - I can help you design, grow, and scale an Engineering organization tailored to your needs.
-- **Just get stuff done** - I can help you scope and complete unique software projects that you just need to get done.
-- **Advisory and support** tailored to your needs — let's explore together how else you need help, and how I could contribute.
+**Key Offerings:**
+- Assessment of data infrastructure and analytics capabilities
+- Identification of AI & Machine Learning opportunities, including applications of Large Language Models (LLMs)
+- Prioritization of AI/ML initiatives based on impact and feasibility
+- Planning for data governance and compliance
 
-### My Technology and Leadership Background
+**Deliverables:** A customized data strategy report, AI/ML roadmap, and infrastructure / implementation recommendations<br/>
+**Ideal for:** Companies looking to establish a solid data foundation or align AI strategies with business goals<br/>
+**Pricing:** Starting at $15k. Custom pricing based on company size and project scope.
 
-I studied Computer Science Engineering at the University of Michigan (BSE 2004) and the University of Illinois (MS 2009 while working full-time). I’ve spent the last 20+ years building software and software teams to solve interesting and difficult problems, mostly focused around data. Here’s my experience:
+--- 
 
-- **Director of Engineering** at [Teamshares](https://www.teamshares.com/) (2021-2024). Teamshares is backed by QED Investors, Khosla Ventures, Slow Ventures, Union Square Ventures, and other top-tier investors. I built Teamshares’ data strategy and data infrastructure, from 0 to 1. I built out a software team and a technical platform to help colleagues across all functions make better data-informed decisions related to buying and operating small businesses.
-- **Director of Data Science and Engineering** at [Racon Capital Partners](https://raconcapital.com/) (2020-2021). In partnership with the Head of Quantitative Research, I built a collection of quantitative investment algorithms, and built the underlying software / data infrastructure to backtest and execute those algorithms at scale.
-- **Director of Engineering** at [CircleUp](https://circleup.com/) (2014-2020). CircleUp was backed by Google Ventures, Union Square Ventures, QED Investors, Clayton Christensen’s Rose Park Advisors, and other top-tier investors. I helped to build and scale a Data / Machine Learning platform to discover and analyze emerging consumer brands found across 100s of data sources. The platform automatically discovered and analyzed >100k small consumer businesses -- and was used to guide investment decisions in those businesses. The platform helped to faciliate 100s of successful equity and debt transactions.
-- **VP of Engineering** at [Harqen](https://www.harqen.com/) (2010-2014). I helped to build one of the first digital interviewing platforms, allowing millions of job applicants to apply for roles via asynchronous audio or video recordings from their smart phones or computers.
-- **Senior Software Engineer** at Stark Investments (2007-2010). I built Derivatives / Credit Default Swaps trading software for a multi-billion dollar Hedge Fund, and learned some interesting lessons through the 2007-2008 global financial crisis.
-- Engineering Leadership Program at General Electric (2004-2007).
-- Built and launched 7 iOS applications in the late 2000s, as side projects / ways to learn.
+### **AI / Data Project Implementation (8+ weeks)**
 
-Most of my recent technology experience has been in the Python data ecosystem (Python, Pandas, Scikit Learn, PySpark, AWS, Docker, DBT, etc.). However, I am comfortable learning about and building with any technology (as an example — it’s been a while, but I’ve built web applications as well using frameworks like Django and Angular). I strive to use the right tool for the job, and to avoid re-inventing the wheel. Above all else, I care deeply about the underlying business strategy and clarifying the core problems to be solved. It’s important to build the thing right, but it’s absolutely critical to **build the right thing**.
+I provide hands-on expertise to bring your AI vision to life, from concept to deployment.
 
-I’ve recently been digging deeply into Large Language Models, and how they can best be used and applied. LLMs are an extremely exciting technology, and the LLM landscape is changing every day / moving fast. I believe wide-spread adoption of LLMs will fundamentally change many jobs and how work gets done — and I want to be at the leading edge of that. Perhaps I can help you to be at the leading edge as well.
+**Key Offerings:**
+- End-to-end data and AI solution development (predictive anaytics, automation, modeling)
+- Scalable data pipeline and infrastructure design
+- Seamless integration of ML models into business processes
+- Rapid prototyping and Proof of Concept (PoC) development
 
-I believe strong leadership and coaching can be a huge positive multiplier for software teams. I pride myself on building, coaching, growing, and mentoring Engineering teams and individual teammates. There’s nothing that frustrates me more than seeing great talent, energy, and curiosity get stifled by less-than-excellent leadership. I take great pride in helping to grow and nurture the skills of future Engineering leaders, and making sure my teams can experience what good leadership looks like.
+**Deliverables:** Deployed AI/ML solutions, proof of concepts, functional models, and comprehensive documentation<br/>
+**Ideal for:** Companies ready to implement AI projects with expert guidance<br/>
+**Pricing:** Starting at $30k for smaller projects. Larger implementations and enterprise-scale solutions are priced based on scope.
 
+---
 
-### How To Reach Me
+### **Advisory & Retainer Services (Flexible monthly agreements)**
+I offer ongoing, flexible expertise to support your AI initiatives without the need for full-time hires.
 
-Send me a note at **mattstockton@gmail.com** - I look forward to hearing about what you're working on and what you need help with.
+**Key Offerings:**
+- Strategic AI guidance and insights on emerging technologies
+- Project oversight and alignment with business objectives
+- On-demand consulting for troubleshooting and decision-making
+- Customized AI/ML workshops, presentations, and team training
+
+**Deliverables:** Ongoing strategic advice, project evaluations, and tailored training sessions<br/>
+**Ideal for:** Companies seeking continuous AI expertise without hiring a full-time team<br/>
+**Pricing:** Starting at $5k per month, with flexible pricing based on involvement level.<br/>
+
+---
+
+### Why Partner with Me?
+
+I’ve spent 2 decades assembling hard-won insights while building software / data products and leading teams. Let me help you use those insights to reach your company’s objectives faster. Here are some key things to know about me.
+
+- 20+ years experience in software engineering, with a strong focus on data engineering, AI, and machine learning in the last 10
+- Proven success as a technology leader, including roles as Director of Engineering and Data Science at venture-backed startups
+- Expertise in building data strategies and infrastructures, demonstrated at Teamshares and CircleUp
+- Deep knowledge of the Python data ecosystem, including tools like Pandas, Scikit-Learn, PySpark, AWS, and DBT
+- Hands-on experience with Large Language Models (LLMs) and their real-world business applications
+- Strong background in quantitative finance and algorithmic trading, enhancing data-driven decision-making
+- Skilled in building and leading high-performing engineering teams across various industries
+- Committed to aligning technology solutions with core business strategies and challenges
+- Adept at communicating complex technical concepts to both technical and non-technical stakeholders
+
+**Ready to transform your business with AI? *[Contact me today](mailto:mattstockton@gmail.com)* for a free consultation to discuss how I can help you achieve your goals.**
+
+Are you curious about how I might help you, but the above doesn’t exactly match what you’re looking for? I’m eager to hear from you anyway. Send me an email: mattstockton@gmail.com
