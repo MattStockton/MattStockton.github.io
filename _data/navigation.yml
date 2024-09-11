@@ -1,5 +1,7 @@
 main:
-  - title: "Writing"
-    url: /writing.html
   - title: "Work With Me"
     url: /work-with-me.html
+  - title: "Writing"
+    url: /writing.html
+  - title: "Background"
+    url: /my-background.html
