@@ -55,7 +55,7 @@ I offer ongoing, flexible expertise to support your AI initiatives without the n
 
 ---
 
-### Why Partner with Me?
+### Why Partner With Me?
 
 I’ve spent 2 decades assembling hard-won insights while building software / data products and leading teams. Let me help you use those insights to reach your company’s objectives faster. Here are some key things to know about me.
 
@@ -69,6 +69,6 @@ I’ve spent 2 decades assembling hard-won insights while building software / da
 - Committed to aligning technology solutions with core business strategies and challenges
 - Adept at communicating complex technical concepts to both technical and non-technical stakeholders
 
-**Ready to transform your business with AI? *[Contact me today](mailto:mattstockton@gmail.com)* for a free consultation to discuss how I can help you achieve your goals.**
+**Ready to transform your business with AI? *[Contact me today](mailto:mattstockton@gmail.com)* for a consultation to discuss how I can help you achieve your goals.**
 
 Are you curious about how I might help you, but the above doesn’t exactly match what you’re looking for? I’m eager to hear from you anyway. Send me an email: mattstockton@gmail.com
