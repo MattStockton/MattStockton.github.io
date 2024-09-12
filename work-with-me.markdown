@@ -4,7 +4,7 @@ layout: splash
 <br/>
 # AI and Data Consulting Services
 
-With over two decades of experience building software — and over a decade in data strategy, data engineering, machine learning, and AI — I help businesses unlock the full potential of their data. Whether you’re building data infrastructure from scratch or just starting to explore new Large Language Model tools, I tailor my approach to your specific challenges. From startups to established companies, I can deliver AI and data solutions that drive results — across industries like tech, healthcare, finance, SMB, and more.
+With over [two decades of experience](/my-background.html) building software — and over a decade in data strategy, data engineering, machine learning, and AI — I help businesses unlock the full potential of their data. Whether you’re building data infrastructure from scratch or just starting to explore new Large Language Model tools, I tailor my approach to your specific challenges. From startups to established companies, I can deliver AI and data solutions that drive results — across industries like tech, healthcare, finance, SMB, and more.
 
 ***Here are three ways I can support your company:***
 ---
