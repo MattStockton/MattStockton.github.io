@@ -29,7 +29,7 @@ I collaborate with your team to create a comprehensive data strategy that aligns
 I provide hands-on expertise to bring your AI vision to life, from concept to deployment.
 
 **Key Offerings:**
-- End-to-end data and AI solution development (predictive anaytics, automation, modeling)
+- End-to-end data and AI solution development (custom LLM-powered tools, predictive anaytics, automation, modeling)
 - Scalable data pipeline and infrastructure design
 - Seamless integration of ML models into business processes
 - Rapid prototyping and Proof of Concept (PoC) development
