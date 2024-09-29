@@ -20,7 +20,6 @@ I collaborate with your team to create a comprehensive data strategy that aligns
 
 **Deliverables:** A customized data strategy report, AI/ML roadmap, and infrastructure / implementation recommendations<br/>
 **Ideal for:** Companies looking to establish a solid data foundation or align AI strategies with business goals<br/>
-**Pricing:** Starting at $15k. Custom pricing based on company size and project scope.
 
 --- 
 
@@ -36,7 +35,6 @@ I provide hands-on expertise to bring your AI vision to life, from concept to de
 
 **Deliverables:** Deployed AI/ML solutions, proof of concepts, functional models, and comprehensive documentation<br/>
 **Ideal for:** Companies ready to implement AI projects with expert guidance<br/>
-**Pricing:** Starting at $30k for smaller projects. Larger implementations and enterprise-scale solutions are priced based on scope.
 
 ---
 
@@ -51,7 +49,6 @@ I offer ongoing, flexible expertise to support your AI initiatives without the n
 
 **Deliverables:** Ongoing strategic advice, project evaluations, and tailored training sessions<br/>
 **Ideal for:** Companies seeking continuous AI expertise without hiring a full-time team<br/>
-**Pricing:** Starting at $5k per month, with flexible pricing based on involvement level.<br/>
 
 ---
 
