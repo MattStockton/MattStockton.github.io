@@ -83,3 +83,6 @@ analytics:
   google:
     tracking_id: "G-HFEW5N1H7X"
     anonymize_ip: false # default
+
+head_scripts:
+  - https://cdn-cookieyes.com/client_data/cc3cc7c737387cca67e28af5/script.js
