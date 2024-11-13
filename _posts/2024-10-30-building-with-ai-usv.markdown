@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Building with AI: Insights from Matt Cynamon and USV"
 ---
 
