@@ -35,7 +35,7 @@ By “AI wrappers,” I mean a very light layer of logic / orchestration on top 
 Solving how people interact with AI tools is far more critical than just improving prompts. “Human in the loop” and how that human is integrated into the process defines the success of these tools. This is the real challenge — and the teams that solve it will win.
 
 ### Generative AI is just one tool in the toolbox.
-Use it where it makes sense. The old tools still work — don’t throw out your entire toolbox. For example, if you need a Linear Regression model, use Linear Regression — not generative AI.
+Use it where it makes sense. The old tools still work — don’t throw out your entire toolbox. For example, if you're solving a linear regression problem, use a linear regression model — not generative AI.
 
 ### AI adoption works best from the ground up.
 Identify the handful of people in your organization who are excited about AI, let them explore and experiment, and then empower them to teach others. If you don’t have one of these people yet, grow one from within your organization.
