@@ -44,7 +44,7 @@ Identify the handful of people in your organization who are excited about AI, le
 Designing your product to collect the right data at the right time is critical, and you need an automated way to feed that data back into how you use and improve your models. Don’t ignore this aspect — it makes the compounding effect happen so much faster.
 
 ### The future of AI lies in discovering new form factors.
-The ways we interact with AI are rapidly changing, and many ways are yet to be discovered. This is one of the most interesting areas to experiment with. For example, I used ChatGPT’s voice mode while on a run to think through and refine the core ideas in this post. I couldn't imagine getting value out of this form factor even a few months ago. What other form factors are yet to be discovered?
+The ways we interact with AI are rapidly changing, and many ways are yet to be discovered. This is one of the most interesting areas to experiment with. For example, I used ChatGPT’s voice mode while on a run to think through and refine the core ideas in this post. I couldn't imagine getting value out of this form factor even a few months ago -- so what will be the next form factor like this? (NotebookLM is another great example).
 
 ### Conclusion
 Some of these takes are going to be wrong, and that’s part of the fun. AI is evolving quickly, and everyone is figuring it out as they go. If you don’t have a perspective yet, it might be worth diving in and exploring these tools for yourself. There’s no better way to form a view than by experimenting firsthand. What are your takes? Send me a note, I'd love to hear them.
