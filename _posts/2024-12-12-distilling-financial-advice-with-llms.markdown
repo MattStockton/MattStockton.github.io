@@ -3,7 +3,7 @@ layout: single
 title: "Distilling Financial Advice With LLMs"
 ---
 
-In my last post, I shared a detailed plan for swapping assets between a taxable and a tax-deferred account to optimize tax efficiency. I used an LLM to build the plan itself, and I was impressed with how thorough and actionable it was. This experience sparked a few conversations with others about how LLMs might disrupt the financial services industry. Personally, I think this is one area where these tools are going to have a huge impact — helping people refine strategies, make better decisions, and process complex information more efficiently.  
+[In my last post](/2024/12/11/portfolio-management-with-ai.html) , I shared a detailed plan for swapping assets between a taxable and a tax-deferred account to optimize tax efficiency. I used an LLM to build the plan itself, and I was impressed with how thorough and actionable it was. This experience sparked a few conversations with others about how LLMs might disrupt the financial services industry. Personally, I think this is one area where these tools are going to have a huge impact — helping people refine strategies, make better decisions, and process complex information more efficiently.  
 
 Today, I ran another quick experiment. This time, I focused on using the LLM to distill and summarize financial strategies by interacting with it in a conversational, iterative way. What I’m sharing here isn’t just the output — which is useful — but also the process. The key takeaway is that you can work with these tools using plain, simple language without overthinking how to phrase things.  
 
