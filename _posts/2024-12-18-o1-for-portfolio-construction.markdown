@@ -72,7 +72,7 @@ O1 generated eight distinct portfolio strategies. Each was clearly summarized, a
 
 ### 5. Evaluating the Output
 
-While I’m not skilled enough to evaluate the financial validity of these strategies in depth, I’ve built technology in this space and have a reasonable sense of what might work. Some of these strategies passed the “sniff test” and seemed logical enough to consider backtesting. This is one of the most exciting parts — seeing that a tool like O1 can help to create actionable starting points without a ton of effort is remarkable. Imagine what it could do with a bit more thought and instruction.
+While I’m not deep enough and don't have enough time to evaluate the financial validity of these strategies in depth, I’ve built technology in this space and have a reasonable sense of what might work. Some of these strategies passed the “sniff test” and seemed logical enough to consider backtesting. This is one of the most exciting parts — seeing that a tool like O1 can help to create actionable starting points without a ton of effort is remarkable. Imagine what it could do with a bit more thought and instruction.
 
 ## What I Learned
 
