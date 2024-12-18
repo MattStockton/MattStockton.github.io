@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Trying Out O1 for Portfolio Strategy Generation"
+title: "Trying Out O1 for Portfolio Construction"
 ---
 
 OpenAI recently released their O1 model, and I’ve been following the early feedback closely. [A tweet from Deedy Das](https://x.com/deedydas/status/1869049071346102729) caught my attention, stating that O1 Preview is “far superior to doctors on reasoning tasks, and it’s not even close.” If that’s accurate, it’s a remarkable milestone. I’ve been eager to experiment with O1 and had an idea that aligned with my interests in portfolio construction and systematic investing, givine me a nice opportunity to dive in.
