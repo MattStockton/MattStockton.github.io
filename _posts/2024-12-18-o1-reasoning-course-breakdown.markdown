@@ -1,49 +1,49 @@
 ---
 layout: single
-title: "Reasoning with O1 - Course Breakdown"
+title: "Reasoning with o1 - Course Breakdown"
 ---
 
-I took the [Reasoning with O1](https://www.deeplearning.ai/short-courses/reasoning-with-o1/) short course led by [Colin Jarvis](https://www.linkedin.com/in/colin-jarvis-50019658/) at OpenAI. At just over an hour long, it’s a concise introduction to a few things that o1 is particularly good at. The course strikes a great balance — technical enough to dig into the details but still approachable for experienced engineers who haven’t explored these tools yet. If you’re curious but maybe skeptical of using these tools, it’s a fantastic way to see what these models are capable of.
+I took the [Reasoning with o1](https://www.deeplearning.ai/short-courses/reasoning-with-o1/) short course led by [Colin Jarvis](https://www.linkedin.com/in/colin-jarvis-50019658/) at OpenAI. At just over an hour long, it’s a concise introduction to a few things that o1 is particularly good at. The course strikes a great balance — technical enough to dig into the details but still approachable for experienced engineers who haven’t explored these tools yet. If you’re curious but maybe skeptical of using these tools, it’s a fantastic way to see what these models are capable of.
 
 Here’s a summary of the course content, with some details that stood out to me.
 
-## What Makes O1 Different?
+## What Makes o1 Different?
 
-O1 introduces **chain of thought reasoning** as a built-in feature. Unlike earlier models, where you needed to explicitly guide the reasoning process in your prompt, O1 is designed to think through problems step by step natively.
+o1 introduces **chain of thought reasoning** as a built-in feature. Unlike earlier models, where you needed to explicitly guide the reasoning process in your prompt, o1 is designed to think through problems step by step natively.
 
-The model uses "reasoning tokens," which serve as a scratchpad during inference. These tokens allow the model to break a problem into smaller parts, explore different solutions, and refine its output. This approach has significantly improved performance in areas like mathematical problem solving. For instance, on the MATH ML benchmark, O1 raised accuracy from 60.3% (with GPT-4) to 94.8%.
+The model uses "reasoning tokens," which serve as a scratchpad during inference. These tokens allow the model to break a problem into smaller parts, explore different solutions, and refine its output. This approach has significantly improved performance in areas like mathematical problem solving. For instance, on the MATH ML benchmark, o1 raised accuracy from 60.3% (with GPT-4) to 94.8%.
 
-## Writing Prompts for O1
+## Writing Prompts for o1
 
-Using O1 requires a simpler, more direct approach to prompting. The course emphasized that you no longer need to include instructions like “think step by step” because the model already does this. Instead:
+Using o1 requires a simpler, more direct approach to prompting. The course emphasized that you no longer need to include instructions like “think step by step” because the model already does this. Instead:
 
 - **Be direct**: State exactly what you want.
 - **Use structure**: Use formats like Markdown or XML tags to organize your prompt into sections.
 - **Provide examples**: Show what kind of output you’re expecting, which helps the model understand the context.
 
-This makes working with O1 more straightforward and lets you focus on the task without overthinking the instructions.
+This makes working with o1 more straightforward and lets you focus on the task without overthinking the instructions.
 
 ## Supply Chain Management and Tool Calling Example
 
-The course included an example of using O1 to handle a supply chain request, such as processing a customer order. The goal was for O1 to generate an executable plan to manage the request. The prompt provided O1 with a clear set of scaffolding instructions and a list of tools it could use, including operations for managing inventory, orders, suppliers, production capacity, and shipping options. These tools were backed by a hypothetical in-memory database serving as the underlying data source.
+The course included an example of using o1 to handle a supply chain request, such as processing a customer order. The goal was for o1 to generate an executable plan to manage the request. The prompt provided o1 with a clear set of scaffolding instructions and a list of tools it could use, including operations for managing inventory, orders, suppliers, production capacity, and shipping options. These tools were backed by a hypothetical in-memory database serving as the underlying data source.
 
-Using this information, O1 generated a highly detailed plan, outlining specific tool calls for each step, such as fetching new orders or checking inventory levels. Once the plan was created, it was passed to a smaller model - GPT-4o-mini - which executed each step of the plan for a specific customer scenario. The level of detail O1 produced, based only on the provided tools and simple instructions, demonstrated its great ability to build complex planning steps with embebbed decision logic - and then these individual steps could be delegated to a less expensive model.
+Using this information, o1 generated a highly detailed plan, outlining specific tool calls for each step, such as fetching new orders or checking inventory levels. Once the plan was created, it was passed to a smaller model - GPT-4o-mini - which executed each step of the plan for a specific customer scenario. The level of detail o1 produced, based only on the provided tools and simple instructions, demonstrated its great ability to build complex planning steps with embebbed decision logic - and then these individual steps could be delegated to a less expensive model.
 
-This example also made very clear the power of **tool calling**, where LLMs interact with external systems to automate workflows. It was impressive to see how O1 leveraged the provided tools to generate such a well-structured plan and seamlessly delegated the execution to a lower-powered model.
+This example also made very clear the power of **tool calling**, where LLMs interact with external systems to automate workflows. It was impressive to see how o1 leveraged the provided tools to generate such a well-structured plan and seamlessly delegated the execution to a lower-powered model.
 
 ## Writing and Refining Code
 
-The course demonstrated several ways O1 can help with code:
+The course demonstrated several ways o1 can help with code:
 
-- O1 can generate high-quality, functional code from plain English descriptions. For example, it produced React components that were noticeably better than those generated by GPT-4o-mini, showing its ability to handle complex requirements with more precision.
+- o1 can generate high-quality, functional code from plain English descriptions. For example, it produced React components that were noticeably better than those generated by GPT-4o-mini, showing its ability to handle complex requirements with more precision.
 - It’s effective at improving existing code. One example involved optimizing verbose Python code with unnecessary loops, transforming it into a cleaner, more efficient version.
-- O1 can also compare two versions of code and explain which one is better. While this isn’t unique to O1, it’s a good reminder that LLMs can help with evaluation tasks (e.g. LLM-as-judge). It was very good at describing how the revised Python code was better than the previous version.
+- o1 can also compare two versions of code and explain which one is better. While this isn’t unique to o1, it’s a good reminder that LLMs can help with evaluation tasks (e.g. LLM-as-judge). It was very good at describing how the revised Python code was better than the previous version.
 
-These capabilities show how O1 can support both creating new code and refining what you already have, making it a useful tool for iterative development.
+These capabilities show how o1 can support both creating new code and refining what you already have, making it a useful tool for iterative development.
 
 ## Reasoning with Images
 
-One of the examples showed how O1 Vision can process images, such as organizational charts. The workflow started with O1 extracting structured data from an org chart into a JSON format. This data included fields like name, role, and reporting lines. Once the information was structured, follow-up analysis using the structured text became easier. For example, the model could answer questions like, “Who has the most direct reports?” or “Which manager oversees the largest team?”
+One of the examples showed how o1 Vision can process images, such as organizational charts. The workflow started with o1 extracting structured data from an org chart into a JSON format. This data included fields like name, role, and reporting lines. Once the information was structured, follow-up analysis using the structured text became easier. For example, the model could answer questions like, “Who has the most direct reports?” or “Which manager oversees the largest team?”
 
 The key takeaway here is that you can first turn complex images into structured text and then use that text for further analysis. This approach is both cost-effective and robust: tuning the initial prompt against the image ensures the extracted data is accurate, and once the text is structured, you don’t need to reprocess the image if you want to ask questions about what it means. This makes workflows cheaper and more reliable.
 
@@ -51,10 +51,10 @@ The key takeaway here is that you can first turn complex images into structured 
 
 One of the more complex examples involved taking a written airline cancellation policy, turning it into an LLM-executable plan that uses tool calling, and then refining that executable plan through an **iterative meta-prompting workflow**. The process had several steps:
 
-1. O1 translated a written airline cancellation policy into a structured, pseudo-programmatic routine with step-by-step instructions optimized for execution by an LLM (including underlying tools to call).
+1. o1 translated a written airline cancellation policy into a structured, pseudo-programmatic routine with step-by-step instructions optimized for execution by an LLM (including underlying tools to call).
 2. An evaluation set of simulated customer requests was created. For instance, “I need to cancel my flight” was paired with the expected outcome, such as issuing a refund or rebooking a ticket.
-3. The O1-generated routine from step 1 acted as the policy enforcer, while another model simulated customer interactions to test how well the policy performed, using the evaluation set as guidance. Essentially, a different LLM-based 'customer bot' was created to act as the customers contained within the evaluation set.
-4. The evaluation results were scored and fed into a separate O1 prompt specifically designed to analyze the failures and suggest iterative improvements to the policy. The updated policy was then tested against the evaluation set again.
+3. The o1-generated routine from step 1 acted as the policy enforcer, while another model simulated customer interactions to test how well the policy performed, using the evaluation set as guidance. Essentially, a different LLM-based 'customer bot' was created to act as the customers contained within the evaluation set.
+4. The evaluation results were scored and fed into a separate o1 prompt specifically designed to analyze the failures and suggest iterative improvements to the policy. The updated policy was then tested against the evaluation set again.
 
 This iterative loop of evaluation and refinement highlights how LLMs can improve their own processes over time if orchestrated effectively. It’s a structured way to adapt complex systems while minimizing human intervention, and the improvements were measurable after each iteration.
 
@@ -62,6 +62,6 @@ This example was extremely cool and honestly kind of blew my mind. You have to s
 
 ## Final Thoughts
 
-The *Reasoning with O1* course is a solid introduction to O1’s capabilities and how to use them effectively. Whether it’s generating executable plans, refining policies, improving code, or processing images, the course covered practical use cases that are directly applicable to real-world problems.
+The *Reasoning with o1* course is a solid introduction to o1’s capabilities and how to use them effectively. Whether it’s generating executable plans, refining policies, improving code, or processing images, the course covered practical use cases that are directly applicable to real-world problems.
 
-For engineers who haven’t yet explored these tools, it’s a great starting point. The examples and workflows are clear and well-explained, and the course makes it easy to see where models like O1 can fit into your work. If you’re curious about the role of LLMs in solving complex challenges, this course is well worth the time.
+For engineers who haven’t yet explored these tools, it’s a great starting point. The examples and workflows are clear and well-explained, and the course makes it easy to see where models like o1 can fit into your work. If you’re curious about the role of LLMs in solving complex challenges, this course is well worth the time.
