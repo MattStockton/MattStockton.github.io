@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Reasoning with o1 - Course Breakdown"
+title: "Reasoning with O1 - Course Breakdown"
 ---
 
 I took the [Reasoning with O1](https://www.deeplearning.ai/short-courses/reasoning-with-o1/) short course led by [Colin Jarvis](https://www.linkedin.com/in/colin-jarvis-50019658/) at OpenAI. At just over an hour long, it’s a concise introduction to a few things that o1 is particularly good at. The course strikes a great balance — technical enough to dig into the details but still approachable for experienced engineers who haven’t explored these tools yet. If you’re curious but maybe skeptical of using these tools, it’s a fantastic way to see what these models are capable of.
