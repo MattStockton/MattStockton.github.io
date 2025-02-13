@@ -1,26 +1,31 @@
 ---
 layout: single
-title: "A braindump on how I use AI tools"
+title: "A Brain Dump on How I Use AI Tools"
 ---
 
-I recently caught up with some former co-workers and shared a range of AI tips and tricks — from using voice input to reduce friction, to employing meta-prompting for clearer instructions. While I didn’t record the actual conversation, I recalled most of the key points and recorded myself talking through the tips and workflows I use. I also recorded a video of the entire process so you can see firsthand how I leverage these tools. Here's a quick summary of what I did, along with a video of me doing it, and the final output document the process produced.
+I recently met up with some former co-workers to catch up and share what I’ve been learning about AI. The conversation covered a lot—voice input, meta-prompting, project organization—and I realized afterward that I had probably overwhelmed them with too much information at once. To make it more digestible, I wanted to send them a structured summary of what we talked about. Instead of writing it all out manually, I used AI to generate it. And since I was already doing that, I decided to document the process to show how these tools can help streamline this kind of work.  
 
-## The Process
+Here’s how I did it, plus a breakdown of some of the most useful takeaways.  
 
-- **Recorded a Brain Dump:**  
-  I captured myself explaining all the AI tips and tricks we discussed, covering everything from my favorite tools to strategies like using voice mode and meta-prompting.
+## The Process  
 
-- **Transcribed the Recording:**  
-  A transcription tool converted my recording into text, preserving the core ideas and insights.
+1. **Brain Dump:** I recorded myself talking through my AI workflows—covering tools, strategies, and how I actually use them.  
+2. **Transcription:** I used a transcription tool to convert the recording into text, keeping all the key insights.  
+3. **Structured Summary:** I used AI to refine the transcript into a clear, organized document with headers and bullet points.  
 
-- **Generated a Summary Document:**  
-  I used AI to transform the transcript into a structured document. By leveraging voice dictation and meta-prompting, I guided the AI to create a summary with clear headers and bullet points that capture the essence of my discussion.
+## Key Takeaways from the Video  
 
-## Check It Out
+- **Voice Input Removes Friction** – Talking to AI instead of typing speeds up idea capture and brainstorming. I use voice mode while running or commuting to get thoughts down quickly. AI then organizes the raw dump into something structured.  
+- **Meta Prompting for Better Results** – Instead of guessing how to phrase a prompt, I ask AI to refine it first. This makes responses clearer and more useful.  
+- **Organizing AI Workflows with Projects** – Keeping related files, notes, and context in a project-based system makes AI interactions more efficient.  
+- **Iterate and Improve Prompts** – The first AI-generated response is rarely perfect. I always refine and tweak prompts, and sometimes I even ask the AI how I could phrase things better.  
 
-I’ve put together a demo video that walks through the full process — from recording to generating the final document. In the video, I share a few tips and workflows I use, offering practical insights for anyone interested in streamlining their own process. You can watch the video here:
+## Watch It in Action  
+
+Here’s a video where I walk through the entire workflow, from recording my thoughts to generating a structured document:  
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KggW4rLy76s?si=XSzsClCKLQwSzxeo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<br/><br/>
-I’ve also attached the [generated document here](/docs/assets/pdfs/ai_tips_from_matt.pdf) so you can see the output for yourself. I hope you find this demo practical and (maybe) inspiring as you explore new ways to enhance your AI workflows.
+You can also check out the [final document here](/docs/assets/pdfs/ai_tips_from_matt.pdf).  
+
+Hopefully, this gives you some ideas on how to make AI work for you.
