@@ -1,0 +1,287 @@
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<style>
+    /* PragmaNexus color variables */
+    :root {
+      --primary-color: #0A4D68;
+      --secondary-color: #FFD700;
+      --text-color: #212529;
+      --light-background: #f8f9fa;
+    }
+    
+    /* Enhanced header styling with increased size */
+    .masthead {
+      background-color: white;
+      border-bottom: 1px solid rgba(10, 77, 104, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 1em 0; /* Increased padding */
+    }
+    
+    .masthead__inner-wrap {
+      padding: 0.5em 2em; /* Wider padding on sides */
+      max-width: 1400px; /* Increased max-width */
+    }
+    
+    /* Completely revised site title styling */
+    .site-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.8em;
+      letter-spacing: -0.01em;
+      color: #0A4D68;
+      position: relative;
+      padding: 0.2em 0;
+      margin: 0 0.3em;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+    
+    /* Remove ALL default underlines and behaviors */
+    .site-title:before, 
+    .site-title:after,
+    .greedy-nav a:before,
+    .greedy-nav a:after {
+      display: none !important;
+    }
+    
+    /* Add a small decorative line under the site title */
+    .masthead .site-title {
+      border-bottom: 3px solid #FFD700;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.1em;
+    }
+    
+    /* Improved nav styling with larger elements */
+    .greedy-nav {
+      background: transparent;
+      height: auto; /* Allow height to adjust naturally */
+    }
+    
+    .greedy-nav .visible-links {
+      display: flex;
+      align-items: center;
+      height: auto; /* Allow height to adjust naturally */
+    }
+    
+    .greedy-nav a {
+      padding: 0.8em 1.2em; /* Larger padding */
+      margin: 0 0.3em;
+      font-weight: 500;
+      font-size: 1.1em; /* Larger font size */
+      color: #333;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    
+    .greedy-nav a.site-title {
+      margin-right: 1em; /* Space between title and nav items */
+    }
+    
+    .greedy-nav a:hover {
+      color: #0A4D68;
+    }
+    
+    /* Custom hover effect for navigation items */
+    .greedy-nav .visible-links li a {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .greedy-nav .visible-links li a:hover {
+      color: #0A4D68;
+    }
+    
+    .greedy-nav .visible-links li a:after {
+      content: "";
+      position: absolute;
+      bottom: 0.5em;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #FFD700;
+      transition: width 0.3s ease, left 0.3s ease;
+      display: block !important;
+    }
+    
+    .greedy-nav .visible-links li a:hover:after {
+      width: 70%;
+      left: 15%;
+    }
+    
+    /* If there's a dark mode toggle, style it */
+    .greedy-nav__toggle {
+      background-color: #f0f0f0;
+      border-radius: 50%;
+      padding: 0.5em;
+    }
+    
+    /* Update page title area */
+    .page__title {
+      color: var(--primary-color) !important;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    
+    .page__lead {
+      color: var(--text-color) !important;
+    }
+    
+    /* Update page hero area */
+    .page__hero--overlay .page__title,
+    .page__hero--overlay .page__meta,
+    .page__hero--overlay .page__lead {
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Footer styling */
+    .page__footer {
+      background-color: var(--light-background);
+      color: var(--text-color);
+      border-top: 1px solid rgba(10, 77, 104, 0.1);
+    }
+    
+    .page__footer a {
+      color: var(--primary-color);
+    }
+    
+    .page__footer a:hover {
+      color: #137a9e;
+    }
+    
+    .page__footer-copyright {
+      color: #6c757d;
+    }
+    
+    .page__footer-follow .social-icons .fa {
+      color: var(--primary-color);
+    }
+    
+    /* General button styling */
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .btn:hover {
+      background-color: #137a9e;
+    }
+    
+    .btn--primary {
+      background-color: var(--primary-color);
+    }
+    
+    .btn--primary:hover {
+      background-color: #137a9e;
+    }
+    
+    /* Page content container styling */
+    .page__content h2, 
+    .page__content h3, 
+    .page__content h4, 
+    .page__content h5, 
+    .page__content h6 {
+      color: var(--primary-color);
+    }
+    
+    .page__content a:not(.btn) {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    
+    .page__content a:not(.btn):hover {
+      color: #137a9e;
+      text-decoration: underline;
+    }
+    
+    /* Archive item styling (for consistency with our custom pages) */
+    .archive__item-title a {
+      color: var(--primary-color);
+    }
+    
+    .archive__item-title a:hover {
+      color: #137a9e;
+    }
+    
+    /* Navigation styling */
+    .nav__list .nav__items a {
+      color: var(--text-color);
+    }
+    
+    .nav__list .nav__items a:hover {
+      color: var(--primary-color);
+    }
+    
+    .nav__list .nav__items a.active {
+      color: var(--primary-color);
+    }
+    
+    /* Sidebar styling */
+    .sidebar .nav__list {
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+    }
+    
+    /* Make the header responsive and clean on mobile */
+    @media (max-width: 1024px) {
+      .masthead__inner-wrap {
+        padding: 0.5em 1.5em;
+      }
+      
+      .site-title {
+        font-size: 1.6em;
+      }
+      
+      .greedy-nav a {
+        padding: 0.7em 1em;
+        font-size: 1em;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .masthead__inner-wrap {
+        padding: 0.5em 1em;
+      }
+      
+      .site-title {
+        font-size: 1.4em;
+      }
+      
+      .greedy-nav a {
+        padding: 0.6em 0.8em;
+        font-size: 0.95em;
+      }
+    }
+    
+    /* Global container width fixes */
+    .page__content,
+    #main,
+    .page__main,
+    .page__content > *,
+    .splash .page__content {
+      max-width: 1200px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    /* Ensure full width on main container */
+    #main {
+      width: 100% !important;
+      float: none !important;
+    }
+    
+    /* Ensure sidebars don't interfere with layout */
+    .sidebar__right {
+      display: none !important;
+    }
+    
+    /* Fix for collection layout */
+    .layout--collection .page__content {
+      float: none !important;
+      width: 100% !important;
+    }
+    </style>
