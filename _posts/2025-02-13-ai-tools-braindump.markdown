@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "A Brain Dump on How I Use AI Tools"
+excerpt: "I use AI tools daily to streamline thinking, organize projects, and refine ideas. This post breaks down my workflow - voice input, meta-prompting, structured summaries — and how AI helps turn rough thoughts into something useful. If you’re looking to make AI more practical, here’s how I do it."
 ---
 
 I recently met up with some former co-workers to catch up and share what I’ve been learning about AI. The conversation covered a lot—voice input, meta-prompting, project organization—and I realized afterward that I had probably overwhelmed them with too much information at once. To make it more digestible, I wanted to send them a structured summary of what we talked about. Instead of writing it all out manually, I used AI to generate it. And since I was already doing that, I decided to document the process to show how these tools can help streamline this kind of work.  

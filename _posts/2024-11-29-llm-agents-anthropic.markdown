@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Building LLM Agents: Insights from Anthropic on Latent Space"
+excerpt: "Latent Space’s conversation with Erik Schluntz from Anthropic covered practical lessons on building LLM agents — from structuring prompts with XML to designing tools like a UX problem. The key takeaway: effective agents aren’t just about capabilities, but about guiding LLMs to reason and act well."
 ---
 
 The recent [Latent Space podcast](https://www.latent.space/p/claude-sonnet) with Erik Schluntz, a member of the technical staff at Anthropic, explored agents — programs powered by Large Language Models designed to autonomously perform tasks by reasoning and acting in dynamic environments. While the discussion focused on agents and their application in coding, many of the insights apply broadly to building applications with LLMs. I captured these takeaways as notes for myself and thought they might be useful to share.

@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "Learning about AI is easier than you think. Just get started"
+title: "Learning About AI Is Easier Than You Think. Just Get Started"
+excerpt: "I tested Flux, an AI image model, and documented my workflow for experimenting with new AI tools. The takeaway? The best way to learn AI is to start playing with it. Small experiments compound, and those who explore now will have an edge later."
 ---
 > *a photo realistic image of a dad playing soccer with his daughter on a lake michigan beach*
 

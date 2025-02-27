@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Reasoning with o1 - Course Breakdown"
+excerpt: "I took OpenAI’s *Reasoning with o1* course, a short but detailed look at how o1 handles chain-of-thought reasoning, tool calling, and complex workflows. This post breaks down key takeaways, from coding improvements to policy refinement, and why this model stands out for structured problem-solving."
 ---
 
 I took the [Reasoning with o1](https://www.deeplearning.ai/short-courses/reasoning-with-o1/) short course led by [Colin Jarvis](https://www.linkedin.com/in/colin-jarvis-50019658/) at OpenAI. At just over an hour long, it’s a concise introduction to a few things that o1 is particularly good at. The course strikes a great balance — technical enough to dig into the details but still approachable for experienced engineers who haven’t explored these tools yet. If you’re curious but maybe skeptical of using these tools, it’s a fantastic way to see what these models are capable of.

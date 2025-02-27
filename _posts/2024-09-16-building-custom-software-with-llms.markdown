@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "Building small-scale Custom Software with LLMs and Gumloop"
+title: "Building Small-Scale Custom Software with LLMs and Gumloop"
+excerpt: "LLMs have drastically lowered the cost of prototyping custom software. Using Gumloop, I built an AI-powered podcast summarizer in under an hour — automating transcription, summarization, and PDF generation. It’s never been easier to experiment and build useful tools."
 ---
 
 The cost to prototype custom software that solves niche problems can be substantially lower with LLM capabilities. Aspects of a software system that previously required deep technical knowledge to build can now often be implemented cheaply and easily with the help of LLMs.

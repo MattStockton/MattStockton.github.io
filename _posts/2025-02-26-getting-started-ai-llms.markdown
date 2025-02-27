@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with AI & LLMs (For Technical Folks)"
 layout: single
-excerpt: "A curated collection of resources, tools, and personal insights to help technical professionals get started with AI and large language models."
+excerpt: "If you're technical and trying to get your head around AI, this guide cuts through the noise. I’ve put together a mix of foundational concepts, hands-on resources, and my own takeaways to help you get started quickly. The best way to learn AI is by diving in — this post gives you a roadmap."
 ---
 
 Recently, someone asked me for recommendations on how to get started with AI product building, and I realized I had a lot of thoughts here - mainly because I’m way down the rabbit hole. I also figured this would be useful for others, so I am sharing structured thoughts here. 

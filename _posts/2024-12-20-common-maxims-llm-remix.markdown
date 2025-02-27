@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Common Maxims - LLM Remix"
+excerpt: "I used o1 pro to challenge widely accepted maxims and generate new ones with fresh perspectives. This experiment highlights how AI can help unpack assumptions, rethink conventional wisdom, and surface insights that might otherwise go unnoticed. Here’s what I found."
 ---
 
 Today I got access to OpenAI's o1 pro, a specialized model within the ChatGPT Pro lineup, designed for complex reasoning tasks. It’s particularly effective for problems requiring deep analysis, making it ideal for fields like science, mathematics, and advanced programming. While this first experiment, detailed below, isn't a perfect fit for o1 pro's strengths, I wanted to try it out on something that's been a background thread the last few days.

@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Bringing Clear Communication to AI-Driven Teams"
+excerpt: "Clear communication is critical for AI teams. Simple, precise language helps bridge gaps between technical and non-technical members, improving collaboration. Learning to write clearly  —whether for teammates or LLMs — is just as valuable as learning new AI techniques."
 ---
 
 Clear communication is critical for effective teams. Using simple, precise language helps bridge gaps across roles. Clear language enables everyone to contribute meaningfully. This is particularly true for technical projects -- where complex ideas are shared constantly between domain experts, engineers, and non-technical teammates. 

@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "You can build a RAG system too"
+title: "You Can Build a RAG System Too"
+excerpt: "RAG sounds complex, but it’s really just using a custom search engine to feed better context to an LLM. A great place to start is Santiago’s step-by-step tutorial — under 100 lines of code. If you’re curious, just dive in. The hardest part is getting started."
 ---
 
 In software engineering, we have the tendency to invent complex terminology to describe relatively simple concepts. I’ve experienced that as I’ve learned more about Large Language Models and what we can do with them. Here’s an example: **Retrieval Augmented Generation (RAG)**. What’s that? To me, it is: *Using a custom search engine to find information, and including that information in your initial model prompt before running it*.

@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Notes From Google's Prompt Tuning Playbook"
+excerpt: "Google’s prompt tuning playbook is packed with insights on writing better prompts. Key takeaways: guide the model to the right 'universe' of information, favor clear zero-shot instructions, and remember that LLMs excel where answers are hard to make but easy to check."
 ---
 
 [Varun Godbole](https://www.linkedin.com/in/godbolevarun/) and his team at Google recently released an excellent [prompt tuning playbook](https://github.com/varungodbole/prompt-tuning-playbook), packed with practical advice. Varun, a core contributor to Gemini, has generously shared this knowledge, and it’s worth a full read. I’ve summarized my takeaways below. If you’re aiming to get better at using LLMs, resources like this are invaluable — study them, experiment, and then apply what you learn.

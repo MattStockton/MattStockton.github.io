@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "A Firehose of LLM / AI Tidbits"
+title: "A Firehose of LLM / AI Tidbits"
+excerpt: "A rapid-fire list of AI insights, tools, and concepts that have caught my attention lately — from practical prompting tips to the latest breakthroughs in multimodal models. If you're looking for a nudge to dive deeper into this space, there’s something here for you."
 ---
 
 I’ve been pretty far down the rabbit hole of Large Language Models for a while, yet there's still so much for me to learn. I feel so early in the journey. At the same time, I realize I’ve built up a lot of knowledge worthy of sharing. I enjoy writing about what I’m learning here on my site. It’s been a fun way to experiment with tools, get some writing practice in, and connect with others who are curious too. I have a large backlog of topics I’d like to write about. For this post, I’m trying something new. Instead of going deep on a single thing, here’s a firehose of quick tidbits. My goal in sharing this is twofold: (1) to categorize and solidify things I’ve found interesting over the past month or so, and (2) to inspire a few of you to go deeper in this space. Maybe you’ll find something here that is the nudge you need to go deeper. Happy building and exploring.

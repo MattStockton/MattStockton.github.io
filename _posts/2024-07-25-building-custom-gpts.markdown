@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "Building Custom GPTs"
+title: "Building Custom GPTs"
+excerpt: "Custom GPTs are a fast, low-effort way to embed tailored LLM functionality for your team. I built one for leadership decision-making in minutes — adding custom prompts, conversation starters, and book references. It’s a great middle-ground between generic AI chat and full custom software."
 ---
 
 

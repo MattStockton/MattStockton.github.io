@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Building with AI: Insights from Matt Cynamon and USV"
+excerpt: "Matt Cynamon’s discussion on building AI tools at USV reinforced a key idea — just start. Experimentation, small specialized tools, and human-AI collaboration are shaping how we build. The best insights come from diving in, iterating, and learning along the way."
 ---
 
 I've written before about some key themes I see in building with AI: the importance of creativity and curiosity, the increasing accessibility of tools, and most importantly, [the benefit of just getting started](/2024/08/12/ai-is-easy-just-get-started.html). These themes came alive recently while [listening to Matt Cynamon](https://every.to/podcast/how-union-square-ventures-built-an-ai-brain-for-venture-capital) from Union Square Ventures (USV) on the Every podcast. I highly encourage you to listen to the episode, even if you haven't dug into any content in this space before. It's highly approachable and you'll come away excited to try something yourself. Below, I've summarized my key take-aways from the episode.

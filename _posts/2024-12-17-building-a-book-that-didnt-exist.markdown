@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Building a Book That Didn’t Exist"
+excerpt: "Andrej Karpathy used O1 Pro to create a full book from scratch, shaping the content himself through structured prompts. This process isn’t just about getting answers — it’s a powerful way to clarify thinking, refine ideas, and explore topics in ways that weren’t possible before."
 ---
 
 Andrej Karpathy had a question: *What would the Founding Fathers think about America today?* He couldn’t find a book that explored it, so [he built one himself](https://x.com/karpathy/status/1868903650451767322) using OpenAI’s newest model, **O1 Pro**.  

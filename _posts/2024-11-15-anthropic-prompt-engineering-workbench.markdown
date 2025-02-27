@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Thoughts on Anthropic's Updated Prompt Engineering Workbench"
+excerpt: "Anthropic’s updated prompt workbench makes testing, refining, and deploying prompts much smoother. It blends automation with flexibility — letting you generate test cases, tweak prompts, and evaluate results all in one place. A well-designed tool for serious prompt engineering."
 ---
 
 Before we dive in, take 10 minutes to watch [Anthropic’s demo video](https://x.com/alexalbert__/status/1857134866900639799). Seeing the tool in action is way more valuable than any written summary — mine included.  

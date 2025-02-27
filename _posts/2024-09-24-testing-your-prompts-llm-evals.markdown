@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "Testing Your Prompts - Writing LLM Evals"
+title: "Testing Your Prompts - Writing LLM Evals"
+excerpt: "If you're using LLMs in production, you need systematic evaluations. Anthropic’s notebooks and tools like PromptFoo make it easy to test prompts, compare models, and iterate quickly. LLMs are powerful, but without structured testing, you won’t know if they’re working as expected."
 ---
 
 Anthropic created a [set of python notebooks](https://x.com/alexalbert__/status/1835717512404914401) detailing how to create prompt evaluations. The [GitHub repo is here](https://github.com/anthropics/courses/tree/master/prompt_evaluations). If you’re using a language model in your application, you should test the results of your prompts in a systematic way. It’s  not much work to do this, and it’s tremendously important to do so. There are tools to help you run the evaluations, and they don’t take much time to set up or use. I’d encourage folks to read through the notebooks linked above to build appropriate context. You can read through all of them within an hour or two. As a quick overview, I wrote a few take-aways below.

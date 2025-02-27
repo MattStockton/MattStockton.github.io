@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "AI Beyond Text Generation: A song about a worm"
+title: "AI Beyond Text Generation: A Song About a Worm"
+excerpt: "AI tools like Udio can generate full songs with lyrics and music in minutes. I tested it by making a country song about my book character, Warren the Worm. The results were surprisingly good — and a reminder that AI creativity goes far beyond text generation."
 ---
 
 When ChatGPT first came out, I remember showing my family funny poems that it could write. I remember the novelty of telling ChatGPT to make the poem rhyme, or to be a certain number of words, or to be a limerick. It felt like magic, and also a bit silly at the same time. The core language model technologies have improved a lot since then, and so have the custom-built applications that use those underlying LLM capabilities. There's so much you can do now with these tools, and it changes every day. Maybe I'm just too far down the rabbit-hole, but it continues to surprise me how few people know the breadth and depth of what these models (and other generative AI tools) can do if used in interesting ways. Raising awareness of these capabilities is something I'm really passionate about.

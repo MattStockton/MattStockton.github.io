@@ -1,6 +1,7 @@
 ---
 layout: single
-title:  "Using LLMs to Build Software - A working game in 5 minutes"
+title: "Using LLMs to Build Software - A Working Game in 5 Minutes"
+excerpt: "I built a playable word game in 5 minutes using Claude’s Artifacts feature — no coding required. LLMs are making software development more accessible, reducing the time to prototype, and enabling new types of small, custom applications that wouldn’t have been built before."
 ---
 
 <img src="/docs/assets/images/wordspy/1.png" width="600px" height="600px"/>

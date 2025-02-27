@@ -1,6 +1,7 @@
 ---
 title: "The Most Overlooked Step in Building Reliable AI Systems"
 layout: single
+excerpt: "Many AI teams skip the most critical step — actually reviewing their model’s outputs. If you don’t analyze errors and define correctness, you risk building something that looks right but isn’t. This post breaks down why structured evaluation is the difference between AI experiments and real-world impact."
 ---
 
 One of the biggest mistakes people make when working with AI systems is not looking closely enough at their data. They assume the system is working because it’s generating outputs, and they move on. But if you’re not actively reviewing what the model is doing — step by step, error by error — you risk missing fundamental problems. That was one of the key takeaways from [Hamel Husain](https://hamel.dev/)’s recent discussion on *Vanishing Gradients* ([episode link](https://vanishinggradients.fireside.fm/45)), where he emphasized the importance of error analysis. This post weaves in some of the key ideas from that conversation along with my own thoughts on these issues — why looking at your data matters, how to think about correctness, and why simple evaluation strategies can make or break an AI system. The best AI practitioners know that this process is where real progress happens.  

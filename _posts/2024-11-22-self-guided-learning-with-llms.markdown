@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "How I Use LLMs for Self-Guided Learning"
+excerpt: "I used Claude to break down complex ideas from a podcast, refining explanations and generating useful examples. The process took 10 minutes and turned passive listening into active learning. AI makes it easy to iterate — just ask, refine, and keep going until it clicks."
 ---
 
 I'm excited about using AI tools for self-guided learning — it's one of my highest-conviction use cases for this technology. [I wrote about this before](/2024/11/17/my-takes-on-ai.html), but today I want to share a specific example of how I used these tools to better understand some complex technical concepts from a podcast. My hope is that by sharing concrete examples of what works for me, it'll inspire you to experiment and find approaches that work for you too.

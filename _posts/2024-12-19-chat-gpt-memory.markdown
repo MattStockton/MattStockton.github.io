@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "A Thought Experiment with ChatGPT’s Memory"
+excerpt: "I tested ChatGPT’s memory with prompts designed to uncover hidden narratives, sparking questions about how it generalizes insights. This post explores the experiment, potential uses for memory embeddings, and how o1 pro helped brainstorm new ways to analyze patterns in stored interactions."
 ---
 
 One corner of AI Twitter that’s been catching my attention is where people share prompts designed to get ChatGPT to reflect on specific things about you. These prompts go beyond simple questions, often aiming to uncover deeper insights or patterns. An example that stood out to me was a prompt asking ChatGPT to find your “hidden narrative” or “subtext.” It instructed ChatGPT to dig deeper, unpacking layers until there was nothing left to uncover. You can see the [full prompt here](https://x.com/heyalexfriedman/status/1866175362813595944).

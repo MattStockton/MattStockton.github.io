@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Trying Gemini Flash 2.0's Screen Interaction"
+excerpt: "I tested Gemini Flash 2.0’s screen-sharing feature by analyzing a portfolio report in real time. It felt like having someone guide me through the data, reducing friction and making learning more natural. The insights weren’t perfect, but this kind of interaction is a big step forward."
 ---
 
 One of my main beliefs about large language models is that they enable people to learn interesting concepts on their own terms, in their own ways, unlocking entirely new paths toward knowledge. The tools are evolving quickly, building better and better user experiences to make this possible. Gemini Flash 2.0’s new screen-sharing feature feels like a step in that direction, and I wanted to see how well it worked in practice.

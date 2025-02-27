@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Building a Game From a 400-Page Book in 400 Words"
+excerpt: "Steven Johnson turned his 400-page book into an interactive detective game using a 400-word prompt and an LLM. His essay highlights how long-context models are transforming how we analyze, retrieve, and interact with information—moving beyond search to reasoning and creative problem-solving."
 ---
 
 Steven Johnson’s essay - [You Exist in the Long Context](https://thelongcontext.com/) - opens with something incredible: he took his 400-page book *The Infernal Machine*, wrote a 400-word prompt, and used a large language model to turn it into an interactive detective game. Players can step into the role of a forensic detective, explore the story’s details, and solve the mystery, all within a web browser. The AI not only retained all the facts from the book but guided players with historical context, improvised new scenes, and kept the experience grounded in the book’s timeline.  

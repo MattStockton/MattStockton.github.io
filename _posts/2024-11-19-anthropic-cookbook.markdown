@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Why You Should Spend a Day with Anthropic’s Cookbook"
+excerpt: "Anthropic’s Cookbook is one of the best hands-on resources for learning LLM techniques. The examples — like structuring citations, prompt formatting, and integrating external tools — are practical and widely applicable. If you’re serious about improving your LLM skills, it’s worth your time."
 ---
 
 [Anthropic’s Cookbook](https://github.com/anthropics/anthropic-cookbook/tree/main) is a collection of Jupyter notebooks that teach foundational techniques for working with LLMs. These examples go beyond just using Claude - they offer reusable knowledge that applies to any model you might work with. It’s a practical, high-signal resource that can significantly improve your LLM skills.

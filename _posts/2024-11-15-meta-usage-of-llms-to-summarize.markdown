@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "How I Used LLMs to Summarize Workflow Hacks from a Twitter Thread"
+excerpt: "I used an LLM to distill insights from a Twitter thread on AI workflow hacks — turning a noisy flood of replies into a clear, structured top 10 list. The process itself became a meta-experiment in using AI to cut through information overload efficiently."
 ---
 
 Twitter is the absolute highest signal for learning about leading-edge LLM advancements -- if you follow the right people. That said, it’s also overwhelming and noisy, and keeping up can easily consume time you should spend building. 

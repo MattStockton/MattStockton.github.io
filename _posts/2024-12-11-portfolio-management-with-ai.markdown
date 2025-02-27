@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Using AI to Make My Portfolio More Tax-Efficient"
+excerpt: "I used AI to analyze my portfolio for tax efficiency, starting with a casual voice prompt and refining my strategy with Claude. In 30 minutes, I identified simple, actionable changes that could save money long-term — an easy, effective way to make better financial decisions."
 ---
 
 The other day at the playground, I got into a conversation with my friend Nick, who knows a lot about investing. We started talking about our portfolios, and I mentioned a large capital gains distribution I had just received. Nick explained why ETFs typically don’t have these distributions, unlike mutual funds. The explanation — something about how ETFs work with brokers and market makers to avoid selling underlying holdings — was fascinating but slightly over my head.

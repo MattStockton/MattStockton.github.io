@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Using OpenAI’s Deep Research"
+excerpt: "OpenAI’s Deep Research generates structured reports with citations in minutes, making research faster and more efficient. I tested it for portfolio analysis, using meta-prompting to refine my queries. Here’s how it streamlined my decision-making and how you can use it too."
 ---
 
 When you need deep, structured research on a topic, the usual approach is slow — digging through sources, organizing notes, and synthesizing insights. OpenAI’s [Deep Research](https://openai.com/index/introducing-deep-research/) changes that, generating baseline structured reports with citations in minutes. Instead of manually compiling information, you can describe your research goal, and the tool will return a well-organized summary backed by sources.  

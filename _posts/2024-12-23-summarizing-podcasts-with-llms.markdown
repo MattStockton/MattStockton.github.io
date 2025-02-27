@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Summarizing Podcasts with LLMs (Using o1 Pro)"
+excerpt: "I use LLMs to summarize podcasts into structured takeaways, making it easier to revisit key insights. This post walks through my workflow — meta-prompting, refining outputs, and generating summaries. If you want to extract useful details from long-form content, here’s how I do it."
 ---
 
 I’ve been experimenting with using LLMs to distill key details from podcasts. I listen to most episodes while running and afterwards want a succinct record of what stood out. Below is how I approach that process, along with a look at two summary artifacts I created from a recent High Agency Podcast episode - [How to build great AI products with Vanta Software Developer Noam Rubin](https://www.youtube.com/watch?v=PdT8STmhUqg). I used o1 pro for all of this - I recently got access to this model, and have been experimenting with it to see how it works differently than previous OpenAI models.
