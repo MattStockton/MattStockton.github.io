@@ -15,7 +15,7 @@ layout: splash
     padding: 2.5em;
     background-color: #fff;
     border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 12px;
     border-top: 3px solid #0A4D68; /* PragmaNexus primary color */
   }
   
@@ -191,7 +191,7 @@ layout: splash
       <div class="expertise-column">
         <div class="expertise-box">
           <div class="expertise-title">LLM Implementation</div>
-          <p>I work with large language models to solve problems involving unstructured text, document processing, and natural language interfaces. I focus on effective prompt design, retrieval systems that provide context, and ensuring outputs are accurate and relevant.</p>
+          <p>I build effective LLM systems that integrate with existing infrastructure, focus on accuracy, and deliver reliable results. My implementations address common challenges like data security, reducing hallucinations, and optimizing for both performance and cost.</p>
         </div>
       </div>
     </div>
@@ -200,8 +200,8 @@ layout: splash
     
     <ul class="services-list">
       <li><span class="highlight">Practical AI Strategy</span> — Developing roadmaps that use both traditional ML and LLMs to address your specific business challenges</li>
-      <li><span class="highlight">LLM Implementation</span> — Building systems that use LLMs effectively with proper context retrieval and output validation</li>
-      <li><span class="highlight">Data Engineering</span> — Creating reliable data infrastructure that powers both analytics and AI applications</li>
+      <li><span class="highlight">LLM Engineering</span> — Building reliable AI systems that deliver accurate results, integrate with your existing tools, and address practical concerns like security and cost</li>
+      <li><span class="highlight">Data Infrastructure</span> — Building scalable data platforms that provide the foundation for both analytics and AI applications</li>
       <li><span class="highlight">Technical Evaluation</span> — Assessing which approaches will work best for your specific requirements and constraints</li>
       <li><span class="highlight">Team Development</span> — Helping your team build the skills to maintain and extend these systems</li>
     </ul>
