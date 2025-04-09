@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Karpathy's Practical LLM Insights"
 excerpt: "I distilled two hours of practical wisdom from Andrej Karpathy on using large language models effectively — real tools, clear explanations, and valuable tips you can apply immediately."
 ---
