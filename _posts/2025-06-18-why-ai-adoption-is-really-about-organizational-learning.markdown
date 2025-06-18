@@ -4,7 +4,7 @@ title: "Why AI Adoption is Really About Organizational Learning"
 excerpt: "After updating AI workshop materials that became obsolete in 3 months, I realized the real challenge isn't keeping up with tools - it's building organizations that can learn and adapt continuously."
 ---
 
-I recently spent a few days updating my AI workshop materials for a ~60-person training. Last time I refreshed this content was only three months ago. Many technical details in my slides required substantial changes.
+I recently spent a few days updating my AI workshop materials for a ~50-person training. Last time I refreshed this content was only three months ago. Many technical details in my slides required substantial changes.
 
 The last few months brought significant change: Agents and agentic AI expanded significantly. MCP protocols are now a thing. OpenAI's Deep Research can produce comprehensive reports that would have been extremely time-consuming to compile manually. OpenAI rolled out persistent memory (that sometimes helps and sometimes makes things worse). Tool integrations got deeper across all the major model providers. Plus a dozen other significant capability jumps.
 
