@@ -2,6 +2,8 @@
 layout: single
 title: "Six Insights from Andrew Ng on Building Faster with AI"
 excerpt: "Key takeaways from Andrew Ng's Y Combinator talk on adapting to the rapidly evolving AI development landscape."
+category: "AI Strategy & Leadership"
+tags: ["andrew-ng", "ai-strategy", "startup-advice", "product-development", "y-combinator"]
 ---
 
 [Andrew Ng](https://www.linkedin.com/in/andrewyng/) is one of the best technical teachers out there - any content he puts out is guaranteed to be high quality. His recent YCombinator AI Startup School talk ["Building Faster with AI"](https://www.youtube.com/watch?v=RNJCfif1dPY) was valuable because it condensed practical, applicable advice into 45 minutes. In a space where best practices change every few months, having someone with Ng's experience distill what matters is useful.

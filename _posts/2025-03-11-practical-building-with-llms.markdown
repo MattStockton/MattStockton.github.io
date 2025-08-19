@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Practical Takeaways on Building with LLMs from John Berryman"
-excerpt: "Success with LLMs isn’t about picking the right API  it’s about structuring problems in a way that works. In this podcast recap, I break down John Berryman’s insights on better prompts, structured workflows, and human-AI collaboration that lead to real results."
+excerpt: "Success with LLMs isn't about picking the right API  it's about structuring problems in a way that works. In this podcast recap, I break down John Berryman's insights on better prompts, structured workflows, and human-AI collaboration that lead to real results."
+category: "Building with LLMs"
+tags: ["john-berryman", "practical-tips", "prompting", "workflows", "podcast-recap"]
 ---
 
 Most people approach large language models by picking tools first. But the real challenge isn’t which API you call, it’s how you frame the problem. I recently listened to an episode of [*How AI Is Built*](https://share.transistor.fm/s/7eb9804c), a podcast hosted by [Nicolay Gerold](https://www.linkedin.com/in/nicolay-gerold/) that consistently delivers deep yet approachable technical content. This episode featured [John Berryman](https://www.linkedin.com/in/john-berryman-864b1713/), who shared some of the most useful, real-world advice I’ve heard on working with LLMs. No AI hype, just practical insights on what actually works. One of the key insights Berryman shared was about how to frame prompts in a way that models understand more reliably.

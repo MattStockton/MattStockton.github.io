@@ -2,6 +2,8 @@
 layout: single
 title: "Videos Within Multi-Modal Models - A Whole New World of Opportunity"
 excerpt: "LLMs can now process video, unlocking entirely new categories of automation. I tested this by turning an iPhone walkthrough of an EV charger install into a detailed project quote in under 10 minutes. The potential for real-world applications is massive."
+category: "Building with LLMs"
+tags: ["multimodal", "video-processing", "automation", "real-world-applications", "project-quotes"]
 ---
 
 Yesterday I wrote about how [long context windows are game-changers](/2024/08/13/gemini-long-context-window.html), enabling us to solve problems that were essentially unsolvable before.

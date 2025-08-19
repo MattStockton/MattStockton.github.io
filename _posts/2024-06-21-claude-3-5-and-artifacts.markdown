@@ -2,6 +2,8 @@
 layout: single
 title: "Creating an Image Classifier with Claude 3.5 and Artifacts"
 excerpt: "I built a working image classifier in 20 minutes using Claude 3.5 and Artifact — handling everything from Flask API setup to model integration and Docker deployment. This experiment showed just how much LLMs can accelerate development and simplify complex workflows."
+category: "Software Engineering"
+tags: ["claude-artifacts", "image-classifier", "flask", "docker", "rapid-development"]
 ---
 
 ***This post was written primarily with ChatGPT. Using ChatGPT was part of the experiment. Can I build something moderately interesting and write a post about it -- constraining myself to an hour time limit, and only use LLMs?***

@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Key Takeaways from Jason Liu's Podcast on RAG Pipelines"
-excerpt: "Jason Liu’s TwiML podcast covered high-signal lessons on RAG pipelines — why structured evaluations beat stochastic testing, how chain-of-thought prompting outperforms multi-step prompts, and why structured reports often deliver more value than chatbots. A must-listen for LLM builders."
+excerpt: "Jason Liu's TwiML podcast covered high-signal lessons on RAG pipelines — why structured evaluations beat stochastic testing, how chain-of-thought prompting outperforms multi-step prompts, and why structured reports often deliver more value than chatbots. A must-listen for LLM builders."
+category: "Building with LLMs"
+tags: ["rag", "jason-liu", "evaluation", "chain-of-thought", "podcast-recap"]
 ---
 
 [Jason Liu](https://jxnl.co/) creates incredibly high-signal AI and LLM content online. I try to read or listen to everything he creates. His recent [podcast appearance on TwiML](https://twimlai.com/podcast/twimlai/why-your-rag-pipeline-is-broken-and-how-to-fix-it/) did not disappoint. I’ve been trying to better distill my key takeaways from podcasts and articles. Here are my notes from this podcast. Each point references a quote from the episode. I pulled the quotes from the YouTube transcript, so they might not be 100% accurate — but they are directionally correct. This episode is definitely worth a full listen.

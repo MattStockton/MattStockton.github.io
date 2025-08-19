@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Using Google Gemini's Long Context Window to Analyze Small Cap Stock Annual Reports"
-excerpt: "I used Gemini’s long context window to analyze company annual reports — processing hundreds of pages in minutes to rank small-cap stocks. This kind of deep document analysis was nearly impossible before, but LLMs are changing what’s feasible at scale."
+excerpt: "I used Gemini's long context window to analyze company annual reports — processing hundreds of pages in minutes to rank small-cap stocks. This kind of deep document analysis was nearly impossible before, but LLMs are changing what's feasible at scale."
+category: "Finance & Investing"
+tags: ["gemini", "long-context", "document-analysis", "small-cap", "annual-reports"]
 ---
 
 Google built an LLM with a large input context window named [Gemini](https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/). A context window is the amount of text an LLM can consider at once when generating a response. Gemini 1.5 Pro has a context window limit of 2 million tokens. As comparison, ChatGPT 4o has a limit of 128k. A large context window lets you create long LLM prompts with limited data preparation work. To give you a frame of reference, the entire Harry Potter series contains just over a million words. A token isn't a word, but it's likely you could use all of the book text in a single LLM prompt. Then, the LLM could reference all the material to answer the real prompt you asked. Incredible stuff.

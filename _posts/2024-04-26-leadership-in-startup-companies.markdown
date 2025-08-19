@@ -1,5 +1,8 @@
 ---
 title:  "Leadership in startup companies"
+layout: single
+category: "Product & Strategy"
+tags: ["leadership", "startup", "management", "vision"]
 ---
 
 I’ve spent most of my career in small-ish VC-backed startup companies, with between 10 and 150 people. Things tend to move and change fast in small companies. Your success is far from guaranteed, and the 'rules of the game' can change frequently -- A year can happen in a week. It’s important to have leaders who can steer the ship through the fog, and keep the team moving forward. You need to be the compass for the team. I spent time reflecting on key leadership traits, behaviors, and activities that are useful towards being this compass. This isn’t a comprehensive list - just a few of the main things that come to mind.

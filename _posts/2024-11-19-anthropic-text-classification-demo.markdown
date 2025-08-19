@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Anthropic Demo for LLM Text Classification"
-excerpt: "Anthropic’s classification demo showed me a different way to approach text classification — structured XML prompts, retrieval-augmented examples, and clear evaluation with PromptFoo. It’s practical, well-documented, and has me rethinking when to reach for an LLM over traditional ML tools."
+excerpt: "Anthropic's classification demo showed me a different way to approach text classification — structured XML prompts, retrieval-augmented examples, and clear evaluation with PromptFoo. It's practical, well-documented, and has me rethinking when to reach for an LLM over traditional ML tools."
+category: "Building with LLMs"
+tags: ["text-classification", "anthropic", "xml-prompts", "promptfoo", "evaluation"]
 ---
 
 I’ve typically leaned on classical machine learning tools like scikit-learn and XGBoost for classification tasks. I recently found a demo notebook from Anthropic, and it made me rethink some of my assumptions. [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook/tree/main) contains high-quality, practical notebooks for learning how to use LLMs in real applications.

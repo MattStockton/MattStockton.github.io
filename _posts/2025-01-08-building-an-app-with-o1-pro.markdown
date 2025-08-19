@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Building a Self-Guided Learning App with O1 Pro"
-excerpt: "I used OpenAI’s o1 pro to build a self-guided learning app — generating a PRD, writing code, and creating a working prototype in no time. This post walks through the process, showing how AI can streamline development and make building more accessible than ever."
+excerpt: "I used OpenAI's o1 pro to build a self-guided learning app — generating a PRD, writing code, and creating a working prototype in no time. This post walks through the process, showing how AI can streamline development and make building more accessible than ever."
+category: "Software Engineering"
+tags: ["o1-pro", "app-development", "prd", "prototyping", "self-guided-learning"]
 ---
 
 <img src="/docs/assets/images/o1-pro-app/1.png"/>

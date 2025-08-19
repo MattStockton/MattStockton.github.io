@@ -2,6 +2,8 @@
 layout: single
 title: "AI Coding Tools: Why I Use Claude Code"
 excerpt: "After trying RepoPrompt, Cline, and others, I found the AI coding tool that finally clicked. Here's what I learned about choosing tools, avoiding the shiny object trap, and why the command line interface makes all the difference."
+category: "Software Engineering"
+tags: ["ai-tools", "coding", "claude-code", "repoprompt", "cline", "developer-tools"]
 ---
 
 Six months of experimenting with AI coding tools taught me that the "best" tool is the one that aligns with how you actually work. I tried [RepoPrompt](https://repoprompt.com/), [Cline](https://cline.bot/), and others before settling on [Claude Code](https://www.anthropic.com/claude-code). Here's what makes it click for experienced engineers - and why trying any of these tools beats endlessly evaluating them.

@@ -1,5 +1,8 @@
 ---
 title:  "Clear Thinking : Take-Aways"
+layout: single
+category: "Learning & Books"
+tags: ["clear-thinking", "book-review", "shane-parrish", "decision-making", "mental-models"]
 ---
 
 I finished reading [Shane Parrish](https://twitter.com/ShaneAParrish)’s new book [Clear Thinking](https://a.co/d/g6PYgb4). It has quite a few nuggets of wisdom that I’d like to reference in the future. I’m trying to get better at applying information I learn in books. Perhaps taking reflective notes is a good way to do this, so I am trying it out. Here’s to hoping I can apply a few of the following ideas in my life.

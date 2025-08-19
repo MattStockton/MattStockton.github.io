@@ -2,6 +2,8 @@
 layout: single
 title: "Cheat Codes for Life: Experimenting with LLMs"
 excerpt: "I used Claude AI to refine a list of life skills that would be valuable to learn at 21. Voice input made the process faster, and experimenting with writing styles helped shape clearer, more actionable insights. The result was a solid list — simple, direct, and worth revisiting."
+category: "Personal Reflections"
+tags: ["life-skills", "claude", "voice-input", "personal-growth", "experimentation"]
 ---
 
 Today, I came across a [tweet by Alex McCaw](https://x.com/maccaw/status/1862159247825399863) asking what topics young adults should learn but aren’t typically taught. This sparked an idea: what could large language models come up with on this topic? Along the way, I decided to test Claude AI’s new functionality for creating custom writing styles.

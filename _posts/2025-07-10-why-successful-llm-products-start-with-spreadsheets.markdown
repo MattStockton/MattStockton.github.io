@@ -2,6 +2,9 @@
 layout: single
 title: "Why Successful LLM Products Start with Spreadsheets"
 excerpt: "Philip Carter's process on Vanishing Gradients shows the value-added work most people skip - actually looking at your data and fixing what's broken."
+featured: true
+category: "Building with LLMs"
+tags: ["data-analysis", "product-development", "evaluation", "process"]
 ---
 
 [Philip Carter](https://www.linkedin.com/in/phillip-carter-4714a135/) from Honeycomb walked through his error analysis process on Vanishing Gradients, Hugo Bowne-Anderson's excellent podcast that consistently delivers practical insights for data practitioners. In [episode 51](https://vanishinggradients.fireside.fm/51), Carter's description is detailed and approachable - he tells you exactly what he did and how you can use LLM tools to help.

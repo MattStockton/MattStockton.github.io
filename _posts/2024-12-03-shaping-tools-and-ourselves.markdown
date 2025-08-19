@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Shaping Tools and Ourselves: Reflections from Gwern Branwen"
-excerpt: "Gwern Branwen’s take on writing, curiosity, and burnout left me thinking about how we shape AI — and how it shapes us. From following rabbit holes to recognizing when it’s time to switch gears, this episode was a reminder to stay curious and intentional about what I create."
+excerpt: "Gwern Branwen's take on writing, curiosity, and burnout left me thinking about how we shape AI — and how it shapes us. From following rabbit holes to recognizing when it's time to switch gears, this episode was a reminder to stay curious and intentional about what I create."
+category: "Personal Reflections"
+tags: ["gwern-branwen", "writing", "curiosity", "ai-ethics", "burnout"]
 ---
 
 I spend a lot of time thinking about how to apply ML and LLMs to real-world problems. A recent episode of the [Dwarkesh Podcast](https://www.dwarkeshpatel.com/p/gwern-branwen) featuring Gwern Branwen pushed my brain in a different direction. [Gwern](https://gwern.net/) is a researcher and writer who’s had a big impact on how people think about AI, scaling laws, and more. Listening to him talk about writing, curiosity, and burnout got me thinking about the bigger picture — not just the tools we build, but how we approach the work itself.

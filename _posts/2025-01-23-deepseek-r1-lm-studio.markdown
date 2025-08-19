@@ -2,6 +2,8 @@
 layout: single
 title: "DeepSeek R1: A Reasoning Model with Thinking Tokens"
 excerpt: "DeepSeek R1 is a transparent reasoning model that exposes its thought process through thinking tokens. I tested it locally and recorded a demo showing how it works. This post breaks down why its approach to chain-of-thought reasoning is so interesting and how it might change how we use AI."
+category: "Building with LLMs"
+tags: ["deepseek", "reasoning-models", "thinking-tokens", "chain-of-thought", "lm-studio"]
 ---
 
 I experimented with [**DeepSeek R1**](https://www.deepseek.com/), an LLM that uses chain-of-thought reasoning. For those interested, I recorded a six-minute demo, showing how the model works and why I find it so fascinating. If you’d prefer a quick summary, below are my key takeaways. **TLDR:** You can learn a lot about the problem you're trying to solve from the reasoning tokens themselves, not just the final model output.

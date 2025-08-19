@@ -2,6 +2,8 @@
 layout: single
 title: "Learning with LLMs: Using Quick Notes to Guide Better Summaries"
 excerpt: "I used Gemini to turn rough, disorganized notes from a podcast into a structured, useful summary. By guiding the model with key points I cared about, I got a refined list of prompting techniques with minimal effort—another example of how LLMs can adapt to different learning styles."
+category: "Getting Started with AI"
+tags: ["note-taking", "gemini", "summarization", "learning-styles", "organization"]
 ---
 
 In my [previous post](/2024/11/22/self-guided-learning-with-llms.html), I shared how I use LLMs for self-directed learning. Here's an example that shows a different approach: using rough notes to guide an LLM in summarizing what you find most interesting from a larger text. While my previous post focused on summarizing technical topics, this time I used brief notes to help guide the model to extract and organize precisely what I wanted from a long interview.

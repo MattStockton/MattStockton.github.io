@@ -2,6 +2,8 @@
 layout: single
 title: "GPT-5 Prompting is Different - Here's What Works"
 excerpt: "GPT-5 requires different prompting techniques than GPT-4o and o3, but once you understand what it expects, the results are worth the adjustment."
+category: "Building with LLMs"
+tags: ["gpt-5", "prompting", "techniques", "ai-models"]
 ---
 
 OpenAI released GPT-5 this week, and the prompting techniques that work best are fundamentally different from GPT-4o and o3. After spending several days converting workflows and experimenting with different approaches, the core difference is clear: GPT-4o and o3 excel at taking ambiguous prompts and iterating with you to reach a good result. GPT-5 does better with explicit, structured prompts upfront but delivers excellent results when you provide them.

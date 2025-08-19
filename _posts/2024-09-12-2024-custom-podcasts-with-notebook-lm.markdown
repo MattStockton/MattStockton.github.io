@@ -2,6 +2,8 @@
 layout: single
 title: "Custom Podcasts with NotebookLM"
 excerpt: "NotebookLM lets you turn documents into custom podcasts in minutes. I tested it by generating an audio overview of nuclear energy — and it worked great. Learning on your own terms has never been easier, and tools like this are making it even more accessible."
+category: "Getting Started with AI"
+tags: ["notebooklm", "podcasts", "custom-content", "learning", "audio-generation"]
 ---
 
 I've written before that self-guided learning is an area where LLM-based applications excel. It's never been easier to simply open up ChatGPT and have a conversation about a topic you're curious about -- on your own terms, using your own language, knowledge, and workflow. I've recently found myself using the voice functionality of ChatGPT -- with lots of back and forth -- on my phone. I can do it anywhere -- I can be on a walk, working in the yard, or just between other tasks. The form factor is amazing and convenient. There's now *really* no such thing as a dumb question, as long as you're willing to keep the conversation going.

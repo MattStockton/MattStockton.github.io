@@ -2,6 +2,8 @@
 layout: single
 title: "Summarizing with LLMs: Video Walkthrough"
 excerpt: "I recorded a video showing how I use LLMs to summarize podcast transcripts into concise, structured insights. This post covers the workflow, key takeaways, and how tools like the LLMOps database can help builders working with AI. If you're summarizing long-form content, here's how to do it efficiently."
+category: "Building with LLMs"
+tags: ["summarization", "podcasts", "workflow", "llmops", "practical-tips"]
 ---
 
 In a previous [blog post](/2024/12/23/summarizing-podcasts-with-llms.html), I walked through how I use LLM tools to summarize podcast transcripts into concise, useful summaries. This time, I thought it might be helpful to create a video tutorial to show how the process works. Beyond the workflow itself, I also wanted to highlight two fantastic resources for builders working with LLMs: the [Vanishing Gradients](https://vanishinggradients.fireside.fm/43) podcast episode with [Alex Strick van Linschoten](https://x.com/strickvl), and Alex's [LLMOps database](https://www.zenml.io/llmops-database). If you're building systems with LLMs, these are well worth exploring.

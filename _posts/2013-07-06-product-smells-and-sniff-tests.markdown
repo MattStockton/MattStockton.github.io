@@ -1,5 +1,8 @@
 ---
 title: Product smells and sniff tests
+layout: single
+category: "Product & Strategy"
+tags: ["product-strategy", "decision-making", "features", "startup"]
 ---
 
 **Thoughts on ‘Product strategy means saying NO’**

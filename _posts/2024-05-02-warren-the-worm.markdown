@@ -1,5 +1,8 @@
 ---
 title:  "Warren The Worm: A Children's Book by ChatGPT and me"
+layout: single
+category: "Building with LLMs"
+tags: ["chatgpt", "creative-writing", "children", "storytelling", "ai-generated"]
 ---
 
 # What is this?

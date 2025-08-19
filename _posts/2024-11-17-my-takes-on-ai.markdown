@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "My Takes On AI"
-excerpt: "AI is evolving fast, and these are the ideas shaping how I think about it — from self-guided learning to the importance of UX in adoption. There’s still so much to build, and the best way to form a perspective is to dive in and experiment. What are your takes?"
+excerpt: "AI is evolving fast, and these are the ideas shaping how I think about it — from self-guided learning to the importance of UX in adoption. There's still so much to build, and the best way to form a perspective is to dive in and experiment. What are your takes?"
+category: "AI Strategy & Leadership"
+tags: ["ai-perspective", "learning", "ux-design", "adoption", "predictions"]
 ---
 AI is evolving quickly, with Generative AI and Large Language Models drastically expanding what’s possible and who can tap into its potential. I’m often asked where I see AI heading and how to approach it, but I hadn’t taken the time to organize my thoughts until now. Below, I’ve distilled some of my perspectives. While this isn’t comprehensive, it helped me clarify my thinking and focus on what feels most important today. I hope you find value in these insights, and I’d love to hear your perspectives on this ever-changing and exciting space.
 

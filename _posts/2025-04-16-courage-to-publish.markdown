@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "The Courage to Hit Publish"
-excerpt: "Everyone has a strange, specific mix of experiences that’s completely their own. Writing is how I’ve learned to make sense of mine—and how you might start uncovering yours."
+excerpt: "Everyone has a strange, specific mix of experiences that's completely their own. Writing is how I've learned to make sense of mine—and how you might start uncovering yours."
+category: "Personal Reflections"
+tags: ["writing", "publishing", "personal-growth", "courage", "creativity"]
 ---
 
 I listened to Dwarkesh’s podcast with [Scott Alexander and Daniel Kokotajlo](https://www.dwarkesh.com/p/scott-daniel) expecting to learn more about AI timelines. And I did. But the part that stuck with me had nothing to do with intelligence explosions or month-by-month forecasts.

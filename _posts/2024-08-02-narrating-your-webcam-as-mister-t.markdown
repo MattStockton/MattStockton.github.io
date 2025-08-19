@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Narrating Your Webcam with Your Own Voice and Mister T"
-excerpt: "I modified a demo that narrates your webcam in real time — using my own cloned voice and Mister T. It’s a fun example of how little effort it takes to build with AI now. The real question: what non-toy applications can we create with the same underlying tech?"
+excerpt: "I modified a demo that narrates your webcam in real time — using my own cloned voice and Mister T. It's a fun example of how little effort it takes to build with AI now. The real question: what non-toy applications can we create with the same underlying tech?"
+category: "Building with LLMs"
+tags: ["voice-cloning", "webcam", "real-time", "demo", "creative-applications"]
 ---
 
 When I'm trying to get people excited about AI and LLMs, showing them audio and video stuff usually does the trick. A demo I saw early on that blew me away was the 'narrating your webcam as David Attenborough' [demo](https://x.com/charliebholtz/status/1724815159590293764)

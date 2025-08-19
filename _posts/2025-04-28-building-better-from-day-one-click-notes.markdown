@@ -2,6 +2,8 @@
 layout: single
 title: "Building Better from Day One: Notes on Click by Jake Knapp and John Zeratsky"
 excerpt: "Click offers a simple, practical framework for starting projects the right way. In this post, I share my notes on why the Foundation Sprint works, how it helps teams focus on real problems, and why I think it is worth keeping close if you are building anything new."
+category: "Learning & Books"
+tags: ["book-notes", "product-development", "design-sprint", "foundation-sprint", "jake-knapp"]
 ---
 
 I recently read [*Click: How to Build Products People Want*](https://www.theclickbook.com/) by [Jake Knapp and John Zeratsky](https://www.jakeandjz.com/). It is a short book packed with practical advice on how to start building the right way.  

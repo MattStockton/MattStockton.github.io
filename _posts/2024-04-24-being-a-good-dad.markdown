@@ -1,5 +1,8 @@
 ---
 title:  "Being a good dad"
+layout: single
+category: "Personal Reflections"
+tags: ["parenting", "emotional-intelligence", "personal-growth", "family", "book-lessons"]
 ---
 
 I want to be a great dad. It’s not easy. Being a dad is the biggest privilege and opportunity in my life. As a parent, you have huge responsibility in the actions you take —  and do not take — to help your kids thrive. It’s easy for me to feel like I am failing. Being a dad is the hardest thing I’ve ever done. It’s filled with a ton of joy, awe, laughter, surprise, memories, giggles, happy tears, and unfiltered overwhelming love. There’s also moments of tiredness, frustration, irrationality, anger followed by shame, overwhelming emotions, and slog.  Reading books is my primary means to learn and grow. Recently, I discovered two books that have helped me shape my role as a dad.

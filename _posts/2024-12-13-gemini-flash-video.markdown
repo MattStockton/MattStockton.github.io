@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Gemini 2.0 Flash: A Shift in How We Interact with AI"
-excerpt: "Gemini 2.0 Flash introduces real-time screen and video interaction, making AI feel more like a true assistant. A radiologist’s demo shows its potential for detailed analysis, but the real takeaway is how these tools are evolving to fit into real workflows."
+excerpt: "Gemini 2.0 Flash introduces real-time screen and video interaction, making AI feel more like a true assistant. A radiologist's demo shows its potential for detailed analysis, but the real takeaway is how these tools are evolving to fit into real workflows."
+category: "Building with LLMs"
+tags: ["gemini-flash", "video-interaction", "real-time", "medical-applications", "workflows"]
 ---
 
 This week, Google released [Gemini 2.0 Flash](https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/), which introduces two standout features. You can share your screen or a video in real time and interact with the model about what it’s seeing. You can also use your webcam to engage with the model, letting it "see" you and respond based on visual context.  

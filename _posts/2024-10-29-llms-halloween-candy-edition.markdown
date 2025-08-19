@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "LLMs - Halloween Candy Edition"
-excerpt: "I built a Halloween Candy Calculator using an LLM in minutes, not hours — proving that AI enables rapid prototyping, playful creativity, and even a little family-friendly learning. The best way to understand LLMs? Just start building, even if it’s something as silly as tracking candy raids."
+excerpt: "I built a Halloween Candy Calculator using an LLM in minutes, not hours — proving that AI enables rapid prototyping, playful creativity, and even a little family-friendly learning. The best way to understand LLMs? Just start building, even if it's something as silly as tracking candy raids."
+category: "Getting Started with AI"
+tags: ["halloween", "rapid-prototyping", "creativity", "family-projects", "experimentation"]
 ---
 
 [Check out my Halloween Candy Calculator!](https://claude.site/artifacts/a588f6f6-5b9b-4569-a7a2-34989fc276a0)

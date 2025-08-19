@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Inviting AI to the Table - Building Software Edition"
-excerpt: "Alex Bartling’s team is using LLMs not just for AI-driven note-taking, but to refine their product based on user feedback — turning unstructured input into structured UI improvements. This is the future of building: constantly iterating with AI as a collaborator."
+excerpt: "Alex Bartling's team is using LLMs not just for AI-driven note-taking, but to refine their product based on user feedback — turning unstructured input into structured UI improvements. This is the future of building: constantly iterating with AI as a collaborator."
+category: "AI Strategy & Leadership"
+tags: ["product-development", "user-feedback", "collaboration", "iteration", "alex-bartling"]
 ---
 I’ve written [in the past](/2024/08/12/ai-is-easy-just-get-started.html) on how I love Ethan Mollick’s idea of “always inviting AI to to the table”. He wrote the following in [this post](https://www.oneusefulthing.org/p/doing-stuff-with-ai-opinionated-midyear?utm_source=publication-search):
 

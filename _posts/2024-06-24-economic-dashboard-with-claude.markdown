@@ -2,6 +2,8 @@
 layout: single
 title: "Building an Economic Indicators Dashboard with Claude 3.5"
 excerpt: "I used Claude 3.5 to build an interactive dashboard that maps stock returns to economic indicators like GDP and inflation. Claude handled API calls, data processing, and visualization, letting me iterate quickly. In under an hour, I had a working prototype with real insights."
+category: "Building with LLMs"
+tags: ["claude", "dashboard", "economic-indicators", "streamlit", "rapid-prototyping"]
 ---
 
 <img src="/docs/assets/images/econ-dashboard/econ_dashboard_0.png" width="600px" height="600px"/>

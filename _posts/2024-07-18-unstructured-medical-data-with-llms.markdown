@@ -2,6 +2,8 @@
 layout: single
 title: "Exploring My Unstructured Medical Data from PDFs with Claude"
 excerpt: "I used Claude to extract and visualize my blood test history from unstructured PDFs — transforming raw medical data into an interactive tool in minutes. This experiment highlights how LLMs can bridge the gap between personal data and useful insights."
+category: "Building with LLMs"
+tags: ["claude", "data-visualization", "medical-data", "pdf-extraction", "personal-data"]
 ---
 
 

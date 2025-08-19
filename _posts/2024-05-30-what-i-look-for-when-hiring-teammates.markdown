@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "What I look for when hiring teammates"
+category: "Product & Strategy"
+tags: ["hiring", "leadership", "team-building", "startup"]
 ---
 
 I previously wrote about the [traits of a good leader in a startup](/2024/04/26/leadership-in-startup-companies.html). I spent some time reflecting on the key traits I value when hiring new teammates. This isn’t a comprehensive list, just some of the key traits that I care about. 

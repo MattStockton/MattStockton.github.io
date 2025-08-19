@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Investing With Language Models"
-excerpt: "Verdad used LLMs to analyze thousands of Japanese company reports, categorizing their valuation plans and linking them to stock performance. This kind of structured analysis — translation, summarization, and categorization —  is exactly where LLMs shine. We’re just getting started."
+excerpt: "Verdad used LLMs to analyze thousands of Japanese company reports, categorizing their valuation plans and linking them to stock performance. This kind of structured analysis — translation, summarization, and categorization —  is exactly where LLMs shine. We're just getting started."
+category: "Finance & Investing"
+tags: ["investing", "analysis", "unstructured-data", "research"]
 ---
 How we can use information found in unstructured data to drive investment ideas is an area I’m really interested in. When used appropriately, language models can be great at summarization and categorization tasks. For those who want to build a better mental model of ‘what LLMs are good at’, I highly recommend [Andrew Ng’s Prompt Engineering course](/2024/05/07/prompt-engineering-quickstart.html) or just take a spin through this [Prompt Engineering Guide](https://www.promptingguide.ai/)
 

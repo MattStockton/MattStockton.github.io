@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Using AI Without Overthinking It – From Ethan Mollick"
-excerpt: "Ethan Mollick’s post cuts through the noise on AI and prompt engineering: just start using it. Treat AI like a forgetful but skilled coworker, be clear in your requests, and iterate. The best way to learn is through hands-on practice—don’t overthink it, just dive in."
+excerpt: "Ethan Mollick's post cuts through the noise on AI and prompt engineering: just start using it. Treat AI like a forgetful but skilled coworker, be clear in your requests, and iterate. The best way to learn is through hands-on practice—don't overthink it, just dive in."
+category: "Getting Started with AI"
+tags: ["ethan-mollick", "prompt-engineering", "practical-tips", "getting-started", "ai-adoption"]
 ---
 
 I love finding content that’s easy to share with people curious about AI but unsure where to start. Ethan Mollick’s post, [Good Enough Prompting – Don’t Make This Hard](https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough), is perfect for anyone looking to dive in. It’s a quick read that cuts through the noise and offers actionable advice. I’ve pulled out some of the most useful points below, but I’d still encourage you to check out the full post.  

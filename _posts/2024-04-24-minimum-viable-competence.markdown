@@ -1,5 +1,8 @@
 ---
 title:  "Minimum Viable Competence"
+layout: single
+category: "Personal Reflections"
+tags: ["learning", "competence", "personal-growth", "skill-building", "specialization"]
 ---
 
 There is an endless amount of stuff in the world to learn, and not enough time to learn it. The demands of modern work nudge us to build skills in a very specific domain - typically the domain someone else is giving us money to be proficient in. Success at work is important, but it’s not sufficient to be happy and successful in life. There are many other areas where, if you aren’t minimum viably competent, life will be hard. You may not even be aware of what other domains you should be competent in. Unknown unknowns. Strategies have trade offs, and our culture view towards specialization doesn’t get an exception — but the consensus view doesn’t have to be your view. You also cannot learn or understand everything. Time scarcity is real, so how do you allocate time, or even know what to allocate time to? I’ve been thinking about this a lot recently.  Key questions I have for myself are:

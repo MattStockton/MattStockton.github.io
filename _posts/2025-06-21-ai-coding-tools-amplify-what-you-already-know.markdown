@@ -2,6 +2,9 @@
 layout: single
 title: "AI Coding Tools Amplify What You Already Know"
 excerpt: "Alex MacCaw nails why AI tools are rocket fuel for experienced engineers - plus the six prompting principles that work beyond coding."
+featured: true
+category: "Getting Started with AI"
+tags: ["coding", "productivity", "ai-tools", "engineering"]
 ---
 
 Alex MacCaw's recent post about ["vibe coding" for senior engineers](https://blog.alexmaccaw.com/how-to-vibe-code-as-a-senior-engineer/) is completely right. His core insight:

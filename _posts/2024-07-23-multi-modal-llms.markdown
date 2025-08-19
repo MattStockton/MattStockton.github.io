@@ -2,6 +2,8 @@
 layout: single
 title: "Multi-Modal LLM Capabilities"
 excerpt: "LLMs can now analyze images and generate detailed narratives with minimal input. I tested this by having Claude Sonnet 3.5 interpret everyday scenes and historical documents — producing rich, context-aware stories. The potential for real-world applications is enormous."
+category: "Building with LLMs"
+tags: ["multimodal", "image-analysis", "claude-sonnet", "narratives", "visual-ai"]
 ---
 
 Multi-modal LLMs -- and specifically the incorporation of vision models -- is such an amazing unlock for what is possible. With limited prompting and no custom infrastructure, you can do amazing stuff already. Simply uploading an image to an LLM and asking 'what's happening here?' gives interesting results. 

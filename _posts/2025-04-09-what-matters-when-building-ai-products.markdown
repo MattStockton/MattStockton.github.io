@@ -1,8 +1,10 @@
 ---
 layout: single
-title: "What Actually Matters When You’re Building AI Products"
-excerpt: "A few takeaways from Hamel Husain’s guide to improving AI products — from avoiding the tools-first trap to empowering domain experts and focusing on fast, iterative learning. One of the most useful pieces I’ve read on building with LLMs."
-
+title: "What Actually Matters When You're Building AI Products"
+excerpt: "A few takeaways from Hamel Husain's guide to improving AI products — from avoiding the tools-first trap to empowering domain experts and focusing on fast, iterative learning. One of the most useful pieces I've read on building with LLMs."
+featured: true
+category: "Building with LLMs"
+tags: ["product-development", "evaluation", "ai-systems", "best-practices"]
 ---
 
 [Hamel Husain](https://hamel.dev/) wrote a piece that’s too good to summarize. But I’m going to anyway.

@@ -2,6 +2,8 @@
 layout: single
 title: "Building a Personal Finance Tool in a Day with AI"
 excerpt: "I built a personal finance tool in a day using AI to automate portfolio analysis — extracting data, checking allocations, and identifying better fund options. This post (and video) walks through how I used AI tools to speed up development and even add features with voice commands."
+category: "Finance & Investing"
+tags: ["personal-finance", "ai-tools", "portfolio-analysis", "development", "automation"]
 ---
 
 Every year, my wife and I go through the same process - reviewing our investment portfolio, gathering data, checking allocations, and comparing fund performance. It’s tedious, manual, and spreadsheet-heavy. This year, we decided to automate it a bit.

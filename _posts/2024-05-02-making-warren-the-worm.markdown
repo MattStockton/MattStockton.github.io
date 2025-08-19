@@ -1,5 +1,8 @@
 ---
 title:  "Making 'Warren The Worm': A Children's Book by ChatGPT and me"
+layout: single
+category: "Building with LLMs"
+tags: ["chatgpt", "creative-projects", "experimentation", "prompt-engineering", "learning"]
 ---
 I love Ethan Mollick’s ‘[Jagged Frontier](https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged)’ concept with LLMs. We don’t exactly know what LLMs are great at, and what they are bad at — yet. To figure this out, we should experiment with LLMs as much as we can — and ‘bring’ them to tasks we do on a regular basis. With that as inspiration, I wanted to see if I could author a children’s book using ChatGPT. Here are the general rules I wanted to follow:
 

@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Analyzing Companies with LLMs - A Simulated Investor Conversation"
-excerpt: "I used LLMs to simulate a conversation between Warren Buffett and Joel Greenblatt analyzing a company’s annual report. The results were fascinating — and just a glimpse of what’s possible with creative prompting. Full inputs and outputs included."
+excerpt: "I used LLMs to simulate a conversation between Warren Buffett and Joel Greenblatt analyzing a company's annual report. The results were fascinating — and just a glimpse of what's possible with creative prompting. Full inputs and outputs included."
+category: "Finance & Investing"
+tags: ["company-analysis", "buffett", "greenblatt", "creative-prompting", "investment-research"]
 ---
 ***Note***: I’m trying something new in this post. I’ve included a PDF document at the bottom that contains some full input and output prompts from the experiments described below. It’s a lot of text, so I didn’t want to include it inline. Let me know if you read through that piece, and what you think!
 

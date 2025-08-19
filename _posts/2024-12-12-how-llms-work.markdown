@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "How Large Language Models Work at a High Level"
-excerpt: "Large language models predict the next word based on context, trained on massive text datasets. 3Blue1Brown’s video explains this in under 10 minutes with great visuals. Understanding these basics helps you use LLMs more effectively — watching the video is a great place to start."
+excerpt: "Large language models predict the next word based on context, trained on massive text datasets. 3Blue1Brown's video explains this in under 10 minutes with great visuals. Understanding these basics helps you use LLMs more effectively — watching the video is a great place to start."
+category: "Getting Started with AI"
+tags: ["how-llms-work", "3blue1brown", "fundamentals", "explainer", "educational"]
 ---
 
 Recently, I watched a fantastic [3Blue1Brown video](https://www.youtube.com/watch?v=LPZh9BOjkQs) on large language models that does an excellent job of demystifying the technology. The video is under 10 minutes and well worth your time.

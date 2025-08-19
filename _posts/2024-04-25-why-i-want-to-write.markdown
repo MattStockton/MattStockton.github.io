@@ -1,5 +1,8 @@
 ---
 title:  "Why I want to write"
+layout: single
+category: "Personal Reflections"
+tags: ["writing", "personal-growth", "motivation", "creativity", "purpose"]
 ---
 
 I’ve recently built a desire to write more, and wanted to dig into why I am feeling this way. What are my reasons and goals? A big part of this desire is rooted in discovering content from people like [David Perell](https://perell.com/), [Dan Shipper](https://twitter.com/danshipper), [Paul Millerd](https://pmillerd.com/), and [Nat Eliason](https://www.nateliason.com/). Following their journeys — and the journeys of people they talk to, write about, and interact with — has been inspiring to me. It made me realize that maybe I have something interesting to say too.

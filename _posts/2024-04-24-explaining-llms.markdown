@@ -1,5 +1,8 @@
 ---
 title:  "Explaining LLMs to non-technical people"
+layout: single
+category: "Getting Started with AI"
+tags: ["llms", "explanation", "communication", "education", "analogies"]
 ---
 
 Explaining how things work to different audiences is a topic that interests me. Can you put yourself in the mind-space of the person you’re speaking with — and explain a concept — so that they truly receive what you’re saying? I’m also curious about the view that true value in LLMs is through getting people to use them in the problems they encounter daily —  ‘AI meets life stuff’. 

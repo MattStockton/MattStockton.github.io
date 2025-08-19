@@ -2,6 +2,9 @@
 layout: single
 title: "Karpathy's Practical LLM Insights"
 excerpt: "I distilled two hours of practical wisdom from Andrej Karpathy on using large language models effectively — real tools, clear explanations, and valuable tips you can apply immediately."
+featured: true
+category: "Getting Started with AI"
+tags: ["karpathy", "practical-tips", "llm-fundamentals", "tools"]
 ---
 
 I recently watched [Andrej Karpathy's two-hour talk](https://www.youtube.com/watch?v=EWvNQjAaOHw) on how he uses large language models in practical, everyday situations. My notes here reflect points I personally found valuable, but they're not comprehensive. I'm sure others watching will discover additional insights. I highly recommend viewing the full video, as it contains many more valuable discussions and examples.

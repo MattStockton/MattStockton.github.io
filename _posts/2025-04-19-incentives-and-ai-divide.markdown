@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Incentives and the AI Divide"
-excerpt: "The only way to get good at using AI is by doing the work. But unless teams are set up with the right expectations and incentives, that learning won't happen. This post breaks down how to structure for progress—and what happens if you don’t."
+excerpt: "The only way to get good at using AI is by doing the work. But unless teams are set up with the right expectations and incentives, that learning won't happen. This post breaks down how to structure for progress—and what happens if you don't."
+category: "AI Strategy & Leadership"
+tags: ["incentives", "organizational-change", "ai-adoption", "team-structure", "shopify"]
 ---
 
 Any time something’s broken on a team, I start with the same question: *what’s the incentive structure that would cause this behavior to make sense?*  

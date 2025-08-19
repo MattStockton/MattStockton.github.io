@@ -1,6 +1,8 @@
 ---
 layout: single
 title:  "Prompt Engineering Quickstart"
+category: "Getting Started with AI"
+tags: ["prompt-engineering", "quickstart", "fundamentals", "techniques", "learning"]
 ---
 
 I want to build my [Prompt Engineering](https://en.wikipedia.org/wiki/Prompt_engineering) skills. As I highlighted in a [previous post](/2024/04/29/cointelligence-take-aways.html), I’m convinced that LLMs will be a huge part of the future of work. Understanding how to use them most effectively will be an incredibly valuable skill. There are many published resources on Prompt Engineering out there. It’s difficult to filter the signal from the noise. After a bit of searching, I decided to watch [Andrew Ng](https://twitter.com/AndrewYNg)’s and [Isa Fulford](https://twitter.com/isafulf)’s [Prompt Engineering Course](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/) on Coursera. I recently audited Andrew Ng’s [Machine Learning Specialization](https://www.deeplearning.ai/courses/machine-learning-specialization/) Course, and he is a fantastic instructor. He is able to explain complex topics very clearly. He is also pretty funny.

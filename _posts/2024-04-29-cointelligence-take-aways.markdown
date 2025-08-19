@@ -1,5 +1,8 @@
 ---
 title:  "Co-Intelligence : Take-Aways"
+layout: single
+category: "Learning & Books"
+tags: ["co-intelligence", "book-review", "ethan-mollick", "ai-collaboration", "takeaways"]
 ---
 
 I recently finished reading [Co-Intelligence](https://www.oneusefulthing.org/p/i-cyborg-using-co-intelligence) by [Ethan Mollick](https://twitter.com/emollick). I was very eager to read this book, as Ethan continually posts fantastic LLM content on Twitter. The content is a really good mix — links to technical papers, links to new tools, insights he’s had through his work, etc. — overall just a fantastic way to stay informed in this incredibly fast moving space. 

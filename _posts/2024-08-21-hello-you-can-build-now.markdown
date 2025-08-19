@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Hello - You Can Build Now"
-excerpt: "An 8-year-old built a working chatbot app in 45 minutes. The barriers to building with AI are gone — if you can write clearly, you can create software. The only real challenge left is getting started. Watch the video, try it yourself, and see what’s possible."
+excerpt: "An 8-year-old built a working chatbot app in 45 minutes. The barriers to building with AI are gone — if you can write clearly, you can create software. The only real challenge left is getting started. Watch the video, try it yourself, and see what's possible."
+category: "Getting Started with AI"
+tags: ["accessibility", "app-building", "barriers", "claude-artifacts", "creativity"]
 ---
 
 There’s a video making waves this week in the AI rabbit hole community. If you haven’t yet taken the time to fully understand what’s become possible in the last year or so, maybe this video will be the nudge you need. I’ll summarize here, but I think it’s worth watching the video. It’s only 10 minutes.

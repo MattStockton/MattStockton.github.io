@@ -60,6 +60,11 @@ plugins:
 
 minimal_mistakes_skin: "dirt"
 
+# Permalink structure for posts - explicitly exclude categories
+permalink: /:year/:month/:day/:title.html
+
+# Force Jekyll to ignore categories in permalinks
+
 defaults:
   - scope:
       path: ""
@@ -68,6 +73,7 @@ defaults:
       show_date: true
       read_time: true
       layout: single
+      permalink: /:year/:month/:day/:title.html
 
 footer:
   links:

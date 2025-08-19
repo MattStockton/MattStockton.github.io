@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Evaluating LLM Applications the Right Way"
-excerpt: "Hamel Husain’s post on LLM evaluations is the most practical guide I’ve seen. The key takeaway? Work with a domain expert — they define success, refine inputs, and keep your system grounded in reality. Everything else, from synthetic inputs to structured feedback, is built on that foundation."
+excerpt: "Hamel Husain's post on LLM evaluations is the most practical guide I've seen. The key takeaway? Work with a domain expert — they define success, refine inputs, and keep your system grounded in reality. Everything else, from synthetic inputs to structured feedback, is built on that foundation."
+category: "Building with LLMs"
+tags: ["evaluation", "hamel-husain", "domain-experts", "testing", "best-practices"]
 ---
 
 [This article from Hamel Husain](https://hamel.dev/blog/posts/llm-judge/) is the highest-signal post I’ve read on building evaluations for LLM-based applications. I encourage you to spend 20 minutes reading the entire thing and not just my notes. Hamel breaks down how to evaluate AI systems in a way that cuts through noise and delivers practical, actionable results.

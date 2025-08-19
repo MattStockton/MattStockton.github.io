@@ -2,6 +2,8 @@
 layout: single
 title: "Distilling Financial Advice With LLMs"
 excerpt: "I used an LLM to refine financial strategies, iterating through simple prompts to generate clear, actionable insights. This experiment reinforced how easily these tools can help process complex idea — no overthinking required, just a conversational approach to learning."
+category: "Finance & Investing"
+tags: ["financial-advice", "llm-analysis", "investment-strategy", "simple-prompts", "learning"]
 ---
 
 [In my last post](/2024/12/11/portfolio-management-with-ai.html) , I shared a detailed plan for swapping assets between a taxable and a tax-deferred account to optimize tax efficiency. I used an LLM to build the plan itself, and I was impressed with how thorough and actionable it was. This experience sparked a few conversations with others about how LLMs might disrupt the financial services industry. Personally, I think this is one area where these tools are going to have a huge impact — helping people refine strategies, make better decisions, and process complex information more efficiently.  

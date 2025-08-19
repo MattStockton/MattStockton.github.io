@@ -1,5 +1,8 @@
 ---
 title:  "A small thought on focus"
+layout: single
+category: "Personal Reflections"
+tags: ["focus", "attention", "mindfulness", "personal-growth", "productivity"]
 ---
 
 - Everything competes for your attention

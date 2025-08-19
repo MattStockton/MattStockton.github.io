@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "A Year Of Building With LLMs - The Paper You Need To Read"
-excerpt: "If you’re serious about building with LLMs, read 'What We’ve Learned From A Year of Building with LLMs.' It’s packed with lessons on prompting, retrieval, evaluations, and real-world deployment. My notes summarize key takeaways, but the full paper is worth your time."
+excerpt: "If you're serious about building with LLMs, read 'What We've Learned From A Year of Building with LLMs.' It's packed with lessons on prompting, retrieval, evaluations, and real-world deployment. My notes summarize key takeaways, but the full paper is worth your time."
+category: "Building with LLMs"
+tags: ["paper-review", "lessons-learned", "deployment", "best-practices", "real-world"]
 ---
 
 If you have an hour, click the below link and then just close out my website. If you don't have an hour, you can read below, but it wont be as good.

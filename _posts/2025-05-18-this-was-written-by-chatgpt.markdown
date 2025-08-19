@@ -2,6 +2,8 @@
 layout: single
 title: "This Was Written With ChatGPT"
 excerpt: "Some people dismiss writing if it was touched by AI. But that reaction often misses the point. This post explores why the tool itself isn't the problem—and why thoughtful use of AI can actually sharpen your thinking."
+category: "Personal Reflections"
+tags: ["writing", "ai-tools", "thinking", "skepticism", "productivity"]
 ---
 
 I've noticed a strange kind of skepticism lately. If people find out something was written with ChatGPT, they often discount it immediately, as if using AI somehow diminishes the thought behind the words.

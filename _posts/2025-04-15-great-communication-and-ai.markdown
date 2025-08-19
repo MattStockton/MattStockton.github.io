@@ -1,7 +1,10 @@
 ---
 layout: single
 title: "Better Communication Makes You Better at AI"
-excerpt: "Lessons on communication from Wes Kao that apply just as much to working with people as they do to prompting LLMs. Clear, tactical, and instantly useful — these are the ideas that stuck with me, but there’s plenty more in the full episode."
+excerpt: "Lessons on communication from Wes Kao that apply just as much to working with people as they do to prompting LLMs. Clear, tactical, and instantly useful — these are the ideas that stuck with me, but there's plenty more in the full episode."
+featured: true
+category: "AI Strategy & Leadership"
+tags: ["communication", "prompting", "leadership", "ai-fundamentals"]
 ---
 
 I've said before that working with AI is mostly just good communication. That idea came up again listening to [Wes Kao](https://www.weskao.com/) on [Lenny Rachitsky](https://www.lennysnewsletter.com/)'s podcast. [The episode](https://www.lennysnewsletter.com/p/become-a-better-communicator-specific) is framed as a conversation about executive communication and influence, but it ended up being one of the best explanations I’ve heard for how to work well — with people or with language models.

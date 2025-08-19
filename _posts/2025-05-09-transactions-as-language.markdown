@@ -2,6 +2,8 @@
 layout: single
 title: "Transactions as Language"
 excerpt: "Stripe's approach to fraud detection made me rethink how we use transformers. What looks like a row in a table might actually be a sequence. And once you model it that way, a lot of things get simpler."
+category: "Building with LLMs"
+tags: ["transformers", "fraud-detection", "stripe", "embeddings", "sequence-modeling"]
 ---
 
 Stripe recently [shared a post](https://x.com/thegautam/status/1920198569308664169) about improving fraud detection using a transformer-based model. On paper, it's a technical win. They improved detection of card testing attacks from 59% to 97%. But the part that really stayed with me wasn’t the number. It was the shift in how they approached the problem.

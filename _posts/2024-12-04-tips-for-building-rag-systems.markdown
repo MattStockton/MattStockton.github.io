@@ -2,6 +2,8 @@
 layout: single
 title: "Improving Retrieval Augmented Generation Systems"
 excerpt: "A recent podcast with Max Buckley highlighted key ways to improve RAG systems — adding context to chunks, using multiple embeddings, and implementing pre-submission checks for better input quality. A holistic approach across the pipeline ensures more precise and reliable AI-generated responses."
+category: "Building with LLMs"
+tags: ["rag", "retrieval", "embeddings", "max-buckley", "system-improvement"]
 ---
 
 A recent episode of the [How AI Is Built podcast](https://podcasts.apple.com/us/podcast/from-ambiguous-to-ai-ready-improving-documentation/id1739823286?i=1000677765593), hosted by [Nicolay Gerold](https://www.linkedin.com/in/nicolay-gerold/) and featuring [Max Buckley](https://www.linkedin.com/in/maxbuckley/) from Google, explored how to improve Retrieval-Augmented Generation (RAG) systems. The discussion highlighted how documentation quality can make or break a system and emphasized strategies for addressing errors, reducing ambiguities, and creating feedback loops to refine the entire pipeline — not just the retrieval aspect.

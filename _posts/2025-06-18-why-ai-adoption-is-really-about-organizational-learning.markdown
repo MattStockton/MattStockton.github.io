@@ -2,6 +2,8 @@
 layout: single
 title: "Why AI Adoption is Really About Organizational Learning"
 excerpt: "After updating AI workshop materials that became obsolete in 3 months, I realized the real challenge isn't keeping up with tools - it's building organizations that can learn and adapt continuously."
+category: "AI Strategy & Leadership"
+tags: ["organizational-learning", "ai-adoption", "workshops", "training", "change-management"]
 ---
 
 I recently spent a few days updating my AI workshop materials for a ~50-person training. Last time I refreshed this content was only three months ago. Many technical details in my slides required substantial changes.

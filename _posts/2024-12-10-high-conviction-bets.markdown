@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "High-Conviction Bets"
-excerpt: "Stanley Druckenmiller’s British Pound trade is a masterclass in high-conviction decision-making. He saw a clear mismatch, acted decisively, and concentrated his bet. The lesson applies beyond investing — when the odds are in your favor, focus and bold action can drive the biggest outcomes."
+excerpt: "Stanley Druckenmiller's British Pound trade is a masterclass in high-conviction decision-making. He saw a clear mismatch, acted decisively, and concentrated his bet. The lesson applies beyond investing — when the odds are in your favor, focus and bold action can drive the biggest outcomes."
+category: "Finance & Investing"
+tags: ["druckenmiller", "conviction", "decision-making", "risk-management", "investing-lessons"]
 ---
 
 I recently listened to [Stanley Druckenmiller recount his British Pound trade](https://podcasts.apple.com/no/podcast/stan-druckenmiller-inside-the-mind-of-a-legendary-investor/id1614211565?i=1000675883446) on a podcast, and it really stuck with me. It’s a great example of how clear evidence and grounded reasoning can lead to high-conviction decisions. What stood out most, though, was how Druckenmiller acted — he made a bold and concentrated bet that matched his conviction. That combination of focus and decisive action made all the difference, and it’s a lesson that applies far beyond investing. Whether in business, technology, or any other area of life, clarity and the courage to act can lead to transformative outcomes.

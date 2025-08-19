@@ -2,6 +2,8 @@
 layout: single
 title: "Repo Prompt and prompting for o1 pro"
 excerpt: "Repo Prompt automates injecting local files into model contexts, making it useful for coding and structured workflows. In this video, I demo how it helps with prompting for o1 pro, using meta-prompting and structured inputs to improve responses. If you're working with o1 pro, this tool is worth exploring."
+category: "Software Engineering"
+tags: ["repo-prompt", "o1-pro", "coding", "meta-prompting", "developer-tools"]
 ---
 
 Here's a video I made demonstrating a tool called [**Repo Prompt**](https://repoprompt.com/). At its core, Repo Prompt automates the process of injecting local files into the context window for models, making it especially valuable for coding tasks. It helps you structure prompts that guide models to produce usable, structured outputs and even enables workflows like generating diffs you can apply directly to your files.

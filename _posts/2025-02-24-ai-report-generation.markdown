@@ -1,7 +1,9 @@
 ---
 layout: single
 title: "Report Generation - A Smart Way To Start With AI"
-excerpt: "Most AI projects fail because they start with the tool instead of the problem. Report generation flips that — integrating AI into real workflows where domain experts already know what good looks like. This post breaks down why it’s the best first step for AI adoption."
+excerpt: "Most AI projects fail because they start with the tool instead of the problem. Report generation flips that — integrating AI into real workflows where domain experts already know what good looks like. This post breaks down why it's the best first step for AI adoption."
+category: "AI Strategy & Leadership"
+tags: ["report-generation", "ai-adoption", "workflows", "domain-experts", "strategy"]
 ---
 
 Many AI adoption efforts stall - not because companies lack tools, but because they start in the wrong place.

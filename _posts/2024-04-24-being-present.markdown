@@ -1,5 +1,8 @@
 ---
 title:  "Being present"
+layout: single
+category: "Personal Reflections"
+tags: ["mindfulness", "presence", "parenting", "technology", "personal-growth"]
 ---
 
 Last month, during a visit to the Apple Store, I experienced an unexpected nudge towards being present — a concept I encounter frequently in books I’ve read. The idea of living the present moment conceptually resonates with me. I make attempts to integrate it into my daily life — but applying consistently often proves challenging. It's easy to drift away from the now, to fret over the future, or to dwell on past mistakes, particularly when life's demands and distractions get our attention. This lapse can fill me with regret and disappointment. My oldest daughter is six. We're already 1/3rd through the years she'll spend at home. This realization is startling.
