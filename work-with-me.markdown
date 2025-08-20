@@ -162,10 +162,27 @@ layout: splash
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(10, 77, 104, 0.15); /* Primary color shadow */
   }
+  
+  /* Closing statement styling */
+  .closing-statement {
+    text-align: center;
+    margin: 2em 0 1.5em;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .closing-statement p {
+    font-size: 1.1em;
+    color: #0A4D68;
+    font-weight: 500;
+    margin: 0;
+    font-style: italic;
+  }
 </style>
 
 <div class="work-container">
-  <h1 class="page-heading">AI and Data Consulting Services</h1>
+  <h1 class="page-heading">Building AI Systems That Work</h1>
 
   <div class="company-logo-container">
     <a href="https://pragmanexus.com" class="company-logo">
@@ -174,24 +191,26 @@ layout: splash
   </div>
   
   <div class="content-container">
-    <p class="description-text">After 20+ years building data systems and leading engineering teams, I founded PragmaNexus to help organizations make practical use of their data. My experience spans <span class="highlight accent">both traditional machine learning and newer large language models</span>, allowing me to recommend the right approach for each specific business problem.</p>
+    <p class="description-text">I help organizations understand what's actually possible with large language models and build solutions that work. After 20+ years building data systems and leading teams, I founded PragmaNexus to provide <span class="highlight accent">strategy, implementation, and training</span> that helps teams cut through the AI hype and solve real problems.</p>
     
-    <h3 class="section-heading">Practical Experience with Both Approaches</h3>
+    <h3 class="section-heading">My Approach</h3>
     
-    <p class="description-text">What guides my work is a straightforward principle: use the right tool for the job. Sometimes that's a traditional ML model with clear, interpretable outputs. Other times it's an LLM that can process unstructured data or natural language. Often, it's a combination of both approaches working together to solve different parts of a complex problem.</p>
+    <p class="description-text">I start with your actual business problems, not the technology. These tools can solve problems in ways that weren't possible before, but the key is figuring out what's worth building. Not every problem needs AI, but when it fits, it can open up new possibilities.</p>
+    
+    <p class="description-text">I've worked across <span class="highlight">quantitative finance</span> (trading algorithms and investment research), <span class="highlight">consumer brands</span> (ML platforms analyzing 100,000+ businesses), <span class="highlight">small business software</span> (data infrastructure from the ground up), <span class="highlight">logistics</span>, and <span class="highlight">healthcare</span>. While I know these sectors well, I'm drawn to interesting problems in any industry.</p>
     
     <div class="expertise-grid">
       <div class="expertise-column">
         <div class="expertise-box">
-          <div class="expertise-title">Traditional Data & ML</div>
-          <p>I've built production machine learning systems for predictive modeling, classification, and recommendation engines. My experience includes designing data pipelines, feature engineering, and developing models that deliver reliable, transparent results at scale.</p>
+          <div class="expertise-title">LLM Applications</div>
+          <p>I build production LLM systems that solve problems you couldn't tackle before - from processing complex documents to generating insights from unstructured data. My focus is on creating real value and leveraging these tools where they make the biggest impact.</p>
         </div>
       </div>
       
       <div class="expertise-column">
         <div class="expertise-box">
-          <div class="expertise-title">LLM Implementation</div>
-          <p>I build effective LLM systems that integrate with existing infrastructure, focus on accuracy, and deliver reliable results. My implementations address common challenges like data security, reducing hallucinations, and optimizing for both performance and cost.</p>
+          <div class="expertise-title">Traditional ML & Data</div>
+          <p>When you need predictable, interpretable results, I build traditional ML models and data pipelines. A decade of experience means I can quickly identify the right approach for your constraints.</p>
         </div>
       </div>
     </div>
@@ -199,20 +218,14 @@ layout: splash
     <h3 class="section-heading">Services I Offer</h3>
     
     <ul class="services-list">
-      <li><span class="highlight">Practical AI Strategy</span> — Developing roadmaps that use both traditional ML and LLMs to address your specific business challenges</li>
-      <li><span class="highlight">LLM Engineering</span> — Building reliable AI systems that deliver accurate results, integrate with your existing tools, and address practical concerns like security and cost</li>
-      <li><span class="highlight">Data Infrastructure</span> — Building scalable data platforms that provide the foundation for both analytics and AI applications</li>
-      <li><span class="highlight">Technical Evaluation</span> — Assessing which approaches will work best for your specific requirements and constraints</li>
-      <li><span class="highlight">Team Development</span> — Helping your team build the skills to maintain and extend these systems</li>
+      <li><span class="highlight">Strategy & Evaluation</span> — Figure out what's actually worth building and which approach will work for your specific situation</li>
+      <li><span class="highlight">Implementation</span> — Build production systems alongside your team, whether that's LLM applications, ML models, or data pipelines</li>
+      <li><span class="highlight">Training & Workshops</span> — Help your team understand and apply these technologies through hands-on sessions and practical examples</li>
+      <li><span class="highlight">Ongoing Support</span> — Stay available to help your team evolve and improve the systems we've built</li>
     </ul>
     
-    <p class="description-text">My background spans different industries—from quantitative finance to consumer analytics to small business operations. This breadth of experience helps me quickly understand your domain and business objectives when designing technical solutions.</p>
-    
-    <div class="product-first-box">
-      <div class="product-first-heading">My Product-First Approach</div>
-      <p>I believe the most important question isn't "Which AI technology should we use?" but rather "What actual business problems are we trying to solve?" This product-first mindset means I start by understanding the real issues affecting your business, your users, and your bottom line.</p>
-      <p>Only after clarifying the core problems do we discuss potential solutions—whether that involves machine learning, LLMs, or simpler approaches. The technologies are just tools; what matters is addressing the problems that genuinely impact your business outcomes.</p>
-      <p>This approach has consistently led to more focused, practical solutions that deliver real value rather than chasing the latest technology trends. It's about building something that works for your specific context, solves actual problems, and creates measurable business impact.</p>
+    <div class="closing-statement">
+      <p>Let's figure out what's actually worth building for your business.</p>
     </div>
     
     <div class="cta-container">

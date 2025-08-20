@@ -22,9 +22,9 @@ title: My Professional Background
   
   /* Page introduction */
   .page-intro {
-    margin-bottom: 2.5em;
+    margin-bottom: 1.5em;
     border-bottom: 1px solid rgba(10, 77, 104, 0.1);
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
   }
   
   /* Main heading */
@@ -200,10 +200,10 @@ title: My Professional Background
   
   /* LLM focus section */
   .llm-focus {
-    margin: 3em 0;
+    margin: 2em 0;
     border-radius: 8px;
     background: linear-gradient(to right, rgba(10, 77, 104, 0.06), rgba(10, 77, 104, 0.02));
-    padding: 2em;
+    padding: 1.5em;
     position: relative;
     overflow: hidden;
   }
@@ -249,8 +249,8 @@ title: My Professional Background
   .philosophy-section {
     background-color: rgba(255, 215, 0, 0.05);
     border-radius: 8px;
-    padding: 2em;
-    margin: 3em 0;
+    padding: 1.5em;
+    margin: 2em 0;
     position: relative;
   }
   
@@ -276,8 +276,8 @@ title: My Professional Background
     background-color: white;
     border: 1px solid rgba(10, 77, 104, 0.1);
     border-radius: 8px;
-    padding: 2em;
-    margin: 3em 0;
+    padding: 1.5em;
+    margin: 2em 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
   
@@ -345,12 +345,7 @@ title: My Professional Background
 <div class="background-container">
   <div class="page-intro">
     <h1 class="page-heading">My Professional Journey</h1>
-    <p class="section-text">With over 20 years of experience building software and leading engineering teams, I've focused my career on solving complex problems with data-driven solutions. Today, I'm channeling that expertise into helping organizations leverage AI technologies effectively through my consulting practice, PragmaNexus.</p>
-  </div>
-
-  <div class="education-section">
-    <h2 class="section-heading">Education</h2>
-    <p class="section-text">I hold a Bachelor of Science in Engineering (Computer Science) from the University of Michigan (2004) and a Master of Science from the University of Illinois (2009), which I completed while working full-time.</p>
+    <p class="section-text">With over 20 years of experience building software and leading engineering teams, I help organizations cut through the AI hype to build systems that actually work. My experience across traditional ML, data infrastructure, and modern LLM applications helps me figure out what's worth building and then build it right.</p>
   </div>
 
   <h2 class="section-heading">Professional Experience</h2>
@@ -360,7 +355,7 @@ title: My Professional Background
       <span class="job-title">Founder & Principal Consultant</span>
       <span class="company">at PragmaNexus</span>
       <span class="years">(2024-Present)</span>
-      <p class="job-description">I founded PragmaNexus to help organizations navigate the AI landscape with practical, results-driven solutions. Drawing on my experience in both traditional machine learning and emerging AI technologies, I provide strategic guidance and implementation support for businesses looking to leverage data and AI effectively.</p>
+      <p class="job-description">I founded PragmaNexus to help teams cut through the AI hype and build systems that actually work. I focus on figuring out what's worth building first, then provide strategy, implementation, and training to make it happen.</p>
     </div>
     
     <div class="experience-item">
@@ -412,33 +407,19 @@ title: My Professional Background
   </div>
 
   <div class="llm-focus">
-    <h2 class="llm-heading">Current Focus: AI & Large Language Models</h2>
-    <p class="section-text">I've invested significant time researching and prototyping with Large Language Models, developing practical applications that deliver real business value. My work blends technical implementation with strategic thinking to help organizations effectively adopt AI technologies.</p>
-    
-    <div class="focus-areas">
-      <span class="focus-tag">Data Infrastructure</span>
-      <span class="focus-tag">AI Strategy</span>
-      <span class="focus-tag">ML/LLM Integration</span>
-      <span class="focus-tag">RAG Systems</span>
-      <span class="focus-tag">Evaluation Frameworks</span>
-      <span class="focus-tag">Data Engineering</span>
-    </div>
-    
-    <p class="section-text">My approach combines rigorous technical expertise with practical business sense. I help organizations move past the hype to implement AI solutions that solve real problems and deliver measurable results.</p>
+    <h2 class="llm-heading">Current Focus: Large Language Models</h2>
+    <p class="section-text">I'm building production systems in the large language model ecosystem - the kind that process real documents, handle actual customer data, and solve problems that weren't solvable before these tools existed. My work spans strategy, implementation, and training, helping teams figure out what's worth building and then building it right.</p>
   </div>
 
   <div class="philosophy-section">
     <h2 class="philosophy-heading">My Product-First Approach</h2>
-    <p class="section-text">I believe the most critical question isn't "Which AI technology should we use?" but "What business problems are we trying to solve?" This product-first mindset means starting with the real issues affecting your business, users, and bottom line.</p>
-    <p class="section-text">Only after clarifying core problems do I consider potential solutions—whether they involve machine learning, LLMs, or simpler approaches. Technologies are tools; what matters is addressing problems that genuinely impact your business outcomes.</p>
-    <p class="section-text">This approach consistently leads to focused, practical solutions that deliver real value rather than chasing technology trends. It's about building something that works for your specific context and creates measurable business impact.</p>
+    <p class="section-text">I believe the most important question isn't "Which technology should we use?" but "What business problems are we trying to solve?" I start with understanding your actual problems, then figure out what's worth building - whether that's an LLM application, traditional ML model, or simpler solution.</p>
+    <p class="section-text">This approach leads to focused solutions that solve real problems rather than chase technology trends. It's about using the right tool for the job and building something that works for your specific situation.</p>
   </div>
 
   <div class="leadership-section">
     <h2 class="leadership-heading">Leadership Philosophy</h2>
     <p class="section-text">I believe effective leadership multiplies a team's impact. Throughout my career, I've prioritized building, coaching, and mentoring engineering teams. Nothing frustrates me more than seeing exceptional talent stifled by inadequate leadership.</p>
-    <p class="section-text">My leadership approach centers on empowering teams to do their best work. This means clear communication, thoughtful delegation, and creating an environment where innovation thrives. I take pride in growing future engineering leaders and demonstrating excellence in leadership practices.</p>
+    <p class="section-text">My leadership approach centers on empowering teams to do their best work. This means clear communication, thoughtful delegation, and creating an environment where innovation thrives. This experience in coaching and mentoring teams is why training and strategy work are such important parts of what I offer - the best systems are ones that teams can understand, maintain, and improve.</p>
   </div>
-
-  <p class="section-text">Above all, I focus on understanding the underlying business strategy and clearly defining the core problems to be solved. While it's important to build things correctly, it's absolutely critical to <span class="emphasis">build the right things</span>.</p>
 </div>
