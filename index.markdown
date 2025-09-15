@@ -360,19 +360,19 @@ layout: splash
     <h2 class="section-heading">Recent Writing</h2>
     <div class="recent-posts">
       <div class="recent-post">
-        <h4><a href="/2025/07/10/why-successful-llm-products-start-with-spreadsheets/">Why Successful LLM Products Start with Spreadsheets</a></h4>
+        <h4><a href="/2025/07/10/why-successful-llm-products-start-with-spreadsheets.html">Why Successful LLM Products Start with Spreadsheets</a></h4>
         <p>Systematic evaluation is what separates working products from demos.</p>
       </div>
       <div class="recent-post">
-        <h4><a href="/2025/06/21/ai-coding-tools-amplify-what-you-already-know/">AI Coding Tools Amplify What You Already Know</a></h4>
+        <h4><a href="/2025/06/21/ai-coding-tools-amplify-what-you-already-know.html">AI Coding Tools Amplify What You Already Know</a></h4>
         <p>These tools are productivity multipliers for people who understand the domain.</p>
       </div>
       <div class="recent-post">
-        <h4><a href="/2025/04/09/what-matters-when-building-ai-products/">What Actually Matters When You're Building AI Products</a></h4>
+        <h4><a href="/2025/04/09/what-matters-when-building-ai-products.html">What Actually Matters When You're Building AI Products</a></h4>
         <p>A few takeaways from Hamel Husain's guide to improving AI products.</p>
       </div>
       <div class="recent-post">
-        <h4><a href="/2025/07/13/five-insights-from-andrew-ng-on-building-faster-with-ai/">Five Insights from Andrew Ng on Building Faster with AI</a></h4>
+        <h4><a href="/2025/07/13/five-insights-from-andrew-ng-on-building-faster-with-ai.html">Five Insights from Andrew Ng on Building Faster with AI</a></h4>
         <p>Practical advice on shipping AI features quickly and effectively.</p>
       </div>
     </div>
