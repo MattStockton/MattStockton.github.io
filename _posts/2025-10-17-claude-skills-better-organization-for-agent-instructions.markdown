@@ -2,6 +2,8 @@
 layout: single
 title: "Claude Skills: Better Organization for Agent Instructions"
 excerpt: "Skills gives me a better framework for organizing Claude Code instructions that have been growing unwieldy in CLAUDE.md files."
+category: "Getting Started with AI"
+tags: ["workflow", "ai-tools", "knowledge-management", "claude", "productivity"]
 ---
 
 Anthropic announced [Claude Skills](https://www.anthropic.com/news/skills) yesterday, and my first reaction was that this solves some real problems I've been dealing with.
