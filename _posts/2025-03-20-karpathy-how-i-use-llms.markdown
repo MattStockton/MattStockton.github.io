@@ -73,7 +73,6 @@ Karpathy shared a practical example of creating a custom GPT tailored for Korean
 
 Throughout his talk, Karpathy mentioned valuable resources:
 
-- [Claude Artifacts Showcase](https://claudeartifacts.com/): Real-world examples of Claude.
 - [SuperWhisper](http://superwhisper.com/): Effective voice-interaction tool.
 - [Excalidraw](https://excalidraw.com/): Karpathy didn't explicitly discuss this, but he used it throughout the talk to visually present content. It's an intuitive tool I discovered and plan to explore further.
 - [NotebookLM](https://notebooklm.google.com): Useful for creating personalized podcasts and tailored content.
