@@ -2,6 +2,8 @@
 layout: single
 title: "Tool Calling and the Value of Understanding AI More Deeply"
 excerpt: "Understanding how AI building blocks like tool calling work gives you a framework for figuring out where AI fits into the problems you're actually trying to solve."
+category: "Building with LLMs"
+tags: ["tool-calling", "ai-fundamentals", "ai-tools", "llm-architecture"]
 ---
 
 Everyone has areas where they go deep and areas where they don't. AI is one where going a bit deeper pays off - not because you need to become an expert, but because AI applies to so many different problems. When you understand the building blocks, you can pattern match against what you're actually trying to solve.
