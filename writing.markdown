@@ -1,11 +1,15 @@
 ---
 layout: splash
-classes: 
+classes:
   - wide
 ---
 
 <style>
-  /* Force full width container without indentation */
+  /* =================================================================
+     WRITING ARCHIVE - Refined Tech Design
+     ================================================================= */
+
+  /* Main Container */
   .page__content,
   .archive,
   #main {
@@ -16,123 +20,192 @@ classes:
     width: 100% !important;
   }
 
-  /* Remove any right-side shifting */
   #main {
-    padding-left: 1em !important;
-    padding-right: 1em !important;
+    padding: 0 1rem !important;
   }
-  
-  /* Container for better spacing */
+
+  /* Page Header */
+  .page-header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background: var(--gradient-hero);
+    margin: -2rem -1rem 0;
+    position: relative;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 30% 40%, rgba(30, 58, 95, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+    position: relative;
+  }
+
+  .page-header p {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Content Container */
   .content-container {
-    margin-top: 1.5em;
-    padding: 1.5em 1.4em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 12px;
-    border-top: 3px solid #0A4D68;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
   }
 
-
-  /* Featured badge for posts */
-  .featured-badge {
-    background-color: #FFD700;
-    color: #0A4D68;
-    padding: 0.2em 0.6em;
-    border-radius: 12px;
-    font-size: 0.75em;
-    margin-left: 0.5em;
-    font-weight: 600;
-  }
-
-  /* Category navigation */
+  /* Category Navigation - Compact Horizontal Scroll */
   .category-nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4em;
-    margin-bottom: 1.5em;
-    justify-content: center;
-    padding-bottom: 1em;
-    border-bottom: 1px solid #e9ecef;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .category-nav::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .category-nav::-webkit-scrollbar-track {
+    background: var(--color-surface-elevated);
+    border-radius: 2px;
+  }
+
+  .category-nav::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 2px;
+  }
+
+  .category-nav:hover::-webkit-scrollbar-thumb {
+    background: var(--color-border-hover);
   }
 
   .category-button {
-    padding: 0.4em 0.8em;
-    background-color: #fff;
-    color: #0A4D68;
-    border: 1px solid #0A4D68;
-    border-radius: 16px;
+    font-family: var(--font-display);
+    padding: 0.35rem 0.75rem;
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
     text-decoration: none;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
     cursor: pointer;
+    flex-shrink: 0;
     white-space: nowrap;
   }
 
-  .category-button:hover, .category-button.active {
-    background-color: #0A4D68;
-    color: white !important;
+  .category-button:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(30, 58, 95, 0.05);
   }
 
-  /* All posts section */
+  .category-button.active {
+    background: var(--gradient-accent);
+    color: white !important;
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.25);
+  }
+
+  /* Featured Badge */
+  .featured-badge {
+    background: var(--color-secondary);
+    color: var(--color-text);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* All Posts Section */
   .all-posts {
-    margin-top: 1.5em;
+    display: grid;
+    gap: 1rem;
   }
 
   .post-item {
-    padding: 1.2em 1.5em;
-    margin-bottom: 1.2em;
-    background-color: #f8f9fa;
-    border-radius: 6px;
-    border-top: 3px solid #0A4D68;
-    transition: all 0.2s ease-out;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1.75rem;
+    transition: all var(--transition-base);
   }
 
   .post-item:hover {
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
   }
 
   .post-item h3 {
-    margin-top: 0.1em !important;
-    margin-bottom: 0.4em !important;
-    font-size: 1.2em !important;
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1.15rem !important;
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.35;
   }
 
   .post-item h3 a {
-    color: #0A4D68 !important;
+    color: var(--color-text) !important;
     text-decoration: none !important;
+    transition: color var(--transition-fast);
   }
 
-  .post-item h3 a:hover {
-    color: #137a9e !important;
+  .post-item:hover h3 a {
+    color: var(--color-primary) !important;
   }
 
   .post-meta {
-    margin-bottom: 0.5em !important;
-    font-size: 0.85em !important;
-    color: #6c757d !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem !important;
+    font-size: 0.85rem !important;
+    color: var(--color-text-muted) !important;
+  }
+
+  .post-category {
+    display: inline-block;
+    background: var(--color-surface-elevated);
+    color: var(--color-primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-xl);
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
   .post-excerpt {
     display: block !important;
-    margin-top: 0.6em !important;
-    margin-bottom: 0.6em !important;
-    font-size: 0.92em !important;
-    color: #212529 !important;
-    line-height: 1.55 !important;
-  }
-
-  /* Category badges */
-  .post-category {
-    display: inline-block;
-    background-color: #e9ecef;
-    color: #0A4D68;
-    padding: 0.2em 0.6em;
-    border-radius: 12px;
-    font-size: 0.75em;
-    margin-left: 0.5em;
-    font-weight: 500;
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    color: var(--color-text-muted) !important;
+    line-height: 1.6 !important;
   }
 
   /* Hidden class for filtering */
@@ -140,115 +213,36 @@ classes:
     display: none !important;
   }
 
-  /* Tag section styles */
-  .tag-section {
-    text-align: center;
-    margin: 0.5em 0;
-    padding-top: 0.3em;
-  }
-
-  .tag-toggle {
-    background: none;
-    border: none;
-    color: #6c757d;
-    font-size: 0.75em;
-    cursor: pointer;
-    padding: 0.2em 0.4em;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    opacity: 0.7;
-  }
-
-  .tag-toggle:hover {
-    background-color: #f8f9fa;
-    color: #0A4D68;
-    opacity: 1;
-  }
-
-  .tag-cloud {
-    display: none;
-    margin-top: 0.8em;
-    padding: 0.8em;
-    background-color: #fafbfc;
-    border: 1px solid #e9ecef;
-    border-radius: 6px;
-    max-height: 180px;
-    overflow-y: auto;
-  }
-
-  .tag-cloud.show {
-    display: block;
-  }
-
-  .tag-item {
-    display: inline-block;
-    margin: 0.2em 0.3em;
-    padding: 0.3em 0.6em;
-    background-color: #fff;
-    color: #0A4D68;
-    border: 1px solid #dee2e6;
-    border-radius: 12px;
-    font-size: 0.75em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .tag-item:hover {
-    background-color: #0A4D68;
-    color: white;
-  }
-
-  .tag-item.active {
-    background-color: #0A4D68;
-    color: white;
-    font-weight: 600;
-  }
-
-  /* Tag size variations based on frequency */
-  .tag-item.size-large { font-size: 0.9em; font-weight: 600; }
-  .tag-item.size-medium { font-size: 0.8em; font-weight: 500; }
-  .tag-item.size-small { font-size: 0.7em; }
-
-  /* Section divider */
-  .section-divider {
-    margin: 3em 0 2em 0;
-    border-bottom: 2px solid #e9ecef;
-    position: relative;
-  }
-
-  .section-divider::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 2px;
-    background-color: #0A4D68;
-  }
-
-  /* Responsive design */
+  /* Responsive */
   @media (max-width: 768px) {
-    .featured-posts {
-      grid-template-columns: 1fr;
-    }
-    
-    .category-nav {
-      justify-content: flex-start;
-    }
-    
-    .featured-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5em;
+    .page-header {
+      padding: 2rem 1rem 1.5rem;
     }
 
-    .page-title {
-      font-size: 2em;
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .content-container {
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .post-item {
+      padding: 1.25rem;
+    }
+
+    .post-item h3 {
+      font-size: 1.05rem !important;
     }
   }
 </style>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>Writing</h1>
+  <p>Practical insights on building AI solutions, software engineering, and strategy.</p>
+</div>
 
 <div class="content-container">
   <!-- Category Navigation -->
@@ -266,20 +260,10 @@ classes:
     <button class="category-button" data-category="uncategorized">Other</button>
   </div>
 
-  <!-- Tag Section -->
-  <div class="tag-section">
-    <button class="tag-toggle" onclick="toggleTagCloud()">
-      Browse by Topic <span id="tag-arrow">▼</span>
-    </button>
-    <div class="tag-cloud" id="tagCloud">
-      <!-- Tags will be populated by JavaScript -->
-    </div>
-  </div>
-
   <!-- All Posts Section -->
   <div class="all-posts">
     {% for post in site.posts %}
-    <article class="post-item" data-category="{{ post.category | default: 'uncategorized' }}" data-featured="{{ post.featured | default: false }}" data-tags="{% if post.tags %}{{ post.tags | join: ', ' }}{% endif %}">
+    <article class="post-item" data-category="{{ post.category | default: 'uncategorized' }}" data-featured="{{ post.featured | default: false }}">
       <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
       <div class="post-meta">
         {{ post.date | date: "%B %d, %Y" }}
@@ -296,115 +280,32 @@ classes:
 
 <script>
 let activeCategory = 'all';
-let activeTag = null;
 
 document.addEventListener('DOMContentLoaded', function() {
   const categoryButtons = document.querySelectorAll('.category-button');
-  const postItems = document.querySelectorAll('.post-item');
-  
-  // Initialize tag cloud
-  initializeTagCloud();
-  
+
   categoryButtons.forEach(button => {
     button.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      this.blur(); // Remove focus to prevent any focus-related scrolling
+      this.blur();
       activeCategory = this.getAttribute('data-category');
-      
-      // Clear active tag when switching categories
-      activeTag = null;
-      document.querySelectorAll('.tag-item').forEach(tag => tag.classList.remove('active'));
-      
-      // Update active button
+
       categoryButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
-      
-      // Filter posts
+
       filterPosts();
     });
   });
 });
 
-function initializeTagCloud() {
-  const tagCloud = document.getElementById('tagCloud');
-  const postItems = document.querySelectorAll('.post-item');
-  const tagCounts = {};
-  
-  // Count tag frequencies
-  postItems.forEach(post => {
-    const tags = post.getAttribute('data-tags');
-    if (tags) {
-      tags.split(',').forEach(tag => {
-        const trimmedTag = tag.trim();
-        if (trimmedTag) {
-          tagCounts[trimmedTag] = (tagCounts[trimmedTag] || 0) + 1;
-        }
-      });
-    }
-  });
-  
-  // Sort tags by frequency and take top 20
-  const sortedTags = Object.entries(tagCounts)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20);
-  
-  // Create tag elements
-  tagCloud.innerHTML = '';
-  sortedTags.forEach(([tag, count]) => {
-    const tagElement = document.createElement('span');
-    tagElement.className = 'tag-item';
-    tagElement.textContent = tag;
-    tagElement.setAttribute('data-tag', tag);
-    
-    // Add size class based on frequency
-    if (count >= 8) {
-      tagElement.classList.add('size-large');
-    } else if (count >= 4) {
-      tagElement.classList.add('size-medium');
-    } else {
-      tagElement.classList.add('size-small');
-    }
-    
-    tagElement.addEventListener('click', function() {
-      if (activeTag === tag) {
-        // Deselect tag
-        activeTag = null;
-        this.classList.remove('active');
-      } else {
-        // Select new tag
-        activeTag = tag;
-        document.querySelectorAll('.tag-item').forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-      }
-      filterPosts();
-    });
-    
-    tagCloud.appendChild(tagElement);
-  });
-}
-
-function toggleTagCloud() {
-  const tagCloud = document.getElementById('tagCloud');
-  const arrow = document.getElementById('tag-arrow');
-  
-  if (tagCloud.classList.contains('show')) {
-    tagCloud.classList.remove('show');
-    arrow.textContent = '▼';
-  } else {
-    tagCloud.classList.add('show');
-    arrow.textContent = '▲';
-  }
-}
-
 function filterPosts() {
   const postItems = document.querySelectorAll('.post-item');
-  
+
   postItems.forEach(post => {
     const postCategory = post.getAttribute('data-category');
     const postFeatured = post.getAttribute('data-featured') === 'true';
-    const postTags = post.getAttribute('data-tags') || '';
-    
+
     let categoryMatch = false;
     if (activeCategory === 'all') {
       categoryMatch = true;
@@ -413,10 +314,8 @@ function filterPosts() {
     } else {
       categoryMatch = postCategory === activeCategory;
     }
-    
-    let tagMatch = !activeTag || postTags.includes(activeTag);
-    
-    if (categoryMatch && tagMatch) {
+
+    if (categoryMatch) {
       post.classList.remove('hidden');
     } else {
       post.classList.add('hidden');

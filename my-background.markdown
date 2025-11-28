@@ -4,422 +4,408 @@ title: My Professional Background
 ---
 
 <style>
-  /* Main container styling */
-  .page__content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2em 1.4em;
-  }
-  
-  /* Background container */
-  .background-container {
-    padding: 2.5em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 12px;
-    border-top: 3px solid #0A4D68;
-  }
-  
-  /* Page introduction */
-  .page-intro {
-    margin-bottom: 1.5em;
-    border-bottom: 1px solid rgba(10, 77, 104, 0.1);
-    padding-bottom: 1em;
-  }
-  
-  /* Main heading */
-  .page-heading {
-    font-size: 2.2em;
-    margin-bottom: 0.7em;
-    color: #0A4D68;
+  /* =================================================================
+     MY BACKGROUND PAGE - Refined Tech Design
+     ================================================================= */
+
+  /* Page Header */
+  .page-header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background: var(--gradient-hero);
+    margin: -2rem -1rem 0;
     position: relative;
-    display: inline-block;
   }
-  
-  .page-heading:after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 3px;
-    background-color: #FFD700;
+
+  .page-header::before {
+    content: '';
     position: absolute;
-    bottom: -8px;
-    left: 0;
+    inset: 0;
+    background-image: radial-gradient(circle at 25% 60%, rgba(30, 58, 95, 0.05) 0%, transparent 50%);
+    pointer-events: none;
   }
-  
-  /* Education section */
-  .education-section {
-    margin-bottom: 2.5em;
+
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+    position: relative;
   }
-  
-  /* Section headings */
+
+  .page-header p {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  /* Background Container */
+  .background-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  /* Content Card */
+  .content-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Section Heading */
   .section-heading {
-    font-size: 1.5em;
-    margin: 1.8em 0 1em;
-    color: #0A4D68;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.02em;
     display: flex;
     align-items: center;
+    gap: 0.75rem;
   }
-  
-  .section-heading:before {
-    content: "";
-    display: inline-block;
-    width: 6px;
+
+  .section-heading::before {
+    content: '';
+    width: 4px;
     height: 24px;
-    background-color: #FFD700;
-    margin-right: 12px;
-    border-radius: 3px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
   }
-  
-  /* Paragraph text with improved readability */
+
+  /* Section Text */
   .section-text {
-    font-size: 1.05em;
-    line-height: 1.7;
-    color: #3a3f45;
-    margin-bottom: 1.5em;
-    max-width: 90ch;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
   }
-  
-  /* Experience timeline styling */
+
+  /* Experience Timeline */
   .experience-timeline {
     position: relative;
-    margin: 2em 0 3em;
-    padding-left: 2em;
+    padding-left: 2rem;
   }
-  
-  .experience-timeline:before {
-    content: "";
+
+  .experience-timeline::before {
+    content: '';
     position: absolute;
-    top: 8px;
-    bottom: 8px;
     left: 0;
-    width: 3px;
-    background-color: rgba(10, 77, 104, 0.1);
-    border-radius: 3px;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: var(--color-border);
+    border-radius: 1px;
   }
-  
-  /* Experience item */
+
+  /* Experience Item */
   .experience-item {
     position: relative;
-    margin-bottom: 2em;
-    padding-bottom: 1em;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
   }
-  
-  .experience-item:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
+
+  .experience-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
   }
-  
-  /* Special styling for current company */
-  .experience-item.current {
-    background-color: rgba(10, 77, 104, 0.03);
-    border-radius: 6px;
-    padding: 1.5em;
-    margin-left: -0.5em;
-    margin-bottom: 3em;
-    border-left: 3px solid #FFD700;
-  }
-  
-  .experience-item.current:before {
-    top: 1.5em;
-    left: -2.5em;
-    width: 16px;
-    height: 16px;
-    background-color: #FFD700;
-    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
-  }
-  
-  .experience-item:before {
-    content: "";
+
+  .experience-item::before {
+    content: '';
     position: absolute;
-    left: -2em;
-    top: 6px;
-    width: 12px;
-    height: 12px;
+    left: -2rem;
+    top: 1.5rem;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background-color: #0A4D68;
-    border: 2px solid white;
-    box-shadow: 0 0 0 2px rgba(10, 77, 104, 0.3);
+    background: var(--color-primary);
+    border: 2px solid var(--color-surface);
+    box-shadow: 0 0 0 2px var(--color-primary);
   }
-  
-  /* Job title styling */
+
+  /* Current Job Styling */
+  .experience-item.current {
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.03) 0%, rgba(245, 158, 11, 0.02) 100%);
+    border-left: 4px solid var(--color-secondary);
+    padding: 1.5rem;
+  }
+
+  .experience-item.current::before {
+    width: 14px;
+    height: 14px;
+    background: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+    left: calc(-2rem - 2px);
+  }
+
   .job-title {
-    font-size: 1.15em;
-    font-weight: 600;
-    color: #0A4D68;
-    margin-bottom: 0.4em;
-    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
   }
-  
-  /* Current job title styling */
+
   .current .job-title {
-    font-size: 1.25em;
+    font-size: 1.2rem;
   }
-  
-  /* Company styling */
+
   .company {
     font-weight: 500;
-    color: #137a9e;
-    margin-left: 0.4em;
+    color: var(--color-primary);
   }
-  
-  /* Current company styling */
-  .current .company {
-    color: #0A4D68;
-    font-weight: 600;
+
+  .company a {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-fast);
   }
-  
-  /* Year range styling */
+
+  .company a:hover {
+    border-bottom-color: var(--color-primary);
+  }
+
   .years {
     display: inline-block;
-    color: #5a6268;
-    font-size: 0.9em;
-    margin-left: 0.8em;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-left: 0.75rem;
   }
-  
-  /* Current year styling */
+
   .current .years {
-    background-color: rgba(255, 215, 0, 0.2);
-    padding: 0.2em 0.6em;
-    border-radius: 4px;
-    color: #0A4D68;
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--color-text);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
     font-weight: 500;
   }
-  
-  /* Job description */
+
   .job-description {
-    margin-top: 0.5em;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
     line-height: 1.6;
-    color: #3a3f45;
+    color: var(--color-text-muted);
   }
-  
-  /* Current job description */
-  .current .job-description {
-    margin-top: 0.6em;
+
+  /* Focus Section */
+  .focus-section {
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(30, 58, 95, 0.02) 100%);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
   }
-  
-  /* LLM focus section */
-  .llm-focus {
-    margin: 2em 0;
-    border-radius: 8px;
-    background: linear-gradient(to right, rgba(10, 77, 104, 0.06), rgba(10, 77, 104, 0.02));
-    padding: 1.5em;
-    position: relative;
-    overflow: hidden;
+
+  .focus-heading {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
   }
-  
-  .llm-focus:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 100%;
-    background-color: #0A4D68;
-  }
-  
-  .llm-heading {
-    color: #0A4D68;
-    font-size: 1.5em;
-    margin-bottom: 1em;
-    position: relative;
-  }
-  
-  /* Focus areas */
-  .focus-areas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8em;
-    margin: 1.5em 0;
-  }
-  
-  .focus-tag {
-    display: inline-block;
-    padding: 0.5em 1em;
-    background-color: white;
-    border: 1px solid rgba(10, 77, 104, 0.2);
-    border-radius: 4px;
-    font-size: 0.9em;
-    color: #0A4D68;
-    font-weight: 500;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Philosophy section */
+
+  /* Philosophy Section */
   .philosophy-section {
-    background-color: rgba(255, 215, 0, 0.05);
-    border-radius: 8px;
-    padding: 1.5em;
-    margin: 2em 0;
-    position: relative;
+    background: var(--color-bg-warm);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
   }
-  
-  .philosophy-section:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    background-color: #FFD700;
-    border-radius: 8px 0 0 8px;
-  }
-  
+
   .philosophy-heading {
-    color: #0A4D68;
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
   }
-  
-  /* Leadership section */
+
+  /* Leadership Section */
   .leadership-section {
-    background-color: white;
-    border: 1px solid rgba(10, 77, 104, 0.1);
-    border-radius: 8px;
-    padding: 1.5em;
-    margin: 2em 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
   }
-  
+
   .leadership-heading {
-    color: #0A4D68;
-    font-size: 1.4em;
-    margin-bottom: 1em;
-    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
     position: relative;
+    display: inline-block;
   }
-  
-  .leadership-heading:after {
-    content: "";
+
+  .leadership-heading::after {
+    content: '';
     position: absolute;
-    bottom: -6px;
+    bottom: -4px;
     left: 0;
     width: 40%;
-    height: 2px;
-    background-color: #FFD700;
+    height: 3px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
   }
-  
-  /* Emphasis styling */
+
   .emphasis {
-    color: #0A4D68;
+    color: var(--color-primary);
     font-weight: 600;
   }
-  
-  /* Responsive adjustments */
+
+  /* Responsive */
   @media (max-width: 768px) {
-    .background-container {
-      padding: 1.8em;
+    .page-header {
+      padding: 2rem 1rem 1.5rem;
     }
-    
-    .page-heading {
-      font-size: 1.8em;
+
+    .page-header h1 {
+      font-size: 2rem;
     }
-    
-    .section-heading {
-      font-size: 1.3em;
+
+    .content-card {
+      padding: 2rem 1.5rem;
     }
-    
+
     .experience-timeline {
-      padding-left: 1.5em;
+      padding-left: 1.5rem;
     }
-    
-    .experience-item:before {
-      left: -1.5em;
+
+    .experience-item::before {
+      left: -1.5rem;
     }
-    
-    .experience-item.current {
-      margin-left: -1.2em;
-      padding: 1.2em;
+
+    .experience-item.current::before {
+      left: calc(-1.5rem - 2px);
     }
-    
-    .experience-item.current:before {
-      left: -1.8em;
+
+    .section-heading {
+      font-size: 1.35rem;
     }
-    
-    .llm-focus, .philosophy-section, .leadership-section {
-      padding: 1.5em;
+
+    .focus-section,
+    .philosophy-section,
+    .leadership-section {
+      padding: 1.5rem;
+    }
+
+    .job-title {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .years {
+      margin-left: 0;
+      display: block;
+      margin-top: 0.25rem;
     }
   }
 </style>
 
+<!-- Page Header -->
+<div class="page-header">
+  <h1>My Professional Journey</h1>
+  <p>20+ years building software and leading engineering teams. I help organizations cut through the AI hype to build systems that actually work.</p>
+</div>
+
 <div class="background-container">
-  <div class="page-intro">
-    <h1 class="page-heading">My Professional Journey</h1>
-    <p class="section-text">With over 20 years of experience building software and leading engineering teams, I help organizations cut through the AI hype to build systems that actually work. My experience across traditional ML, data infrastructure, and modern LLM applications helps me figure out what's worth building and then build it right.</p>
+  <!-- Experience Section -->
+  <div class="content-card">
+    <h2 class="section-heading">Professional Experience</h2>
+
+    <div class="experience-timeline">
+      <div class="experience-item current">
+        <span class="job-title">Founder & Principal Consultant</span>
+        <span class="company">at PragmaNexus</span>
+        <span class="years">(2024-Present)</span>
+        <p class="job-description">I founded PragmaNexus to help teams cut through the AI hype and build systems that actually work. I focus on figuring out what's worth building first, then provide strategy, implementation, and training to make it happen.</p>
+      </div>
+
+      <div class="experience-item">
+        <span class="job-title">Director of Engineering</span>
+        <span class="company">at <a href="https://www.teamshares.com/">Teamshares</a></span>
+        <span class="years">(2021-2024)</span>
+        <p class="job-description">Built Teamshares' data strategy and infrastructure from the ground up. Established a software team and technical platform that empowered colleagues across all departments to make data-informed decisions related to acquiring and operating small businesses. Teamshares is backed by QED Investors, Khosla Ventures, Slow Ventures, Union Square Ventures, and other top-tier investors.</p>
+      </div>
+
+      <div class="experience-item">
+        <span class="job-title">Director of Data Science and Engineering</span>
+        <span class="company">at <a href="https://raconcapital.com/">Racon Capital Partners</a></span>
+        <span class="years">(2020-2021)</span>
+        <p class="job-description">Collaborated with the Head of Quantitative Research to develop quantitative investment algorithms and build the software/data infrastructure necessary for backtesting and executing these algorithms at scale.</p>
+      </div>
+
+      <div class="experience-item">
+        <span class="job-title">Director of Engineering</span>
+        <span class="company">at <a href="https://circleup.com/">CircleUp</a></span>
+        <span class="years">(2014-2020)</span>
+        <p class="job-description">Helped build and scale a Data/Machine Learning platform that discovered and analyzed emerging consumer brands across hundreds of data sources. The platform automatically identified and evaluated over 100,000 small consumer businesses, guiding investment decisions and facilitating hundreds of successful equity and debt transactions. CircleUp was backed by Google Ventures, Union Square Ventures, QED Investors, Clayton Christensen's Rose Park Advisors, and other prominent investors.</p>
+      </div>
+
+      <div class="experience-item">
+        <span class="job-title">VP of Engineering</span>
+        <span class="company">at <a href="https://www.harqen.com/">Harqen</a></span>
+        <span class="years">(2010-2014)</span>
+        <p class="job-description">Helped develop one of the first digital interviewing platforms, enabling millions of job applicants to apply for positions through asynchronous audio or video recordings from their smartphones or computers.</p>
+      </div>
+
+      <div class="experience-item">
+        <span class="job-title">Senior Software Engineer</span>
+        <span class="company">at Stark Investments</span>
+        <span class="years">(2007-2010)</span>
+        <p class="job-description">Developed Derivatives/Credit Default Swaps trading software for a multi-billion dollar hedge fund, gaining valuable insights during the 2007-2008 global financial crisis.</p>
+      </div>
+
+      <div class="experience-item">
+        <span class="job-title">Engineering Leadership Program</span>
+        <span class="company">at General Electric</span>
+        <span class="years">(2004-2007)</span>
+      </div>
+
+      <div class="experience-item">
+        <span class="job-title">iOS Developer</span>
+        <span class="years">(Side Projects, Late 2000s)</span>
+        <p class="job-description">Built and launched 7 iOS applications as side projects and learning experiences.</p>
+      </div>
+    </div>
   </div>
 
-  <h2 class="section-heading">Professional Experience</h2>
-  
-  <div class="experience-timeline">
-    <div class="experience-item current">
-      <span class="job-title">Founder & Principal Consultant</span>
-      <span class="company">at PragmaNexus</span>
-      <span class="years">(2024-Present)</span>
-      <p class="job-description">I founded PragmaNexus to help teams cut through the AI hype and build systems that actually work. I focus on figuring out what's worth building first, then provide strategy, implementation, and training to make it happen.</p>
-    </div>
-    
-    <div class="experience-item">
-      <span class="job-title">Director of Engineering</span>
-      <span class="company">at <a href="https://www.teamshares.com/">Teamshares</a></span>
-      <span class="years">(2021-2024)</span>
-      <p class="job-description">Built Teamshares' data strategy and infrastructure from the ground up. Established a software team and technical platform that empowered colleagues across all departments to make data-informed decisions related to acquiring and operating small businesses. Teamshares is backed by QED Investors, Khosla Ventures, Slow Ventures, Union Square Ventures, and other top-tier investors.</p>
-    </div>
-    
-    <div class="experience-item">
-      <span class="job-title">Director of Data Science and Engineering</span>
-      <span class="company">at <a href="https://raconcapital.com/">Racon Capital Partners</a></span>
-      <span class="years">(2020-2021)</span>
-      <p class="job-description">Collaborated with the Head of Quantitative Research to develop quantitative investment algorithms and build the software/data infrastructure necessary for backtesting and executing these algorithms at scale.</p>
-    </div>
-    
-    <div class="experience-item">
-      <span class="job-title">Director of Engineering</span>
-      <span class="company">at <a href="https://circleup.com/">CircleUp</a></span>
-      <span class="years">(2014-2020)</span>
-      <p class="job-description">Helped build and scale a Data/Machine Learning platform that discovered and analyzed emerging consumer brands across hundreds of data sources. The platform automatically identified and evaluated over 100,000 small consumer businesses, guiding investment decisions and facilitating hundreds of successful equity and debt transactions. CircleUp was backed by Google Ventures, Union Square Ventures, QED Investors, Clayton Christensen's Rose Park Advisors, and other prominent investors.</p>
-    </div>
-    
-    <div class="experience-item">
-      <span class="job-title">VP of Engineering</span>
-      <span class="company">at <a href="https://www.harqen.com/">Harqen</a></span>
-      <span class="years">(2010-2014)</span>
-      <p class="job-description">Helped develop one of the first digital interviewing platforms, enabling millions of job applicants to apply for positions through asynchronous audio or video recordings from their smartphones or computers.</p>
-    </div>
-    
-    <div class="experience-item">
-      <span class="job-title">Senior Software Engineer</span>
-      <span class="company">at Stark Investments</span>
-      <span class="years">(2007-2010)</span>
-      <p class="job-description">Developed Derivatives/Credit Default Swaps trading software for a multi-billion dollar hedge fund, gaining valuable insights during the 2007-2008 global financial crisis.</p>
-    </div>
-    
-    <div class="experience-item">
-      <span class="job-title">Engineering Leadership Program</span>
-      <span class="company">at General Electric</span>
-      <span class="years">(2004-2007)</span>
-    </div>
-    
-    <div class="experience-item">
-      <span class="job-title">iOS Developer</span>
-      <span class="years">(Side Projects, Late 2000s)</span>
-      <p class="job-description">Built and launched 7 iOS applications as side projects and learning experiences.</p>
+  <!-- Current Focus Section -->
+  <div class="content-card">
+    <div class="focus-section">
+      <h2 class="focus-heading">Current Focus: Large Language Models</h2>
+      <p class="section-text">I'm building production systems in the large language model ecosystem - the kind that process real documents, handle actual customer data, and solve problems that weren't solvable before these tools existed. My work spans strategy, implementation, and training, helping teams figure out what's worth building and then building it right.</p>
     </div>
   </div>
 
-  <div class="llm-focus">
-    <h2 class="llm-heading">Current Focus: Large Language Models</h2>
-    <p class="section-text">I'm building production systems in the large language model ecosystem - the kind that process real documents, handle actual customer data, and solve problems that weren't solvable before these tools existed. My work spans strategy, implementation, and training, helping teams figure out what's worth building and then building it right.</p>
+  <!-- Philosophy Section -->
+  <div class="content-card">
+    <div class="philosophy-section">
+      <h2 class="philosophy-heading">My Product-First Approach</h2>
+      <p class="section-text">I believe the most important question isn't "Which technology should we use?" but "What business problems are we trying to solve?" I start with understanding your actual problems, then figure out what's worth building - whether that's an LLM application, traditional ML model, or simpler solution.</p>
+      <p class="section-text" style="margin-bottom: 0;">This approach leads to focused solutions that solve real problems rather than chase technology trends. It's about using the right tool for the job and building something that works for your specific situation.</p>
+    </div>
   </div>
 
-  <div class="philosophy-section">
-    <h2 class="philosophy-heading">My Product-First Approach</h2>
-    <p class="section-text">I believe the most important question isn't "Which technology should we use?" but "What business problems are we trying to solve?" I start with understanding your actual problems, then figure out what's worth building - whether that's an LLM application, traditional ML model, or simpler solution.</p>
-    <p class="section-text">This approach leads to focused solutions that solve real problems rather than chase technology trends. It's about using the right tool for the job and building something that works for your specific situation.</p>
-  </div>
-
-  <div class="leadership-section">
-    <h2 class="leadership-heading">Leadership Philosophy</h2>
-    <p class="section-text">I believe effective leadership multiplies a team's impact. Throughout my career, I've prioritized building, coaching, and mentoring engineering teams. Nothing frustrates me more than seeing exceptional talent stifled by inadequate leadership.</p>
-    <p class="section-text">My leadership approach centers on empowering teams to do their best work. This means clear communication, thoughtful delegation, and creating an environment where innovation thrives. This experience in coaching and mentoring teams is why training and strategy work are such important parts of what I offer - the best systems are ones that teams can understand, maintain, and improve.</p>
+  <!-- Leadership Section -->
+  <div class="content-card">
+    <div class="leadership-section">
+      <h2 class="leadership-heading">Leadership Philosophy</h2>
+      <p class="section-text">I believe effective leadership multiplies a team's impact. Throughout my career, I've prioritized building, coaching, and mentoring engineering teams. Nothing frustrates me more than seeing exceptional talent stifled by inadequate leadership.</p>
+      <p class="section-text" style="margin-bottom: 0;">My leadership approach centers on empowering teams to do their best work. This means clear communication, thoughtful delegation, and creating an environment where innovation thrives. This experience in coaching and mentoring teams is why training and strategy work are such important parts of what I offer - the best systems are ones that teams can understand, maintain, and improve.</p>
+    </div>
   </div>
 </div>

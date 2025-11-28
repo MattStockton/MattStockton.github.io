@@ -2,286 +2,589 @@
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
+<!-- Google Fonts: Outfit (headlines) + Source Sans 3 (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
 <!-- end custom head snippets -->
 
 <style>
-    /* PragmaNexus color variables */
-    :root {
-      --primary-color: #0A4D68;
-      --secondary-color: #FFD700;
-      --text-color: #212529;
-      --light-background: #f8f9fa;
-    }
-    
-    /* Enhanced header styling with increased size */
-    .masthead {
-      background-color: white;
-      border-bottom: 1px solid rgba(10, 77, 104, 0.1);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      padding: 1em 0; /* Increased padding */
-    }
-    
-    .masthead__inner-wrap {
-      padding: 0.5em 2em; /* Wider padding on sides */
-      max-width: 1400px; /* Increased max-width */
-    }
-    
-    /* Completely revised site title styling */
-    .site-title {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.8em;
-      letter-spacing: -0.01em;
-      color: #0A4D68;
-      position: relative;
-      padding: 0.2em 0;
-      margin: 0 0.3em;
-      transition: color 0.3s ease;
-      display: inline-block;
-    }
-    
-    /* Remove ALL default underlines and behaviors */
-    .site-title:before, 
-    .site-title:after,
-    .greedy-nav a:before,
-    .greedy-nav a:after {
-      display: none !important;
-    }
-    
-    /* Add a small decorative line under the site title */
-    .masthead .site-title {
-      border-bottom: 3px solid #FFD700;
-      padding-bottom: 0.2em;
-      margin-bottom: 0.1em;
-    }
-    
-    /* Improved nav styling with larger elements */
-    .greedy-nav {
-      background: transparent;
-      height: auto; /* Allow height to adjust naturally */
-    }
-    
-    .greedy-nav .visible-links {
-      display: flex;
-      align-items: center;
-      height: auto; /* Allow height to adjust naturally */
-    }
-    
-    .greedy-nav a {
-      padding: 0.8em 1.2em; /* Larger padding */
-      margin: 0 0.3em;
-      font-weight: 500;
-      font-size: 1.1em; /* Larger font size */
-      color: #333;
-      position: relative;
-      transition: all 0.2s ease;
-    }
-    
-    .greedy-nav a.site-title {
-      margin-right: 1em; /* Space between title and nav items */
-    }
-    
-    .greedy-nav a:hover {
-      color: #0A4D68;
-    }
-    
-    /* Custom hover effect for navigation items */
-    .greedy-nav .visible-links li a {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .greedy-nav .visible-links li a:hover {
-      color: #0A4D68;
-    }
-    
-    .greedy-nav .visible-links li a:after {
-      content: "";
-      position: absolute;
-      bottom: 0.5em;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #FFD700;
-      transition: width 0.3s ease, left 0.3s ease;
-      display: block !important;
-    }
-    
-    .greedy-nav .visible-links li a:hover:after {
-      width: 70%;
-      left: 15%;
-    }
-    
-    /* If there's a dark mode toggle, style it */
-    .greedy-nav__toggle {
-      background-color: #f0f0f0;
-      border-radius: 50%;
-      padding: 0.5em;
-    }
-    
-    /* Update page title area */
-    .page__title {
-      color: var(--primary-color) !important;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    
-    .page__lead {
-      color: var(--text-color) !important;
-    }
-    
-    /* Update page hero area */
-    .page__hero--overlay .page__title,
-    .page__hero--overlay .page__meta,
-    .page__hero--overlay .page__lead {
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Footer styling */
-    .page__footer {
-      background-color: var(--light-background);
-      color: var(--text-color);
-      border-top: 1px solid rgba(10, 77, 104, 0.1);
-    }
-    
-    .page__footer a {
-      color: var(--primary-color);
-    }
-    
-    .page__footer a:hover {
-      color: #137a9e;
-    }
-    
-    .page__footer-copyright {
-      color: #6c757d;
-    }
-    
-    .page__footer-follow .social-icons .fa {
-      color: var(--primary-color);
-    }
-    
-    /* General button styling */
-    .btn {
-      background-color: var(--primary-color);
-      color: white;
-    }
-    
-    .btn:hover {
-      background-color: #137a9e;
-    }
-    
-    .btn--primary {
-      background-color: var(--primary-color);
-    }
-    
-    .btn--primary:hover {
-      background-color: #137a9e;
-    }
-    
-    /* Page content container styling */
-    .page__content h2, 
-    .page__content h3, 
-    .page__content h4, 
-    .page__content h5, 
-    .page__content h6 {
-      color: var(--primary-color);
-    }
-    
-    .page__content a:not(.btn) {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-    
-    .page__content a:not(.btn):hover {
-      color: #137a9e;
-      text-decoration: underline;
-    }
-    
-    /* Archive item styling (for consistency with our custom pages) */
-    .archive__item-title a {
-      color: var(--primary-color);
-    }
-    
-    .archive__item-title a:hover {
-      color: #137a9e;
-    }
-    
-    /* Navigation styling */
-    .nav__list .nav__items a {
-      color: var(--text-color);
-    }
-    
-    .nav__list .nav__items a:hover {
-      color: var(--primary-color);
-    }
-    
-    .nav__list .nav__items a.active {
-      color: var(--primary-color);
-    }
-    
-    /* Sidebar styling */
-    .sidebar .nav__list {
-      background: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-      border-radius: 4px;
-    }
-    
-    /* Make the header responsive and clean on mobile */
-    @media (max-width: 1024px) {
-      .masthead__inner-wrap {
-        padding: 0.5em 1.5em;
-      }
-      
-      .site-title {
-        font-size: 1.6em;
-      }
-      
-      .greedy-nav a {
-        padding: 0.7em 1em;
-        font-size: 1em;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .masthead__inner-wrap {
-        padding: 0.5em 1em;
-      }
-      
-      .site-title {
-        font-size: 1.4em;
-      }
-      
-      .greedy-nav a {
-        padding: 0.6em 0.8em;
-        font-size: 0.95em;
-      }
-    }
-    
-    /* Global container width fixes */
-    .page__content,
-    #main,
-    .page__main,
-    .page__content > *,
-    .splash .page__content {
-      max-width: 1200px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    
-    /* Ensure full width on main container */
-    #main {
-      width: 100% !important;
-      float: none !important;
-    }
-    
-    /* Ensure sidebars don't interfere with layout */
-    .sidebar__right {
-      display: none !important;
-    }
-    
-    /* Fix for collection layout */
-    .layout--collection .page__content {
-      float: none !important;
-      width: 100% !important;
-    }
-    </style>
+/* =================================================================
+   REFINED TECH DESIGN SYSTEM
+   Modern, light-theme aesthetic for AI Strategy Consultant
+   ================================================================= */
+
+/* CSS Custom Properties */
+:root {
+  /* Primary - Deep Navy Blue */
+  --color-primary: #1E3A5F;
+  --color-primary-dark: #152A45;
+  --color-primary-light: #2D4A6F;
+
+  /* Secondary - Warm Amber */
+  --color-secondary: #F59E0B;
+  --color-secondary-light: #FCD34D;
+
+  /* Backgrounds */
+  --color-bg: #FAFBFC;
+  --color-bg-warm: #FFFBF5;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F8FAFC;
+
+  /* Text */
+  --color-text: #1E293B;
+  --color-text-muted: #64748B;
+  --color-text-light: #94A3B8;
+
+  /* Borders & Effects */
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #F0F9FF 0%, #FFFBEB 50%, #FDF4FF 100%);
+  --gradient-accent: linear-gradient(135deg, #1E3A5F 0%, #2D4A6F 100%);
+  --gradient-card: linear-gradient(135deg, rgba(30, 58, 95, 0.02) 0%, rgba(245, 158, 11, 0.02) 100%);
+  --gradient-text: linear-gradient(135deg, #1E3A5F 0%, #3D5A7F 100%);
+
+  /* Typography */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 12px 32px rgba(30, 58, 95, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
+}
+
+/* =================================================================
+   BASE STYLES
+   ================================================================= */
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+/* =================================================================
+   HEADER / MASTHEAD
+   ================================================================= */
+
+.masthead {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow var(--transition-base);
+}
+
+.masthead:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.masthead__inner-wrap {
+  padding: 0.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Site Title */
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 0.25rem 0;
+  transition: opacity var(--transition-base);
+}
+
+.site-title:hover {
+  opacity: 0.85;
+}
+
+/* Remove default underlines */
+.site-title:before,
+.site-title:after,
+.greedy-nav a:before {
+  display: none !important;
+}
+
+/* Navigation */
+.greedy-nav {
+  background: transparent;
+  height: auto;
+}
+
+.greedy-nav .visible-links {
+  display: flex;
+  align-items: center;
+  height: auto;
+  gap: 0.25rem;
+}
+
+.greedy-nav a {
+  font-family: var(--font-body);
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  position: relative;
+  transition: color var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.greedy-nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Nav link underline animation */
+.greedy-nav .visible-links li a {
+  position: relative;
+}
+
+.greedy-nav .visible-links li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0.35rem;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+  border-radius: 1px;
+  display: block !important;
+}
+
+.greedy-nav .visible-links li a:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Mobile nav toggle */
+.greedy-nav__toggle {
+  background-color: var(--color-surface-elevated);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  transition: background-color var(--transition-fast);
+}
+
+.greedy-nav__toggle:hover {
+  background-color: var(--color-border);
+}
+
+/* =================================================================
+   PAGE CONTENT
+   ================================================================= */
+
+.page__title {
+  font-family: var(--font-display);
+  color: var(--color-text) !important;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-size: 2.5rem;
+}
+
+.page__lead {
+  font-family: var(--font-body);
+  color: var(--color-text-muted) !important;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Content headings */
+.page__content h2 {
+  color: var(--color-text);
+  font-size: 1.75rem;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.page__content h3 {
+  color: var(--color-text);
+  font-size: 1.35rem;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.page__content h4,
+.page__content h5,
+.page__content h6 {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+/* Links */
+.page__content a:not(.btn) {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.page__content a:not(.btn):hover {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Blockquotes */
+.page__content blockquote {
+  background: var(--color-bg-warm);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-lg) var(--space-xl);
+  margin: var(--space-xl) 0;
+  font-style: normal;
+  color: var(--color-text);
+}
+
+.page__content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code blocks */
+.page__content pre {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.page__content code {
+  font-size: 0.9em;
+  background: var(--color-surface-elevated);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  color: var(--color-primary-dark);
+}
+
+.page__content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* Lists */
+.page__content ul,
+.page__content ol {
+  padding-left: 1.5rem;
+}
+
+.page__content li {
+  margin-bottom: 0.5rem;
+}
+
+/* =================================================================
+   BUTTONS
+   ================================================================= */
+
+.btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  border: none;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--gradient-accent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.25);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn--inverse {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+}
+
+.btn--inverse:hover {
+  border-color: var(--color-primary);
+  background: rgba(30, 58, 95, 0.05);
+}
+
+/* =================================================================
+   ARCHIVE / POST LISTINGS
+   ================================================================= */
+
+.archive__item-title a {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.archive__item-title a:hover {
+  color: var(--color-primary);
+}
+
+.archive__item-excerpt {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* =================================================================
+   FOOTER
+   ================================================================= */
+
+.page__footer {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-3xl);
+}
+
+.page__footer a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.page__footer a:hover {
+  color: var(--color-primary-dark);
+}
+
+.page__footer-copyright {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.page__footer-follow .social-icons .fa,
+.page__footer-follow .social-icons .fab,
+.page__footer-follow .social-icons .fas {
+  color: var(--color-primary);
+}
+
+/* =================================================================
+   ANIMATIONS
+   ================================================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* =================================================================
+   UTILITY CLASSES
+   ================================================================= */
+
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.accent-border {
+  position: relative;
+  padding-left: var(--space-lg);
+}
+
+.accent-border::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+/* =================================================================
+   LAYOUT OVERRIDES
+   ================================================================= */
+
+/* Global container width */
+.page__content,
+#main,
+.page__main {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#main {
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Hide default sidebar */
+.sidebar__right {
+  display: none !important;
+}
+
+.layout--collection .page__content {
+  float: none !important;
+  width: 100% !important;
+}
+
+/* =================================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================================= */
+
+@media (max-width: 1024px) {
+  .masthead__inner-wrap {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+
+  .greedy-nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .page__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --space-3xl: 3rem;
+  }
+
+  .masthead__inner-wrap {
+    padding: 0.5rem 1rem;
+  }
+
+  .site-title {
+    font-size: 1.25rem;
+  }
+
+  .greedy-nav a {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .page__title {
+    font-size: 1.75rem;
+  }
+
+  .page__content h2 {
+    font-size: 1.5rem;
+  }
+
+  .page__content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* =================================================================
+   HERO / SPLASH PAGE BACKGROUNDS
+   ================================================================= */
+
+.hero-gradient {
+  background: var(--gradient-hero);
+  position: relative;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 25% 25%, rgba(30, 58, 95, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Subtle dot pattern overlay */
+.pattern-dots {
+  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+</style>
