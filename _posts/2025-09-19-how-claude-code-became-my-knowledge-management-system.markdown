@@ -4,6 +4,7 @@ title: "How Claude Code Became My Knowledge Management System"
 excerpt: "Claude Code transformed my consulting workflow by running locally and integrating with my actual files, creating a knowledge system that compounds over time."
 category: "Getting Started with AI"
 tags: ["workflow", "ai-tools", "knowledge-management", "claude", "productivity"]
+featured: true
 ---
 
 Claude Code is fantastic for coding, and I've been using it for that for a while. But in the last couple months I also started using it as my knowledge management system: client documentation, meeting notes, email drafts, and project organization. It's completely changed how I work.
