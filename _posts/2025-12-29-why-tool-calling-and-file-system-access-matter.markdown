@@ -4,6 +4,7 @@ title: "Tool Calling and File Access: When AI Can Run Commands on Your Actual Fi
 excerpt: "Instead of uploading files to a chat window, give the model access to your file system and let it run commands directly. Here's what that looks like in practice."
 category: "Building with LLMs"
 tags: ["tool-calling", "claude-code", "ai-tools", "workflow", "productivity"]
+featured: true
 ---
 
 When people want AI to work on their files, they usually upload them to a chat window. There's another way: give the model access to your file system and let it run commands directly.

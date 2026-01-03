@@ -4,6 +4,7 @@ title: "Running a Background Thread for AI Opportunities"
 excerpt: "Tedious tasks with clear inputs and outputs are now trivially automatable. The hard part is remembering to ask."
 category: "Building with LLMs"
 tags: ["claude-code", "ai-tools", "workflow", "automation", "productivity"]
+featured: true
 ---
 
 I enrolled my kids in 8 rec department classes and got 8 confirmation emails. Each needed to go into Google Calendar - different dates, times, recurrence patterns, skip weeks. I almost started clicking through the calendar UI before realizing Claude Code could handle it in a couple minutes.
