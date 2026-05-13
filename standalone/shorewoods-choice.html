@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shorewood's Choice — A Reader's Guide to the Task Force Report</title>
+<meta name="description" content="An unofficial, interactive guide to the Shorewood School District Task Force Report on Long-Term Financial Sustainability (April 28, 2026). Compare scenarios, explore tradeoffs, and read the source." />
+
+<!-- Mobile / browser chrome -->
+<meta name="theme-color" content="#1b1914" />
+
+<!-- Open Graph (Facebook, LinkedIn, Slack, iMessage, Discord, etc.) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Shorewood's Choice (Unofficial)" />
+<meta property="og:title" content="Shorewood's Choice — A Reader's Guide to the Task Force Report" />
+<meta property="og:description" content="An unofficial, interactive guide to the Shorewood School District Task Force Report on Long-Term Financial Sustainability. Compare scenarios, explore tradeoffs, and read the source." />
+<meta property="og:url" content="https://mattstockton.com/standalone/shorewoods-choice.html" />
+<meta property="og:image" content="https://mattstockton.com/standalone/preview.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Editorial preview: 'Four paths, one decision.' — guide to the Shorewood Task Force Report. Shows Scenario F (59.8), E (52.7), B (48.8), and Zero (24.1) scores." />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shorewood's Choice — A Reader's Guide to the Task Force Report" />
+<meta name="twitter:description" content="An unofficial, interactive guide to the Shorewood Task Force Report on Long-Term Financial Sustainability." />
+<meta name="twitter:image" content="https://mattstockton.com/standalone/preview.png" />
+<meta name="twitter:image:alt" content="Editorial preview of the guide showing the four scenario scores." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #f7f3ec;
+  --bg-alt: #fffcf6;
+  --bg-deep: #ebe4d4;
+  --ink: #1b1914;
+  --ink-soft: #3d362b;
+  --muted: #7a7163;
+  --muted-light: #a89e8c;
+  --rule: #d9cfba;
+  --rule-soft: #ece4d3;
+  --accent: #b54d2d;
+  --accent-soft: #e8b89e;
+  --warn: #a14040;
+
+  --c-F: #2d6e6b;
+  --c-F-soft: #c8dcd9;
+  --c-E: #a87925;
+  --c-E-soft: #ecd9aa;
+  --c-B: #5e4373;
+  --c-B-soft: #d6c9e0;
+  --c-Z: #a14040;
+  --c-Z-soft: #e7c7c0;
+
+  --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --maxw: 1080px;
+  --textw: 660px;
+  --radius: 4px;
+  --shadow: 0 1px 0 rgba(27, 25, 20, 0.04), 0 6px 24px -8px rgba(27, 25, 20, 0.08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ----- typography ----- */
+.serif { font-family: var(--serif); }
+.mono  { font-family: var(--mono); font-feature-settings: "tnum" 1; }
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0;
+}
+h1 { font-size: clamp(2.5rem, 6vw, 4.75rem); letter-spacing: -0.03em; line-height: 1; }
+h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+h4 { font-size: 1.05rem; }
+
+p { margin: 0 0 1em; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+a:hover { color: var(--ink); }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.dek {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+.byline {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ----- layout primitives ----- */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.text-col {
+  max-width: var(--textw);
+  margin: 0 auto;
+}
+section { padding: clamp(48px, 8vw, 96px) 0; scroll-margin-top: 130px; }
+.section-head {
+  margin-bottom: clamp(28px, 3.5vw, 48px);
+  max-width: 760px;
+}
+.section-head .eyebrow { margin-bottom: 12px; display: inline-block; }
+.section-head h2 { margin-bottom: 16px; }
+.section-head .dek { color: var(--muted); font-style: normal; }
+hr.rule {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+/* ----- sticky header stack ----- */
+.sticky-stack {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+/* ----- disclaimer banner ----- */
+.disclaimer {
+  background: var(--ink);
+  color: var(--bg-alt);
+  border-bottom: 2px solid var(--accent);
+}
+.disclaimer .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+}
+.disclaimer .msg {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(255, 252, 246, 0.88);
+  margin: 0;
+}
+.disclaimer .msg strong { color: var(--bg-alt); font-weight: 600; }
+.disclaimer .warn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+.disclaimer .warn::before {
+  content: "⚠";
+  font-size: 0.85rem;
+  line-height: 1;
+}
+.disclaimer .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: var(--bg-alt);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 9px 16px;
+  border-radius: 4px;
+  border: 0;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+.disclaimer .cta:hover { background: #c95636; color: var(--bg-alt); }
+.disclaimer .cta .arrow { font-size: 1.1em; }
+@media (max-width: 820px) {
+  .disclaimer .wrap {
+    grid-template-columns: 1fr;
+    gap: 8px 14px;
+    padding: 10px 18px;
+  }
+  .disclaimer .cta { justify-self: end; padding: 7px 12px; font-size: 0.76rem; }
+  .disclaimer .msg { font-size: 0.8rem; }
+}
+@media (max-width: 520px) {
+  .disclaimer .cta .arrow { display: none; }
+  .disclaimer .cta { padding: 7px 10px; }
+}
+
+/* ----- nav ----- */
+.topnav {
+  background: rgba(247, 243, 236, 0.94);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.topnav .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.topnav .brand {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  border: 0;
+}
+.topnav nav {
+  display: flex;
+  gap: 22px;
+  font-size: 0.85rem;
+}
+.topnav nav a {
+  color: var(--ink-soft);
+  border: 0;
+  font-weight: 500;
+}
+.topnav nav a:hover { color: var(--accent); }
+@media (max-width: 720px) {
+  .topnav nav { display: none; }
+}
+
+/* ----- hero ----- */
+.hero {
+  padding: clamp(72px, 12vw, 140px) 0 clamp(48px, 6vw, 80px);
+  border-bottom: 1px solid var(--rule);
+}
+.hero .container { display: grid; gap: 32px; }
+.hero h1 { margin-top: 18px; max-width: 16ch; }
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+.hero .dek { max-width: 60ch; margin-top: 24px; }
+.hero .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 36px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+.hero .meta strong { color: var(--ink); font-weight: 600; }
+
+/* ----- intro / lede ----- */
+.intro p { font-size: 1.1rem; line-height: 1.65; }
+.intro p.lede::first-letter {
+  font-family: var(--serif);
+  font-size: 4em;
+  font-weight: 600;
+  float: left;
+  line-height: 0.85;
+  padding: 0.08em 0.1em 0 0;
+  color: var(--accent);
+}
+.pull {
+  border-left: 3px solid var(--accent);
+  padding: 8px 0 8px 20px;
+  margin: 32px 0;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ----- big stat row ----- */
+.stats {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.stats .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stats .stat {
+  padding: 24px 22px;
+  border-right: 1px solid var(--rule);
+}
+.stats .stat:first-child { padding-left: 0; }
+.stats .stat:last-child { border-right: 0; padding-right: 0; }
+.stats .stat .num {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+.stats .stat .num small {
+  font-size: 0.55em;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+.stats .stat .label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.35;
+}
+@media (max-width: 720px) {
+  .stats .grid { grid-template-columns: repeat(2, 1fr); }
+  .stats .stat { padding: 24px 20px; }
+  .stats .stat:nth-child(odd) { padding-left: 0; }
+  .stats .stat:nth-child(even) { padding-right: 0; border-right: 0; }
+  .stats .stat:nth-child(1), .stats .stat:nth-child(2) {
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+/* ----- scoreboard ----- */
+.scoreboard .cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 980px) { .scoreboard .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .scoreboard .cards { grid-template-columns: 1fr; } }
+.scard {
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 20px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.scard:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.scard.leading { border-top: 4px solid var(--scolor); padding-top: 19px; }
+.scard.warning { background: linear-gradient(180deg, #fbf2ef 0%, var(--bg-alt) 60%); border-top: 4px solid var(--c-Z); padding-top: 19px; }
+.scard .tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--scolor);
+  background: var(--scolor-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+.scard.warning .tag { color: var(--c-Z); background: var(--c-Z-soft); }
+.scard .stitle {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.scard .stagline { color: var(--muted); font-size: 0.92rem; margin-top: -8px; }
+.scard .scombined {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 4px 0 -2px;
+  color: var(--scolor);
+}
+.scard.warning .scombined { color: var(--c-Z); }
+.scard .scombined-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.scard .bar {
+  height: 6px;
+  background: var(--rule-soft);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 4px 0 2px;
+}
+.scard .bar > span {
+  display: block;
+  height: 100%;
+  background: var(--scolor);
+  border-radius: 999px;
+  transform-origin: left;
+  animation: barIn 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.scard.warning .bar > span { background: var(--c-Z); }
+@keyframes barIn { from { transform: scaleX(0); } }
+
+.scard .subscore-block {
+  display: grid;
+  gap: 8px;
+  padding: 12px 0 4px;
+  border-top: 1px solid var(--rule-soft);
+  margin-top: 6px;
+}
+.scard .subscore {
+  display: grid;
+  grid-template-columns: 64px 1fr 38px;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+}
+.scard .subscore .sslabel {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  font-size: 0.66rem;
+}
+.scard .subscore .sstrack {
+  height: 4px;
+  background: var(--rule-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.scard .subscore .sstrack > span {
+  display: block;
+  height: 100%;
+  background: var(--scolor);
+  opacity: 0.7;
+  transform-origin: left;
+  animation: barIn 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.scard.warning .subscore .sstrack > span { background: var(--c-Z); }
+.scard .subscore .ssval {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: var(--ink);
+  text-align: right;
+}
+.scard .formula {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-top: -2px;
+}
+.scard .metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+  margin-top: 8px;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 14px;
+}
+.scard .metric .mlabel {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.scard .metric .mval {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 2px;
+  line-height: 1.15;
+}
+.scard .metric .mval small {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 4px;
+}
+.scard .footnote {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* scenario colorings */
+[data-scenario="F"]    { --scolor: var(--c-F); --scolor-soft: var(--c-F-soft); }
+[data-scenario="E"]    { --scolor: var(--c-E); --scolor-soft: var(--c-E-soft); }
+[data-scenario="B"]    { --scolor: var(--c-B); --scolor-soft: var(--c-B-soft); }
+[data-scenario="Zero"] { --scolor: var(--c-Z); --scolor-soft: var(--c-Z-soft); }
+
+/* ----- compare ----- */
+.compare .picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+@media (max-width: 720px) { .compare .picker { grid-template-columns: 1fr; } }
+.picker-col label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--bg-alt);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.chip:hover { border-color: var(--scolor, var(--accent)); color: var(--scolor, var(--accent)); }
+.chip.active {
+  background: var(--scolor, var(--ink));
+  color: white;
+  border-color: var(--scolor, var(--ink));
+}
+/* unified compare panel */
+.compare-panel {
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.compare-header {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-alt) 100%);
+  border-bottom: 1px solid var(--rule);
+}
+.compare-header .ch-col {
+  padding: 20px 22px 16px;
+}
+.compare-header .ch-col[data-side="A"] { color: var(--scolor); }
+.compare-header .ch-col[data-side="B"] { color: var(--scolor); text-align: right; }
+.compare-header .ch-divider {
+  background: var(--rule);
+  margin: 18px 0;
+}
+.ch-col .ch-tagline {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.ch-col .ch-name {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+  color: var(--scolor);
+}
+.ch-col .ch-config {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  letter-spacing: 0;
+}
+
+/* metric bars */
+.metric-bars {
+  padding: 20px 22px 6px;
+}
+.metric-bar-row {
+  display: grid;
+  grid-template-columns: 1fr 12px 1fr;
+  align-items: center;
+  margin-bottom: 18px;
+  gap: 0;
+}
+.metric-bar-row .mb-label {
+  grid-column: 1 / -1;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.metric-bar-row .mb-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 22px;
+}
+.metric-bar-row .mb-track {
+  flex: 1;
+  height: 10px;
+  background: var(--rule-soft);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+.metric-bar-row .mb-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--mbcolor);
+  border-radius: 999px;
+  animation: barIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.metric-bar-row .mb-side[data-side="A"] .mb-fill { right: 0; transform-origin: right; animation-name: barInRight; }
+.metric-bar-row .mb-side[data-side="B"] .mb-fill { left: 0;  transform-origin: left; }
+@keyframes barInRight { from { transform: scaleX(0); } }
+.metric-bar-row .mb-value {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  min-width: 60px;
+  text-align: center;
+}
+.metric-bar-row .mb-side[data-side="A"] .mb-value { text-align: left; }
+.metric-bar-row .mb-side[data-side="B"] .mb-value { text-align: right; }
+.metric-bar-row .mb-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--rule);
+  margin: 0 8px;
+}
+
+/* tabs */
+.compare-tabs {
+  display: flex;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+}
+.compare-tabs button {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  padding: 14px 16px;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+.compare-tabs button:hover { color: var(--ink); }
+.compare-tabs button.active {
+  color: var(--ink);
+  background: var(--bg-alt);
+  border-bottom-color: var(--accent);
+}
+.compare-tabs button.active[data-mood="concern"] { border-bottom-color: var(--c-Z); }
+
+.compare-tab-content {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  min-height: 280px;
+}
+.compare-tab-content .tc-col {
+  padding: 20px 22px 24px;
+}
+.compare-tab-content .tc-col[data-side="A"] { background: linear-gradient(180deg, var(--scolor-soft) 0%, transparent 80px); }
+.compare-tab-content .tc-col[data-side="B"] { background: linear-gradient(180deg, var(--scolor-soft) 0%, transparent 80px); }
+.compare-tab-content .tc-divider {
+  background: var(--rule);
+}
+.tc-col .tc-name {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--scolor);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+.tc-col ul { list-style: none; margin: 0; padding: 0; }
+.tc-col li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.tc-col li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--scolor);
+}
+.tc-col.concern li::before { background: var(--c-Z); }
+
+@media (max-width: 720px) {
+  .compare-header { grid-template-columns: 1fr; }
+  .compare-header .ch-divider { display: none; }
+  .compare-header .ch-col[data-side="B"] { text-align: left; border-top: 1px solid var(--rule); }
+  .compare-tab-content { grid-template-columns: 1fr; }
+  .compare-tab-content .tc-divider { display: none; }
+  .compare-tab-content .tc-col + .tc-col { border-top: 1px solid var(--rule); }
+  .metric-bars { padding: 18px 18px 4px; }
+  .compare-tabs button { font-size: 0.7rem; padding: 12px 6px; }
+}
+
+/* ----- buildings ----- */
+.buildings .tabbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 32px;
+  padding: 6px;
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  width: max-content;
+  max-width: 100%;
+}
+.buildings .tab {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.buildings .tab:hover { color: var(--accent); }
+.buildings .tab.active {
+  background: var(--ink);
+  color: var(--bg-alt);
+}
+.building {
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 18px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  position: relative;
+}
+.building.repurposed {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--bg-alt) 0 10px,
+    rgba(181, 77, 45, 0.05) 10px 11px
+  );
+}
+.building.partial { /* known grades, unknown count — full SVG, italic placeholder */ }
+.building.partial .benroll { color: var(--muted); font-size: 0.95rem; font-style: italic; font-weight: 500; letter-spacing: 0; }
+.building.partial .benroll-unspec { font-family: var(--sans); font-size: 0.85rem; }
+
+.schoolhouse {
+  width: 100%;
+  max-width: 180px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.schoolhouse svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.schoolhouse .roof { fill: var(--scolor); }
+.schoolhouse .body { fill: var(--scolor-soft); stroke: var(--scolor); stroke-width: 1.5; }
+.schoolhouse .bell-tower-base { fill: var(--scolor); }
+.schoolhouse .bell-tower-roof { fill: var(--scolor); }
+.schoolhouse .window {
+  fill: var(--bg-alt);
+  stroke: var(--scolor);
+  stroke-width: 1;
+}
+.schoolhouse .window-cross { stroke: var(--scolor); stroke-width: 0.8; }
+.schoolhouse .door { fill: var(--scolor); }
+.schoolhouse .door-knob { fill: var(--bg-alt); }
+.schoolhouse .step { fill: var(--scolor); opacity: 0.5; }
+.schoolhouse .fill-line { stroke: var(--scolor); stroke-width: 1; stroke-dasharray: 2 2; opacity: 0.4; }
+.schoolhouse .grade-band {
+  fill: var(--scolor);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+.building.repurposed .schoolhouse .roof,
+.building.repurposed .schoolhouse .bell-tower-base,
+.building.repurposed .schoolhouse .bell-tower-roof,
+.building.repurposed .schoolhouse .door,
+.building.repurposed .schoolhouse .step { fill: var(--muted-light); }
+.building.repurposed .schoolhouse .body { fill: var(--rule-soft); stroke: var(--muted-light); }
+.building.repurposed .schoolhouse .window { stroke: var(--muted-light); }
+.building.repurposed .schoolhouse .window-cross { stroke: var(--muted-light); }
+
+.schoolhouse .occupancy-rect {
+  fill: var(--scolor);
+  opacity: 0.18;
+}
+
+.building .bname {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 4px;
+  letter-spacing: -0.01em;
+}
+.building .bgrades {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--scolor);
+  background: var(--scolor-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.building.repurposed .bgrades { color: var(--accent); background: var(--accent-soft); font-family: var(--sans); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.7rem; }
+
+.building .benroll {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+  margin-top: 6px;
+  text-align: center;
+}
+.building.repurposed .benroll { font-size: 0; }
+.building .benroll small {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 4px;
+}
+.building .bstatus {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--scolor);
+  padding: 3px 8px;
+  background: var(--scolor-soft);
+  border-radius: 999px;
+  margin-top: 2px;
+}
+.building.repurposed .bstatus { color: var(--accent); background: var(--accent-soft); }
+
+.buildings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.buildings-grid.warning { background: linear-gradient(180deg, transparent 0%, rgba(161, 64, 64, 0.04) 100%); border-radius: var(--radius); padding: 12px; margin: -12px; }
+@media (max-width: 900px) { .buildings-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .buildings-grid { grid-template-columns: 1fr; } .building { padding: 16px; } .schoolhouse { max-width: 140px; height: 170px; } }
+
+.buildings .summary-row {
+  margin-top: 28px;
+  padding: 20px 24px;
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 720px) { .buildings .summary-row { grid-template-columns: 1fr; } }
+.summary-row .item .skey {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.summary-row .item .sval {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.summary-row .item .sval small {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+/* ----- tensions ----- */
+.tensions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (max-width: 720px) { .tensions-grid { grid-template-columns: 1fr; } }
+.tension {
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 22px 22px 20px;
+}
+.tension .tnum {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.tension h3 { margin: 6px 0 8px; }
+.tension .tsummary {
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  margin-bottom: 18px;
+}
+.spectrum {
+  margin: 24px 0 16px;
+  position: relative;
+}
+.spectrum .axis {
+  position: relative;
+  height: 2px;
+  background: var(--rule);
+  margin: 36px 8px 36px;
+}
+.spectrum .poles {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.spectrum .pole-left, .spectrum .pole-right { max-width: 40%; }
+.spectrum .pole-right { text-align: right; }
+.spectrum .dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  border: 2px solid var(--dcolor);
+  color: var(--dcolor);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  z-index: 2;
+}
+.spectrum .dot[data-s="F"] { --dcolor: var(--c-F); }
+.spectrum .dot[data-s="E"] { --dcolor: var(--c-E); }
+.spectrum .dot[data-s="B"] { --dcolor: var(--c-B); }
+.spectrum .dot[data-s="Zero"] { --dcolor: var(--c-Z); }
+.spectrum .dot:hover { background: var(--dcolor); color: white; }
+.spectrum .dot[data-s="Zero"]::after { content: "0"; }
+.tension details {
+  margin-top: 14px;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 14px;
+}
+.tension summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  list-style: none;
+  user-select: none;
+}
+.tension summary::-webkit-details-marker { display: none; }
+.tension summary::after { content: " →"; }
+.tension details[open] summary::after { content: " ↓"; }
+.tension details p { font-size: 0.92rem; color: var(--ink-soft); margin-top: 12px; line-height: 1.55; }
+.tension .positions {
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+.tension .position {
+  font-size: 0.88rem;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+.tension .position .pbadge {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--pcolor-soft);
+  color: var(--pcolor);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.tension .position[data-s="F"]    { --pcolor: var(--c-F); --pcolor-soft: var(--c-F-soft); }
+.tension .position[data-s="E"]    { --pcolor: var(--c-E); --pcolor-soft: var(--c-E-soft); }
+.tension .position[data-s="B"]    { --pcolor: var(--c-B); --pcolor-soft: var(--c-B-soft); }
+.tension .position[data-s="Zero"] { --pcolor: var(--c-Z); --pcolor-soft: var(--c-Z-soft); }
+
+/* ----- timeline ----- */
+.timeline-wrap {
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  scrollbar-color: var(--muted-light) transparent;
+}
+.timeline {
+  display: flex;
+  gap: 0;
+  position: relative;
+  min-width: max-content;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--rule);
+}
+.tlevent {
+  min-width: 200px;
+  max-width: 240px;
+  padding-right: 28px;
+  position: relative;
+  flex-shrink: 0;
+}
+.tlevent.future { padding-right: 0; }
+.tlevent .date {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.tlevent .marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  margin: 22px 0 18px;
+  position: relative;
+  z-index: 2;
+}
+.tlevent.future .marker {
+  background: var(--bg);
+  border: 2px dashed var(--accent);
+  width: 16px;
+  height: 16px;
+}
+.tlevent.summit .marker { background: var(--ink); transform: scale(1.4); margin-left: 4px; }
+.tlevent .label {
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.tlevent .desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.tlevent.future .label { color: var(--accent); }
+
+/* ----- savings chart ----- */
+.savings-chart {
+  margin-top: 32px;
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 28px 28px 24px;
+}
+.savings-chart h4 { margin-bottom: 4px; }
+.savings-chart .csub { font-size: 0.88rem; color: var(--muted); margin-bottom: 24px; }
+.savings-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 130px;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+@media (max-width: 640px) {
+  .savings-row { grid-template-columns: 80px 1fr; }
+  .savings-row .srange { grid-column: 1 / -1; padding-left: 80px; font-size: 0.85rem; }
+}
+.savings-row .sname {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--scolor);
+}
+.savings-row .sname small {
+  font-family: var(--sans);
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.savings-row .strack {
+  position: relative;
+  height: 14px;
+  background: var(--rule-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.savings-row .sbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--scolor);
+  border-radius: 999px;
+  animation: barIn 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  transform-origin: left;
+}
+.savings-row .srange {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: right;
+}
+.savings-row .srange.none { color: var(--c-Z); }
+.savings-axis {
+  display: grid;
+  grid-template-columns: 110px 1fr 130px;
+  gap: 16px;
+  margin-top: 18px;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 10px;
+}
+.savings-axis .axis-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  grid-column: 2;
+}
+@media (max-width: 640px) {
+  .savings-axis { grid-template-columns: 80px 1fr; }
+  .savings-axis .axis-ticks { grid-column: 2; }
+}
+
+/* ----- closing / cta ----- */
+.cta {
+  background: var(--ink);
+  color: var(--bg-alt);
+  border-radius: var(--radius);
+  padding: clamp(32px, 5vw, 56px);
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: center;
+}
+@media (max-width: 720px) { .cta { grid-template-columns: 1fr; } }
+.cta h3 { color: var(--bg-alt); }
+.cta p { color: rgba(255, 252, 246, 0.75); margin: 8px 0 0; max-width: 56ch; }
+.cta .next-date {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--accent-soft);
+  text-align: right;
+}
+.cta .next-date small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 252, 246, 0.5);
+  margin-top: 8px;
+}
+
+/* ----- criteria pills ----- */
+.criteria-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.criteria-list .cpill {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  background: var(--bg-alt);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink-soft);
+}
+.criteria-list .cpill strong { color: var(--accent); font-weight: 600; margin-right: 4px; }
+
+/* ----- footer ----- */
+footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--rule);
+  padding: 40px 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+footer .container { display: grid; gap: 18px; }
+footer .colophon { display: flex; flex-wrap: wrap; gap: 16px 36px; }
+footer strong { color: var(--ink); }
+
+/* ----- skip link ----- */
+.skip {
+  position: absolute;
+  top: -40px;
+  left: 12px;
+  background: var(--ink);
+  color: var(--bg-alt);
+  padding: 8px 14px;
+  z-index: 100;
+  border: 0;
+}
+.skip:focus { top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<div class="sticky-stack">
+<aside class="disclaimer" role="note" aria-label="About this page">
+  <div class="wrap">
+    <p class="msg"><span class="warn" aria-label="Warning">Unofficial</span><strong>My personal experiment</strong> in visualizing the Task Force report, built iteratively with Claude Code to explore different ways of presenting the data. <strong>Not affiliated with or endorsed by the Shorewood School District.</strong> I double-checked most of the numbers, but use at your own risk — for the actual published information, please rely on the official report.</p>
+    <a class="cta" href="https://www.shorewood.k12.wi.us/community/task-force-on-long-term-sustainability" target="_blank" rel="noopener noreferrer">
+      Read the official report <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</aside>
+
+<header class="topnav">
+  <div class="wrap">
+    <a href="#top" class="brand">Shorewood's Choice</a>
+    <nav>
+      <a href="#scoreboard">Scorecard</a>
+      <a href="#compare">Compare</a>
+      <a href="#buildings">Buildings</a>
+      <a href="#tensions">Tensions</a>
+      <a href="#timeline">Process</a>
+    </nav>
+  </div>
+</header>
+</div>
+
+<main id="main">
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="eyebrow">Shorewood School District · A reader's guide</div>
+    <h1 class="serif">Four paths, <em>one decision</em>.</h1>
+    <p class="dek">A ~40-person task force spent five months evaluating how to put the Shorewood School District on long-term financial footing. Their report isn't a final recommendation — it hands the Board a clear-eyed look at the tradeoffs. This is a guide to that work.</p>
+    <div class="meta">
+      <span><strong>Report dated</strong> April 28, 2026</span>
+      <span><strong>Facilitator</strong> Ryan Maxwell, Exceptionally Good</span>
+      <span><strong>District leads</strong> Dr. Laurie Burgos, Heather Heaviland</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INTRO ============== -->
+<section class="intro">
+  <div class="container">
+    <div class="text-col">
+      <p class="lede">Like many Wisconsin districts, Shorewood faces structural budget pressure: constrained state funding, rising operational costs, and declining enrollment. The current operating referendum — $5.5 million per year for five years — expires in 2028, and the report concludes the status quo is not a viable long-term path. The Board now has to choose between three leading reconfiguration scenarios (selected from seven originally evaluated) and the costlier alternative of standing still.</p>
+
+      <p>The task force's job wasn't to pick. It was to bring approximately 40 parents, educators, staff, and residents through a structured evaluation — a seven-criterion rubric, student focus groups, scenario rankings, and a 4½-hour scoring summit — and to lay the math and the human costs side by side.</p>
+
+      <div class="pull">"This report summarizes the work of that process to date. It is not a final recommendation. The Task Force recognizes that final decisions regarding District configuration, financial sustainability strategies, and implementation rest with the Board."</div>
+
+      <p>What follows is an interactive walk through the four scenarios on the Board's desk: a scorecard, a side-by-side comparison tool, a building-by-building view, the four central tensions the task force surfaced, and the timeline of the work itself.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BIG STATS ============== -->
+<section class="stats">
+  <div class="container">
+    <div class="grid">
+      <div class="stat">
+        <div class="num">~40</div>
+        <div class="label">Task force participants: parents, educators, staff, residents</div>
+      </div>
+      <div class="stat">
+        <div class="num">$5.5M<small>/yr</small></div>
+        <div class="label">Current operating referendum (5-year, expires 2028)</div>
+      </div>
+      <div class="stat">
+        <div class="num">7</div>
+        <div class="label">Criteria scenarios were scored against, from quality to equity to finance</div>
+      </div>
+      <div class="stat">
+        <div class="num">4</div>
+        <div class="label">Scenarios remaining for the Board's deliberation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SCOREBOARD ============== -->
+<section class="scoreboard" id="scoreboard">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">The scoreboard</div>
+      <h2>Four scenarios, scored.</h2>
+      <p class="dek">At the March 14 Scenario Evaluation Summit, the task force scored all seven candidate scenarios against a seven-criterion rubric (scale of 1–4, where 4 is highest). The three leading configurations and Status Quo are shown here. The combined score is derived by multiplying the financial score by the non-financial score, reflecting the Board's charge: <em>financial sustainability while maintaining academic excellence</em>.</p>
+      <div class="criteria-list" aria-label="Seven evaluation criteria">
+        <span class="cpill"><strong>1.</strong>Strong Educational Quality</span>
+        <span class="cpill"><strong>2.</strong>Positive Student Experience</span>
+        <span class="cpill"><strong>3.</strong>Equity and Access</span>
+        <span class="cpill"><strong>4.</strong>Community Identity and Stability</span>
+        <span class="cpill"><strong>5.</strong>Responsible Alignment with Enrollment Trends</span>
+        <span class="cpill"><strong>6.</strong>Strategic Coherence</span>
+        <span class="cpill"><strong>7.</strong>Long-Term Financial Sustainability</span>
+      </div>
+    </div>
+
+    <div class="cards" id="score-cards"></div>
+
+    <div class="savings-chart" aria-label="Annual savings range by scenario">
+      <h4 class="serif">Projected annual savings</h4>
+      <p class="csub">Recurring savings relative to the current operating model. None of the scenarios eliminate the need for an operating referendum.</p>
+      <div id="savings-rows"></div>
+      <div class="savings-axis" aria-hidden="true">
+        <div class="axis-ticks">
+          <span>$0</span><span>$1M</span><span>$2M</span><span>$3M</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ============== COMPARE ============== -->
+<section class="compare" id="compare">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Side by side</div>
+      <h2>Compare any two scenarios.</h2>
+      <p class="dek">Pick two scenarios to see their numbers, strengths, and concerns line up. Bullet points are drawn verbatim from the task force's structured assessment on March 23, 2026 (Appendix B of the report).</p>
+    </div>
+
+    <div class="picker">
+      <div class="picker-col" data-scenario="F">
+        <label for="pickerA">Scenario A</label>
+        <div class="chips" id="pickerA" role="radiogroup" aria-label="Choose first scenario"></div>
+      </div>
+      <div class="picker-col" data-scenario="E">
+        <label for="pickerB">Scenario B</label>
+        <div class="chips" id="pickerB" role="radiogroup" aria-label="Choose second scenario"></div>
+      </div>
+    </div>
+
+    <div class="compare-panel">
+      <div class="compare-header" id="compareHeader"></div>
+      <div class="metric-bars" id="compareMetrics"></div>
+      <div class="compare-tabs" id="compareTabs" role="tablist"></div>
+      <div class="compare-tab-content" id="compareTabContent"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ============== BUILDINGS ============== -->
+<section class="buildings" id="buildings">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">The buildings</div>
+      <h2>Who goes where, building by building.</h2>
+      <p class="dek">Shorewood operates four school buildings: Lake Bluff, Atwater, Shorewood Intermediate School (SIS), and Shorewood High School (SHS). Each scenario assigns grade bands and enrollment differently — and some buildings change purpose entirely.</p>
+    </div>
+
+    <div class="tabbar" id="building-tabs" role="tablist"></div>
+
+    <div class="buildings-grid" id="building-grid"></div>
+
+    <div class="summary-row" id="building-summary"></div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ============== TENSIONS ============== -->
+<section class="tensions" id="tensions">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Four central tensions</div>
+      <h2>The hard tradeoffs.</h2>
+      <p class="dek">The task force's deliberations surfaced four persistent tensions. These aren't disagreements to be resolved by majority vote — they're value-laden choices the Board must weigh. Each dot below marks where a scenario lands on that axis.</p>
+    </div>
+
+    <div class="tensions-grid" id="tensions-grid"></div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ============== TIMELINE ============== -->
+<section id="timeline">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">The process</div>
+      <h2>How they got here.</h2>
+      <p class="dek">Nine sessions across five months, anchored by a structured evaluation summit in March and a final review in late April. The next community information session is scheduled for May 18, 2026.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="timeline-wrap">
+      <div class="timeline" id="timeline-row"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section id="next">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <div class="eyebrow" style="color: var(--accent-soft);">Community session</div>
+        <h3 class="serif">May 18, 2026.</h3>
+        <p>The District scheduled another Community Information Session about this work. The Board's deliberation continues afterward; this report is intended as input, not the final word.</p>
+      </div>
+      <div class="next-date">May 18<small>2026 · Community Session</small></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="colophon">
+      <span><strong>Source:</strong> Task Force on Long-Term Financial Sustainability — Report to the Board of Education, April 28, 2026.</span>
+      <span><strong>Authors:</strong> Ryan Maxwell · Dr. Laurie Burgos · Heather Heaviland</span>
+    </div>
+    <div>This page is an unofficial, personal experiment in visualizing the report's content. It is not affiliated with or endorsed by the Shorewood School District. It reproduces the report's data and language as faithfully as possible; where the source does not specify a value (e.g., per-building enrollment for Scenario E beyond SHS), it is marked as unspecified rather than estimated.</div>
+    <div><strong>Read the authoritative report and all original materials at</strong> <a href="https://www.shorewood.k12.wi.us/community/task-force-on-long-term-sustainability" target="_blank" rel="noopener noreferrer">shorewood.k12.wi.us/community/task-force-on-long-term-sustainability →</a></div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+// DATA — drawn verbatim or paraphrased minimally from the report
+// ============================================================
+const scenarios = {
+  F: {
+    id: "F",
+    name: "Scenario F",
+    tagline: "Big Middle / Big High",
+    config: "K4–4  |  5–8  |  9–12  +  Expanded OE",
+    badge: "Highest combined score",
+    leading: true,
+    notViable: false,
+    totalEnrollment: 1904,
+    nonFinancial: 19.5,
+    financial: 3.07,
+    combined: 59.8,
+    savingsMin: 1.5,
+    savingsMax: 2.0,
+    savingsLabel: "Medium (Low End)",
+    oeSeats: 306,
+    oePct: 16,
+    oeNote: "OE expansion starting at grade 5",
+    ratio: 9.2,
+    buildings: [
+      { id: "lb",  name: "Lake Bluff", grades: "K4–4", enrollment: 643, status: "Full", state: "full" },
+      { id: "at",  name: "Atwater",    grades: "5–8",  enrollment: 588, status: "Full", state: "full" },
+      { id: "sis", name: "SIS",        grades: "Recreation / community use", enrollment: null, status: "Repurposed", state: "repurposed" },
+      { id: "shs", name: "SHS",        grades: "9–12", enrollment: 673, status: "Full", state: "full" }
+    ],
+    strengths: [
+      "Highest combined evaluation score across all seven criteria (59.8)",
+      "Maintains a dedicated middle school experience (Grades 5–8)",
+      "All three buildings fully and efficiently utilized",
+      "Larger high school offers greater breadth of high school course offerings",
+      "Cohort continuity: grade levels remain together within each building transition",
+      "More uniform class sizes across elementary grades",
+      "Fitness Center and Recreation Department can relocate to SIS, creating a community asset",
+      "Higher enrollment provides staffing stability",
+      "More opportunities for staff collaboration",
+      "Less administrative overhead — consolidation"
+    ],
+    concerns: [
+      "Walkability is reduced for families who live further from the center of Shorewood",
+      "Some elective offerings in Grades 4–5 may change",
+      "Atwater building capacity may be stretched",
+      "Requires review of elective offerings and course sequencing at SHS",
+      "OE beginning at Grade 5 may be a challenging entry point for students and require additional marketing efforts to reach enrollment goal"
+    ],
+    challenges: [
+      "Walkability and change to community identity",
+      "OE students starting at grade 5",
+      "Physical space: gym, lab, and music spaces may need to be retrofitted at Atwater"
+    ],
+    solutions: [
+      "Create staggered start/end times and structured walk-route protocols for younger students",
+      "Invest in early PD and staff leadership development across all buildings",
+      "Establish clear OE enrollment criteria and expectations for families from the outset",
+      "Develop a strategy for student community-building between campuses",
+      "Use SIS building space for community use, childcare, and recreation programming",
+      "Engage Village government early on traffic, pedestrian infrastructure, and crossing guard coverage"
+    ]
+  },
+  E: {
+    id: "E",
+    name: "Scenario E",
+    tagline: "Big Middle / Small High",
+    config: "K4–4  |  5–8  |  9–12  ·  Minimal OE",
+    badge: "Lowest staff ratio",
+    leading: true,
+    notViable: false,
+    totalEnrollment: 1636,
+    nonFinancial: 16.83,
+    financial: 3.13,
+    combined: 52.7,
+    savingsMin: 1.5,
+    savingsMax: 2.0,
+    savingsLabel: "Medium (Low End)",
+    oeSeats: null,
+    oePct: null,
+    oeNote: "Minimal OE — current levels reduced",
+    ratio: 8.9,
+    buildings: [
+      { id: "lb",  name: "Lake Bluff", grades: "K4–4", enrollment: null, status: "Unspecified", state: "partial" },
+      { id: "at",  name: "Atwater",    grades: "5–8",  enrollment: null, status: "Not fully occupied", state: "partial" },
+      { id: "sis", name: "SIS",        grades: "Use not specified", enrollment: null, status: "Unspecified", state: "repurposed" },
+      { id: "shs", name: "SHS",        grades: "9–12", enrollment: 509, status: "Smaller HS", state: "full" }
+    ],
+    strengths: [
+      "Second-highest combined evaluation score (52.7); lowest student-to-staff ratio (8.9)",
+      "Maintains a dedicated middle school experience (Grades 5–8)",
+      "Cohort/grade-level continuity: all students in the same grade share one building",
+      "Equitable class sizes across elementary grades at Lake Bluff",
+      "Increased teacher collaboration within grade bands",
+      "More robust and developmentally coherent middle school experience",
+      "Staff can specialize in grade-band curriculum; reduced cross-building travel",
+      "SIS building freed for community use and expanded recreation programming",
+      "Smaller referendum ask compared to Status Quo",
+      "Students may feel a stronger sense of belonging at the grade-band level",
+      "Less administrative overhead — consolidation reduces leadership duplication"
+    ],
+    concerns: [
+      "Smaller high school (~509 students) limits course offerings and elective breadth",
+      "Minimal OE means HS building remains underutilized",
+      "Reduced OE changes school demographics; fewer new community connections",
+      "Walkability is reduced for families further from the center of Shorewood",
+      "Complex drop-off/pick-up logistics across three campuses",
+      "Some building under-utilization at Atwater",
+      "Elective offerings at SHS may need to be reduced or sequenced more tightly",
+      "Staff reductions required, but may be addressed through attrition",
+      "OE students who have been in the district long-term face uncertainty about their pathway"
+    ],
+    challenges: [
+      "Reduction in course offerings — particularly at SHS — is the central challenge; requires deliberate scheduling solutions or fewer course options for students",
+      "OE students currently enrolled need clear, respectful communication about their pathway"
+    ],
+    solutions: [
+      "Partner with UWM or other institutions for elective access (online or in-person) at SHS",
+      "Use SIS spaces for recreation programming — makerspaces, after-school programming, and enrichment",
+      "Consider offering early retirement incentives to manage FTE reductions",
+      "Launch separate working groups to redesign K–4 at Lake Bluff and 5–8 at Atwater, then align",
+      "Stagger start times across buildings; develop walking-school-bus routes and crossing guard coverage",
+      "Develop a community plan for the SIS building: Milestones, Rec Department, or other Village use",
+      "Vary course offerings and scheduling at SHS to accommodate electives for all grade levels"
+    ]
+  },
+  B: {
+    id: "B",
+    name: "Scenario B",
+    tagline: "Two Feed Into One",
+    config: "K4–6  |  K4–6  |  7–12  ·  Minimal OE ending grade 9",
+    badge: "Highest financial score",
+    leading: true,
+    notViable: false,
+    totalEnrollment: 1636,
+    nonFinancial: 14.2,
+    financial: 3.43,
+    combined: 48.8,
+    savingsMin: 1.75,
+    savingsMax: 2.5,
+    savingsLabel: "Medium",
+    oeSeats: 39,
+    oePct: 2,
+    oeNote: "Limited OE, ending at grade 9",
+    ratio: 9.1,
+    buildings: [
+      { id: "lb",  name: "Lake Bluff", grades: "K4–6  ·  3 sections / grade", enrollment: 524, status: "Full", state: "full" },
+      { id: "at",  name: "Atwater",    grades: "K4–6  ·  2 sections / grade", enrollment: 359, status: "Partial", state: "partial" },
+      { id: "sis", name: "SIS",        grades: "Recreation + possible 2nd floor classrooms", enrollment: null, status: "Repurposed", state: "repurposed" },
+      { id: "shs", name: "SHS",        grades: "7–12", enrollment: 753, status: "Near capacity (~95%)", state: "full" }
+    ],
+    strengths: [
+      "Highest financial sustainability score of all leading models (3.43 / 4.0)",
+      "Maintains walkability as is for neighborhood elementary campuses",
+      "Fewer building transitions for students overall (one transition vs. two currently)",
+      "Middle school students have potential access to high school academic facilities, labs, and courses",
+      "Peer mentorship opportunities across grade levels within one campus",
+      "Financial: aligns with current facilities referendum obligations; cost savings are significant",
+      "Rec Department and Fitness Center relocation to SIS creates community benefit",
+      "Consistent elementary structure; staff and families familiar with K–6 configurations",
+      "Less administrative overhead — consolidation reduces leadership duplication"
+    ],
+    concerns: [
+      "7th graders sharing a building, hallways, and campus with older high school students",
+      "Middle school identity not immediately distinct",
+      "High school reaches near-capacity (95%), creating space and logistics pressures",
+      "Attendance boundaries for elementary become less defined",
+      "Unequal class sections between Lake Bluff (3) and Atwater (2) create staffing challenges",
+      "Need for a lunch facility for 7th and 8th graders at SHS (open campus is 9–12 only)",
+      "Teacher licensure implications: middle school teachers may not be certified to teach high school courses",
+      "Elementary split between Atwater and Lake Bluff continues to create planning and collaboration challenges"
+    ],
+    challenges: [
+      "Middle school students interacting with high school students holds concerns for some",
+      "Removing boundary distinctions between Atwater and Lake Bluff elementary zones may produce community conflict",
+      "Likely disruption for current OE families who enrolled with the expectation of a K–12 pathway",
+      "Retrofitting SHS to house a cafeteria",
+      "Teacher licensure may require changing staffing assignments across buildings"
+    ],
+    solutions: [
+      "Configure a physically and operationally distinct 7–8 wing or zone at SHS — separate schedules, entrances, lunch, and social spaces (may require significant capital investment)",
+      "Open campus privileges restricted to Grades 9–12 only; dedicated lunch periods for Grades 7–8",
+      "Design peer mentorship programming to be intentional and age-appropriate, not incidental proximity",
+      "Develop a clear, transparent plan for affected OE families with ample lead time",
+      "Engage staff early in redesigning the 7–8 experience within the high school context"
+    ]
+  },
+  Zero: {
+    id: "Zero",
+    name: "Scenario Zero",
+    tagline: "Status Quo",
+    config: "K4–6  |  K4–6  |  7–8  |  9–12",
+    badge: "Not viable long-term",
+    leading: false,
+    notViable: true,
+    totalEnrollment: 1906,
+    nonFinancial: 17.2,
+    financial: 1.4,
+    combined: 24.1,
+    savingsMin: 0,
+    savingsMax: 0,
+    savingsLabel: "No structural savings",
+    oeSeats: 220,
+    oePct: 12,
+    oeNote: "Current OE levels retained",
+    ratio: 9.4,
+    buildings: [
+      { id: "lb",  name: "Lake Bluff", grades: "K4–6", enrollment: 546, status: "Full", state: "full" },
+      { id: "at",  name: "Atwater",    grades: "K4–6", enrollment: 469, status: "Full", state: "full" },
+      { id: "sis", name: "SIS",        grades: "7–8",  enrollment: 291, status: "Full", state: "full" },
+      { id: "shs", name: "SHS",        grades: "9–12", enrollment: 600, status: "Full", state: "full" }
+    ],
+    strengths: [
+      "Preserves all current school configurations and identities",
+      "Maintains walkability to neighborhood elementary schools",
+      "Maintains the standalone middle school experience at SIS",
+      "Teacher buy-in and continuity; least disruptive for staff and students",
+      "Open Enrollment continues from K through Grade 12 within current parameters",
+      "Strong academic track record in the current structure",
+      "Least transition complexity for families"
+    ],
+    concerns: [
+      "Generates no structural financial savings — does not address the district's core fiscal challenge",
+      "Requires a significantly larger and more frequent operating referendum",
+      "Operating costs for four buildings are not sustainable",
+      "Class-size split between Atwater and Lake Bluff continues; unequal sections create planning burdens",
+      "SIS is in a state of perpetual transition for students",
+      "High school course offerings will likely need to be reduced as enrollment declines",
+      "If the referendum fails, the district faces deeper cuts with no structural safety net",
+      "Retaining the current four-school model without taking action could be perceived as postponing difficult long-term decisions"
+    ],
+    challenges: [
+      "The core implementation challenge is not logistical — it is financial and strategic",
+      "A larger referendum will be required, and if it fails, the consequences are more severe than any reconfiguration",
+      "Community trust may erode if the perception grows that the Task Force process produced no action",
+      "Program cuts at SHS will likely be necessary even with a successful referendum",
+      "Non-parent taxpayers bear disproportionate cost of a large referendum with no structural efficiency gains"
+    ],
+    solutions: [
+      "If the Board retains the Status Quo, it would be advisable to accompany that decision with a fully transparent financial roadmap",
+      "A robust community education campaign on the true cost implications — per-household tax impact — is essential",
+      "Clear communication regarding program reductions will need to occur regardless of configuration",
+      "Consider a phased approach: commit to a timeline for future reconfiguration if referendum revenues fall short",
+      "Engage Village and non-parent stakeholders directly in the referendum conversation"
+    ]
+  }
+};
+
+const order = ["F", "E", "B", "Zero"];
+
+const tensions = [
+  {
+    num: "Tension 01",
+    title: "Expand or limit Open Enrollment?",
+    summary: "OE shapes revenue, costs, building utilization, student diversity, and the size of the high school's course catalog. The task force did not resolve this — Scenario F leans into OE; Scenarios E and B pull back; Zero retains current levels.",
+    poles: ["Limit OE", "Expand OE"],
+    positions: [
+      { s: "Zero", pos: 60, label: "Current ~220 OE seats / 12%" },
+      { s: "E", pos: 6, label: "Minimal OE" },
+      { s: "B", pos: 22, label: "39 seats / 2%, ending grade 9" },
+      { s: "F", pos: 92, label: "306 seats / 16%, starting grade 5" }
+    ],
+    detail: "Proponents of OE expansion argue it fills underutilized buildings, preserves course offerings, stabilizes staffing, and brings in revenue and diversity. Critics note the District cannot control OE demand, per-pupil OE revenue is less than resident revenue, and some task force members raised concerns about starting OE at grade 5. The Board may wish to seek direct community input before deciding."
+  },
+  {
+    num: "Tension 02",
+    title: "What kind of middle school experience?",
+    summary: "Student focus groups expressed a clear preference for a distinct middle school. Scenarios E and F honor that with a 5–8 building. Scenario B folds 7–8 into the high school for financial gain. Zero keeps the current 2-year SIS middle school.",
+    poles: ["Embedded in 7–12", "Distinct middle school"],
+    positions: [
+      { s: "B", pos: 6, label: "7–12 at SHS" },
+      { s: "Zero", pos: 50, label: "Standalone 7–8 at SIS (2-year)" },
+      { s: "E", pos: 86, label: "Dedicated 5–8 at Atwater" },
+      { s: "F", pos: 96, label: "Dedicated 5–8 at Atwater" }
+    ],
+    detail: "The task force broadly affirmed the value of a distinct middle school experience — developmental appropriateness, curriculum alignment, staff collaboration. Some saw merit in B's 7–12 model: fewer transitions, peer mentorship, access to high school facilities. Concerns center on placing 7th graders alongside 12th graders. The task force's deliberation leaned in support of a 5–8 configuration, but Scenario B remains on the table for its financial advantages."
+  },
+  {
+    num: "Tension 03",
+    title: "Walkability and neighborhood schools.",
+    summary: "Shorewood's identity is tied to walkable neighborhood elementaries. Scenarios E and F consolidate K–4 at Lake Bluff and 5–8 at Atwater — reducing walkability for families farther from the center. Scenarios B and Zero retain two elementary campuses.",
+    poles: ["Consolidated campuses", "Walkable neighborhood schools"],
+    positions: [
+      { s: "F", pos: 18, label: "Single K–4 at Lake Bluff" },
+      { s: "E", pos: 6, label: "Single K–4 at Lake Bluff" },
+      { s: "B", pos: 70, label: "Two elementaries; assignment changes" },
+      { s: "Zero", pos: 95, label: "Current attendance areas preserved" }
+    ],
+    detail: "The current two-elementary structure creates awkward class-size splits, uneven resource allocation, and inefficient use of building capacity. Consolidating K–4 at Lake Bluff addresses these but adds walking distance for families on the edges. The task force notes this tension may be addressed by walking pathways, adjusted start times, drop-off logistics, and pedestrian infrastructure — but the Board should weigh walkability alongside educational, operational, and financial factors."
+  },
+  {
+    num: "Tension 04",
+    title: "Referendum magnitude and programmatic implications.",
+    summary: "None of the scenarios eliminate the need for continued operating referendum support; they only impact the size relative to the current $5.5M/year for five years. The Board must assess community appetite for a larger or sustained referendum, and whether it should be paired with program reductions or staffing adjustments.",
+    poles: ["Smaller referendum", "Larger referendum"],
+    positions: [
+      { s: "B", pos: 20, label: "Closest to current $5.5M" },
+      { s: "F", pos: 38, label: "Slightly less savings long-term due to OE staffing" },
+      { s: "E", pos: 48, label: "Larger than current required" },
+      { s: "Zero", pos: 92, label: "Significantly larger; perceived as untenable" }
+    ],
+    detail: "The current $5.5M operating referendum expires in 2028. Task force members identified future referendum funding as the single most important question to put before the broader community, and helped craft questions for the April 2026 School Perceptions survey. The Board will need to assess the community's appetite for a larger or sustained referendum, and whether that should be paired with program reductions or staff adjustments."
+  }
+];
+
+const timeline = [
+  { date: "Dec 8, 2025",  label: "Community Information Session", desc: "Introduced the task force's charge; gathered community input on values and priorities." },
+  { date: "Jan 12, 2026", label: "Task Force Meeting #1", desc: "Built shared knowledge on financial situation and strategic context; established working agreements." },
+  { date: "Jan 26, 2026", label: "Task Force Meeting #2", desc: "Initial scenario analysis using a structured gallery walk; additional scenarios requested." },
+  { date: "Feb 23, 2026", label: "Task Force Meeting #3", desc: "Reviewed results of student focus groups; expanded scenarios (E and F); Q&A across finance, student experience, and process; captured \"What if…?\" ideas; subcommittee volunteers identified." },
+  { date: "Mar 2, 2026",  label: "Community Update and Input Session", desc: "Broader community briefing on Task Force progress; input gathered on emerging questions and scenario variables." },
+  { date: "Mar 14, 2026", label: "Scenario Evaluation Summit", desc: "Full Task Force evaluated all scenarios against the seven-criterion rubric (4.5 hours); scores recorded and tallied; top scenarios identified for further refinement.", summit: true },
+  { date: "Mar 23, 2026", label: "Task Force Meeting #4", desc: "Structured analysis of leading scenarios (B, E, F, and Zero) — pluses, minuses, implementation challenges, and solutions for each." },
+  { date: "Apr 13, 2026", label: "Task Force Meeting #5", desc: "Review of cost containment measures." },
+  { date: "Apr 27, 2026", label: "Task Force Meeting #6", desc: "Review of this report; final discussion and assessment." },
+  { date: "May 18, 2026", label: "Community Information Session", desc: "Scheduled public session about the Task Force's work." }
+];
+
+// ============================================================
+// RENDER — scoreboard
+// ============================================================
+function renderScorecards() {
+  const root = document.getElementById("score-cards");
+  const maxCombined = 70;   // 4.0 × 17.5 generous ceiling
+  const maxNonFin = 28;     // 7 criteria × 4
+  const maxFin = 4;
+  root.innerHTML = order.map(id => {
+    const s = scenarios[id];
+    const pct = Math.min(100, (s.combined / maxCombined) * 100);
+    const pctNF = (s.nonFinancial / maxNonFin) * 100;
+    const pctF  = (s.financial   / maxFin)    * 100;
+    const cls = s.notViable ? "scard warning" : "scard leading";
+    const oe = (s.oeSeats != null && s.oePct != null) ? `${s.oeSeats} <small>/ ${s.oePct}%</small>` : "Minimal";
+    return `
+      <article class="${cls}" data-scenario="${id}">
+        <span class="tag">${s.badge}</span>
+        <div>
+          <div class="stitle">${s.name}</div>
+          <div class="stagline">${s.tagline}</div>
+        </div>
+        <div>
+          <div class="scombined">${s.combined.toFixed(1)}</div>
+          <div class="scombined-label">Combined score</div>
+          <div class="bar" aria-hidden="true"><span style="width: ${pct}%"></span></div>
+          <div class="formula">non-fin × financial = combined</div>
+        </div>
+        <div class="subscore-block">
+          <div class="subscore">
+            <div class="sslabel">Non-fin</div>
+            <div class="sstrack"><span style="width: ${pctNF}%"></span></div>
+            <div class="ssval">${s.nonFinancial}</div>
+          </div>
+          <div class="subscore">
+            <div class="sslabel">Financial</div>
+            <div class="sstrack"><span style="width: ${pctF}%"></span></div>
+            <div class="ssval">${s.financial.toFixed(2)}</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="mlabel">Annual savings</div>
+            <div class="mval">${s.savingsMax > 0 ? '$' + s.savingsMin + '–$' + s.savingsMax + 'M' : '—'}</div>
+          </div>
+          <div class="metric">
+            <div class="mlabel">Enrollment</div>
+            <div class="mval">${s.totalEnrollment.toLocaleString()}</div>
+          </div>
+          <div class="metric">
+            <div class="mlabel">OE seats</div>
+            <div class="mval">${oe}</div>
+          </div>
+          <div class="metric">
+            <div class="mlabel">Student / staff</div>
+            <div class="mval">${s.ratio}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderSavingsChart() {
+  const root = document.getElementById("savings-rows");
+  const MAX = 3; // $3M ceiling
+  root.innerHTML = order.map(id => {
+    const s = scenarios[id];
+    const left = (s.savingsMin / MAX) * 100;
+    const width = ((s.savingsMax - s.savingsMin) / MAX) * 100;
+    const rangeText = s.savingsMax > 0
+      ? `$${s.savingsMin}M – $${s.savingsMax}M`
+      : "No savings";
+    const rangeCls = s.savingsMax > 0 ? "srange" : "srange none";
+    return `
+      <div class="savings-row" data-scenario="${id}">
+        <div class="sname">${s.name}<small>${s.tagline}</small></div>
+        <div class="strack">
+          ${s.savingsMax > 0 ? `<div class="sbar" style="left:${left}%; width:${Math.max(width, 2)}%"></div>` : ''}
+        </div>
+        <div class="${rangeCls}">${rangeText}</div>
+      </div>
+    `;
+  }).join("");
+}
+
+// ============================================================
+// RENDER — compare picker (unified panel with metric bars + tabs)
+// ============================================================
+let pickedA = "F", pickedB = "B";
+let activeTab = "strengths";
+
+const tabs = [
+  { key: "strengths",  label: "Strengths",   mood: "good"    },
+  { key: "concerns",   label: "Concerns",    mood: "concern" },
+  { key: "challenges", label: "Challenges",  mood: "concern" },
+  { key: "solutions",  label: "Solutions",   mood: "good"    }
+];
+
+const compareMetrics = [
+  { key: "combined",        label: "Combined score",      max: 70,   fmt: (v, s) => v.toFixed(1) },
+  { key: "nonFinancial",    label: "Non-financial score", max: 28,   fmt: (v, s) => v.toFixed(2) + " / 28" },
+  { key: "financial",       label: "Financial score",     max: 4,    fmt: (v, s) => v.toFixed(2) + " / 4" },
+  { key: "savings",         label: "Annual savings",      max: 3,    fmt: (v, s) => s.savingsMax === 0 ? "None" : "$" + s.savingsMin + "–$" + s.savingsMax + "M" },
+  { key: "totalEnrollment", label: "Total enrollment",    max: 2000, fmt: (v, s) => v.toLocaleString() },
+  { key: "oePct",           label: "Open enrollment",     max: 20,   fmt: (v, s) => s.oeSeats != null ? s.oeSeats + " (" + s.oePct + "%)" : "Minimal" }
+];
+
+function metricValue(s, key) {
+  if (key === "savings") return s.savingsMax; // bar shows the high end of the range
+  if (key === "oePct") return s.oePct != null ? s.oePct : 0;
+  return s[key];
+}
+
+function renderCompare() {
+  const pa = scenarios[pickedA];
+  const pb = scenarios[pickedB];
+
+  // picker color sync
+  document.querySelectorAll('.picker-col')[0].setAttribute('data-scenario', pickedA);
+  document.querySelectorAll('.picker-col')[1].setAttribute('data-scenario', pickedB);
+
+  // header
+  document.getElementById("compareHeader").innerHTML = `
+    <div class="ch-col" data-side="A" data-scenario="${pickedA}">
+      <div class="ch-tagline">${pa.tagline}</div>
+      <div class="ch-name">${pa.name}</div>
+      <div class="ch-config">${pa.config}</div>
+    </div>
+    <div class="ch-divider"></div>
+    <div class="ch-col" data-side="B" data-scenario="${pickedB}">
+      <div class="ch-tagline">${pb.tagline}</div>
+      <div class="ch-name">${pb.name}</div>
+      <div class="ch-config">${pb.config}</div>
+    </div>
+  `;
+
+  // metric bars
+  const metricsHTML = compareMetrics.map(m => {
+    const vA = metricValue(pa, m.key);
+    const vB = metricValue(pb, m.key);
+    const pctA = Math.min(100, (vA / m.max) * 100);
+    const pctB = Math.min(100, (vB / m.max) * 100);
+    const dispA = m.fmt(vA, pa);
+    const dispB = m.fmt(vB, pb);
+    return `
+      <div class="metric-bar-row">
+        <div class="mb-label">${m.label}</div>
+        <div class="mb-side" data-side="A" style="--mbcolor: var(--c-${pickedA === 'Zero' ? 'Z' : pickedA});">
+          <div class="mb-value">${dispA}</div>
+          <div class="mb-track"><div class="mb-fill" style="width: ${pctA}%"></div></div>
+        </div>
+        <div class="mb-divider"></div>
+        <div class="mb-side" data-side="B" style="--mbcolor: var(--c-${pickedB === 'Zero' ? 'Z' : pickedB});">
+          <div class="mb-track"><div class="mb-fill" style="width: ${pctB}%"></div></div>
+          <div class="mb-value">${dispB}</div>
+        </div>
+      </div>
+    `;
+  }).join("");
+  document.getElementById("compareMetrics").innerHTML = metricsHTML;
+
+  // tabs
+  document.getElementById("compareTabs").innerHTML = tabs.map(t => `
+    <button class="${t.key === activeTab ? 'active' : ''}" data-tab="${t.key}" data-mood="${t.mood}" role="tab">${t.label}</button>
+  `).join("");
+
+  // tab content
+  const list = key => arr => `<ul>${arr.map(x => `<li>${x}</li>`).join("")}</ul>`;
+  const itemsA = pa[activeTab] || [];
+  const itemsB = pb[activeTab] || [];
+  const concernCls = (activeTab === "concerns" || activeTab === "challenges") ? "concern" : "";
+  document.getElementById("compareTabContent").innerHTML = `
+    <div class="tc-col ${concernCls}" data-side="A" data-scenario="${pickedA}">
+      <div class="tc-name">${pa.name}</div>
+      ${list()(itemsA)}
+    </div>
+    <div class="tc-divider"></div>
+    <div class="tc-col ${concernCls}" data-side="B" data-scenario="${pickedB}">
+      <div class="tc-name">${pb.name}</div>
+      ${list()(itemsB)}
+    </div>
+  `;
+
+  refreshChips();
+}
+
+function attachCompareTabs() {
+  document.getElementById("compareTabs").addEventListener("click", e => {
+    const btn = e.target.closest("button[data-tab]");
+    if (!btn) return;
+    activeTab = btn.dataset.tab;
+    renderCompare();
+  });
+}
+
+function buildChips() {
+  ["pickerA", "pickerB"].forEach((id, idx) => {
+    const root = document.getElementById(id);
+    root.innerHTML = order.map(sid => {
+      const s = scenarios[sid];
+      return `<button class="chip" role="radio" data-target="${id}" data-id="${sid}">${s.name}</button>`;
+    }).join("");
+    root.addEventListener("click", e => {
+      const btn = e.target.closest(".chip");
+      if (!btn) return;
+      const sid = btn.dataset.id;
+      if (id === "pickerA") pickedA = sid; else pickedB = sid;
+      renderCompare();
+    });
+  });
+  refreshChips();
+}
+
+function refreshChips() {
+  document.querySelectorAll("#pickerA .chip").forEach(c => {
+    c.classList.toggle("active", c.dataset.id === pickedA);
+    c.parentElement.parentElement.setAttribute('data-scenario', pickedA);
+  });
+  document.querySelectorAll("#pickerB .chip").forEach(c => {
+    c.classList.toggle("active", c.dataset.id === pickedB);
+    c.parentElement.parentElement.setAttribute('data-scenario', pickedB);
+  });
+}
+
+// ============================================================
+// RENDER — buildings
+// ============================================================
+let activeBuilding = "F";
+function buildBuildingTabs() {
+  const tabbar = document.getElementById("building-tabs");
+  tabbar.innerHTML = order.map(id => {
+    const s = scenarios[id];
+    return `<button class="tab" role="tab" data-id="${id}">${s.name} · ${s.tagline}</button>`;
+  }).join("");
+  tabbar.addEventListener("click", e => {
+    const btn = e.target.closest(".tab");
+    if (!btn) return;
+    activeBuilding = btn.dataset.id;
+    renderBuildings();
+  });
+}
+
+// Building capacity assumptions for occupancy fill (relative scale only)
+const BUILDING_CAPACITY = { lb: 720, at: 700, sis: 500, shs: 800 };
+
+function schoolhouseSVG(b, scenarioId, isRepurposed, isUnspecified) {
+  // Base SVG viewBox 100 wide × 130 tall
+  // Occupancy: fill from bottom up based on enrollment / capacity
+  const cap = BUILDING_CAPACITY[b.id] || 700;
+  const occRatio = (b.enrollment != null && !isRepurposed && !isUnspecified)
+    ? Math.min(1, b.enrollment / cap) : 0;
+  // body sits from y=42 to y=118 (height 76). Fill rises from bottom.
+  const bodyTop = 42, bodyBottom = 118, bodyH = bodyBottom - bodyTop;
+  const fillH = bodyH * occRatio;
+  const fillY = bodyBottom - fillH;
+
+  // Grade label inside body
+  const gradeText = isRepurposed ? "" : (isUnspecified ? "?" : (b.grades.replace(/&ndash;|–/g, "–").split(/\s+·/)[0]));
+
+  return `
+    <svg viewBox="0 0 100 140" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <!-- Bell tower -->
+      <rect class="bell-tower-base" x="46" y="14" width="8" height="10" rx="0.5"/>
+      <polygon class="bell-tower-roof" points="44,14 56,14 50,4"/>
+      <!-- Roof -->
+      <polygon class="roof" points="6,42 94,42 50,16"/>
+      <!-- Body -->
+      <rect class="body" x="10" y="${bodyTop}" width="80" height="${bodyH}" rx="1"/>
+      ${occRatio > 0 ? `<rect class="occupancy-rect" x="11" y="${fillY}" width="78" height="${fillH - 1}" rx="0.5"/>` : ""}
+      <!-- Windows -->
+      <g>
+        <rect class="window" x="17" y="50" width="14" height="14" rx="1"/>
+        <line class="window-cross" x1="24" y1="50" x2="24" y2="64"/>
+        <line class="window-cross" x1="17" y1="57" x2="31" y2="57"/>
+
+        <rect class="window" x="69" y="50" width="14" height="14" rx="1"/>
+        <line class="window-cross" x1="76" y1="50" x2="76" y2="64"/>
+        <line class="window-cross" x1="69" y1="57" x2="83" y2="57"/>
+
+        <rect class="window" x="17" y="76" width="14" height="14" rx="1"/>
+        <line class="window-cross" x1="24" y1="76" x2="24" y2="90"/>
+        <line class="window-cross" x1="17" y1="83" x2="31" y2="83"/>
+
+        <rect class="window" x="69" y="76" width="14" height="14" rx="1"/>
+        <line class="window-cross" x1="76" y1="76" x2="76" y2="90"/>
+        <line class="window-cross" x1="69" y1="83" x2="83" y2="83"/>
+      </g>
+      <!-- Door -->
+      <rect class="door" x="42" y="96" width="16" height="22" rx="2"/>
+      <circle class="door-knob" cx="54" cy="108" r="0.9"/>
+      <!-- Step -->
+      <rect class="step" x="38" y="118" width="24" height="2.5" rx="1"/>
+      ${gradeText ? `<text class="grade-band" x="50" y="${bodyTop - 4}" >${gradeText}</text>` : ""}
+    </svg>
+  `;
+}
+
+function renderBuildings() {
+  const s = scenarios[activeBuilding];
+  document.querySelectorAll("#building-tabs .tab").forEach(t => {
+    t.classList.toggle("active", t.dataset.id === activeBuilding);
+  });
+  const grid = document.getElementById("building-grid");
+  grid.setAttribute('data-scenario', activeBuilding);
+  grid.className = "buildings-grid" + (s.notViable ? " warning" : "");
+  grid.innerHTML = s.buildings.map(b => {
+    const isRepurposed = b.state === 'repurposed';
+    const isPartial = b.state === 'partial' && !isRepurposed; // known grades, unknown count
+    const cls = ["building"];
+    if (isRepurposed) cls.push("repurposed");
+    if (isPartial)    cls.push("partial");
+    const enrollHTML = b.enrollment != null
+      ? `${b.enrollment.toLocaleString()}<small>Students</small>`
+      : (isRepurposed ? "" : `<span class="benroll-unspec">Not specified</span>`);
+    return `
+      <div class="${cls.join(" ")}" data-scenario="${activeBuilding}">
+        <div class="schoolhouse">${schoolhouseSVG(b, activeBuilding, isRepurposed, false)}</div>
+        <div class="bname">${b.name}</div>
+        <div class="bgrades">${b.grades}</div>
+        <div class="benroll">${enrollHTML}</div>
+        <span class="bstatus">${b.status}</span>
+      </div>
+    `;
+  }).join("");
+
+  const sum = document.getElementById("building-summary");
+  sum.setAttribute('data-scenario', activeBuilding);
+  const oe = s.oeSeats != null ? `${s.oeSeats} <small>/ ${s.oePct}%</small>` : "Minimal";
+  const savings = s.savingsMax > 0 ? `$${s.savingsMin}M – $${s.savingsMax}M <small>per year</small>` : "None";
+  sum.innerHTML = `
+    <div class="item"><div class="skey">Total district enrollment</div><div class="sval">${s.totalEnrollment.toLocaleString()}</div></div>
+    <div class="item"><div class="skey">Open enrollment</div><div class="sval">${oe}</div></div>
+    <div class="item"><div class="skey">Projected annual savings</div><div class="sval">${savings}</div></div>
+  `;
+}
+
+// ============================================================
+// RENDER — tensions
+// ============================================================
+function renderTensions() {
+  const root = document.getElementById("tensions-grid");
+  root.innerHTML = tensions.map(t => {
+    const dots = t.positions.map(p => `
+      <div class="dot" data-s="${p.s}" style="left: ${p.pos}%;" title="${scenarios[p.s].name}: ${p.label}">${p.s === "Zero" ? "0" : p.s}</div>
+    `).join("");
+    const positions = t.positions
+      .slice()
+      .sort((a, b) => order.indexOf(a.s) - order.indexOf(b.s))
+      .map(p => `
+        <div class="position" data-s="${p.s}">
+          <span class="pbadge">${scenarios[p.s].name}</span>
+          <span>${p.label}</span>
+        </div>
+      `).join("");
+    return `
+      <article class="tension">
+        <div class="tnum">${t.num}</div>
+        <h3>${t.title}</h3>
+        <p class="tsummary">${t.summary}</p>
+        <div class="spectrum">
+          <div class="poles"><span class="pole-left">${t.poles[0]}</span><span class="pole-right">${t.poles[1]}</span></div>
+          <div class="axis">${dots}</div>
+        </div>
+        <div class="positions">${positions}</div>
+        <details>
+          <summary>Read the full tension</summary>
+          <p>${t.detail}</p>
+        </details>
+      </article>
+    `;
+  }).join("");
+}
+
+// ============================================================
+// RENDER — timeline
+// ============================================================
+function renderTimeline() {
+  const root = document.getElementById("timeline-row");
+  root.innerHTML = timeline.map(t => {
+    const cls = ["tlevent"];
+    if (t.future) cls.push("future");
+    if (t.summit) cls.push("summit");
+    return `
+      <div class="${cls.join(" ")}">
+        <div class="date">${t.date}</div>
+        <div class="marker"></div>
+        <div class="label">${t.label}</div>
+        <div class="desc">${t.desc}</div>
+      </div>
+    `;
+  }).join("");
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+  renderScorecards();
+  renderSavingsChart();
+  buildChips();
+  attachCompareTabs();
+  renderCompare();
+  buildBuildingTabs();
+  renderBuildings();
+  renderTensions();
+  renderTimeline();
+});
+</script>
+
+</body>
+</html>
