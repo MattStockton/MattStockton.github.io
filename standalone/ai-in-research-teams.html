@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI in Research Teams — Lessons from the Field</title>
+<meta name="description" content="Seven lessons from applying AI inside research teams at financial institutions, from Matt Stockton.">
+<!-- Publishing: copy this file (renamed ai-in-research-teams.html) AND ai-in-research-teams-preview.png into standalone/ together; og:url and og:image below assume those exact paths -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI in Research Teams — Lessons from the Field">
+<meta property="og:description" content="Seven lessons from applying AI inside research teams at financial institutions: three operational, four technical.">
+<meta property="og:url" content="https://mattstockton.com/standalone/ai-in-research-teams.html">
+<meta property="og:image" content="https://mattstockton.com/standalone/ai-in-research-teams-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI in Research Teams: Lessons from the Field. Seven numbered lessons, three operational and four technical. Matt Stockton, PragmaNexus.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI in Research Teams — Lessons from the Field">
+<meta name="twitter:description" content="Seven lessons from applying AI inside research teams at financial institutions.">
+<meta name="twitter:image" content="https://mattstockton.com/standalone/ai-in-research-teams-preview.png">
+<meta name="twitter:image:alt" content="AI in Research Teams: Lessons from the Field. Seven numbered lessons, three operational and four technical.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFBFC;
+  --panel:#FFFFFF;
+  --ink:#1E293B;
+  --ink-soft:#475569;
+  --ink-faint:#64748B;
+  --line:#E2E8F0;
+  --op:#B45309;        /* Part 1 — operational (amber family, dark enough for white text) */
+  --op-soft:#FEF3C7;
+  --tech:#0A4D68;      /* Part 2 — technical (PragmaNexus teal-700) */
+  --tech-soft:#E8F4F8;
+  --gold:#D4890C;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --maxw:1060px;
+  --textw:680px;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(15,23,42,.05),0 8px 28px rgba(15,23,42,.07);
+  --good:#2e7a52;
+  --good-soft:#e2efe4;
+  --bad:#a8402f;
+  --bad-soft:#f4e1da;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:inherit}
+section{scroll-margin-top:86px}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.text-col{max-width:var(--textw)}
+
+/* progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--op),var(--tech));z-index:60;transition:width .1s linear}
+
+/* nav */
+.topnav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,251,252,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.topnav .container{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.02rem;text-decoration:none;white-space:nowrap}
+.navlinks{display:flex;gap:2px;flex-wrap:wrap;align-items:center;margin-left:auto}
+.navlinks a{
+  text-decoration:none;font-size:.82rem;font-weight:600;color:var(--ink-soft);
+  padding:5px 10px;border-radius:999px;transition:background .15s,color .15s;
+}
+.navlinks a:hover{background:var(--line)}
+.navlinks a.on{background:var(--ink);color:var(--panel)}
+.chips{display:flex;gap:5px;align-items:center}
+.chip{
+  width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.72rem;font-weight:600;
+  text-decoration:none;color:var(--ink-soft);
+  border:1px solid var(--line);background:var(--panel);
+  transition:all .15s;
+}
+.chip:hover{transform:translateY(-1px)}
+.chip.p1:hover,.chip.p1.on{background:var(--op);border-color:var(--op);color:#fff}
+.chip.p2:hover,.chip.p2.on{background:var(--tech);border-color:var(--tech);color:#fff}
+
+/* hero */
+.hero{padding:72px 0 40px}
+.eyebrow{
+  font-family:var(--mono);font-size:.74rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+}
+.hero h1{
+  font-family:var(--serif);font-weight:750;
+  font-size:clamp(2.3rem,5.4vw,3.6rem);
+  line-height:1.06;letter-spacing:-.015em;margin:14px 0 18px;
+}
+.hero .dek{font-size:clamp(1.05rem,2vw,1.22rem);color:var(--ink-soft);max-width:640px;line-height:1.55}
+.byline{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-top:26px;font-size:.9rem;color:var(--ink-soft)}
+.byline b{color:var(--ink)}
+.byline .dot{color:var(--ink-faint)}
+
+/* bio */
+.bio{
+  margin:44px 0 0;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 28px;
+}
+.bio p{margin:6px 0;max-width:var(--textw);font-size:.98rem}
+.bio a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+.bio a:hover{border-bottom-color:var(--ink)}
+
+/* lesson index */
+.index{
+  margin:18px 0 8px;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 28px;
+}
+.ihead{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+.index .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px 34px}
+.index a{
+  display:flex;gap:12px;align-items:baseline;text-decoration:none;
+  padding:9px 2px;border-bottom:1px dashed var(--line);
+  font-size:.97rem;font-weight:500;transition:background .15s;
+}
+.index a:hover{background:rgba(226,232,240,.5)}
+.index .n{font-family:var(--mono);font-size:.74rem;font-weight:600;flex-shrink:0}
+.index .n.p1{color:var(--op)}
+.index .n.p2{color:var(--tech)}
+.index .imore{margin-top:12px}
+.index .imore a{font-size:.9rem;font-weight:600;text-decoration:none;color:var(--ink-soft)}
+.index .imore a:hover{color:var(--ink)}
+
+/* how to use */
+.howto{margin:30px 0 0;font-size:.95rem;color:var(--ink-soft);border-left:3px solid var(--line);padding-left:16px;max-width:640px}
+
+/* part dividers */
+.part-head{padding:64px 0 8px}
+.part-head .kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:.76rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;color:#fff;
+}
+.part-head.op .kicker{background:var(--op)}
+.part-head.tech .kicker{background:var(--tech)}
+.part-head h2{font-family:var(--serif);font-weight:750;font-size:clamp(1.7rem,3.6vw,2.4rem);margin:16px 0 10px;letter-spacing:-.01em}
+.part-head .part-dek{color:var(--ink-soft);max-width:640px;font-size:1.02rem}
+
+/* lesson cards */
+.lesson{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);margin:26px 0;overflow:hidden;
+}
+.lesson .head{padding:26px 30px 0}
+.lesson .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lnum{
+  font-family:var(--mono);font-weight:600;font-size:.78rem;color:#fff;
+  padding:3px 10px;border-radius:999px;
+}
+.lesson.op .lnum{background:var(--op)}
+.lesson.tech .lnum{background:var(--tech)}
+.ltime{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+.lesson h3{font-family:var(--serif);font-weight:750;font-size:clamp(1.45rem,2.8vw,1.9rem);margin:12px 0 4px;letter-spacing:-.01em}
+.lesson .body{padding:14px 30px 28px}
+.story p{margin:12px 0;max-width:var(--textw);color:var(--ink);font-size:1rem}
+.story p em{color:var(--ink);font-style:italic}
+.label{
+  font-family:var(--mono);font-size:.72rem;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);
+  margin:22px 0 8px;
+}
+.pull{
+  font-family:var(--serif);font-size:1.22rem;line-height:1.45;font-weight:600;
+  padding:16px 20px;border-radius:10px;max-width:var(--textw);
+}
+.lesson.op .pull{background:var(--op-soft);border-left:4px solid var(--op)}
+.lesson.tech .pull{background:var(--tech-soft);border-left:4px solid var(--tech)}
+.bq{
+  position:relative;margin:14px 0;max-width:var(--textw);
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 26px 18px 62px;box-shadow:var(--shadow);
+}
+.bq::before{
+  content:"\201C";position:absolute;left:20px;top:34px;
+  font-family:var(--serif);font-size:3.6rem;line-height:.6;font-weight:750;
+}
+.lesson.op .bq::before{color:var(--op)}
+.lesson.tech .bq::before{color:var(--tech)}
+.bq p{font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.55;color:var(--ink);margin:0}
+.bq .who{margin-top:12px;font-size:.8rem;font-style:normal;color:var(--ink-faint)}
+.bq .who b{color:var(--ink-soft);font-weight:600}
+/* Lesson 3: voice-memo callout */
+.vmemo{
+  margin:18px 0;max-width:var(--textw);
+  background:linear-gradient(135deg,var(--op-soft) 0%,var(--panel) 65%);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 24px 22px;box-shadow:var(--shadow);
+}
+.vkick{font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--op)}
+.vmemo h4{font-family:var(--serif);font-size:1.3rem;font-weight:750;margin:6px 0}
+.vmemo .vlead{font-size:.95rem;color:var(--ink-soft);margin:0 0 16px;max-width:56ch}
+.vsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.vstep{
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:12px 12px 14px;
+  opacity:0;transform:translateY(10px);
+  transition:opacity .5s ease,transform .5s ease;
+}
+.vmemo.on .vstep{opacity:1;transform:none}
+.vmemo.on .vstep:nth-child(2){transition-delay:.18s}
+.vmemo.on .vstep:nth-child(3){transition-delay:.36s}
+.vmemo.on .vstep:nth-child(4){transition-delay:.54s}
+.vn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--op);color:#fff;font-family:var(--mono);font-size:.72rem;font-weight:600;
+}
+.vstep b{display:block;font-size:.86rem;margin:8px 0 4px}
+.vstep .vd{display:block;font-size:.8rem;line-height:1.45;color:var(--ink-soft)}
+.takeback{list-style:none;max-width:var(--textw)}
+.takeback li{
+  position:relative;padding:10px 0 10px 34px;border-bottom:1px dashed var(--line);
+  font-size:.98rem;color:var(--ink);
+}
+.takeback li:last-child{border-bottom:none}
+.takeback li::before{
+  content:"→";position:absolute;left:4px;top:9px;
+  font-family:var(--mono);font-weight:600;
+}
+.lesson.op .takeback li::before{color:var(--op)}
+.lesson.tech .takeback li::before{color:var(--tech)}
+
+/* close */
+.close-sec{padding:64px 0 20px}
+.close-sec h2{font-family:var(--serif);font-weight:750;font-size:clamp(1.7rem,3.6vw,2.4rem);margin:16px 0 10px}
+.close-block{margin:30px 0;max-width:var(--textw)}
+.close-block h4{font-family:var(--serif);font-size:1.28rem;font-weight:700;margin-bottom:8px}
+.close-block p{color:var(--ink);font-size:1rem;margin:8px 0}
+
+/* prompt box */
+.promptbox{
+  background:#062E3F;color:#E8F4F8;border-radius:var(--radius);
+  padding:24px 26px;max-width:var(--textw);margin:16px 0 8px;box-shadow:var(--shadow);
+}
+.promptbox .plabel{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:#8FB0C2;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.promptbox pre{
+  font-family:var(--mono);font-size:.92rem;line-height:1.6;
+  white-space:pre-wrap;word-wrap:break-word;
+}
+.copybtn{
+  font-family:var(--sans);font-size:.78rem;font-weight:600;
+  background:#E8F4F8;color:#062E3F;border:none;border-radius:999px;
+  padding:6px 14px;cursor:pointer;transition:transform .12s;
+}
+.copybtn:hover{transform:translateY(-1px)}
+.copybtn:active{transform:translateY(0)}
+
+/* prompt builder */
+.pbuild{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0 2px;max-width:var(--textw)}
+.pbuild label{
+  display:flex;flex-direction:column;gap:4px;flex:1;min-width:200px;
+  font-family:var(--mono);font-size:.7rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);
+}
+.pbuild input{
+  font-family:var(--sans);font-size:.95rem;color:var(--ink);
+  padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);
+}
+.pbuild input:focus{outline:2px solid var(--tech);border-color:var(--tech)}
+
+/* the shorter list */
+.more{padding:64px 0 30px}
+.more h2{font-family:var(--serif);font-weight:750;font-size:clamp(1.7rem,3.6vw,2.4rem);margin:16px 0 8px}
+.more .app-dek{color:var(--ink-soft);max-width:640px;margin-bottom:22px}
+.mini{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  border-left:4px solid var(--op);
+  box-shadow:var(--shadow);margin:14px 0;padding:20px 24px;
+}
+.mini.tech{border-left-color:var(--tech)}
+.mini .lnum{display:inline-block}
+.mini.op .lnum{background:var(--op)}
+.mini.tech .lnum{background:var(--tech)}
+.mini h3{font-family:var(--serif);font-weight:750;font-size:1.3rem;margin:10px 0 4px;letter-spacing:-.01em}
+.mini .mclaim{font-family:var(--serif);font-size:1.05rem;font-weight:600;margin:0 0 6px;max-width:var(--textw)}
+.mini ul{list-style:none;max-width:var(--textw)}
+.mini li{position:relative;padding:8px 0 8px 26px;font-size:.95rem;color:var(--ink);border-bottom:1px dashed var(--line)}
+.mini li:last-child{border-bottom:none}
+.mini li::before{content:"·";position:absolute;left:8px;top:6px;font-weight:800}
+.mini.op li::before{color:var(--op)}
+.mini.tech li::before{color:var(--tech)}
+.mini .mhead{display:flex;align-items:center;gap:12px;cursor:pointer}
+.mini .mhead h3{margin:0;flex:1}
+.mini .chev{font-family:var(--mono);font-size:1.05rem;color:var(--ink-faint);transition:transform .2s;flex-shrink:0}
+.mini.openx .chev{transform:rotate(90deg)}
+.mini .mclaim{margin-top:8px}
+.mini ul{display:none;margin-top:6px}
+.mini.openx ul{display:block}
+
+/* resources */
+.res-title{font-family:var(--serif);font-weight:750;font-size:1.5rem;margin:44px 0 6px}
+.res-dek{color:var(--ink-soft);max-width:640px;margin-bottom:14px;font-size:.95rem}
+.rescard{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  border-left:4px solid var(--gold);
+  box-shadow:var(--shadow);margin:12px 0;padding:18px 24px;
+}
+.rescard h4{font-family:var(--serif);font-weight:700;font-size:1.12rem;margin-bottom:4px}
+.rescard .rdek{font-size:.93rem;color:var(--ink-soft);max-width:var(--textw);margin:2px 0 4px}
+.rescard ul{list-style:none;max-width:var(--textw)}
+.rescard li{position:relative;padding:8px 0 8px 26px;font-size:.95rem;color:var(--ink)}
+.rescard li::before{content:"·";position:absolute;left:8px;top:6px;font-weight:800;color:var(--gold)}
+.rescard a{font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+.rescard a:hover{border-bottom-color:var(--ink)}
+.rtag{
+  font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;
+  border:1px solid var(--line);border-radius:999px;padding:1px 8px;
+  position:relative;top:-1px;margin-right:4px;
+}
+
+/* colophon */
+.colophon{padding:64px 0 30px}
+.colophon h2{font-family:var(--serif);font-weight:750;font-size:clamp(1.7rem,3.6vw,2.4rem);margin:16px 0 8px}
+.colophon p{margin:12px 0;max-width:var(--textw);font-size:1rem}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0;max-width:var(--textw)}
+.stepbtn{
+  display:flex;align-items:center;gap:8px;cursor:pointer;
+  font-family:var(--sans);font-size:.82rem;font-weight:600;color:var(--ink-soft);
+  background:var(--panel);border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px 6px 7px;transition:all .15s;
+}
+.stepbtn .sn{
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.72rem;background:var(--line);color:var(--ink);
+}
+.stepbtn:hover{transform:translateY(-1px)}
+.stepbtn.on{background:var(--ink);border-color:var(--ink);color:var(--panel)}
+.stepbtn.on .sn{background:var(--gold);color:#062E3F}
+.steppanel{
+  background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);
+  border-radius:12px;box-shadow:var(--shadow);padding:20px 24px;margin:14px 0 8px;max-width:var(--textw);
+}
+.steppanel .sptag{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px}
+.steppanel h4{font-family:var(--serif);font-size:1.25rem;font-weight:750;margin-bottom:6px}
+.steppanel p{margin:0 0 14px;font-size:.98rem}
+.spnext{
+  font-family:var(--sans);font-size:.82rem;font-weight:600;cursor:pointer;
+  background:var(--ink);color:var(--panel);border:none;border-radius:999px;
+  padding:7px 16px;transition:transform .12s;
+}
+.spnext:hover{transform:translateY(-1px)}
+
+/* interactive figures */
+.figwrap{margin:16px 0 6px;max-width:var(--textw)}
+.figbox{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.figcap{font-size:.88rem;color:var(--ink-soft);margin-top:12px}
+.figbtns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.figbtn{
+  font-family:var(--sans);font-size:.82rem;font-weight:600;color:var(--ink-soft);
+  background:var(--panel);border:1px solid var(--line);border-radius:999px;
+  padding:6px 14px;cursor:pointer;transition:all .15s;
+}
+.figbtn:hover{transform:translateY(-1px)}
+.figbtn.on{background:var(--ink);border-color:var(--ink);color:var(--panel)}
+.figbtn:disabled{opacity:.45;cursor:default;transform:none}
+.fignote{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);margin-top:10px}
+
+/* fig 1: net-work bars */
+.blabel{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin:12px 0 5px}
+.bar{display:flex;gap:2px;height:34px}
+.bseg{
+  display:flex;align-items:center;padding:0 10px;border-radius:6px;
+  font-family:var(--mono);font-size:.7rem;font-weight:600;color:#fff;
+  white-space:nowrap;overflow:hidden;min-width:0;transition:width .55s ease;
+}
+.s-old,.s-left{background:#64748B}
+.s-bad{background:var(--bad)}
+.s-rev{background:var(--tech)}
+.verdict{display:inline-block;margin-top:14px;padding:7px 14px;border-radius:8px;font-size:.9rem;font-weight:600}
+.verdict.bad{background:var(--bad-soft);color:var(--bad)}
+.verdict.good{background:var(--good-soft);color:var(--good)}
+
+/* fig 2: sorting quiz */
+.qprog{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px}
+.qtask{font-family:var(--serif);font-size:1.12rem;font-weight:650;margin:2px 0 4px}
+.qbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.qfeed{margin-top:14px;padding:12px 16px;border-radius:10px;font-size:.92rem;border-left:4px solid}
+.qfeed b{display:block;margin-bottom:2px}
+.qfeed.lib{background:var(--tech-soft);border-color:var(--tech)}
+.qfeed.ana{background:var(--op-soft);border-color:var(--op)}
+.qfeed.done{background:var(--panel);border-color:var(--gold)}
+
+/* fig 3: written-down levels */
+.p3box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:.95rem;line-height:1.8;min-height:96px}
+.mark{border-bottom:2px solid;padding-bottom:1px}
+.m-aud{border-color:var(--op)}
+.m-src{border-color:var(--tech)}
+.m-inc{border-color:var(--gold)}
+.m-skip{border-color:#7a5ea8}
+.m-out{border-color:var(--good)}
+.leg{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.leg span{font-family:var(--mono);font-size:.68rem;color:var(--ink-soft);display:inline-flex;align-items:center;gap:5px}
+.leg i{width:14px;height:3px;border-radius:2px;display:inline-block}
+.meterrow{display:flex;align-items:center;gap:10px;margin-top:14px}
+.meterlabel{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap}
+.meter{flex:1;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--op),var(--tech));transition:width .5s ease}
+.meterpct{font-family:var(--mono);font-size:.78rem;font-weight:600;width:40px;text-align:right}
+
+/* fig 4: quadrant map */
+.quad{position:relative;height:340px;background:var(--panel);border:1px solid var(--line);border-radius:10px;margin:4px 0 0;overflow:hidden}
+.qzone{position:absolute;left:52%;top:52%;right:2%;bottom:2%;background:var(--tech-soft);opacity:.55;border:1.5px dashed var(--tech);border-radius:8px}
+.qzonelabel{position:absolute;right:4%;top:54%;font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tech)}
+.qylab{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+.qxlab{text-align:right;font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:6px 2px 12px}
+.qdot{
+  position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;
+  border:2px solid #fff;box-shadow:var(--shadow);cursor:pointer;
+  font-family:var(--mono);font-size:.74rem;font-weight:600;color:#fff;
+  display:flex;align-items:center;justify-content:center;transition:transform .15s;
+}
+.qdot:hover{transform:scale(1.15)}
+.qdot.on{transform:scale(1.25);outline:3px solid rgba(30,41,59,.25)}
+.d-auto{background:var(--good)}
+.d-split{background:var(--tech)}
+.d-keep{background:var(--op)}
+.d-skip{background:#64748B}
+.qpanel{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:14px 18px;font-size:.93rem}
+.qpanel .qv{display:block;font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.t-auto{color:var(--good)}
+.t-split{color:var(--tech)}
+.t-keep{color:var(--op)}
+.t-skip{color:#64748B}
+
+/* fig 5: pipeline */
+.pipe{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:6px 0 4px;min-height:36px}
+.pstage{
+  font-family:var(--mono);font-size:.72rem;font-weight:600;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink-faint);
+  border-radius:8px;padding:7px 10px;transition:all .25s;
+}
+.pstage.lit{background:var(--tech);border-color:var(--tech);color:#fff}
+.pstage.mush{background:var(--bad);border-color:var(--bad);color:#fff}
+.parrow{color:var(--ink-faint);font-family:var(--mono);font-size:.8rem}
+
+/* fig 6: receipts */
+.claims{margin-top:4px}
+.claimline{padding:10px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.claimline:last-child{border-bottom:none}
+.cite{
+  display:inline-flex;align-items:center;font-family:var(--mono);font-size:.68rem;font-weight:600;
+  border:none;border-radius:999px;padding:2px 9px;margin-left:8px;cursor:pointer;
+  opacity:0;transform:translateY(2px);transition:opacity .3s,transform .3s;pointer-events:none;
+}
+.receipts .cite{opacity:1;transform:none;pointer-events:auto}
+.g-co{background:var(--tech-soft);color:var(--tech)}
+.g-3p{background:#FBEFCF;color:#8F5F06}
+.g-web{background:var(--op-soft);color:var(--op)}
+.g-code{background:var(--good-soft);color:var(--good)}
+.snip{display:none;margin-top:12px;background:#062E3F;color:#E8F4F8;border-radius:10px;padding:14px 16px;font-family:var(--mono);font-size:.8rem;line-height:1.6}
+.snip .sgrade{display:block;color:#8FB0C2;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+
+/* fig 7: regression chart */
+.chart{width:100%;height:auto;display:block;margin-top:4px}
+.ctick{font-family:var(--mono);font-size:9.5px;fill:var(--ink-faint)}
+.alertpill{display:inline-block;margin-top:10px;padding:7px 12px;border-radius:8px;font-size:.86rem;font-weight:600;opacity:0;transition:opacity .4s}
+.alertpill.show{opacity:1}
+.alertpill.amber{background:#FBEFCF;color:#8F5F06}
+.alertpill.red{background:var(--bad-soft);color:var(--bad)}
+/* fig 7: the test set */
+.evwrap{margin-bottom:16px;padding-bottom:6px;border-bottom:1px dashed var(--line)}
+.evrow{display:grid;grid-template-columns:1.5fr .9fr .95fr;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);align-items:start}
+.evq{font-size:.85rem;color:var(--ink)}
+.evlab{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:2px}
+.evka,.evres{font-size:.84rem;color:var(--ink-soft)}
+.evres .evval{color:var(--ink-faint)}
+.evres.ok .evval{color:var(--good);font-weight:600}
+.evres.no .evval{color:var(--bad);font-weight:600}
+.evfoot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0 4px}
+.evfoot .alertpill{margin-top:0}
+
+/* footer */
+footer{border-top:1px solid var(--line);margin-top:56px;padding:34px 0 60px;color:var(--ink-soft);font-size:.9rem}
+footer .frow{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;align-items:baseline}
+footer a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+footer a:hover{border-bottom-color:var(--ink)}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .lesson .head,.lesson .body{padding-left:20px;padding-right:20px}
+  .index{padding:18px 20px}
+  .chips{display:none}
+  .figbox{padding:14px}
+  .quad{height:280px}
+  .bseg{font-size:.6rem;padding:0 6px}
+  .meterlabel{white-space:normal}
+  .bq{padding:18px 18px 16px 48px}
+  .bq::before{left:14px;top:30px;font-size:3rem}
+  .bq p{font-size:1.06rem}
+  .vsteps{grid-template-columns:1fr 1fr}
+  .evrow{grid-template-columns:1fr 1fr}
+  .evq{grid-column:1/-1}
+}
+@media print{
+  .topnav,#progress{display:none}
+  .lesson,.mini,.rescard,.index{box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav class="topnav">
+  <div class="container">
+    <a class="brand" href="#top">AI in Research Teams</a>
+    <div class="chips" id="chips" aria-label="Jump to lesson"></div>
+    <div class="navlinks" id="navlinks">
+      <a href="#start">Start</a>
+      <a href="#part1">Operational</a>
+      <a href="#part2">Technical</a>
+      <a href="#close">Close</a>
+      <a href="#more">More lessons</a>
+      <a href="#colophon">How I built this</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="eyebrow">Field notes · July 2026</div>
+    <h1>AI in Research Teams:<br>Lessons from the Field</h1>
+    <p class="dek">Seven lessons from applying AI inside research teams at financial institutions: three operational, four technical, in enough detail to take back to your own team.</p>
+    <div class="byline">
+      <b>Matt Stockton</b><span class="dot">·</span><a href="https://pragmanexus.com">PragmaNexus</a><span class="dot">·</span><span>Prepared for the AI working group session, July 16, 2026</span>
+    </div>
+  </div>
+</header>
+
+<section id="start">
+  <div class="container">
+    <div class="bio">
+      <div class="ihead">Who's talking</div>
+      <p>I've spent 20+ years building software, much of it in classical machine learning and data infrastructure — leading teams while staying hands-on in the systems myself. A lot of that time was inside hedge funds and fintech startups. My focus now, through my consulting practice <a href="https://pragmanexus.com">PragmaNexus</a>, is layering large language models onto that foundation and getting them working in production with teams in a few different industries. The lessons here come from the work with research teams at financial institutions.</p>
+      <p>Consulting at <a href="https://pragmanexus.com">pragmanexus.com</a> · fuller background at <a href="https://mattstockton.com/my-background.html">mattstockton.com/my-background</a> · writing at <a href="https://mattstockton.com">mattstockton.com</a></p>
+    </div>
+    <div class="index">
+      <div class="ihead">The seven lessons</div>
+      <div class="cols" id="lessonindex"></div>
+      <div class="imore"><a href="#more">+ Six more, briefly: lessons 8–13, after the close ↓</a></div>
+    </div>
+    <p class="howto"><b>How to use this guide.</b> It follows the live session: three operational lessons, then four technical ones in plain language. Each lesson is one claim, an interactive figure you can poke at, the why behind it, and what to do about it. After the close: six more lessons in compressed form, pointers on where to go from here, and how this guide itself was built.</p>
+  </div>
+</section>
+
+<section class="part-head op" id="part1">
+  <div class="container">
+    <span class="kicker">Part 1 · Operational</span>
+    <h2>People, trust, and process</h2>
+    <p class="part-dek">The tools are rarely the hard part. These three lessons are about why capable tools sit unused, and what actually gets a research team using them.</p>
+  </div>
+</section>
+<div class="container" id="lessons-p1"></div>
+
+<section class="part-head tech" id="part2">
+  <div class="container">
+    <span class="kicker">Part 2 · Technical</span>
+    <h2>What actually works under the hood</h2>
+    <p class="part-dek">Nothing here requires writing code. These four run in order: how to pick the right task, how to get it working, how to make it trustworthy, and how to keep it trustworthy.</p>
+  </div>
+</section>
+<div class="container" id="lessons-p2"></div>
+
+<section class="close-sec" id="close">
+  <div class="container">
+    <div class="eyebrow">Closing</div>
+    <h2>Putting it together</h2>
+
+    <div class="close-block">
+      <h4>Single-player first, then multiplayer</h4>
+      <p>Don't try to boil the ocean with a firm-wide platform. Pick one named workflow: reviewing earnings transcripts, prepping for a management meeting. Have one motivated person get it working hands-on, in a tool with access to files. You shouldn't be doing this in ChatGPT in the browser; you want the tools that can work with your file system. Then write down what worked as shared instructions so the next person doesn't start over. Firm capability gets built one workflow at a time.</p>
+      <p>And it all traces back to the data. Where is it living? How are you storing it? Are your workflows actually capturing the information you care about? If not, that's the first fix, and it's a process change that needs buy-in. Buying something won't do it.</p>
+    </div>
+
+    <div class="close-block">
+      <h4>The framing for leadership is coverage</h4>
+      <p>If early-stage research takes half the time, those hours go to looking at more names. That's the case that lands with leadership. And the most convincing use cases are things people can't do at any speed, like checking one company's claims against every competitor's public statements. Speeding up a slow task is a weaker story.</p>
+    </div>
+
+    <div class="close-block">
+      <h4>There's no replacement for doing the thing</h4>
+      <p>Fluency with these tools takes real hours. The techniques change fast, and the judgment you build carries over as the tools churn. This is also why the champion at the top has to actually use the tools instead of delegating them. The fluency stays with whoever puts in the hours.</p>
+      <p>And try something you think the model can't do. A lot of people still use these tools like a fancier Google search, and it caps what they get out of them. Usually it clicks the first time the model handles something you assumed was impossible.</p>
+    </div>
+
+    <div class="close-block">
+      <h4>The one thing to do this week</h4>
+      <p>Paste this into any tool your firm has approved, and let it interview you. It's Lesson 3 pointed at yourself. Fill in the two blanks and the prompt updates:</p>
+      <div class="pbuild">
+        <label>Your role <input id="in-role" type="text" placeholder="an equity analyst" autocomplete="off"></label>
+        <label>Your firm <input id="in-firm" type="text" placeholder="a multi-strategy fund" autocomplete="off"></label>
+      </div>
+      <div class="promptbox">
+        <div class="plabel"><span>Take-home prompt</span><button class="copybtn" id="copyprompt">Copy</button></div>
+        <pre id="prompttext">I work as [your role] at [type of firm]. Interview me about my regular tasks, one question at a time, then suggest three specific places you could help. Then help me do the first one today.</pre>
+      </div>
+      <p>The fastest way to learn these tools is to point them at your own job.</p>
+    </div>
+  </div>
+</section>
+
+<section class="more" id="more">
+  <div class="container">
+    <div class="eyebrow">The shorter list</div>
+    <h2>Six more lessons, briefly</h2>
+    <p class="app-dek">These didn't make the hour, but they come up all the time. Same shape as the main seven, compressed. Click a card to open the detail.</p>
+    <div id="minicards"></div>
+    <h3 class="res-title">Where to go from here</h3>
+    <p class="res-dek">A short list on purpose. Each item is tagged with who it's for, so you know which one to forward.</p>
+    <div id="rescards"></div>
+  </div>
+</section>
+
+<section class="colophon" id="colophon">
+  <div class="container">
+    <div class="eyebrow">One more thing</div>
+    <h2>How I built this guide</h2>
+    <p>This guide is itself an example of something I keep pushing teams toward: sharing information as a single self-contained page instead of a slide deck. There's no server and no framework behind this. It's one HTML file. You can save it, email it, open it on a phone, and the interactive parts keep working.</p>
+    <p>The build followed the same lessons it teaches. I started from material that already existed (my own notes, an outline, things I've already published) and worked with an AI agent that could read those files directly. I described the audience and what the hour needed to do, let it draft, and then ran the red-pen loop from Lesson 3: say specifically what's wrong and why, feed it back, go again. Getting it to sound like me took a few passes.</p>
+    <div class="steps" id="steps" aria-label="Build steps"></div>
+    <div class="steppanel" id="steppanel"></div>
+    <p>None of this required writing HTML by hand. Everything interactive above, the quizzes, the charts, the toggles, is plain HTML, CSS, and JavaScript in this same single file, and each figure started as a sentence or two describing what it should show. If you can describe the content and how people should move through it, the models can build the artifact for you. Next time you're about to make a deck for something people should explore themselves, try asking for a page like this instead.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container frow">
+    <div>Matt Stockton · <a href="https://pragmanexus.com">PragmaNexus</a> · <a href="https://mattstockton.com">mattstockton.com</a></div>
+    <div>Questions after the session are welcome. Reach out any time.</div>
+  </div>
+</footer>
+
+<script>
+const LESSONS = [
+  {
+    n:1, part:"p1", cls:"op", time:"~7 min",
+    title:"Tools that add work don't get adopted",
+    claim:[
+      "Whether a tool gets used mostly comes down to simple math: the time it saves has to beat the time it adds in reading, checking, and dealing with the output."
+    ],
+    why:[
+      "An AI-generated report with everything in it still has to be read. If the output sits on top of the existing process instead of replacing part of it, the analyst now has more to do, and the tool sits idle.",
+      "A lot of tools pass the demo and fail this test. Accuracy usually has nothing to do with it: the output is mostly right, there's just too much of it."
+    ],
+    takeback:[
+      "Before you build or buy anything, ask: after this tool, does the person do less total work or more?",
+      "A month into any pilot, ask people what they <b>stopped doing</b> because of it. If the answer is nothing, it isn't saving time yet.",
+      "Pay attention to signal-to-noise. Surfacing too much tunes people out just as fast as missing things."
+    ]
+  },
+  {
+    n:2, part:"p1", cls:"op", time:"~7 min",
+    title:"Librarian, not analyst",
+    claim:[
+      "Research teams will use AI to gather and organize information. They won't use it to form judgments for them, and that's the right call."
+    ],
+    why:[
+      "The pushback I see isn't really about accuracy. Analysts don't want a model shaping their view before they've formed their own, even when the model happens to be right, because the independent view is what the firm gets paid for. So the split that works: the models handle the facts (company history, competitive landscape, what management has said and done), and the people handle the analysis and the forecasting.",
+      "A related finding: enriching an analyst's own notes or draft works a lot better than generating a document from scratch. You keep their voice and their framing, and the tool fills in what they missed. Documents generated from a blank page read like they came from a machine."
+    ],
+    takeback:[
+      "For any task you're thinking about automating, ask: is this mostly finding and organizing information, or mostly judgment? Automate the first kind.",
+      "When you automate a document, start from the person's own notes or draft instead of a blank page.",
+      "If analysts push back on a tool, check whether it crossed into judgment before assuming they just don't get it."
+    ]
+  },
+  {
+    n:3, part:"p1", cls:"op", time:"~7 min",
+    title:"Writing it down is 80% of the work",
+    claim:[
+      "Describing what you actually want is most of the work. I always tell people: are you a good communicator? Can you write things down? That's 80% of it."
+    ],
+    why:[
+      {q:"So many investors are intuitive, almost like concert pianists. They can create a masterful trade, but asking them to turn around and write an 80-page operating manual of how they make decisions is a much harder exercise.",
+       attr:'<b>Brett Caughran</b>, Fundamental Edge · from our conversation on <a href="https://www.fundamentedge.com/invest-with-ai-episodes/04">Invest With AI</a>'},
+      "The process lives in intuition built over decades. The models, meanwhile, are literal: if you can specify what you want and point them at the right source material, they're really good. If you can't, no tool purchase fixes that.",
+      {html:`<aside class="vmemo">
+        <div class="vkick">Worth stealing</div>
+        <h4>The voice-memo trick</h4>
+        <p class="vlead">It turns out the models can help you extract this from yourself, and the easiest way in is your voice. You don't have to start from a blank slate.</p>
+        <div class="vsteps">
+          <div class="vstep"><span class="vn">1</span><b>Record yourself</b><span class="vd">A voice memo, talking through how you actually do the task. Rambling is fine, do it on a walk.</span></div>
+          <div class="vstep"><span class="vn">2</span><b>Make a transcript</b><span class="vd">Any transcription app works. Load it into the tool.</span></div>
+          <div class="vstep"><span class="vn">3</span><b>Let it interview you</b><span class="vd">Tell it: ask me questions until you're clear on what I'm trying to do.</span></div>
+          <div class="vstep"><span class="vn">4</span><b>Keep what it writes down</b><span class="vd">It will pull out things you didn't know you knew. That written version is the 80%.</span></div>
+        </div>
+      </aside>`},
+      "Then iterate. The first output is usually not right, and that's normal. Say what's good and bad and why, and feed it back in. A few rounds of this and the model starts to speak your language. One caution: there's a weird dopamine hit in watching output pour out of the machine, and it makes it easy to skip actually reading it. Read what you're going to rely on."
+    ],
+    takeback:[
+      "Pick one recurring task this week, record a voice memo of how you actually do it, and let the model interview you about the gaps.",
+      "When an output is bad, say specifically what's wrong and feed it back, instead of writing the tool off.",
+      "When you get a good output, ask the model to turn that session into a reusable set of instructions (a \"skill\") your team can share."
+    ]
+  },
+  {
+    n:6, part:"p2", cls:"tech", time:"~6 min",
+    title:"Every claim carries a citation, every number comes from code",
+    claim:[
+      "For anything analyst-facing, make two things requirements: every claim links back to its source, and any calculation that matters comes from code."
+    ],
+    why:[
+      "One wrong number on a live name and an analyst is done with the tool. What keeps trust intact is being able to verify: the tool says revenue grew, you click through to the filing it came from. Tag whether each source is internal or public, and keep the source's grade visible too. The company's own filings, a reputable third party, and the long-tail web are three different grades of information.",
+      "The other half is numbers, and it's a right-tool-for-the-job question. A language model doing arithmetic in its head is the wrong tool. Code and spreadsheets are built for calculation: deterministic, checkable, the same answer every time. Excel didn't stop being the right tool because the models showed up. The good systems have the model decide <b>what</b> to compute, then hand the computing to code, and it turns out the models are really good at writing that code. If a calculation matters, it should come from code, and you should be able to ask which one produced it.",
+      "Two habits go with this. When you roll out anything accuracy-sensitive, walk through where it's solid and where the rough edges are up front, so an analyst doesn't find the edge on a real name. And the models skew positive: they play up the good and go light on the risks, so you have to explicitly ask for the downsides."
+    ],
+    takeback:[
+      "Make \"every claim links to its source\" a requirement for anything you buy or build. Ask vendors to demonstrate it live.",
+      "Teach everyone the most useful verification move in any chat tool: \"show me where in the source this came from.\"",
+      "For any number an AI produces, ask whether code computed it or the model did.",
+      "Add a standing question to research prompts: what's the bear case here? What am I missing?"
+    ]
+  },
+  {
+    n:7, part:"p2", cls:"tech", time:"~6 min",
+    title:"“How would we know if it got worse?”",
+    claim:[
+      "Good output today doesn't tell you much about three months from now. The tools change underneath you, and you want to catch a slip on a scheduled check, not on a live name."
+    ],
+    why:[
+      "Model providers ship updates that change behavior, sometimes without a version bump, and a task you depend on can degrade without anything visibly breaking. For people who've run production systems for decades, that's a legitimate concern, and it's behind a lot of the veteran resistance I see. These are non-deterministic machines; the same input doesn't always produce the same output.",
+      "The answer is a standing check, and the easiest version is built from work the team has already done. Pull twenty-five questions from quarters the team knows cold, write the known answers next to them, and rerun the same set on a schedule and after any change: the model, the vendor, the prompts. Score it, plot it, and look at what changed when it drops.",
+      "The scoring can work a few different ways. Questions with a crisp right answer can be checked by code. Fuzzier outputs can be graded by a second model against the written standard, a pattern you'll hear called \"LLM as a judge\": it sounds circular, but checking an answer against a written standard is a much smaller ask than producing the answer, and a person spot-checking the grader keeps it honest. And a team that grades five outputs against a rubric every Friday is doing the same job with no tooling at all. The shape matters less than the standing part. What doesn't work is ad hoc: checking only when someone happens to feel suspicious.",
+      "Worth being honest about the cost: this is an investment, and for a single workflow it can feel like more process than the workflow deserves. The economics change as the tools spread. The checks share the same machinery, and every new workflow you cover is one less place where you're quietly trusting that nothing underneath it changed. It also gives you something concrete to put in front of the skeptics."
+    ],
+    takeback:[
+      "For any AI workflow you rely on, ask: how would we know if it got worse? \"Someone would notice\" is not an answer.",
+      "Build the test set from work the team already did: questions from past quarters with the answers written down. Rerun it on a schedule and on every change, model, vendor, or prompt.",
+      "Ask your vendors the same question: how would they know an update made your workflow worse? The quality of the answer tells you a lot.",
+      "Put your skeptics to work designing the tests. They're asking the right question."
+    ]
+  },
+  {
+    n:4, part:"p2", cls:"tech", time:"~6 min",
+    title:"Pick tasks where the gathering is expensive and the assembly is cheap",
+    claim:[
+      "The wins that hold up share one shape: the information is expensive to collect and cheap to put together once you have it."
+    ],
+    why:[
+      "Think of a research task as gathering plus assembly. Pulling filings, transcripts, old notes, and comparables into one place is the part these tools are genuinely good at, and it's often the bulk of the time. Which of your team's tasks are an hour of collecting and fifteen minutes of assembly? Those are the ones to automate first.",
+      "The ratio also tells you what to skip. A task that's ten minutes of collecting and an hour of thinking doesn't have much for the tools to take off your plate. Start where the ratio is lopsided in the right direction, bank the wins, and expand from there.",
+      "The far corner of the map deserves special attention: checks so gathering-heavy that nobody would ever consider doing them by hand. Take one claim from an earnings call, say that pricing is holding up across the industry, and check it against what every competitor said in the same quarter. Line up every forward-looking promise a management team has made over five years of calls against what actually happened. Diff the new 10-K against last year's, footnote by footnote, and flag what quietly changed. Tasks like these never appeared on anyone's list because they weren't realistic before. They're also easy wins to defend: there's no manual version to compare against, so the output is pure added coverage."
+    ],
+    takeback:[
+      "List your team's recurring tasks and put a rough gathering-to-assembly ratio on each. Automate the lopsided ones first.",
+      "Ask your team what they'd check if reading a hundred transcripts or filings cost nothing. Those answers are some of the best pilot candidates you'll get.",
+      "Don't lead with the thinking-heavy tasks, even if they're the most painful. They save little time and they're easy to call a failure.",
+      "When a pilot disappoints, check the ratio before blaming the tool. If the task was mostly judgment, the pick was wrong. Run it again on a lopsided one."
+    ]
+  },
+  {
+    n:5, part:"p2", cls:"tech", time:"~6 min",
+    title:"When it doesn't work, break the task apart",
+    claim:[
+      "When a model does badly on a task, the task is usually too big as posed. Break it apart before you conclude the tools can't do it."
+    ],
+    why:[
+      "The giant context windows in the marketing are real, but quality drops as you load the models up. Ask for everything in one shot and you get mush back: a summary that reads fine and says almost nothing. The fix is the same thing you'd do with a new hire. You wouldn't hand someone a 300-page filing on day one and say tell me everything that matters. You'd shape the job into steps.",
+      "Take that filing. First ask for a map: which sections touch pricing, litigation, covenants, whatever the thesis cares about. Then have it read the flagged sections closely, one at a time, pulling what matters with page references. Then a final pass that assembles the findings. Each step is small enough for the model to do well, and the output is built from pieces you can check. The same shape works when the pile is bigger than one document, like five years of company history: guidance quarter by quarter, capital moves, segment trends, then the story assembled from those pieces.",
+      "One tooling note, because it changes what's possible here: use software that can search and open your files itself. A lot of tools only see what you paste or upload into the chat, which puts a person back in the middle, ferrying documents. The better setups let the model work a folder the way a person would: search it, open what looks relevant, keep digging. Then each small step can go find what it needs on its own."
+    ],
+    takeback:[
+      "When output quality disappoints, don't conclude the models can't do it yet. Ask: what would this look like as three smaller tasks?",
+      "For a big document, work in passes: map the sections, read the relevant ones closely, then assemble, instead of asking for everything at once.",
+      "Prefer tools that can search and open your files themselves over ones that only see what you paste in. On a real document pile the difference shows up fast.",
+      "When a long chat starts giving worse answers, that's the context filling up. Start a fresh one with just the material that matters."
+    ]
+  }
+];
+
+const MORE = [
+  {
+    n:8, cls:"op", title:"Adoption is people-shaped",
+    claim:"The same tool lands differently depending on who's picking it up. Plan for that.",
+    items:[
+      "Juniors and seniors have opposite problems. Juniors still need to build pattern recognition by reading filings themselves, the same way you don't hand a calculator to a kid who's still learning arithmetic. Seniors evaluate every tool through decades of existing workflow.",
+      "Teams also split into two working styles: people who form their own view first and use AI to check it, and people who work with it from the start. The camps don't really converge. Build tools both can use their own way.",
+      "Champions tend to show up on their own: someone quietly builds something nobody asked for. Name them publicly and ask them to teach the next session. And the cheapest adoption program there is: ask in the weekly meeting, \"what's the most useful thing you got AI to do this week?\""
+    ]
+  },
+  {
+    n:9, cls:"op", title:"Process redesign beats tool improvement",
+    claim:"A better tool doesn't replace an entrenched process on its own. Someone has to decide to switch, say so, and retire the old thing.",
+    items:[
+      "Legacy artifacts survive years of better alternatives when nobody orders the hand-off. If a pilot is supposed to replace something, name what gets retired and when, up front.",
+      "Before automating any recurring document, ask who reads it and whether a shorter version would serve them better. Teams regularly discover they're speeding up something nobody needs at its current length."
+    ]
+  },
+  {
+    n:10, cls:"op", title:"Write the policy that says yes",
+    claim:"The AI policies that work are organized by data sensitivity rather than by tool names.",
+    items:[
+      "Three tiers. Public information: go experiment with approved tools, no sign-off needed. Firm proprietary data: the enterprise tool with controls and a lightweight review. Client PII and undisclosed positions: no external tool, ever.",
+      "Make the lowest tier explicitly self-service. That concentrates scrutiny where it belongs and lets people actually try things.",
+      "For gray areas, the newspaper test: if this showed up in tomorrow's headline, is that a problem? When in doubt, strip the identifying details and run the generic version of the task."
+    ]
+  },
+  {
+    n:11, cls:"tech", title:"Assemble tools, build as little as possible",
+    claim:"For most firms the right setup is assembled from existing tools, with as little custom building as you can get away with.",
+    items:[
+      "Three pieces: a main harness (the agent tool your people work in), a set of written-down skills for your recurring workflows, and connections into your data sources. MCP is the open standard for those connections. It's worth asking every vendor whether they support it.",
+      "Custom software still has a place (a scheduled report, a data source with no connector), but treat it as the exception. The space moves fast enough that you have to be positioned to throw away or repurpose a lot of what you build.",
+      "This is good news for small firms: you can get surprisingly far without an engineering team. The binding constraint is the writing-it-down work in Lesson 3, not headcount."
+    ]
+  },
+  {
+    n:12, cls:"tech", title:"Don't over-instruct the newer models",
+    claim:"The habits that made the early models work, the long rigid step-by-step instructions, actively hurt with the newer ones. You want to let them breathe.",
+    items:[
+      "The early models needed heavy constraint to stay on track. The newer ones are better at figuring out the path themselves, and boxing them in gets you worse answers. Say what you want and why, give the context that matters, and leave the how open.",
+      "The techniques are time-stamped. What's good practice today wasn't a year ago and won't be in a year, so be positioned to throw away or redo a lot of what you build. The durable asset is the written-down version of your process. That carries over as the models churn.",
+      "A practical check: if your team's prompts have grown into legal documents, try a half-length version and compare the output. You'll usually be surprised which one is better."
+    ]
+  },
+  {
+    n:13, cls:"tech", title:"Match the checking to the blast radius",
+    claim:"Not every output deserves the same scrutiny. Calibrate how hard you verify to what a mistake would cost.",
+    items:[
+      "A brainstorm or an internal summary can be wrong cheaply. A number that reaches a client or touches a live position is one-strike. Treat those as different classes of work, each with its own level of verification.",
+      "Where the blast radius is high, read every line and keep a person in the loop. Where the work is boxed in (internal, reversible, easy to check later), deliberately let it run. If you check everything at the same intensity, you end up skimming the stuff that matters.",
+      "It also makes review rules stick. People quietly ignore a rule that treats a chat summary like a client deliverable. Key the rule to what a mistake costs and it holds up."
+    ]
+  }
+];
+
+const RESOURCES = [
+  {
+    title:"Start by doing",
+    dek:"The honest version of \"where do I learn this\": the official material is genuinely good, and none of it substitutes for hours in the tools.",
+    items:[
+      {tag:"For you", text:"The take-home prompt above is the fastest start. Let the model interview you about your own job, and you'll have a personalized starting point in five minutes."},
+      {tag:"For you", text:"Work in a tool that can read your files instead of a chat window in a browser. Anthropic and OpenAI both ship desktop tools that do this. That one change unlocks most of what Part 2 describes."},
+      {tag:"For you", text:"If compliance makes you nervous, start with <a href=\"https://notebooklm.google.com\">NotebookLM</a> on public documents: it only answers from the sources you upload, and it cites where each answer came from. That's Lesson 6 built in."},
+      {tag:"For your engineers", text:"The official docs and tutorials from Anthropic and OpenAI are really good. Do the tutorials, read the docs, and you can get up to speed quickly. Then put in the hours. That part can't be skipped."}
+    ]
+  },
+  {
+    title:"From me",
+    items:[
+      {tag:"For you", text:"I spent an hour on the <a href=\"https://www.fundamentedge.com/invest-with-ai-episodes/04\">Invest With AI podcast</a> with Brett Caughran (Fundamental Edge) and Khe Hy (<a href=\"https://www.latourai.com/\">Latour AI</a>) covering this same territory in conversation form: how research teams actually put these tools to work."},
+      {tag:"For leadership", text:"\"<a href=\"https://mattstockton.com/2026/07/07/building-the-multiplayer-institutional-brain.html\">Building the Multiplayer Institutional Brain</a>\": the written version of that conversation. Seven strategies for getting from individual experimentation to a shared, firm-wide capability. This is the longer version of the close."},
+      {tag:"For you", text:"\"<a href=\"https://mattstockton.com/2026/01/07/claude-code-for-non-technical-work.html\">How I Use Claude Code for Non-Technical Work</a>\": the patterns I use to run my own consulting business with these tools. Meeting notes, project tracking, client docs, drafts. The writing-it-down work from Lesson 3, as daily practice."},
+      {tag:"For your engineers", text:"\"<a href=\"https://mattstockton.com/2025/10/22/building-dashboards-with-ai.html\">Building Dashboards with AI</a>\": going from fuzzy requirements from a business partner to a working dashboard in a few hours. The same build loop I describe in \"How I built this guide\" below."},
+      {tag:"For leadership", text:"\"<a href=\"https://mattstockton.com/2025/06/18/why-ai-adoption-is-really-about-organizational-learning.html\">Why AI Adoption is Really About Organizational Learning</a>\": the techniques keep expiring (Lesson 12), so the durable capability is a team that picks up new ones quickly. I wrote this after a set of workshop materials went stale on me in three months."},
+      {tag:"For you", text:"More writing at <a href=\"https://mattstockton.com\">mattstockton.com</a>, background at <a href=\"https://mattstockton.com/my-background.html\">my-background</a>."}
+    ]
+  },
+  {
+    title:"Worth your time from other people",
+    items:[
+      {tag:"For you", text:"The <a href=\"https://www.fundamentedge.com/invest-with-ai\">Invest With AI</a> podcast from Brett Caughran (Fundamental Edge) and Khe Hy (<a href=\"https://www.latourai.com/\">Latour AI</a>): applied AI in investing, week over week. My episode above is from this show, and the rest of the feed is worth following."},
+      {tag:"For you", text:"Khe Hy's <a href=\"https://khemaridh.substack.com\">newsletter</a>: a weekly roundup of AI in investing, written for finance professionals who don't code. He works the same ground as these lessons: skills, context, and agents, from the operator side."},
+      {tag:"For you", text:"Andrej Karpathy's <a href=\"https://www.youtube.com/watch?v=EWvNQjAaOHw\">How I use LLMs</a> video: two hours, general audience, from one of the clearest teachers in the field. It's from early 2025, so the specific tools have moved, but the mental models hold up."},
+      {tag:"For leadership", text:"Ethan Mollick's <a href=\"https://www.oneusefulthing.org\">One Useful Thing</a>: practical, hype-free writing on working with AI, aimed at people who run teams. No code required."},
+      {tag:"For leadership", text:"Dan Shipper's interview with Will England of Walleye Capital, <a href=\"https://every.to/podcast/at-this-10-billion-hedge-fund-using-ai-just-became-mandatory\">\"At This $10 Billion Hedge Fund, Using AI Just Became Mandatory\"</a>: the fullest public picture of a top-down, firm-wide AI push at a fund."},
+      {tag:"For your engineers", text:"The <a href=\"https://podcasts.apple.com/us/podcast/the-hedgineer-podcast/id1674929284\">Hedgineer</a> podcast: how AI is reshaping the way funds research and operate. It leans more technical than the others on this list, and it's worth the time."}
+    ]
+  }
+];
+
+const STEPS = [
+  {t:"Start from what exists", tag:"Raw material",
+   d:"Gather the material you already have: notes, outlines, transcripts, things you've published. You don't have to start from a blank slate. Most of what a guide like this needs is already written down somewhere."},
+  {t:"Describe the job", tag:"Lesson 3",
+   d:"Who's the audience, how much time do they have, what should they walk away with? This is the writing-it-down work from Lesson 3, and it's most of the effort."},
+  {t:"Let it read and draft", tag:"Lesson 5",
+   d:"Give the model direct access to the material and let it explore the files the way a person would, then draft the whole thing: content, layout, and the interactive parts. Same exploration pattern as Lesson 5."},
+  {t:"Red-pen it", tag:"The loop",
+   d:"Read the draft like an editor. Say specifically what's wrong and why (tone, length, what to cut) and feed it back. This guide took several rounds: a couple for voice, one for length."},
+  {t:"Ship one file", tag:"The artifact",
+   d:"One self-contained HTML file: styling, content, and interactivity all inside. Host it anywhere or just send the file. No deck software, no server, nothing to install."}
+];
+
+const FIGLABELS = {
+  1:"Interactive · See the test",
+  2:"Interactive · Sort six tasks",
+  3:"Interactive · The same ask, three ways",
+  4:"Interactive · The map",
+  5:"Interactive · Run it both ways",
+  6:"Interactive · Flip the switch",
+  7:"Interactive · Run the weekly check"
+};
+
+const FIGS = {
+
+  1(el){
+    el.innerHTML = `<div class="figbox">
+      <div class="figbtns">
+        <button class="figbtn on" type="button" data-m="top">The tool sits on top of the process</button>
+        <button class="figbtn" type="button" data-m="rep">The tool replaces part of it</button>
+      </div>
+      <div class="blabel">Before: one recurring task</div>
+      <div class="bar"><div class="bseg s-old" style="width:75%">the task · 60 min</div></div>
+      <div class="blabel">After</div>
+      <div class="bar" id="f1bar"></div>
+      <div id="f1verdict"></div>
+      <p class="figcap">Same tool, same output quality in both. The difference is whether part of the old process got retired.</p>
+    </div>`;
+    const modes = {
+      top:{
+        segs:[{w:75,c:'s-old',t:'the task, unchanged · 60 min'},{w:25,c:'s-bad',t:'+ reading the output · 20 min'}],
+        v:'<span class="verdict bad">Net: 20 minutes of new work per run. This is how a tool ends up idle.</span>'
+      },
+      rep:{
+        segs:[{w:31,c:'s-left',t:"what's left of the task · 25 min"},{w:13,c:'s-rev',t:'review · 10 min'}],
+        v:'<span class="verdict good">Net: 25 minutes back per run. This is the bar a pilot has to clear.</span>'
+      }
+    };
+    const show = m=>{
+      const M = modes[m];
+      el.querySelector('#f1bar').innerHTML = M.segs.map(s=>
+        `<div class="bseg ${s.c}" style="width:0%" title="${s.t}">${s.t}</div>`).join('');
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        el.querySelectorAll('#f1bar .bseg').forEach((d,i)=>{ d.style.width = M.segs[i].w + '%'; });
+      }));
+      el.querySelector('#f1verdict').innerHTML = M.v;
+    };
+    el.querySelectorAll('.figbtn').forEach(b=>b.addEventListener('click',()=>{
+      el.querySelectorAll('.figbtn').forEach(x=>x.classList.toggle('on',x===b));
+      show(b.dataset.m);
+    }));
+    show('top');
+  },
+
+  2(el){
+    const TASKS = [
+      {t:"Pull every mention of pricing from the last eight earnings calls", side:"lib", why:"Pure gathering. This is the librarian job, and the models are really good at it."},
+      {t:"Does the thesis still hold after this quarter?", side:"ana", why:"That call is what the firm gets paid for. Analysts reject tools that try to make it, even when the tool is right."},
+      {t:"Build a timeline of management's guidance changes over three years", side:"lib", why:"Facts, with dates and sources. Hand it over."},
+      {t:"Draft the recommendation", side:"ana", why:"The recommendation is the analyst's view. Let the model enrich their draft, and keep the position theirs."},
+      {t:"Summarize what every competitor said about demand this quarter", side:"lib", why:"It reads like analysis, but it's gathering and organizing. Fair game."},
+      {t:"Flag where management's language changed from last quarter", side:"lib", why:"A diff, not a view. Deciding what the change means stays with the person."}
+    ];
+    let i = 0, agree = 0;
+    const render = ()=>{
+      if(i >= TASKS.length){
+        el.innerHTML = `<div class="figbox">
+          <div class="qprog">Done · 6 of 6</div>
+          <div class="qfeed done"><b>You agreed with the line on ${agree} of 6.</b>Gathering and facts go to the model. Judgment stays with the person. When a tool gets rejected, check which side of the line it crossed.</div>
+          <div class="qbtns"><button class="figbtn" type="button" id="f2again">Start over</button></div>
+        </div>`;
+        el.querySelector('#f2again').addEventListener('click',()=>{ i=0; agree=0; render(); });
+        return;
+      }
+      const T = TASKS[i];
+      el.innerHTML = `<div class="figbox">
+        <div class="qprog">Task ${i+1} of ${TASKS.length} · Which side of the line?</div>
+        <div class="qtask">&ldquo;${T.t}&rdquo;</div>
+        <div class="qbtns">
+          <button class="figbtn" type="button" data-s="lib">Hand it to the model</button>
+          <button class="figbtn" type="button" data-s="ana">Keep it with the person</button>
+        </div>
+        <div id="f2feed"></div>
+      </div>`;
+      el.querySelectorAll('[data-s]').forEach(b=>b.addEventListener('click',()=>{
+        if(b.dataset.s === T.side) agree++;
+        const label = T.side === 'lib' ? 'The model takes this one.' : 'This one stays with the person.';
+        const lead = b.dataset.s === T.side ? 'Agreed. ' : "I'd put it on the other side. ";
+        el.querySelectorAll('[data-s]').forEach(x=>x.disabled = true);
+        el.querySelector('#f2feed').innerHTML =
+          `<div class="qfeed ${T.side}"><b>${label}</b>${lead}${T.why}</div>
+           <div class="qbtns"><button class="figbtn" type="button" id="f2next">${i < TASKS.length-1 ? 'Next task' : 'Finish'}</button></div>`;
+        el.querySelector('#f2next').addEventListener('click',()=>{ i++; render(); });
+      }));
+    };
+    render();
+  },
+
+  3(el){
+    const LEVELS = [
+      {name:"What most people type", pct:15,
+       html:`Summarize this earnings call.`},
+      {name:"A real ask", pct:45,
+       html:`Summarize this earnings call <span class="mark m-aud">for a PM who has covered the name for years</span>. Focus on <span class="mark m-inc">guidance changes and pricing</span>. <span class="mark m-out">One page.</span>`},
+      {name:"Written down", pct:80,
+       html:`<span class="mark m-out">A one-page brief</span> <span class="mark m-aud">for a PM who has covered this name for years, ahead of a 30-minute review</span>. <span class="mark m-src">Sources: this quarter's call transcript plus the two before it.</span> <span class="mark m-inc">Lead with what changed: guidance, pricing, tone on demand. Quote management directly where it matters, with a pointer to the spot in the transcript.</span> <span class="mark m-skip">Skip the boilerplate the PM already knows.</span> <span class="mark m-inc">Flag anything that contradicts the prior calls.</span> <span class="mark m-out">End with three questions worth asking IR.</span>`}
+    ];
+    el.innerHTML = `<div class="figbox">
+      <div class="figbtns" id="f3btns"></div>
+      <div class="p3box" id="f3box"></div>
+      <div class="leg">
+        <span><i style="background:var(--op)"></i>audience</span>
+        <span><i style="background:var(--tech)"></i>sources</span>
+        <span><i style="background:var(--gold)"></i>what to include</span>
+        <span><i style="background:#7a5ea8"></i>what to skip</span>
+        <span><i style="background:var(--good)"></i>shape of the output</span>
+      </div>
+      <div class="meterrow"><span class="meterlabel">How much of the job is on the page</span><div class="meter"><i id="f3meter"></i></div><span class="meterpct" id="f3pct"></span></div>
+      <p class="figcap">Nothing in the third version is technical. It's the brief you'd give a new hire, written down once and reused. The last 20% is iterating on what comes back.</p>
+    </div>`;
+    const btns = el.querySelector('#f3btns');
+    const show = L=>{
+      el.querySelector('#f3box').innerHTML = L.html;
+      el.querySelector('#f3meter').style.width = L.pct + '%';
+      el.querySelector('#f3pct').textContent = L.pct + '%';
+    };
+    LEVELS.forEach((L,i)=>{
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'figbtn' + (i === 0 ? ' on' : '');
+      b.textContent = L.name;
+      b.addEventListener('click',()=>{
+        btns.querySelectorAll('.figbtn').forEach(x=>x.classList.toggle('on',x===b));
+        show(L);
+      });
+      btns.appendChild(b);
+    });
+    show(LEVELS[0]);
+  },
+
+  4(el){
+    const TASKS = [
+      {n:1,t:"Refresh the comp table",x:80,y:16,v:"auto",d:"Hours of collecting numbers, minutes of judgment once they're in one place. The ratio is exactly right. Automate it first."},
+      {n:2,t:"Pre-meeting prep pack",x:68,y:32,v:"auto",d:"Filings, transcripts, old notes, and news pulled into one brief. Mostly gathering, a little shaping. A strong early win."},
+      {n:3,t:"Track guidance changes across the coverage list",x:64,y:12,v:"auto",d:"Tedious to collect, mechanical to assemble, and nobody does it at scale by hand. Tasks like this make the case for the tools on their own."},
+      {n:4,t:"Deep dive on a new name",x:86,y:76,v:"split",d:"Heavy gathering and heavy judgment. Split it: automate the collection, keep the thinking. Don't pitch it as automated research."},
+      {n:5,t:"The thesis memo",x:20,y:86,v:"keep",d:"Almost all judgment. Automating it saves little and the output reads like a machine. Leave it with the person; at most, let the tool enrich a draft."},
+      {n:6,t:"A number the terminal already has",x:12,y:14,v:"skip",d:"Consensus, a multiple, last quarter's revenue. One function on the terminal, because the vendor already did the gathering and there's nothing to assemble. If an existing tool answers it in seconds, don't point a pilot at it."},
+      {n:7,t:"Cross-check a claim against every peer's calls",x:94,y:22,v:"auto",d:"Management says pricing is holding up industry-wide. Checking that means reading every competitor's call from the same quarter, so nobody ever does. Tasks out here weren't on anyone's list before, and there's no manual version to compare the output against."}
+    ];
+    const VLABEL = {auto:"Automate first",split:"Automate the gathering half",keep:"Keep with the person",skip:"Not worth automating"};
+    el.innerHTML = `<div class="figbox">
+      <div class="quad" id="f4quad">
+        <div class="qzone"></div>
+        <div class="qzonelabel">automate these first</div>
+        <div class="qylab">&uarr; judgment in the assembly</div>
+      </div>
+      <div class="qxlab">cost of the gathering &rarr;</div>
+      <div class="qpanel" id="f4panel"></div>
+      <p class="figcap">Seven recurring research tasks, placed by what the gathering costs and how much judgment the assembly takes. Click around, then map your own team's tasks the same way before picking a pilot.</p>
+    </div>`;
+    const quad = el.querySelector('#f4quad'), panel = el.querySelector('#f4panel');
+    const show = T=>{
+      quad.querySelectorAll('.qdot').forEach(d=>d.classList.toggle('on', +d.dataset.n === T.n));
+      panel.innerHTML = `<span class="qv t-${T.v}">${VLABEL[T.v]}</span><b>${T.t}.</b> ${T.d}`;
+    };
+    TASKS.forEach(T=>{
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'qdot d-' + T.v;
+      b.dataset.n = T.n;
+      b.style.left = T.x + '%';
+      b.style.top = (100 - T.y) + '%';
+      b.textContent = T.n;
+      b.title = T.t;
+      b.addEventListener('click',()=>show(T));
+      quad.appendChild(b);
+    });
+    show(TASKS[0]);
+  },
+
+  5(el){
+    el.innerHTML = `<div class="figbox">
+      <div class="figbtns">
+        <button class="figbtn on" type="button" data-m="one">One giant ask</button>
+        <button class="figbtn" type="button" data-m="broken">Broken apart</button>
+      </div>
+      <div class="pipe" id="f5pipe"></div>
+      <div class="meterrow"><span class="meterlabel">Output quality</span><div class="meter"><i id="f5meter"></i></div><span class="meterpct" id="f5pct"></span></div>
+      <p class="figcap" id="f5cap"></p>
+    </div>`;
+    const MODES = {
+      one:{stages:["a 300-page filing","“tell me what matters”","a summary that says little"], q:30, bad:true,
+        cap:"The whole filing goes in at once. The context fills up, attention spreads thin, and what comes back reads fine but holds almost nothing."},
+      broken:{stages:["map the sections","read the flagged ones closely","pull numbers with page refs","assemble the findings"], q:88, bad:false,
+        cap:"Same filing, same model, four small asks. Each step is a job the model does well, and every piece of the final product can be checked."}
+    };
+    let timers = [];
+    const run = m=>{
+      timers.forEach(clearTimeout); timers = [];
+      const M = MODES[m];
+      const pipe = el.querySelector('#f5pipe');
+      pipe.innerHTML = M.stages.map((s,i)=>
+        (i ? '<span class="parrow">&rarr;</span>' : '') + `<span class="pstage" data-i="${i}">${s}</span>`).join('');
+      const meter = el.querySelector('#f5meter'), pct = el.querySelector('#f5pct');
+      meter.style.width = '0%'; pct.textContent = '';
+      el.querySelector('#f5cap').textContent = M.cap;
+      M.stages.forEach((s,i)=>{
+        timers.push(setTimeout(()=>{
+          pipe.querySelector('[data-i="' + i + '"]').classList.add(M.bad && i === M.stages.length-1 ? 'mush' : 'lit');
+        }, 350 * (i + 1)));
+      });
+      timers.push(setTimeout(()=>{
+        meter.style.background = M.bad ? 'var(--bad)' : 'var(--good)';
+        meter.style.width = M.q + '%';
+        pct.textContent = M.q + '%';
+      }, 350 * (M.stages.length + 1)));
+    };
+    el.querySelectorAll('.figbtn').forEach(b=>b.addEventListener('click',()=>{
+      el.querySelectorAll('.figbtn').forEach(x=>x.classList.toggle('on',x===b));
+      run(b.dataset.m);
+    }));
+    run('one');
+  },
+
+  6(el){
+    const CLAIMS = [
+      {txt:"Management raised full-year price guidance on the Q2 call.", cite:"Q2 call", g:"g-co", glabel:"the company's own words",
+       snip:"“We now expect full-year pricing up 3 to 4 percent, versus 2 to 3 previously.” (Q2 earnings call, prepared remarks)"},
+      {txt:"Two of the three large competitors announced list-price increases in the same window.", cite:"trade press", g:"g-3p", glabel:"reputable third party",
+       snip:"Industry weekly, June 12: both firms confirmed mid-single-digit list increases effective in Q3."},
+      {txt:"Channel chatter points to discounting at the reseller level.", cite:"web forum", g:"g-web", glabel:"long-tail web · handle with care",
+       snip:"Reseller forum thread, June 20: three posters describe off-list discounts. Unverified."},
+      {txt:"Blended realized price is up 4.1% year over year.", cite:"computed", g:"g-code", glabel:"calculated by code, not by the model",
+       snip:"realized_price_q2 / realized_price_q2_prior_year - 1 = 4.1%. Inputs pulled by code from the filing's segment tables."}
+    ];
+    el.innerHTML = `<div class="figbox" id="f6box">
+      <div class="figbtns"><button class="figbtn" type="button" id="f6toggle">Show the receipts</button></div>
+      <div class="claims">${CLAIMS.map((c,i)=>
+        `<div class="claimline">${c.txt}<button type="button" class="cite ${c.g}" data-i="${i}">${c.cite}</button></div>`).join('')}</div>
+      <div class="fignote" id="f6note">A model-drafted summary. Reads fine. Nothing can be checked.</div>
+      <div class="snip" id="f6snip"></div>
+    </div>`;
+    const box = el.querySelector('#f6box');
+    el.querySelector('#f6toggle').addEventListener('click', e=>{
+      const on = box.classList.toggle('receipts');
+      e.target.classList.toggle('on', on);
+      e.target.textContent = on ? 'Hide the receipts' : 'Show the receipts';
+      el.querySelector('#f6note').textContent = on
+        ? 'Now every claim carries its source and its grade, and the number came from code. Click a chip to see where it points.'
+        : 'A model-drafted summary. Reads fine. Nothing can be checked.';
+      el.querySelector('#f6snip').style.display = 'none';
+    });
+    el.querySelectorAll('.cite').forEach(b=>b.addEventListener('click',()=>{
+      const c = CLAIMS[+b.dataset.i];
+      const s = el.querySelector('#f6snip');
+      s.innerHTML = `<span class="sgrade">${c.glabel}</span>${c.snip}`;
+      s.style.display = 'block';
+    }));
+  },
+
+  7(el){
+    const CASES = [
+      {q:"On the Q3 call, did management raise, hold, or cut full-year guidance?", k:"Raised", r:"Raised", ok:true},
+      {q:"What did the CFO say drove the Q2 gross-margin improvement?", k:"Mix, not pricing", r:"Mix, not pricing", ok:true},
+      {q:"What was announced alongside Q4 earnings?", k:"A $500M buyback", r:"A $500M buyback", ok:true},
+      {q:"How did management characterize second-half pricing?", k:"Holding, with pockets of discounting", r:"Broad price increases", ok:false}
+    ];
+    const GOOD = [92,93,91,92,74,72,75,90,92,93];
+    const BADPATH = [92,93,91,92,74,72,75,73,72,71];
+    const W = 560, H = 200, Lp = 36, Rp = 14, Tp = 18, Bp = 40;
+    const x = i=>Lp + i * (W - Lp - Rp) / 9;
+    const y = s=>Tp + (100 - s) * (H - Tp - Bp) / 40;
+    const pts = a=>a.map((s,i)=>x(i) + ',' + y(s)).join(' ');
+    el.innerHTML = `<div class="figbox">
+      <div class="evwrap">
+        ${CASES.map((c,i)=>`<div class="evrow">
+          <div class="evq">${c.q}</div>
+          <div class="evka"><span class="evlab">known answer</span>${c.k}</div>
+          <div class="evres" data-i="${i}"><span class="evlab">this run</span><span class="evval">&ndash;</span></div>
+        </div>`).join('')}
+        <div class="evfoot">
+          <button class="figbtn" type="button" id="f7run">Run week 5&rsquo;s check</button>
+          <span id="f7score" class="alertpill amber">Score: 74. The four runs before it: 92, 93, 91, 92. Time to look at what changed.</span>
+        </div>
+        <p class="fignote">Four of the twenty-five questions in the set. Every one comes from a call or filing the team already knows cold.</p>
+      </div>
+      <div class="figbtns">
+        <button class="figbtn on" type="button" data-m="evals">With a standing check</button>
+        <button class="figbtn" type="button" data-m="none">Without one</button>
+      </div>
+      <svg class="chart" viewBox="0 0 ${W} ${H}" id="f7svg" role="img" aria-label="Quality over ten weekly runs, with a dip after a model update"></svg>
+      <div id="f7alert" class="alertpill"></div>
+      <p class="figcap">Every scheduled run lands as one point on this chart. The dip is the same either way: a provider update changed behavior and nothing visibly broke. The difference is who finds it, and when.</p>
+    </div>`;
+    let evTimers = [];
+    el.querySelector('#f7run').addEventListener('click', ()=>{
+      evTimers.forEach(clearTimeout); evTimers = [];
+      const score = el.querySelector('#f7score');
+      score.classList.remove('show');
+      el.querySelectorAll('.evres').forEach(r=>{ r.classList.remove('ok','no'); r.querySelector('.evval').innerHTML = '&ndash;'; });
+      CASES.forEach((c,i)=>{
+        evTimers.push(setTimeout(()=>{
+          const r = el.querySelector('.evres[data-i="' + i + '"]');
+          r.classList.add(c.ok ? 'ok' : 'no');
+          r.querySelector('.evval').textContent = (c.ok ? '✓ ' : '✗ ') + c.r;
+        }, 450 * (i + 1)));
+      });
+      evTimers.push(setTimeout(()=>score.classList.add('show'), 450 * (CASES.length + 1)));
+    });
+    const svg = el.querySelector('#f7svg'), alertEl = el.querySelector('#f7alert');
+    let timer = null;
+    const grid = [60,80,100].map(s=>
+      `<line x1="${Lp}" y1="${y(s)}" x2="${W-Rp}" y2="${y(s)}" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 4"/>` +
+      `<text x="${Lp-6}" y="${y(s)+3.5}" text-anchor="end" class="ctick">${s}</text>`).join('') +
+      GOOD.map((s,i)=>`<text x="${x(i)}" y="${H-16}" text-anchor="middle" class="ctick">w${i+1}</text>`).join('') +
+      `<line x1="${x(3.5)}" y1="${Tp}" x2="${x(3.5)}" y2="${H-Bp}" stroke="var(--ink-faint)" stroke-width="1" stroke-dasharray="4 4"/>` +
+      `<text x="${x(3.5)}" y="${Tp-5}" text-anchor="middle" class="ctick">model update ships</text>`;
+    const drawIn = line=>{
+      const len = line.getTotalLength();
+      line.style.strokeDasharray = len;
+      line.style.strokeDashoffset = len;
+      line.getBoundingClientRect();
+      line.style.transition = 'stroke-dashoffset 1.5s ease';
+      line.style.strokeDashoffset = '0';
+    };
+    const modes = {
+      evals(){
+        svg.innerHTML = grid +
+          `<polyline id="f7line" points="${pts(GOOD)}" fill="none" stroke="var(--tech)" stroke-width="2.5" stroke-linejoin="round"/>` +
+          `<circle cx="${x(4)}" cy="${y(GOOD[4])}" r="5" fill="var(--bad)"/>`;
+        drawIn(svg.querySelector('#f7line'));
+        alertEl.className = 'alertpill amber';
+        alertEl.textContent = 'Week 5, on the scheduled run: score 92 → 74. Caught in days, fixed by week 8.';
+        timer = setTimeout(()=>alertEl.classList.add('show'), 900);
+      },
+      none(){
+        const hidden = BADPATH.map((s,i)=>i < 3 ? null : x(i) + ',' + y(s)).filter(Boolean).join(' ');
+        svg.innerHTML = grid +
+          `<polyline id="f7line" points="${pts(BADPATH.slice(0,4))}" fill="none" stroke="var(--tech)" stroke-width="2.5" stroke-linejoin="round"/>` +
+          `<polyline points="${hidden}" fill="none" stroke="var(--bad)" stroke-width="2" stroke-dasharray="2 5" opacity=".8"/>` +
+          `<line x1="${x(3)}" y1="${y(92)}" x2="${x(9)}" y2="${y(92)}" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="6 5" opacity=".7"/>` +
+          `<text x="${x(9)}" y="${y(92)-8}" text-anchor="end" class="ctick">what everyone assumes</text>` +
+          `<text x="${x(6)}" y="${y(72)+16}" text-anchor="middle" class="ctick">what's actually happening</text>` +
+          `<circle cx="${x(8)}" cy="${y(BADPATH[8])}" r="5" fill="var(--bad)"/>`;
+        drawIn(svg.querySelector('#f7line'));
+        alertEl.className = 'alertpill red';
+        alertEl.textContent = 'Week 9: an analyst catches a wrong number on a live name. That kind of trust comes back slowly.';
+        timer = setTimeout(()=>alertEl.classList.add('show'), 1200);
+      }
+    };
+    el.querySelectorAll('.figbtn').forEach(b=>b.addEventListener('click',()=>{
+      el.querySelectorAll('.figbtn').forEach(xb=>xb.classList.toggle('on',xb===b));
+      clearTimeout(timer);
+      alertEl.classList.remove('show');
+      modes[b.dataset.m]();
+    }));
+    modes.evals();
+  }
+};
+
+const ORDERED = LESSONS.slice().sort((a,b)=>a.n-b.n);
+
+function renderLessons(){
+  const p1 = document.getElementById('lessons-p1');
+  const p2 = document.getElementById('lessons-p2');
+  ORDERED.forEach(L=>{
+    const sec = document.createElement('section');
+    sec.className = 'lesson ' + L.cls;
+    sec.id = 'lesson-' + L.n;
+    sec.innerHTML =
+      '<div class="head">' +
+        '<div class="meta"><span class="lnum">Lesson ' + L.n + '</span><span class="ltime">' + L.time + '</span></div>' +
+        '<h3>' + L.title + '</h3>' +
+      '</div>' +
+      '<div class="body">' +
+        '<div class="label">The lesson</div>' +
+        '<div class="pull">' + L.claim.join(' ') + '</div>' +
+        '<div class="label">' + (FIGLABELS[L.n] || 'Interactive') + '</div>' +
+        '<div class="figwrap" id="fig-' + L.n + '"></div>' +
+        '<div class="label">Why</div>' +
+        '<div class="story">' + L.why.map(p => typeof p === 'string'
+          ? '<p>'+p+'</p>'
+          : p.q ? '<blockquote class="bq"><p>'+p.q+'</p><div class="who">'+p.attr+'</div></blockquote>'
+          : p.html
+        ).join('') + '</div>' +
+        '<div class="label">What to do</div>' +
+        '<ul class="takeback">' + L.takeback.map(t=>'<li>'+t+'</li>').join('') + '</ul>' +
+      '</div>';
+    (L.part === 'p1' ? p1 : p2).appendChild(sec);
+  });
+  ORDERED.forEach(L=>{ if(FIGS[L.n]) FIGS[L.n](document.getElementById('fig-' + L.n)); });
+}
+
+function renderIndex(){
+  const wrap = document.getElementById('lessonindex');
+  ORDERED.forEach(L=>{
+    const a = document.createElement('a');
+    a.href = '#lesson-' + L.n;
+    a.innerHTML = '<span class="n ' + (L.part === 'p1' ? 'p1' : 'p2') + '">' + L.n + '</span><span>' + L.title + '</span>';
+    wrap.appendChild(a);
+  });
+}
+
+function renderChips(){
+  const chips = document.getElementById('chips');
+  ORDERED.forEach(L=>{
+    const a = document.createElement('a');
+    a.className = 'chip ' + (L.part === 'p1' ? 'p1' : 'p2');
+    a.href = '#lesson-' + L.n;
+    a.textContent = L.n;
+    a.title = 'Lesson ' + L.n + ': ' + L.title;
+    chips.appendChild(a);
+  });
+}
+
+function renderMore(){
+  const wrap = document.getElementById('minicards');
+  MORE.forEach(M=>{
+    const d = document.createElement('section');
+    d.className = 'mini ' + M.cls;
+    d.id = 'lesson-' + M.n;
+    d.innerHTML =
+      '<div class="mhead" role="button" tabindex="0" aria-expanded="false">' +
+        '<span class="lnum">Lesson ' + M.n + '</span>' +
+        '<h3>' + M.title + '</h3>' +
+        '<span class="chev">&rsaquo;</span>' +
+      '</div>' +
+      '<p class="mclaim">' + M.claim + '</p>' +
+      '<ul>' + M.items.map(i=>'<li>'+i+'</li>').join('') + '</ul>';
+    const head = d.querySelector('.mhead');
+    const toggle = ()=>{
+      const open = d.classList.toggle('openx');
+      head.setAttribute('aria-expanded', open);
+    };
+    head.addEventListener('click', toggle);
+    head.addEventListener('keydown', e=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+    wrap.appendChild(d);
+  });
+}
+
+function renderResources(){
+  const wrap = document.getElementById('rescards');
+  RESOURCES.forEach(R=>{
+    const d = document.createElement('div');
+    d.className = 'rescard';
+    d.innerHTML = '<h4>' + R.title + '</h4>' +
+      (R.dek ? '<p class="rdek">' + R.dek + '</p>' : '') +
+      '<ul>' + R.items.map(i=>
+        '<li>' + (i.tag ? '<span class="rtag">' + i.tag + '</span> ' : '') + i.text + '</li>'
+      ).join('') + '</ul>';
+    wrap.appendChild(d);
+  });
+}
+
+function initProgress(){
+  const bar = document.getElementById('progress');
+  addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }, {passive:true});
+}
+
+function initSpy(){
+  const links = Array.from(document.querySelectorAll('#navlinks a'));
+  const sections = ['start','part1','part2','close','more','colophon']
+    .map(id=>document.getElementById(id)).filter(Boolean);
+  const spy = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(a=>a.classList.toggle('on', a.getAttribute('href') === '#'+e.target.id));
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  sections.forEach(s=>spy.observe(s));
+
+  const chipLinks = Array.from(document.querySelectorAll('.chip'));
+  const lessonSpy = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        chipLinks.forEach(c=>c.classList.toggle('on', c.getAttribute('href') === '#'+e.target.id));
+      }
+    });
+  }, {rootMargin:'-25% 0px -65% 0px'});
+  document.querySelectorAll('.lesson').forEach(l=>lessonSpy.observe(l));
+}
+
+function renderSteps(){
+  const row = document.getElementById('steps');
+  const panel = document.getElementById('steppanel');
+  let cur = 0;
+  const show = i=>{
+    cur = i;
+    Array.from(row.children).forEach((b,j)=>b.classList.toggle('on', j===i));
+    const S = STEPS[i];
+    panel.innerHTML =
+      '<div class="sptag">Step ' + (i+1) + ' of ' + STEPS.length + ' · ' + S.tag + '</div>' +
+      '<h4>' + S.t + '</h4><p>' + S.d + '</p>' +
+      '<button class="spnext" id="spnext">' + (i < STEPS.length-1 ? 'Next step →' : 'Start over') + '</button>';
+    document.getElementById('spnext').addEventListener('click', ()=>show((cur+1)%STEPS.length));
+  };
+  STEPS.forEach((S,i)=>{
+    const b = document.createElement('button');
+    b.className = 'stepbtn';
+    b.type = 'button';
+    b.innerHTML = '<span class="sn">' + (i+1) + '</span><span>' + S.t + '</span>';
+    b.addEventListener('click', ()=>show(i));
+    row.appendChild(b);
+  });
+  show(0);
+}
+
+function initPromptBuilder(){
+  const role = document.getElementById('in-role');
+  const firm = document.getElementById('in-firm');
+  const out = document.getElementById('prompttext');
+  const update = ()=>{
+    const r = role.value.trim() || '[your role]';
+    const f = firm.value.trim() || '[type of firm]';
+    out.textContent = 'I work as ' + r + ' at ' + f + '. Interview me about my regular tasks, one question at a time, then suggest three specific places you could help. Then help me do the first one today.';
+  };
+  role.addEventListener('input', update);
+  firm.addEventListener('input', update);
+}
+
+function initCopy(){
+  const btn = document.getElementById('copyprompt');
+  const txt = document.getElementById('prompttext');
+  btn.addEventListener('click', ()=>{
+    navigator.clipboard.writeText(txt.textContent.trim()).then(()=>{
+      btn.textContent = 'Copied ✓';
+      setTimeout(()=>{ btn.textContent = 'Copy'; }, 1800);
+    }).catch(()=>{
+      const r = document.createRange();
+      r.selectNodeContents(txt);
+      const sel = getSelection();
+      sel.removeAllRanges(); sel.addRange(r);
+      btn.textContent = 'Select + copy';
+    });
+  });
+}
+
+function initVmemo(){
+  const vm = document.querySelector('.vmemo');
+  if(!vm) return;
+  if(!('IntersectionObserver' in window)){ vm.classList.add('on'); return; }
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ vm.classList.add('on'); io.disconnect(); } });
+  },{threshold:.3});
+  io.observe(vm);
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderLessons();
+  initVmemo();
+  renderIndex();
+  renderChips();
+  renderMore();
+  renderResources();
+  renderSteps();
+  initProgress();
+  initSpy();
+  initPromptBuilder();
+  initCopy();
+});
+</script>
+</body>
+</html>
