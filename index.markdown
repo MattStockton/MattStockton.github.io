@@ -3,447 +3,304 @@ layout: splash
 ---
 
 <style>
-  /* =================================================================
-     HOMEPAGE STYLES - Refined Tech Design
-     ================================================================= */
-
-  /* Hero Section */
-  .hero-section {
-    background: var(--gradient-hero);
-    padding: 4rem 1.5rem 3rem;
-    margin: -2rem -1.4rem 0;
-    position: relative;
-  }
-
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at 20% 30%, rgba(30, 58, 95, 0.06) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.04) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .hero-content {
-    max-width: 800px;
+  .home-shell {
+    max-width: 1040px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    padding: 0 1.5rem 4rem;
   }
 
-  /* Profile Header */
-  .profile-header {
-    display: flex;
-    flex-direction: column;
+  .home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 3.5rem;
     align-items: center;
-    text-align: center;
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  /* Profile Image */
-  .profile-image-wrapper {
-    position: relative;
-    margin-bottom: 2rem;
+  .home-eyebrow {
+    margin: 0 0 1rem;
+    color: var(--color-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
-  .profile-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 4px solid var(--color-surface);
-    box-shadow: 0 8px 32px rgba(30, 58, 95, 0.15),
-                0 0 0 1px var(--color-primary);
-    object-fit: cover;
+  .home-title {
+    max-width: 760px;
+    margin: 0 0 1.25rem;
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 6vw, 4.6rem);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
   }
 
-  /* Hero Heading */
-  .hero-heading {
-    font-family: var(--font-display);
-    font-size: 2.75rem;
-    font-weight: 800;
-    color: var(--color-text);
-    margin-bottom: 1rem;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-  }
-
-  .hero-heading .text-gradient {
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Hero Subheading */
-  .hero-subheading {
-    font-family: var(--font-body);
-    font-size: 1.2rem;
-    line-height: 1.7;
+  .home-intro {
+    max-width: 680px;
+    margin: 0;
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
-    max-width: 600px;
+    font-size: 1.18rem;
+    line-height: 1.65;
   }
 
-  /* CTA Section */
-  .cta-section {
+  .home-actions {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
     flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
   }
 
-  .btn-hero-primary {
+  .home-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: var(--gradient-accent);
-    color: white !important;
+    min-height: 44px;
+    padding: 0.7rem 1.1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 6px;
+    background: var(--color-primary);
+    color: #fff !important;
+    font-size: 0.95rem;
+    font-weight: 650;
     text-decoration: none;
-    border-radius: var(--radius-md);
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 16px rgba(30, 58, 95, 0.3);
-    transition: all var(--transition-base);
-    border: none;
   }
 
-  .btn-hero-primary:hover {
-    box-shadow: 0 6px 24px rgba(30, 58, 95, 0.4);
-    transform: translateY(-2px);
-    color: white !important;
+  .page__content a.home-button {
+    border-bottom: 1px solid var(--color-primary);
   }
 
-  .btn-hero-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: var(--color-surface);
-    color: var(--color-primary) !important;
-    text-decoration: none;
-    border-radius: var(--radius-md);
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: 2px solid var(--color-border);
-    transition: all var(--transition-base);
-  }
-
-  .btn-hero-secondary:hover {
-    border-color: var(--color-primary);
-    background: rgba(30, 58, 95, 0.05);
-    transform: translateY(-2px);
+  .home-button.secondary {
+    background: transparent;
     color: var(--color-primary) !important;
   }
 
-  /* Main Content Container */
-  .main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-  }
-
-  /* What I Do Section */
-  .what-i-do-section {
-    margin-bottom: 4rem;
-  }
-
-  .what-i-do-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    position: relative;
+  .home-button:hover {
+    transform: translateY(-1px);
     box-shadow: var(--shadow-md);
-    max-width: 800px;
-    margin: 0 auto;
   }
 
-  .what-i-do-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 1.5rem;
-    bottom: 1.5rem;
-    width: 4px;
-    background: var(--gradient-accent);
-    border-radius: 2px;
+  .home-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 10px 10px 0 rgba(245, 166, 35, 0.2);
   }
 
-  .what-i-do-intro {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 1.25rem;
-    line-height: 1.4;
+  .home-section {
+    padding: 3.75rem 0 0;
   }
 
-  .what-i-do-details {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    margin-bottom: 1.25rem;
+  .home-section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .what-i-do-approach {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: var(--color-text);
-    margin-bottom: 0;
-    padding-top: 1rem;
-    border-top: 1px solid var(--color-border);
-    font-weight: 500;
-  }
-
-  /* Section Heading */
-  .section-heading {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-text);
-    text-align: center;
-    margin-bottom: 2rem;
+  .home-section h2 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 2.15rem;
+    font-weight: 400;
     letter-spacing: -0.02em;
   }
 
-  /* Recent Writing Section */
-  .recent-writing-section {
-    margin-bottom: 4rem;
-  }
-
-  .recent-posts {
-    display: grid;
-    gap: 1.25rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-  }
-
-  .recent-post {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.5rem 1.75rem;
-    transition: all var(--transition-base);
-  }
-
-  .recent-post:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
-  }
-
-  .recent-post h4 {
-    margin: 0 0 0.5rem 0;
-  }
-
-  .recent-post h4 a {
-    font-family: var(--font-display);
-    color: var(--color-text);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: color var(--transition-fast);
-  }
-
-  .recent-post:hover h4 a {
+  .home-section-link {
     color: var(--color-primary);
-  }
-
-  .recent-post p {
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  /* Browse All Link */
-  .writing-link {
-    text-align: center;
-  }
-
-  .writing-link a {
-    font-family: var(--font-display);
-    color: var(--color-primary);
+    font-size: 0.92rem;
+    font-weight: 650;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: gap var(--transition-fast);
   }
 
-  .writing-link a:hover {
-    gap: 0.6rem;
-  }
-
-  /* Navigation Cards Section */
-  .nav-cards-section {
-    padding-top: 2rem;
+  .home-post-list {
     border-top: 1px solid var(--color-border);
   }
 
-  .nav-cards {
+  .home-post {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .nav-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    transition: all var(--transition-base);
-    display: block;
+  .home-post time {
+    color: var(--color-text-light);
+    font-size: 0.82rem;
   }
 
-  .nav-card:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-3px);
+  .home-post h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.08rem;
+    line-height: 1.35;
   }
 
-  .nav-card-title {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 700;
+  .home-post h3 a {
     color: var(--color-text);
-    margin-bottom: 0.5rem;
-    transition: color var(--transition-fast);
+    text-decoration: none;
   }
 
-  .nav-card:hover .nav-card-title {
-    color: var(--color-primary);
-  }
-
-  .nav-card-description {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
+  .home-post p {
     margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.96rem;
+    line-height: 1.5;
   }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero-section {
-      padding: 3rem 1rem 2rem;
-    }
+  .home-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
 
-    .hero-heading {
-      font-size: 2rem;
-    }
+  .home-feature {
+    display: flex;
+    min-height: 210px;
+    flex-direction: column;
+    padding: 1.4rem;
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-primary);
+    border-radius: 10px;
+    background: var(--color-surface);
+  }
 
-    .hero-subheading {
-      font-size: 1.1rem;
-    }
+  .home-feature:nth-child(2) {
+    border-top-color: var(--color-secondary);
+  }
 
-    .profile-image {
-      width: 140px;
-      height: 140px;
-    }
+  .home-feature-label {
+    margin-bottom: 0.75rem;
+    color: var(--color-text-light);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 
-    .cta-section {
-      flex-direction: column;
-      align-items: center;
-    }
+  .home-feature h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.08rem;
+    line-height: 1.35;
+  }
 
-    .btn-hero-primary,
-    .btn-hero-secondary {
-      width: 100%;
-      max-width: 280px;
-      justify-content: center;
-    }
+  .home-feature p {
+    margin: 0 0 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
 
-    .nav-cards {
+  .home-feature a {
+    margin-top: auto;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .home-note {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.75rem 2rem;
+    border-radius: 10px;
+    background: var(--color-surface-elevated);
+    border-left: 3px solid var(--color-secondary);
+  }
+
+  .home-note p {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 760px) {
+    .home-shell { padding: 0 1rem 3rem; }
+    .home-hero {
       grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 0;
     }
-
-    .what-i-do-card {
-      padding: 2rem 1.5rem;
+    .home-photo {
+      width: 150px;
+      height: 150px;
+      grid-row: 1;
     }
-
-    .what-i-do-intro {
-      font-size: 1.2rem;
-    }
+    .home-title { font-size: 2.8rem; }
+    .home-feature-grid { grid-template-columns: 1fr; }
+    .home-feature { min-height: 0; }
+    .home-post { grid-template-columns: 1fr; gap: 0.35rem; }
+    .home-note { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
+    .home-section-header { align-items: flex-end; }
   }
 </style>
 
-<!-- Hero Section -->
-<div class="hero-section">
-  <div class="hero-content">
-    <div class="profile-header animate-in">
-      <div class="profile-image-wrapper">
-        <img src="/docs/assets/images/matt.jpeg" class="profile-image" alt="Matt Stockton"/>
-      </div>
-      <h1 class="hero-heading">Hello, I'm <span class="text-gradient">Matt</span></h1>
-      <p class="hero-subheading">I've spent 20+ years building software and data systems, with the last decade focused on ML and data infrastructure. Today I help teams understand what's actually possible with large language models and build solutions that deliver real results.</p>
-      <div class="cta-section">
-        <a href="/work-with-me.html" class="btn-hero-primary">Work With Me</a>
-        <a href="/writing.html" class="btn-hero-secondary">Read My Writing</a>
+<div class="home-shell">
+  <section class="home-hero">
+    <div>
+      <p class="home-eyebrow">Software engineering, applied AI, and machine learning</p>
+      <h1 class="home-title">I build software and write about what I learn.</h1>
+      <p class="home-intro">I've spent more than 20 years building software and roughly a decade working in ML and AI. Today my work focuses on applied AI, production ML, and software engineering. I write here about the work and what I learn from it.</p>
+      <div class="home-actions">
+        <a class="home-button" href="/writing.html">Read the writing</a>
+        <a class="home-button secondary" href="https://pragmanexus.com">Work with me through PragmaNexus</a>
       </div>
     </div>
-  </div>
-</div>
+    <img class="home-photo" src="/docs/assets/images/matt.jpeg" alt="Matt Stockton">
+  </section>
 
-<!-- Main Content -->
-<div class="main-content">
-
-  <!-- What I Do Section -->
-  <div class="what-i-do-section animate-in delay-1">
-    <div class="what-i-do-card">
-      <p class="what-i-do-intro">I help teams cut through the AI hype to build systems that actually solve their business problems.</p>
-      <p class="what-i-do-details">These tools can solve problems in ways that weren't possible before - processing complex documents, understanding customer intent, generating insights from unstructured data. But the key is starting with your actual business problems, not the technology. I help you figure out what's worth building, then build it alongside your team, and make sure your people can maintain it.</p>
-      <p class="what-i-do-approach">My approach is hands-on: I architect and build alongside your team rather than just giving advice. The goal is reliable systems that create real value, not demos.</p>
+  <section class="home-section">
+    <div class="home-section-header">
+      <h2>Recent writing</h2>
+      <a class="home-section-link" href="/writing.html">All posts &rarr;</a>
     </div>
-  </div>
-
-  <!-- Recent Writing Section -->
-  <div class="recent-writing-section animate-in delay-2">
-    <h2 class="section-heading">Recent Writing</h2>
-    <div class="recent-posts">
-      <div class="recent-post">
-        <h4><a href="/2025/07/10/why-successful-llm-products-start-with-spreadsheets.html">Why Successful LLM Products Start with Spreadsheets</a></h4>
-        <p>Systematic evaluation is what separates working products from demos.</p>
-      </div>
-      <div class="recent-post">
-        <h4><a href="/2025/06/21/ai-coding-tools-amplify-what-you-already-know.html">AI Coding Tools Amplify What You Already Know</a></h4>
-        <p>These tools are productivity multipliers for people who understand the domain.</p>
-      </div>
-      <div class="recent-post">
-        <h4><a href="/2025/04/09/what-matters-when-building-ai-products.html">What Actually Matters When You're Building AI Products</a></h4>
-        <p>A few takeaways from Hamel Husain's guide to improving AI products.</p>
-      </div>
-      <div class="recent-post">
-        <h4><a href="/2025/07/13/five-insights-from-andrew-ng-on-building-faster-with-ai.html">Five Insights from Andrew Ng on Building Faster with AI</a></h4>
-        <p>Practical advice on shipping AI features quickly and effectively.</p>
-      </div>
+    <div class="home-post-list">
+      {% for post in site.posts limit:5 %}
+      <article class="home-post">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+        </div>
+      </article>
+      {% endfor %}
     </div>
-    <p class="writing-link"><a href="/writing.html">Browse all posts →</a></p>
-  </div>
+  </section>
 
-  <!-- Navigation Cards -->
-  <div class="nav-cards-section animate-in delay-3">
-    <div class="nav-cards">
-      <a href="/work-with-me.html" class="nav-card">
-        <h3 class="nav-card-title">Work With Me</h3>
-        <p class="nav-card-description">Strategic consulting for measurable business impact</p>
-      </a>
-      <a href="/writing.html" class="nav-card">
-        <h3 class="nav-card-title">Writing</h3>
-        <p class="nav-card-description">Practical insights on building AI solutions that work</p>
-      </a>
-      <a href="/my-background.html" class="nav-card">
-        <h3 class="nav-card-title">Background</h3>
-        <p class="nav-card-description">20+ years of building systems that solve real problems</p>
-      </a>
+  <section class="home-section">
+    <div class="home-section-header">
+      <h2>Projects and conversations</h2>
     </div>
-  </div>
+    <div class="home-feature-grid">
+      <article class="home-feature">
+        <div class="home-feature-label">Interactive guide</div>
+        <h3>AI in Research Teams</h3>
+        <p>Lessons on choosing research tasks, keeping judgment with analysts, and checking whether the output stays reliable.</p>
+        <a href="/standalone/ai-in-research-teams.html">Open the guide &rarr;</a>
+      </article>
+      <article class="home-feature">
+        <div class="home-feature-label">Podcast</div>
+        <h3>Deploying AI on the Buyside</h3>
+        <p>A conversation with Brett Caughran and Khe Hy about moving from individual experiments to shared workflows.</p>
+        <a href="https://www.fundamentedge.com/invest-with-ai-episodes/04">Listen to the episode &rarr;</a>
+      </article>
+      <article class="home-feature">
+        <div class="home-feature-label">Interactive project</div>
+        <h3>WattsOpen</h3>
+        <p>An interactive site that connects federal energy datasets to map power plant retirements, grid infrastructure, and interconnection queues.</p>
+        <a href="https://wattsopen.com/">Explore WattsOpen &rarr;</a>
+      </article>
+    </div>
+  </section>
 
+  <section class="home-section">
+    <div class="home-note">
+      <p>I do client work through <strong>PragmaNexus</strong>. Its site has services, case studies, and contact information.</p>
+      <a class="home-section-link" href="https://pragmanexus.com">Visit PragmaNexus &rarr;</a>
+    </div>
+  </section>
 </div>

@@ -6,7 +6,7 @@ category: "AI Strategy & Leadership"
 tags: ["ai-adoption", "investment-research", "research-workflows", "evals", "ai-tools"]
 ---
 
-Last month I gave a talk to a private working group of finance professionals, a couple dozen people on the call from a mix of firms. The topic was getting AI into research workflows, which is part of what I've worked on over the last couple of years. Thirteen lessons prepared for an hour, questions running throughout, and we got through seven.
+Last month I gave a talk to a private working group of finance professionals, a couple dozen people on the call from a mix of firms. The topic was using AI in investment research. I based the talk on tools I've built and conversations with teams across the industry. Thirteen lessons prepared for an hour, questions running throughout, and we got through seven.
 
 I built the talk as [a single interactive page](/standalone/ai-in-research-teams.html) instead of a slide deck, with a figure you can click through for each lesson. It's still up, and it's the fuller version of everything below.
 

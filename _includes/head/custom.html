@@ -1,30 +1,32 @@
 <!-- start custom head snippets -->
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="icon" href="/docs/assets/images/site/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/docs/assets/images/site/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/docs/assets/images/site/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0A4D68">
 
-<!-- Google Fonts: Outfit (headlines) + Source Sans 3 (body) -->
+<!-- Google Fonts: Instrument Serif (editorial accents) + DM Sans (interface and body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 <!-- end custom head snippets -->
 
 <style>
 /* =================================================================
-   REFINED TECH DESIGN SYSTEM
-   Modern, light-theme aesthetic for AI Strategy Consultant
+   PERSONAL SITE DESIGN SYSTEM
    ================================================================= */
 
 /* CSS Custom Properties */
 :root {
-  /* Primary - Deep Navy Blue */
-  --color-primary: #1E3A5F;
-  --color-primary-dark: #152A45;
-  --color-primary-light: #2D4A6F;
+  /* Primary - Deep Teal */
+  --color-primary: #0A4D68;
+  --color-primary-dark: #062E3F;
+  --color-primary-light: #0D5F7F;
 
-  /* Secondary - Warm Amber */
-  --color-secondary: #F59E0B;
-  --color-secondary-light: #FCD34D;
+  /* Secondary - Warm Gold */
+  --color-secondary: #F5A623;
+  --color-secondary-light: #FFB84D;
 
   /* Backgrounds */
   --color-bg: #FAFBFC;
@@ -42,14 +44,15 @@
   --color-border-hover: #CBD5E1;
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #F0F9FF 0%, #FFFBEB 50%, #FDF4FF 100%);
-  --gradient-accent: linear-gradient(135deg, #1E3A5F 0%, #2D4A6F 100%);
-  --gradient-card: linear-gradient(135deg, rgba(30, 58, 95, 0.02) 0%, rgba(245, 158, 11, 0.02) 100%);
-  --gradient-text: linear-gradient(135deg, #1E3A5F 0%, #3D5A7F 100%);
+  --gradient-hero: linear-gradient(135deg, #F0F8FA 0%, #FFFBF2 100%);
+  --gradient-accent: linear-gradient(135deg, #0A4D68 0%, #0D5F7F 100%);
+  --gradient-card: linear-gradient(135deg, rgba(10, 77, 104, 0.025) 0%, rgba(245, 166, 35, 0.025) 100%);
+  --gradient-text: linear-gradient(135deg, #062E3F 0%, #0D5F7F 100%);
 
   /* Typography */
-  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -70,7 +73,7 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.06);
-  --shadow-hover: 0 12px 32px rgba(30, 58, 95, 0.12);
+  --shadow-hover: 0 12px 32px rgba(10, 77, 104, 0.12);
 
   /* Transitions */
   --transition-fast: 0.15s ease;
@@ -339,11 +342,11 @@ h1, h2, h3, h4, h5, h6 {
 .btn--primary {
   background: var(--gradient-accent);
   color: white;
-  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.25);
+  box-shadow: 0 2px 8px rgba(10, 77, 104, 0.25);
 }
 
 .btn--primary:hover {
-  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.35);
+  box-shadow: 0 4px 16px rgba(10, 77, 104, 0.35);
   transform: translateY(-1px);
 }
 
@@ -355,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn--inverse:hover {
   border-color: var(--color-primary);
-  background: rgba(30, 58, 95, 0.05);
+  background: rgba(10, 77, 104, 0.05);
 }
 
 /* =================================================================
@@ -577,8 +580,8 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 25% 25%, rgba(30, 58, 95, 0.05) 0%, transparent 50%),
-                    radial-gradient(circle at 75% 75%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 25% 25%, rgba(10, 77, 104, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(245, 166, 35, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 

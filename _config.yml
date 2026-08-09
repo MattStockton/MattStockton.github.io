@@ -24,8 +24,8 @@ title: Matt Stockton
 author:
   name: Matt Stockton
   email: mattstockton@gmail.com
-  bio: "AI strategy consultant and software engineer sharing practical insights from real implementations."
-  avatar: "/assets/images/avatar.jpg"
+  bio: "Software engineer writing about applied AI, machine learning, and software development."
+  avatar: "/docs/assets/images/matt.jpeg"
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -35,11 +35,13 @@ author:
       url: "https://www.linkedin.com/in/mattstockton/"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Practical AI implementation and software engineering insights from real projects.
+  Writing about software development, applied AI, and machine learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mattstockton.com" # the base hostname & protocol for your site
+og_image: "/docs/assets/images/site/social-card.png"
 
 # Build settings
+# The remote theme works on GitHub Pages and with local `bundle exec jekyll serve`.
 remote_theme: "mmistakes/minimal-mistakes@4.26.0"
 plugins:
   - jekyll-feed
@@ -53,7 +55,11 @@ lsi: false
 
 # Exclude from processing.
 exclude:
+  - AGENTS.md
   - CLAUDE.md
+  - .agents/
+  - .claude/
+  - .codex/
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/

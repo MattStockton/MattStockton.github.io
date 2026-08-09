@@ -1,285 +1,199 @@
 ---
 layout: splash
+title: Writing
 classes:
   - wide
 ---
 
 <style>
-  /* =================================================================
-     WRITING ARCHIVE - Refined Tech Design
-     ================================================================= */
-
-  /* Main Container */
-  .page__content,
-  .archive,
-  #main {
-    max-width: 1200px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    float: none !important;
-    width: 100% !important;
-  }
-
-  #main {
-    padding: 0 1rem !important;
-  }
-
-  /* Page Header */
-  .page-header {
-    text-align: center;
-    padding: 3rem 1rem 2rem;
-    background: var(--gradient-hero);
-    margin: -2rem -1rem 0;
-    position: relative;
-  }
-
-  .page-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle at 30% 40%, rgba(30, 58, 95, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .page-header h1 {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--color-text);
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.03em;
-    position: relative;
-  }
-
-  .page-header p {
-    font-size: 1.15rem;
-    color: var(--color-text-muted);
-    max-width: 600px;
+  .writing-page {
+    max-width: 1040px;
     margin: 0 auto;
-    position: relative;
+    padding: 4.5rem 1.5rem 4rem;
   }
 
-  /* Content Container */
-  .content-container {
-    margin-top: 1.5rem;
-    padding: 2rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+  .writing-header {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  /* Category Navigation - Compact Horizontal Scroll */
+  .writing-header h1 {
+    margin: 0 0 1rem;
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .writing-header p {
+    max-width: 640px;
+    margin: 0 !important;
+    color: var(--color-text-muted);
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+
   .category-nav {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 0.4rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--color-border);
+    gap: 0.45rem;
+    margin: 0;
+    padding: 1.5rem 0;
     overflow-x: auto;
+    border-bottom: 1px solid var(--color-border);
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
   }
 
-  .category-nav::-webkit-scrollbar {
-    height: 3px;
-  }
-
-  .category-nav::-webkit-scrollbar-track {
-    background: var(--color-surface-elevated);
-    border-radius: 2px;
-  }
-
-  .category-nav::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 2px;
-  }
-
-  .category-nav:hover::-webkit-scrollbar-thumb {
-    background: var(--color-border-hover);
-  }
-
   .category-button {
-    font-family: var(--font-display);
-    padding: 0.35rem 0.75rem;
-    background: var(--color-surface);
-    color: var(--color-text-muted);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: all var(--transition-base);
-    cursor: pointer;
     flex-shrink: 0;
+    padding: 0.42rem 0.72rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 0.73rem;
+    font-weight: 600;
+    line-height: 1.2;
     white-space: nowrap;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
   }
 
   .category-button:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
-    background: rgba(30, 58, 95, 0.05);
   }
 
   .category-button.active {
-    background: var(--gradient-accent);
-    color: white !important;
-    border-color: transparent;
-    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.25);
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: #fff;
   }
 
-  /* Featured Badge */
-  .featured-badge {
-    background: var(--color-secondary);
-    color: var(--color-text);
-    padding: 0.15rem 0.5rem;
-    border-radius: var(--radius-xl);
-    font-size: 0.7rem;
-    font-weight: 600;
-    margin-left: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  /* All Posts Section */
   .all-posts {
-    display: grid;
-    gap: 1rem;
+    border-top: 0;
   }
 
   .post-item {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.5rem 1.75rem;
-    transition: all var(--transition-base);
-  }
-
-  .post-item:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
-  }
-
-  .post-item h3 {
-    margin: 0 0 0.5rem 0 !important;
-    font-size: 1.15rem !important;
-    font-family: var(--font-display);
-    font-weight: 600;
-    line-height: 1.35;
-  }
-
-  .post-item h3 a {
-    color: var(--color-text) !important;
-    text-decoration: none !important;
-    transition: color var(--transition-fast);
-  }
-
-  .post-item:hover h3 a {
-    color: var(--color-primary) !important;
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 1.75rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .post-meta {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem !important;
-    font-size: 0.85rem !important;
-    color: var(--color-text-muted) !important;
+    color: var(--color-text-light);
+    font-size: 0.76rem;
+    line-height: 1.45;
   }
 
   .post-category {
-    display: inline-block;
-    background: var(--color-surface-elevated);
+    display: block;
+    margin-top: 0.4rem;
     color: var(--color-primary);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--radius-xl);
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .featured-badge {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.12rem 0.4rem;
+    border-radius: 4px;
+    background: rgba(245, 166, 35, 0.18);
+    color: var(--color-text);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .post-body h2 {
+    margin: 0 0 0.4rem !important;
+    padding: 0 !important;
+    border: 0 !important;
+    font-family: var(--font-display);
+    font-size: 1.06rem !important;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .post-body h2 a {
+    color: var(--color-text) !important;
+    text-decoration: none !important;
+    border: 0 !important;
+  }
+
+  .post-body h2 a:hover {
+    color: var(--color-primary) !important;
   }
 
   .post-excerpt {
-    display: block !important;
     margin: 0 !important;
-    font-size: 0.95rem !important;
-    color: var(--color-text-muted) !important;
-    line-height: 1.6 !important;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
-  /* Hidden class for filtering */
   .hidden {
     display: none !important;
   }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .page-header {
-      padding: 2rem 1rem 1.5rem;
-    }
-
-    .page-header h1 {
-      font-size: 2rem;
-    }
-
-    .content-container {
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .post-item {
-      padding: 1.25rem;
-    }
-
-    .post-item h3 {
-      font-size: 1.05rem !important;
-    }
+  @media (max-width: 700px) {
+    .writing-page { padding: 3rem 1rem; }
+    .writing-header { padding-bottom: 2.25rem; }
+    .writing-header h1 { font-size: 3rem; }
+    .post-item { grid-template-columns: 1fr; gap: 0.55rem; padding: 1.35rem 0; }
+    .post-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .post-category, .featured-badge { display: inline-block; margin-top: 0; }
   }
 </style>
 
-<!-- Page Header -->
-<div class="page-header">
-  <h1>Writing</h1>
-  <p>Practical insights on building AI solutions, software engineering, and strategy.</p>
-</div>
+<div class="writing-page">
+  <header class="writing-header">
+    <h1>Writing</h1>
+    <p>Notes on software development, applied AI, and machine learning.</p>
+  </header>
 
-<div class="content-container">
-  <!-- Category Navigation -->
-  <div class="category-nav">
-    <button class="category-button active" data-category="all">All Posts</button>
-    <button class="category-button" data-category="featured">Featured</button>
-    <button class="category-button" data-category="Getting Started with AI">Getting Started with AI</button>
-    <button class="category-button" data-category="Building with LLMs">Building with LLMs</button>
-    <button class="category-button" data-category="AI Strategy & Leadership">AI Strategy</button>
-    <button class="category-button" data-category="Finance & Investing">Finance & Investing</button>
-    <button class="category-button" data-category="Product & Strategy">Product & Strategy</button>
-    <button class="category-button" data-category="Software Engineering">Software Engineering</button>
-    <button class="category-button" data-category="Learning & Books">Learning & Books</button>
-    <button class="category-button" data-category="Personal Reflections">Personal</button>
-    <button class="category-button" data-category="uncategorized">Other</button>
-  </div>
+  <nav class="category-nav" aria-label="Filter writing by category">
+    <button class="category-button active" data-category="recent" aria-pressed="true">Recent</button>
+    <button class="category-button" data-category="all" aria-pressed="false">All posts</button>
+    <button class="category-button" data-category="featured" aria-pressed="false">Featured</button>
+    <button class="category-button" data-category="Getting Started with AI" aria-pressed="false">Getting started</button>
+    <button class="category-button" data-category="Building with LLMs" aria-pressed="false">Building with LLMs</button>
+    <button class="category-button" data-category="AI Strategy & Leadership" aria-pressed="false">AI strategy</button>
+    <button class="category-button" data-category="Finance & Investing" aria-pressed="false">Finance</button>
+    <button class="category-button" data-category="Product & Strategy" aria-pressed="false">Product</button>
+    <button class="category-button" data-category="Software Engineering" aria-pressed="false">Software engineering</button>
+    <button class="category-button" data-category="Learning & Books" aria-pressed="false">Learning and books</button>
+    <button class="category-button" data-category="Personal Reflections" aria-pressed="false">Personal</button>
+    <button class="category-button" data-category="uncategorized" aria-pressed="false">Other</button>
+  </nav>
 
-  <!-- All Posts Section -->
   <div class="all-posts">
     {% for post in site.posts %}
-    <article class="post-item" data-category="{{ post.category | default: 'uncategorized' }}" data-featured="{{ post.featured | default: false }}">
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <article class="post-item" data-index="{{ forloop.index0 }}" data-category="{{ post.category | default: 'uncategorized' }}" data-featured="{{ post.featured | default: false }}">
       <div class="post-meta">
-        {{ post.date | date: "%B %d, %Y" }}
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
         <span class="post-category">{{ post.category | default: "Other" }}</span>
-        {% if post.featured %}
-        <span class="featured-badge">Featured</span>
-        {% endif %}
+        {% if post.featured %}<span class="featured-badge">Featured</span>{% endif %}
       </div>
-      <div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</div>
+      <div class="post-body">
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      </div>
     </article>
     {% endfor %}
   </div>
 </div>
 
 <script>
-let activeCategory = 'all';
+let activeCategory = 'recent';
 
 document.addEventListener('DOMContentLoaded', function() {
   const categoryButtons = document.querySelectorAll('.category-button');
@@ -287,39 +201,33 @@ document.addEventListener('DOMContentLoaded', function() {
   categoryButtons.forEach(button => {
     button.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation();
-      this.blur();
       activeCategory = this.getAttribute('data-category');
 
-      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      categoryButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
       this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
 
       filterPosts();
     });
   });
+
+  filterPosts();
 });
 
 function filterPosts() {
-  const postItems = document.querySelectorAll('.post-item');
-
-  postItems.forEach(post => {
+  document.querySelectorAll('.post-item').forEach(post => {
     const postCategory = post.getAttribute('data-category');
     const postFeatured = post.getAttribute('data-featured') === 'true';
+    const postIndex = Number(post.getAttribute('data-index'));
+    const showPost = (activeCategory === 'recent' && postIndex < 20) ||
+      activeCategory === 'all' ||
+      (activeCategory === 'featured' && postFeatured) ||
+      postCategory === activeCategory;
 
-    let categoryMatch = false;
-    if (activeCategory === 'all') {
-      categoryMatch = true;
-    } else if (activeCategory === 'featured') {
-      categoryMatch = postFeatured;
-    } else {
-      categoryMatch = postCategory === activeCategory;
-    }
-
-    if (categoryMatch) {
-      post.classList.remove('hidden');
-    } else {
-      post.classList.add('hidden');
-    }
+    post.classList.toggle('hidden', !showPost);
   });
 }
 </script>

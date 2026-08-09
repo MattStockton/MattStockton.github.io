@@ -1,16 +1,16 @@
 ---
 layout: single
 title: "How I Use Modal"
-excerpt: "A tour of the Modal features behind two patterns I use across client work: cron jobs, secrets, volumes, static IPs, web apps, background AI jobs, and sandboxes, all in plain Python."
+excerpt: "A tour of two practical Modal deployment patterns: cron jobs, secrets, volumes, static IPs, web apps, background AI jobs, and sandboxes, all in plain Python."
 category: "Software Engineering"
 tags: ["modal", "infrastructure", "python", "serverless", "data-engineering"]
 ---
 
-I've been using Modal across my consulting work for a while now, and it's become my favorite piece of infrastructure. It's super simple, I don't have to worry about infra code, and I can focus on getting things done. I listened to a recent [Latent Space episode with Modal's CTO](https://www.latent.space/p/modal2026) and realized I've never written down how I actually use it, so that's what this post is.
+I've been using Modal in my consulting work for a while, and it's become my favorite piece of infrastructure. It keeps the infrastructure code small and lets me focus on the application. After listening to a recent [Latent Space episode with Modal's CTO](https://www.latent.space/p/modal2026), I realized I'd never written down how I use it.
 
 For those unfamiliar: [Modal](https://modal.com) is a serverless platform for Python. You decorate ordinary functions with infrastructure configuration, define your dependencies in a Dockerfile or declaratively in Python, and Modal runs the functions in its cloud. Scheduling, scaling, HTTPS routing, and log capture are all handled for you.
 
-Most of my consulting clients have similar problem spaces: Python-centric data work, a warehouse as the source of truth, internal tools, and AI-backed jobs. Modal shows up in bits and pieces across that work, and in some cases it's the entire cloud layer. Different engagements use different subsets, so to keep things concrete I'll describe two patterns that together cover everything I use:
+The same problems come up often: Python data pipelines, a warehouse, internal tools, and AI jobs. Modal can handle individual pieces or most of the cloud layer. Below are two generalized patterns from that work:
 
 - **A scheduled ingestion service.** Every morning it pulls report data from a third-party vendor's API and lands it in Snowflake. It isn't the only feed into the warehouse, but the others load outside Modal, so I'm leaving them out. On Modal this is one function, about 60 lines of infrastructure code total.
 - **An internal data platform.** A Streamlit web portal with dashboards built on Snowflake data, AI agents that generate long-form reports as background jobs, and an MCP server that exposes the same data tools to Claude and ChatGPT clients. Five Modal functions plus on-demand sandboxes, all built from one container image.
@@ -52,7 +52,7 @@ Volumes are network filesystems that mount into containers and survive between r
 
 ### Static IPs
 
-Serverless containers normally get arbitrary outbound IPs, which breaks anything that enforces an IP allowlist. Attaching `proxy=modal.Proxy.from_name("egress-proxy")` to a function routes all its outbound traffic through a managed tunnel with one static IP. Everything in this post shares a single proxy, so the warehouse and the vendors only have to allowlist one address. This is the feature that makes Modal an option for clients with strict network policies.
+Serverless containers normally get arbitrary outbound IPs, which breaks anything that enforces an IP allowlist. Attaching `proxy=modal.Proxy.from_name("egress-proxy")` to a function routes all its outbound traffic through a managed tunnel with one static IP. Everything in this post shares a single proxy, so the warehouse and the vendors only have to allowlist one address. This lets Modal work with strict network policies.
 
 ### Web endpoints
 

@@ -19,13 +19,13 @@ I used this approach with ChatGPT 4o, asking it to help me build a Deep Research
 
 ### Research Report  
 
-For those who want to see the full breakdown, I’ve compiled everything into a single document. This includes:
+I compiled the full exercise into a single document. It includes:
 
 - The meta-prompting process – How I used ChatGPT to refine my Deep Research query.
 - The final Deep Research prompt – The exact input I used to generate the structured report.
 - The full research report – The output from Deep Research, providing a structured analysis of the three mutual funds I was evaluating.
 
-📄 [View the full doc here (PDF)](/docs/assets/pdfs/open_ai_deep_research_mutual_funds.pdf)
+📄 [View the full document (PDF)](/docs/assets/pdfs/open_ai_deep_research_mutual_funds.pdf)
 
 ## Results  
 
@@ -43,6 +43,6 @@ The most valuable part of this process was how little effort it took to create a
 
 OpenAI isn’t the only company offering a Deep Research tool — **Perplexity AI** and **Google** have similar features as well. Each has its own approach to sourcing and structuring information, so if you're curious about trying them out, it's worth doing your own research to see how they compare and which one fits your needs best.  
 
-As more people experiment with these tools, best practices are still emerging. It’s incredible how far they’ve come, and I’m interested in learning from others using them in different ways.  
+These tools change quickly, so it is worth testing the same task in more than one of them. I am interested in hearing what works for other people.
 
 If you’ve been experimenting with Deep Research, I’d love to hear how you’re using it and what prompting techniques have worked well for you.
