@@ -1,0 +1,158 @@
+---
+layout: splash
+---
+
+{% assign note = site.data.x_notes | where: "slug", page.note_slug | first %}
+
+<style>
+  .note-detail {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 4rem;
+  }
+
+  .note-detail__back {
+    display: inline-block;
+    margin-bottom: 3rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  .note-detail__back:hover {
+    color: var(--color-primary);
+  }
+
+  .note-detail__header {
+    max-width: 760px;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .note-detail__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .note-detail h1 {
+    max-width: 740px;
+    margin: 0;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: clamp(3rem, 7vw, 4.75rem);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+  }
+
+  .note-detail__body {
+    max-width: 720px;
+    padding: 2.5rem 0;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .note-detail__body p {
+    margin: 0 0 1.25rem;
+  }
+
+  .note-detail__update {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-surface);
+  }
+
+  .note-detail__update strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .note-detail__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    max-width: 720px;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .page__content a.note-detail__action {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .page__content a.note-detail__action:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 720px) {
+    .note-detail {
+      padding-top: 3rem;
+    }
+
+    .note-detail__back {
+      margin-bottom: 2rem;
+    }
+
+    .note-detail__meta {
+      display: block;
+    }
+
+    .note-detail__meta span {
+      display: block;
+      margin-top: 0.4rem;
+    }
+
+    .note-detail h1 {
+      font-size: 2.75rem;
+      overflow-wrap: break-word;
+    }
+  }
+</style>
+
+{% if note %}
+<article class="note-detail">
+  <a class="note-detail__back" href="/notes.html">&larr; All notes</a>
+
+  <header class="note-detail__header">
+    <div class="note-detail__meta">
+      <time datetime="{{ note.datetime }}">{{ note.date }}</time>
+      <span>{{ note.theme }}</span>
+    </div>
+    <h1>{{ note.title }}</h1>
+  </header>
+
+  <div class="note-detail__body">
+    {% for paragraph in note.paragraphs %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+
+    {% if note.update %}
+      <div class="note-detail__update">
+        <strong>What I would add now</strong>
+        {{ note.update }} {% if note.update_url %}<a href="{{ note.update_url }}">Read the newer note on X.</a>{% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <footer class="note-detail__actions">
+    <a class="note-detail__action" href="{{ note.url }}" rel="noopener noreferrer">Read the original and replies on X &rarr;</a>
+    <a class="note-detail__action" href="https://x.com/mstockton" rel="noopener noreferrer">Follow @mstockton on X</a>
+  </footer>
+</article>
+{% endif %}

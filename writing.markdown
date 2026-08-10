@@ -34,6 +34,12 @@ classes:
     line-height: 1.6;
   }
 
+  .writing-header a {
+    color: var(--color-primary) !important;
+    border-bottom: 1px solid rgba(10, 77, 104, 0.3) !important;
+    text-decoration: none !important;
+  }
+
   .category-nav {
     display: flex;
     gap: 0.45rem;
@@ -157,7 +163,7 @@ classes:
 <div class="writing-page">
   <header class="writing-header">
     <h1>Writing</h1>
-    <p>Notes on software development, applied AI, and machine learning.</p>
+    <p>Longer pieces on software development, applied AI, and machine learning. I post shorter, more current <a href="/notes.html">notes from X</a>.</p>
   </header>
 
   <nav class="category-nav" aria-label="Filter writing by category">

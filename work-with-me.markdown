@@ -187,16 +187,17 @@ permalink: /work-with-me.html
     <div>
       <p class="work-kicker">Client work</p>
       <h1>Consulting through PragmaNexus.</h1>
-      <p class="work-lead">I help teams define a specific problem, build the software, and put it into production. I can work with an engineering team or handle the technical work myself.</p>
+      <p class="work-lead">I help teams turn a specific problem into working software, from AI products and product features to internal tools and production ML. I can work with an engineering team or handle the technical work myself.</p>
     </div>
 
     <aside class="work-services">
       <h2>Typical work</h2>
       <ul class="work-service-list">
+        <li>Applied AI products and product features</li>
+        <li>Agentic systems and workflows</li>
         <li>Internal AI tools</li>
         <li>ML and data systems</li>
-        <li>AI project reviews</li>
-        <li>AI coding practices for engineers</li>
+        <li>Technical reviews and engineering practices</li>
       </ul>
     </aside>
   </section>
@@ -204,7 +205,7 @@ permalink: /work-with-me.html
   <section class="work-approach">
     <h2>How I work</h2>
     <div class="work-copy">
-      <p>I start by learning how the work gets done and what needs to change. From there, the work might be an assessment, a focused prototype, an improvement to an existing system, or a production build.</p>
+      <p>I start by understanding the users, the existing system, and what the software needs to do. From there, the work might be an assessment, a focused prototype, an improvement to an existing system, or a production build.</p>
       <p>I work in short cycles using real data and feedback from the people doing the job. We adjust the plan as we learn more.</p>
       <p>Sometimes the answer is an AI system. Sometimes it is traditional software, a process change, or a decision not to build anything.</p>
     </div>

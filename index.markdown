@@ -115,6 +115,13 @@ layout: splash
     text-decoration: none;
   }
 
+  .home-section-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    justify-content: flex-end;
+  }
+
   .home-post-list {
     border-top: 1px solid var(--color-border);
   }
@@ -147,6 +154,54 @@ layout: splash
     margin: 0;
     color: var(--color-text-muted);
     font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .home-x-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .home-x-note {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .home-x-meta {
+    color: var(--color-text-light);
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .home-x-theme {
+    display: block;
+    margin-top: 0.3rem;
+    color: var(--color-primary);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .home-x-note h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.08rem;
+    line-height: 1.35;
+  }
+
+  .home-x-note h3 a {
+    color: var(--color-text);
+    border: 0 !important;
+    text-decoration: none;
+  }
+
+  .home-x-note p {
+    max-width: 720px;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.94rem;
     line-height: 1.5;
   }
 
@@ -234,8 +289,11 @@ layout: splash
     .home-feature-grid { grid-template-columns: 1fr; }
     .home-feature { min-height: 0; }
     .home-post { grid-template-columns: 1fr; gap: 0.35rem; }
+    .home-x-note { grid-template-columns: 1fr; gap: 0.35rem; }
+    .home-x-theme { display: inline; margin-left: 0.5rem; }
     .home-note { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
     .home-section-header { align-items: flex-end; }
+    .home-section-links { justify-content: flex-start; }
   }
 </style>
 
@@ -244,13 +302,38 @@ layout: splash
     <div>
       <p class="home-eyebrow">Software engineering, applied AI, and machine learning</p>
       <h1 class="home-title">I build software and write about what I learn.</h1>
-      <p class="home-intro">I've spent more than 20 years building software and roughly a decade working in ML and AI. Today my work focuses on applied AI, production ML, and software engineering. I write here about the work and what I learn from it.</p>
+      <p class="home-intro">I've spent more than 20 years building software and roughly a decade working in ML and AI. I publish longer pieces here. Most of my day-to-day thinking happens <a href="https://x.com/mstockton">on X</a>, where I share working ideas and practical things I'm trying.</p>
       <div class="home-actions">
         <a class="home-button" href="/writing.html">Read the writing</a>
         <a class="home-button secondary" href="https://pragmanexus.com">Work with me through PragmaNexus</a>
       </div>
     </div>
     <img class="home-photo" src="/docs/assets/images/matt.jpeg" alt="Matt Stockton">
+  </section>
+
+  <section class="home-section">
+    <div class="home-section-header">
+      <h2>Working notes</h2>
+      <div class="home-section-links">
+        <a class="home-section-link" href="/notes.html">All notes &rarr;</a>
+        <a class="home-section-link" href="https://x.com/mstockton">Follow on X &rarr;</a>
+      </div>
+    </div>
+    <div class="home-x-list">
+      {% assign featured_notes = site.data.x_notes | where: "featured", true %}
+      {% for note in featured_notes %}
+      <article class="home-x-note">
+        <div class="home-x-meta">
+          <time datetime="{{ note.datetime }}">{{ note.date }}</time>
+          <span class="home-x-theme">{{ note.theme }}</span>
+        </div>
+        <div>
+          <h3><a href="/notes/{{ note.slug }}/">{{ note.title }}</a></h3>
+          <p>{{ note.summary }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </section>
 
   <section class="home-section">
