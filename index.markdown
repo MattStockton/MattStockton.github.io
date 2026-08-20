@@ -207,7 +207,7 @@ layout: splash
 
   .home-feature-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
 
@@ -293,6 +293,11 @@ layout: splash
     .home-x-theme { display: inline; margin-left: 0.5rem; }
     .home-note { grid-template-columns: 1fr; gap: 1rem; padding: 1.5rem; }
     .home-section-header { align-items: flex-end; }
+    .home-section-header--stack {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
     .home-section-links { justify-content: flex-start; }
   }
 </style>
@@ -355,28 +360,20 @@ layout: splash
   </section>
 
   <section class="home-section">
-    <div class="home-section-header">
-      <h2>Projects and conversations</h2>
+    <div class="home-section-header home-section-header--stack">
+      <h2>Experiments and conversations</h2>
+      <a class="home-section-link" href="/experiments.html">All experiments &rarr;</a>
     </div>
     <div class="home-feature-grid">
+      {% assign featured_experiments = site.data.experiments | where: "featured", true %}
+      {% for item in featured_experiments limit:4 %}
       <article class="home-feature">
-        <div class="home-feature-label">Interactive guide</div>
-        <h3>AI in Research Teams</h3>
-        <p>Lessons on choosing research tasks, keeping judgment with analysts, and checking whether the output stays reliable.</p>
-        <a href="/standalone/ai-in-research-teams.html">Open the guide &rarr;</a>
+        <div class="home-feature-label">{{ item.kind }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.short | default: item.summary }}</p>
+        <a href="{{ item.url }}"{% if item.external %} rel="noopener noreferrer"{% endif %}>{% if item.cta %}{{ item.cta }}{% if item.external %} &nearr;{% else %} &rarr;{% endif %}{% elsif item.external %}Explore {{ item.title }} &nearr;{% else %}Open the page &rarr;{% endif %}</a>
       </article>
-      <article class="home-feature">
-        <div class="home-feature-label">Podcast</div>
-        <h3>Deploying AI on the Buyside</h3>
-        <p>A conversation with Brett Caughran and Khe Hy about moving from individual experiments to shared workflows.</p>
-        <a href="https://www.fundamentedge.com/invest-with-ai-episodes/04">Listen to the episode &rarr;</a>
-      </article>
-      <article class="home-feature">
-        <div class="home-feature-label">Interactive project</div>
-        <h3>WattsOpen</h3>
-        <p>An interactive site that connects federal energy datasets to map power plant retirements, grid infrastructure, and interconnection queues.</p>
-        <a href="https://wattsopen.com/">Explore WattsOpen &rarr;</a>
-      </article>
+      {% endfor %}
     </div>
   </section>
 

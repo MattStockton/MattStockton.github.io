@@ -1,9 +1,11 @@
 main:
+  - title: "Work With Me"
+    url: /work-with-me.html
   - title: "Writing"
     url: /writing.html
   - title: "Notes"
     url: /notes.html
+  - title: "Experiments"
+    url: /experiments.html
   - title: "Background"
     url: /my-background.html
-  - title: "Work With Me"
-    url: /work-with-me.html

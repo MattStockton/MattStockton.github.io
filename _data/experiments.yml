@@ -1,0 +1,80 @@
+# Experiments listed on /experiments.html and featured on the home page.
+#
+# Newest first. `featured: true` promotes an entry to the home page grid
+# (it shows the first 3). `type: appearance` moves an entry out of the card
+# grid and into the "Elsewhere" list at the bottom of the experiments page.
+#
+# `built_with` and `data` are the build notes. Fill in rough build time where
+# you remember it - that detail is the most useful part for readers.
+
+- title: "Pacing the Frontier"
+  slug: "pacing-the-frontier"
+  url: "/standalone/pacing-the-frontier.html"
+  preview: "/standalone/pacing-the-frontier-preview.png"
+  preview_alt: "Dark card reading Pacing the Frontier above four figures - 1,134 signatories, 47% from Anthropic, 23.5% anonymous, 6.2% left a comment - over a field of tally marks, one per signatory."
+  date: "Jul 2026"
+  datetime: "2026-07-28"
+  kind: "Interactive reading"
+  featured: true
+  short: "All 1,134 signatories and 70 comments on the Pacing the Frontier statement, explorable, with every figure computed from the source data."
+  summary: "Every signatory and every comment on the Pacing the Frontier statement, explorable. 47% of the 1,134 signatories came from Anthropic, 23.5% signed anonymously, and 6.2% left a comment."
+  data: "1,134 signatory records and 70 comment records extracted from the statement site's embedded data payload, snapshotted 28 July 2026. Every figure on the page is computed from that source."
+  built_with: "Claude Code"
+
+- title: "AI in Research Teams"
+  slug: "ai-in-research-teams"
+  url: "/standalone/ai-in-research-teams.html"
+  preview: "/standalone/ai-in-research-teams-preview.png"
+  preview_alt: "AI in Research Teams: Lessons from the Field. Seven numbered lessons, three operational and four technical."
+  date: "Jul 2026"
+  datetime: "2026-07-14"
+  kind: "Interactive talk"
+  featured: true
+  short: "Seven lessons about using AI in investment research, built as a single interactive page instead of a slide deck."
+  summary: "Seven lessons about using AI in investment research, three operational and four technical. I built the talk as a single interactive page instead of a slide deck, with a figure you can click through for each lesson."
+  data: "A talk I gave to research teams, plus conversations with teams across the industry."
+  built_with: "Claude Code"
+  post_url: "/2026/07/30/five-lessons-from-putting-ai-into-research-teams.html"
+  post_title: "Five Lessons from Putting AI Into Research Teams"
+
+- title: "WattsOpen"
+  slug: "wattsopen"
+  url: "https://wattsopen.com/"
+  external: true
+  preview: "/docs/assets/images/experiments/wattsopen-preview.png"
+  preview_alt: "Where does America's grid have room? 88 retiring plants over 100 MW, 120 monthly snapshots, 8 federal datasets, 3,235 counties screened."
+  date: "Jun 2026"
+  datetime: "2026-06-04"
+  kind: "Interactive atlas"
+  featured: true
+  short: "An interactive atlas of U.S. fossil plants retiring through 2030, scored on how much room the grid around them has."
+  summary: "Where does America's grid have room? Every U.S. fossil plant over 100 MW retiring between 2024 and 2030, scored on transmission proximity, gas access, site size, and recent capacity factor."
+  data: "Eight federal datasets - EIA 860M, LBNL Queued Up, HIFLD, NOAA - joined across 3,235 counties and 120 monthly snapshots."
+  built_with: "Claude Code, D3"
+  post_url: "/2026/06/04/theres-more-public-data-than-people-exploring-it.html"
+  post_title: "There's More Public Data Than People Exploring It"
+
+- title: "Shorewood's Choice"
+  slug: "shorewoods-choice"
+  url: "/standalone/shorewoods-choice.html"
+  preview: "/standalone/preview.png"
+  preview_alt: "Editorial preview reading 'Four paths, one decision' with the four scenario scores: F at 59.8, E at 52.7, B at 48.8, and Zero at 24.1."
+  date: "May 2026"
+  datetime: "2026-05-13"
+  kind: "Reader's guide"
+  summary: "An unofficial guide to my school district's Task Force Report on long-term financial sustainability. Compare the four scenarios side by side, explore the tradeoffs, and read the source behind each number."
+  data: "The Shorewood School District Task Force Report on Long-Term Financial Sustainability, April 28, 2026."
+  built_with: "Claude Code, built iteratively to try different ways of presenting the same numbers"
+
+- title: "Deploying AI on the Buyside"
+  slug: "deploying-ai-on-the-buyside"
+  url: "https://www.fundamentedge.com/invest-with-ai-episodes/04"
+  external: true
+  type: appearance
+  date: "Jul 2026"
+  datetime: "2026-07-03"
+  kind: "Podcast"
+  featured: true
+  cta: "Listen to the episode"
+  short: "A conversation with Brett Caughran and Khe Hy about moving from individual experiments to shared workflows."
+  summary: "A conversation with Brett Caughran and Khe Hy about moving from individual experiments to shared workflows."
