@@ -7,6 +7,21 @@
 # `built_with` and `data` are the build notes. Fill in rough build time where
 # you remember it - that detail is the most useful part for readers.
 
+- title: "The Listening Index"
+  slug: "listening-index"
+  url: "/standalone/listening-index.html"
+  preview: "/standalone/listening-index-preview.png"
+  preview_alt: "The Listening Index over a field of 151 tally marks, one per episode, above five figures: 1,214 takeaways, 151 episodes, 22 shows, 144 speakers, 142 hours of audio."
+  date: "Aug 2026"
+  datetime: "2026-08-21"
+  kind: "Searchable index"
+  featured: true
+  cta: "Browse the index"
+  short: "1,214 claims that agents pulled out of 151 podcast episodes, searchable by topic, show and speaker."
+  summary: "I listen to a lot of podcasts, and a week later I usually can't tell you which episode a given idea came from. So now every episode I finish gets transcribed, and a model reads the transcript and writes down the ideas that were new or useful to me. Search by topic, show, or speaker: every card has one claim, the excerpt it came from, and a link to the episode."
+  data: "151 episodes across 22 shows, 142 hours of audio. Transcripts come from the publisher when a show provides one, from video captions where there is a video, and from Whisper for the rest. A model wrote 1,707 ranked takeaways and I drop the weakest ones before the page gets built."
+  built_with: "Claude Code, Python, Whisper, a local Apple Podcasts library"
+
 - title: "Pacing the Frontier"
   slug: "pacing-the-frontier"
   url: "/standalone/pacing-the-frontier.html"

@@ -226,6 +226,18 @@ layout: splash
     border-top-color: var(--color-secondary);
   }
 
+  /* An odd number of features leaves the last one alone in a two-up grid, so
+     it takes the full width instead. Same move .fig:last-child makes on the
+     listening index. Conditional, so the set can change size without this
+     needing a second look. */
+  .home-feature:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    /* min-height exists to keep two tiles in a row the same height. A card
+       with the row to itself has nothing to match, and at twice the width it
+       holds its text in one line, so the floor just leaves a hole. */
+    min-height: 0;
+  }
+
   .home-feature-label {
     margin-bottom: 0.75rem;
     color: var(--color-text-light);
@@ -366,7 +378,7 @@ layout: splash
     </div>
     <div class="home-feature-grid">
       {% assign featured_experiments = site.data.experiments | where: "featured", true %}
-      {% for item in featured_experiments limit:4 %}
+      {% for item in featured_experiments limit:5 %}
       <article class="home-feature">
         <div class="home-feature-label">{{ item.kind }}</div>
         <h3>{{ item.title }}</h3>

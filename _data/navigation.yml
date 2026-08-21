@@ -5,6 +5,8 @@ main:
     url: /writing.html
   - title: "Notes"
     url: /notes.html
+  - title: "Listening"
+    url: /standalone/listening-index.html
   - title: "Experiments"
     url: /experiments.html
   - title: "Background"
