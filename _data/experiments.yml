@@ -17,9 +17,9 @@
   kind: "Searchable index"
   featured: true
   cta: "Browse the index"
-  short: "1,214 claims that agents pulled out of 151 podcast episodes, searchable by topic, show and speaker."
-  summary: "I listen to a lot of podcasts, and a week later I usually can't tell you which episode a given idea came from. So now every episode I finish gets transcribed, and a model reads the transcript and writes down the ideas that were new or useful to me. Search by topic, show, or speaker: every card has one claim, the excerpt it came from, and a link to the episode."
-  data: "151 episodes across 22 shows, 142 hours of audio. Transcripts come from the publisher when a show provides one, from video captions where there is a video, and from Whisper for the rest. A model wrote 1,707 ranked takeaways and I drop the weakest ones before the page gets built."
+  short: "1,214 takeaways from 151 podcast episodes, searchable by topic, show, and speaker."
+  summary: "I built this because I kept losing track of which podcast episode an idea came from. After I finish an episode, a script finds or makes a transcript and a model writes down the ideas I may want to find later. You can search all 1,214 takeaways by topic, show, or speaker. Every one includes an excerpt and a link to the original episode."
+  data: "151 episodes across 22 shows, totaling 142 hours of audio. The script looks for a publisher transcript first, then video captions, then runs Whisper locally. Claude wrote and scored 1,707 takeaways. Code sorts them, checks the quotes, and publishes the 1,214 that scored 3 to 5."
   built_with: "Claude Code, Python, Whisper, a local Apple Podcasts library"
 
 - title: "Pacing the Frontier"
