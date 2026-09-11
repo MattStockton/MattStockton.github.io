@@ -154,6 +154,7 @@ classes:
 
   <div class="notes-list">
     {% for note in site.data.x_notes %}
+    {% unless note.archived %}
     <article class="x-note" id="{{ note.slug }}">
       <div class="x-note-meta">
         <time datetime="{{ note.datetime }}">{{ note.date }}</time>
@@ -172,6 +173,7 @@ classes:
         <a class="x-note-link" href="{{ note.url }}">Read the original and replies on X &rarr;</a>
       </div>
     </article>
+    {% endunless %}
     {% endfor %}
   </div>
 </div>

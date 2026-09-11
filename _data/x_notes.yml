@@ -1,3 +1,76 @@
+- title: "A five-minute fix for a stuck liftgate"
+  slug: "a-five-minute-liftgate-fix"
+  date: "Sep 8, 2026"
+  datetime: "2026-09-08"
+  theme: "Everyday uses"
+  url: "https://x.com/mstockton/status/2097346969978974284"
+  summary: "ChatGPT helped me find a loose washer or nut blocking my Jeep's liftgate latch."
+  paragraphs:
+    - "The liftgate on my Jeep Cherokee was stuck. I could press the release, but nothing happened. I asked ChatGPT what to do, and it asked me a few questions."
+    - "It told me which panel to open and mentioned a Reddit thread where someone had found a loose washer or nut blocking the mechanical latch. I looked, and sure enough, there was one stuck there. I removed it and the liftgate worked."
+    - "A minor thing, but it took about five minutes to fix."
+
+- title: "Sometimes the agent can use the API directly"
+  slug: "agents-over-data-apis"
+  date: "Sep 6, 2026"
+  datetime: "2026-09-06"
+  theme: "Data engineering"
+  url: "https://x.com/mstockton/status/2096696110752424100"
+  summary: "I've built agent workflows over raw data APIs where I previously would have scheduled ingestion into a warehouse."
+  paragraphs:
+    - "In the past year, I've built agent workflows directly on top of raw data APIs. In the past, I would have built a scheduled ingestion job to pull that data into a warehouse first."
+    - "Good tools and clear tool definitions let the agent figure out how to get the data it needs. For some use cases, that's enough to avoid building a more complex pipeline. Some data can stay less structured than it would have before."
+    - "Data engineering still matters. You still need data modeling, transforms, validation, and pipelines. Companies that have already done that work have a useful foundation for agents."
+
+- title: "A fresh review still needs judgment"
+  slug: "a-fresh-review-still-needs-judgment"
+  date: "Sep 2, 2026"
+  datetime: "2026-09-02"
+  theme: "Software engineering"
+  url: "https://x.com/mstockton/status/2095331790198120467"
+  summary: "Reviews with fresh context can help, but asking an agent to find problems doesn't make every finding real."
+  paragraphs:
+    - "If you ask an agent to find something wrong, it will find something wrong. That doesn't mean the problem is real."
+    - "I still find adversarial review with a fresh context window useful. Asking the same agent to keep checking its work can reinforce the assumptions already in its context. A separate review gives it another starting point."
+    - "You still need enough understanding of the work to judge what comes back."
+
+- title: "When the harness changes and I don't know why"
+  slug: "when-the-harness-changes"
+  date: "Aug 27, 2026"
+  datetime: "2026-08-27"
+  theme: "Agent design"
+  url: "https://x.com/mstockton/status/2093081795516358947"
+  summary: "Claude Code started finding adjacent project folders on its own, and I couldn't tell what had changed."
+  paragraphs:
+    - "I used to run /add-dir in Claude Code when I wanted a session to access a folder outside its project. Now it sometimes finds related project folders and works in them on its own. I don't know why that changed."
+    - "Was it a new version of Claude Code? A memory it generated? A change one of my skills made to the project context? I could ask it why, but I also wonder whether that conversation would change its memory and affect the behavior again."
+    - "This is one reason I find smaller, open harnesses like Pi refreshing. They take more work to set up, but it's easier to inspect what they're doing. I like that the larger tools adapt to me; I also want to understand how."
+
+- title: "Enjoying the old job doesn't mean enjoying the new one"
+  slug: "enjoying-the-new-job"
+  date: "Aug 25, 2026"
+  datetime: "2026-08-25"
+  theme: "Software engineering"
+  url: "https://x.com/mstockton/status/2092428050289795337"
+  summary: "I still find flow in building software, but the work that gets me there has changed. I understand why some engineers don't enjoy it."
+  paragraphs:
+    - "I've been building software professionally for 23 years. I love refactoring, making things simpler, and solving hard bugs. Sometimes I'd wake up in the middle of the night with an idea for a problem that had been nagging me all week."
+    - "In two years, I've gone from being the most stringent person on code reviews to scanning the code and letting agents do much of the reviewing. It's been disorienting and energizing. I still get into a flow state, but through work that takes a different kind of focus."
+    - "Some of the best engineers I've worked with don't want to work this way. I wish I could convince them to try it, but I understand. The job has changed, and some people who were good at the old job also enjoy the new one. Some don't."
+
+- title: "Finding the things I saved and never read"
+  slug: "finding-things-i-saved"
+  date: "Aug 22, 2026"
+  datetime: "2026-08-22"
+  theme: "How I work"
+  url: "https://x.com/mstockton/status/2091283454881038686"
+  featured: true
+  summary: "I built a CLI for my Twitter archive, then asked Claude Code to find twenty longer pieces I'd saved and never gone back to read."
+  paragraphs:
+    - "I built a CLI to pull down my Twitter data and create searchable embeddings. Claude Code can use the CLI, so I can ask questions about the archive from inside the project."
+    - "I like a lot of longer AI posts and then never circle back to read them. I talked into MacWhisper and asked Claude Code to look over the last three months and find the twenty things it thought were most worth reading."
+    - "The instruction was mostly me rambling about what I wanted. It put together a reading list from material I'd already saved."
+
 - title: "Experienced engineers still matter"
   slug: "experienced-engineers-still-matter"
   date: "Aug 8, 2026"
@@ -5,10 +78,10 @@
   theme: "Software engineering"
   url: "https://x.com/mstockton/status/2086274409178788043"
   featured: true
-  summary: "Experienced engineers do not need to read every generated line, but their judgment still needs to shape the result."
+  summary: "I miss writing code, but the experience I built doing it still shapes how I work with agents."
   paragraphs:
-    - "I am an old-school software engineer: design patterns, domain-driven design, TDD, all the things. I loved the craft for a long time and still do. I miss writing code, and I also understand that the role has completely changed."
-    - "All of it still matters, but in a different way. You do not need to read every line of code now, but you do need to make sure the tools reflect your experience and preferences."
+    - "I'm an old-school software engineer: design patterns, domain-driven design, TDD, all the things. I took a class from Ralph Johnson during my CS master's at UIUC. I loved the craft for a long time and still do. I miss writing code, and I also understand that the role has completely changed."
+    - "All of that still matters, but in a different way. You don't need to read every line of code now, but you need to find a way to bring your experience and preferences into the work. There's no single way to do this."
     - "I still believe the people who benefit most from AI coding tools are the people with experience and battle scars. They also seem to be among the hardest to convince that this is real."
 
 - title: "Write the important context yourself"
@@ -17,11 +90,10 @@
   datetime: "2026-08-07"
   theme: "Working with models"
   url: "https://x.com/mstockton/status/2085888574130368851"
-  summary: "Handwritten context often beats model-generated instructions because it contains your actual constraints and judgment."
+  summary: "When I write instructions for a skill, I pretend I'm explaining the work to a new employee."
   paragraphs:
-    - "It is easy to ask a model to write every skill and instruction. The result is often generic because the model only knows what you gave it."
-    - "If you are building something you plan to use repeatedly, do you want the model filling in the blanks with an average set of instructions?"
-    - "I like to open a text editor and write the instructions myself. I pretend I am giving instructions to a new employee. I do not need to specify every step. I need to explain the context, constraints, and goal that come from knowing the work."
+    - "It's easy to ask a model to write a skill for you. But if you're building something you plan to use over and over, do you want it filling in the blanks with a generic set of instructions?"
+    - "I like to open a text editor and write the instructions myself. I pretend I'm explaining the work to a new employee. I don't have to specify every step, just the context, constraints, and end goal."
 
 - title: "Use deterministic tools for deterministic work"
   slug: "deterministic-tools"
@@ -39,10 +111,10 @@
   datetime: "2026-08-02"
   theme: "Applied AI and ML"
   url: "https://x.com/mstockton/status/2083933669429854380"
-  summary: "Agents are most useful when you can tell whether the result is good."
+  summary: "I suspect there are many narrow fields where agents could try answers, check them, and improve."
   paragraphs:
-    - "Many narrow fields have outcomes you can check, or at least check well enough to be useful. Very few people have built that checking into an agent yet."
-    - "If an agent can try an answer, test it against a useful signal, and try again, the pattern can work outside math, code, and benchmarks."
+    - "I think there are probably lots of narrow fields where you can verify an outcome, or at least verify it well enough to be useful. My suspicion is that very few people have tried building that verification into an agent yet."
+    - "Being able to try something, check the result, and try again seems useful in many more places than we've applied it so far."
 
 - title: "Domain expertise still matters"
   slug: "domain-expertise-is-the-moat"
@@ -52,8 +124,8 @@
   url: "https://x.com/mstockton/status/2082298676853006529"
   summary: "People who know the work can give models better context and judge the results."
   paragraphs:
-    - "If you know a field well and can write down what you know, you can get a lot from language models. Learning these tools is easier than learning your field."
-    - "Prompting tricks are not the important part. You need to write down what you know, decide where judgment belongs, and give the model that information in a form it can use."
+    - "If you're an expert in your field and can write down what you know, you can get a lot from language models. Whatever you learned in your field is probably more complex than learning to use these tools."
+    - "Start using them, or find someone who knows a bit more and can help you get going."
 
 - title: "Write the content before building the presentation"
   slug: "write-content-first"
@@ -64,7 +136,31 @@
   summary: "Work out the message in plain text, then ask the model to turn it into the right format."
   paragraphs:
     - "One of my favorite things to do now is focus entirely on the content in text. I open a text editor and work through the exact message, organization, and flow I want."
-    - "Once the thinking is there, I ask Claude to turn it into an interactive website. Separating the thinking from the presentation makes both parts better."
+    - "Then I ask Claude to turn it into an interactive website."
+
+- title: "Retrieval tools still have a place"
+  slug: "retrieval-tools-still-have-a-place"
+  date: "Jul 17, 2026"
+  datetime: "2026-07-17"
+  theme: "Applied AI and ML"
+  url: "https://x.com/mstockton/status/2078312039202586760"
+  summary: "In my work, custom vector-search and TF-IDF tools are still useful alongside filesystem access."
+  paragraphs:
+    - "Giving an agent filesystem tools works well, but it isn't the full story. In many of the domains I work in, I've had good results building custom tools for vector search or TF-IDF and letting the harness decide how to use them."
+    - "During development, it helps to have the model look at its traces: what did it do, and where did it fail to use the retrieval tools well? That gives you something specific to improve."
+    - "Match the retrieval tools and rules to the problem, and have a systematic way to evaluate whether the results are useful."
+
+- title: "Build a small baseline, then distill your preferences"
+  slug: "build-a-baseline-then-distill-preferences"
+  date: "Jul 2, 2026"
+  datetime: "2026-07-02"
+  theme: "How I work"
+  url: "https://x.com/mstockton/status/2072697272974860485"
+  summary: "I work closely with the agent on the first few features, then have it derive project instructions from the code and our sessions."
+  paragraphs:
+    - "When I start a project with coding agents, I build in small pieces. For a Flask app, the first instruction might be to set up a uv environment and a hello-world endpoint. I read the code carefully and ask the agent to adjust the structure and style until they fit what I want. I repeat that for several small additions, maybe ten."
+    - "Once there's a useful baseline, I ask the agent to review the code and session traces, then write an AGENTS.md and supporting context that capture my preferences. I read those files carefully too. Then I store them in the repo and start giving the agent bigger pieces of work, with less detailed review of every change."
+    - "This has worked better for me than starting with a generic set of instructions. I think my preferences are more dependent on the project than I sometimes realize. Having the agent derive them from actual work gives it a better starting point. It's one approach that's worked for me, not a rule for every project."
 
 - title: "Production agents need more visibility"
   slug: "purpose-built-harnesses"
@@ -72,10 +168,11 @@
   datetime: "2026-07-01"
   theme: "Agent design"
   url: "https://x.com/mstockton/status/2072333650864099342"
-  summary: "General-purpose harnesses work well interactively, but production systems may need more control and visibility."
+  summary: "I've started experimenting with Pi and DeepAgents because I want more control over what the harness is doing."
   paragraphs:
-    - "Claude Code and Codex work very well interactively. But when an agent moves into production, it matters more that you can see what the harness is doing. The model is already nondeterministic. Adding another layer you cannot inspect makes the system harder to understand."
-    - "I still use general-purpose harnesses for most interactive coding and many background jobs. For mature projects and agents inside products, a smaller custom harness can give you more control over context, models, cost, and correctness."
+    - "I use Claude Code or Codex for almost all of my interactive coding, and Claude Code in non-interactive mode for a lot of background jobs. But the model is already nondeterministic. Putting another layer on top that I can't inspect makes it harder to understand what's happening."
+    - "I've begun experimenting with custom Pi-based harnesses around my knowledge wiki and specific code projects. Moving the context from a more mature project into Pi has started to show signs of value. For agents inside products, I've gravitated toward LangChain DeepAgents because I like its lighter base harness and the way it handles skills and tools."
+    - "It might still be too early for companies to invest a lot of time in this. I don't know where it all goes, but I'd bet that cost, control, and the ability to change models will push more teams toward purpose-built harnesses."
 
 - title: "The right level of instruction has changed"
   slug: "level-of-instruction-has-changed"
@@ -85,8 +182,9 @@
   url: "https://x.com/mstockton/status/2063037271025373541"
   summary: "Strong models need a clear goal, useful information, and a definition of success more than a long list of rules."
   paragraphs:
-    - "What models need from instructions has changed. A year ago, context often meant specific steps, guardrails, and a long list of things not to do. Now, too many rules can get in the way."
-    - "Spend time outside the agent writing down what you want, what information is available, and what a good result looks like. Do not prescribe every step. Some of my best recent sessions started with instructions I wrote myself."
+    - "I've been feeling a shift in my work. A year ago, context often meant specific steps, guardrails, and long lists of what to do and what not to do. Now I'm finding that too many rules can get in the way."
+    - "Some of my best recent sessions started with instructions I typed myself: what I want, what information is available, and what success looks like. Writing that down forces me to think through the work before I ask the agent to do it."
+    - "There's still a pull to involve the agent immediately and watch things start changing. But I've found it useful to be more deliberate about that, depending on the work."
 
 - title: "Build systems that keep improving the work"
   slug: "background-systems-that-compound"
@@ -94,12 +192,11 @@
   datetime: "2026-05-30"
   theme: "Agent design"
   url: "https://x.com/mstockton/status/2060741863221657883"
-  featured: true
-  summary: "Some of the best uses of agents run in the background and leave better context, documentation, or tools behind."
+  summary: "I run a weekly GitHub Action that uses Claude Code to update architecture docs and turn them into an interactive site the team can explore."
   paragraphs:
-    - "One useful version of compound engineering is to use agents, automations, callbacks, and scheduled jobs to make a process a little better without remembering to do everything manually."
-    - "In some codebases, I run a weekly job that inspects recent changes and produces an architecture overview, a changes summary, and a map of how the services fit together. Future agents can use that context directly. The same material also becomes a small interactive site that the team can explore."
-    - "I now ask what small system I can build once that will keep improving the process. Not everything needs to be a chat interaction."
+    - "For some codebases I'm working in, I have a weekly GitHub Action that runs Claude Code in non-interactive mode with -p. A few custom skills inspect the repos and recent changes, then write an architecture overview, a changes summary, and a map of how the repos or services fit together."
+    - "Those markdown files go into a repo with a Claude Code plugin so future agents can use the context directly. Another step turns them into a self-contained HTML site. It's been useful for understanding how a part of the system fits together and sharing that view with the team."
+    - "It takes tuning. I have to decide what the skills should inspect, what belongs in the docs, and what the site should look like. But once it's wired into GitHub Actions, it runs without me having to remember to ask for it."
 
 - title: "Companies need people to implement AI"
   slug: "ai-implementation-gap"
@@ -108,10 +205,11 @@
   theme: "AI adoption"
   url: "https://x.com/mstockton/status/2059845493740503105"
   featured: true
-  summary: "Most companies are far behind what the tools can already do."
+  summary: "In my work with teams, everyone already has a job, and figuring out how AI changes it often belongs to nobody."
   paragraphs:
-    - "Even if the tools stopped improving today, it would take companies a long time to use what is already possible. In my work with teams, access is not the main problem. Companies need people who understand the work, know how to use the tools, and have time to change the process."
-    - "Most employees are busy doing their actual jobs. Few people are responsible for figuring out how AI changes a role, how work moves between teams, or how to put those changes into practice."
+    - "Even if the tools stopped improving today, it would take companies a long time to use what's already possible. You still need people who know how to use them and understand the work well enough to figure out where they fit."
+    - "In my work with teams, everyone is busy with their actual job. That job usually doesn't include figuring out how AI changes their role, how it relates to other roles, or how to use the tools across functions."
+    - "There's work here that someone needs to own. I don't think the shape of that role is fully defined yet, but the need for it is pretty clear."
 
 - title: "Adopting AI means changing how work gets done"
   slug: "ai-adoption-changes-the-system"
@@ -132,9 +230,9 @@
   url: "https://x.com/mstockton/status/2058241402031505902"
   summary: "A well-organized folder gives a model something real to explore and work with."
   paragraphs:
-    - "A lot of people still open a blank chat, paste in context, ask a question, and start over next time. That works, but it forces the model to rebuild its understanding in every session."
-    - "Tools with filesystem access can list directories, read files, search across them, follow links, and work out where the useful context lives. This works outside code too. A well-organized folder can become a map of the work."
-    - "Small markdown files can provide project context, constraints, preferences, examples, and links to deeper material. What belongs in those files and how they stay current require judgment, but the starting point is simple: point the model at a real body of work instead of an empty box."
+    - "A lot of people open a blank chat, paste in context, ask a question, and start over next time. I still do this all the time, but it forces the model to rebuild context from scratch."
+    - "Tools with filesystem access can list directories, read files, search across them, and follow links. That works outside code too. Give the model a folder of well-organized information and it can explore it like a map."
+    - "For me, the starting point is usually small markdown files with project context, constraints, preferences, examples, and links to other files. There's some art to deciding what goes in them and how they stay current. I don't think there's one perfect way to do it."
 
 - title: "Leaders need to learn by doing"
   slug: "leaders-need-to-learn-by-doing"
@@ -155,7 +253,7 @@
   url: "https://x.com/mstockton/status/2048115926038716925"
   summary: "Coding agents work better with current documentation, independent review, and a clear plan."
   paragraphs:
-    - "Distill useful session history into markdown. Maintain a compact project map with progressive links. Run more than one code review, including reviews with fresh context. Automate recurring checks and documentation updates when the process is stable enough."
+    - "Save useful session history in markdown. Keep AGENTS.md up to date and link to more detailed files from it. Run a review within the session and others with fresh context, then bring the findings together. Use CI to run recurring checks and refresh architecture docs."
     - "Do not skip planning. You still need to describe clearly what you want to build. That thinking matters more than pressing the button quickly."
 
 - title: "Connect the harness to the work"
@@ -164,10 +262,10 @@
   datetime: "2026-04-24"
   theme: "Applied AI and ML"
   url: "https://x.com/mstockton/status/2047885644605608154"
-  summary: "A useful agent needs access to the right company data, tools, and reusable instructions."
+  summary: "For data sources without an existing connector, I've been using FastMCP, Modal, and Auth0."
   paragraphs:
-    - "Teams can get a lot done by connecting an agent harness to their data sources and giving it a well-designed skills library. Those connections and instructions have to be reliable enough to use."
-    - "When a needed system has an API but no existing connector, a small custom tool is often enough. The building blocks already exist. The work is choosing the right abstractions, writing clear tool definitions, handling authentication, and testing the whole path."
+    - "I'm in favor of teams using an existing harness, connecting their data sources, and building a skills library around the work. It takes time to get the skills right, but you can get a lot done that way."
+    - "For an internal database or a service with an API but no connector, my approach has been FastMCP Python wrappers around API calls, deployed on Modal, with Auth0 for authentication. The context in the tool definitions matters, and I don't want to build authentication myself."
 
 - title: "The first version can become the specification"
   slug: "prototype-becomes-the-specification"
@@ -200,8 +298,8 @@
   url: "https://x.com/mstockton/status/2035179208872202320"
   summary: "AI systems change quickly enough that rebuilding can be more practical than preserving an outdated design."
   paragraphs:
-    - "The right way to build AI-enabled products can change within a few months. Sometimes rebuilding is more sensible than adapting a system designed around assumptions that no longer hold. The same tools creating the change also make rebuilding cheaper."
-    - "You cannot wait for everything to stabilize. Build something useful, keep the underlying knowledge portable, and design the process so that replacing a component does not mean losing what the team learned."
+    - "The right way to build an AI-enabled product can change in a few months. Sometimes rebuilding makes more sense than adapting a system built around assumptions that no longer hold. The same tools causing the change also make rebuilding easier."
+    - "You can't wait for everything to stabilize. For me, the best answer right now is to keep domain knowledge in markdown that I can adapt as the tools change. I don't have a more settled answer than that."
 
 - title: "Carry improvements across the company"
   slug: "organizational-compounding"
@@ -209,10 +307,11 @@
   datetime: "2026-03-18"
   theme: "AI adoption"
   url: "https://x.com/mstockton/status/2034299161374265423"
-  summary: "Reusable context and workflows can improve work across engineering and the rest of the company."
+  summary: "Intercom's account of using AI across the company made me think beyond engineering workflows."
   paragraphs:
-    - "The same idea behind compound engineering can apply across a company. Useful context, repeatable workflows, and review practices can be written down once and reused by other teams."
-    - "Some companies will use AI as a limited assistant. Others will change how information and work move through the business. Access to the models will be common. How the company organizes the work around them will matter more."
+    - "Reading about Intercom's use of AI, I was struck by how far it extended beyond engineering. It made me think about how these practices could apply across an organization."
+    - "Some companies are barely using the tools, while others are changing how they work around them. I'm curious how much that difference will affect their performance over time."
+  archived: true
 
 - title: "Agentic engineering is not vibe coding"
   slug: "agentic-engineering-is-not-vibe-coding"
@@ -233,8 +332,9 @@
   url: "https://x.com/mstockton/status/2032294207872786842"
   summary: "Talk through what you want, transcribe it, and let the model ask questions until the goal is clear."
   paragraphs:
-    - "Open Voice Memo and talk through everything you want to accomplish. Keep talking after you think you are done. Transcribe the recording, give it to the model, and ask the model to question you until it understands the goal."
-    - "The point is not a perfect prompt. It is getting your real context out of your head and into a form the model can work with. Curiosity and persistence matter more than knowing the tools in advance."
+    - "Open Voice Memo and talk through everything you want to accomplish. When you think you're done, keep talking. Aim for at least ten minutes. Transcribe it with MacWhisper and give the transcript to Claude Code."
+    - "Ask it to read what you said and keep asking questions until it understands what you're trying to do. You can tell it you've never used it before and need help figuring out where to start."
+    - "If even that sounds confusing, paste the original post into whatever AI tool you use and ask it to help you follow the steps. I'm trying to help you get started. Curiosity and persistence matter here."
   update: "The original workflow used plan mode. I no longer use plan mode regularly. The durable part is speaking your goals, providing real context, and learning by using the tools."
   update_url: "https://x.com/mstockton/status/2081941058460459369"
 
@@ -246,8 +346,8 @@
   url: "https://x.com/mstockton/status/2031770216376504643"
   summary: "As the unit of work moves from files to agents, developers need better ways to direct and coordinate many parallel tasks."
   paragraphs:
-    - "A useful development environment now needs to coordinate many agents, support different models and harnesses, and connect them to an actual backlog. The human is directing the work instead of operating on one file at a time."
-    - "Opening more terminals is easy. The real problem is giving many agents clear work and pulling their output back together without creating more overhead."
+    - "I want a development environment that lets me coordinate lots of agents, mix models and harnesses, and connect them to a backlog of work."
+    - "I've been using Ghostty with some automation around it. I probably need something more complete, because I'm clicking too many things and making too many decisions just to keep the work moving."
 
 - title: "Ask whether the work has a measurable signal"
   slug: "work-with-a-measurable-signal"
@@ -255,10 +355,11 @@
   datetime: "2026-03-09"
   theme: "Applied AI and ML"
   url: "https://x.com/mstockton/status/2031146703135326252"
-  summary: "If an outcome can be evaluated efficiently, agents can generate candidates, test them, and search for improvements."
+  summary: "A point from Karpathy that I wanted more people to consider: can an agent evaluate the outcome of your work efficiently?"
   paragraphs:
-    - "Any metric that can be evaluated efficiently creates the possibility of an automated improvement loop. Agents can try changes, measure the result, keep what works, and repeat."
-    - "For any domain, ask whether you can test the outcome reliably enough. If you can, this pattern can work outside code and model training."
+    - "One point from Karpathy's post stood out to me: if a metric is reasonably efficient to evaluate, an agent can try changes and measure whether they help."
+    - "I wanted people to consider whether their own problem fits that description, even if they don't work in AI."
+  archived: true
 
 - title: "Give agents a map of the territory"
   slug: "map-of-the-territory"
@@ -290,8 +391,9 @@
   url: "https://x.com/mstockton/status/2029403405190414505"
   summary: "What feels effortless now rests on years of work by people who learned the underlying tools deeply."
   paragraphs:
-    - "At one of my first software jobs, I had a coworker who was a wizard with grep, sed, awk, regular expressions, xargs, and tail. He would pipe them together to solve a problem while I wrote a hundred-line Java program."
-    - "I sometimes think about how his hard work, and the work of people like him who shared what they learned, is one of the main reasons we can just do things now."
+    - "At one of my first software jobs in the mid-2000s, I had a coworker who was a wizard with grep, sed, awk, regular expressions, xargs, and tail. He'd pipe them together like some sort of wild spell to solve a problem. I never knew what he was doing."
+    - "Meanwhile, I was writing hundred-line Java programs to do the same things."
+    - "I sometimes think about how his hard work, and the work of people like him who shared what they knew on StackOverflow, is one of the reasons we can just do things now."
 
 - title: "Start with what the model builders publish"
   slug: "use-published-model-context"
@@ -301,8 +403,10 @@
   url: "https://x.com/mstockton/status/2028905270227685861"
   summary: "The teams building the models publish reusable instructions that encode what they have learned about using them."
   paragraphs:
-    - "The teams building the models know a great deal about how to use them. Some of that knowledge is published as skills, examples, and tools that help write instructions. You can use those directly."
-    - "Before writing a complex instruction set from scratch, look for a strong existing starting point. Then adapt it to your work and apply your own judgment. The reusable context is valuable, but taste and domain knowledge still determine whether the result is good."
+    - "The teams building the models know a lot about how to use them, and some of that knowledge is available in the skills they publish. The skill-creator skill is a good example: instructions from people at the model labs who have spent time figuring out what works."
+    - "At the time of this post, my advice was to start with those existing skills or have the model ask you questions to build the context, rather than write it all yourself. You still need taste and enough knowledge of the work to judge what comes back."
+  update: "By August, I was finding it useful to write more of the instructions myself, especially for skills I'd use repeatedly. I like to pretend I'm explaining the work to a new employee."
+  update_url: "https://x.com/mstockton/status/2085888574130368851"
 
 - title: "Use normal work as feedback"
   slug: "closed-loop-agent-improvement"
@@ -310,10 +414,11 @@
   datetime: "2026-03-02"
   theme: "Agent design"
   url: "https://x.com/mstockton/status/2028586935456039302"
-  summary: "Agent systems improve when normal work produces correctness signals that can be fed back into them."
+  summary: "Normal PR review can provide feedback for improving an agent without giving people another task."
   paragraphs:
-    - "To improve an agent, you need a record of what it did, a way to tell whether the result was correct, enough examples to spot patterns, and a process for changing its context or tools."
-    - "The best feedback already happens inside the work. A code change being accepted or rejected is more useful than asking someone to complete a separate evaluation task. Collect the signal without giving people another job to do."
+    - "One way to improve an agent is to collect its traces along with a signal of whether its actions were correct. In the example I was responding to, that signal came from whether a code change was accepted during normal PR review."
+    - "Feed those results, the traces, and the agent's context into a different model to look for improvements. Use what it finds to change the agent's context, then track correctness over time to see whether the changes help."
+    - "The useful part is that people can review PRs as they already do. Getting that feedback without asking them to take on another task is a design problem worth spending time on."
 
 - title: "Use the tools before hiring someone to implement them"
   slug: "use-tools-before-hiring"
