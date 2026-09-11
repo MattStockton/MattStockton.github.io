@@ -7,6 +7,22 @@
 # `built_with` and `data` are the build notes. Fill in rough build time where
 # you remember it - that detail is the most useful part for readers.
 
+- title: "AI in Research Teams"
+  slug: "ai-in-research-teams"
+  url: "/standalone/ai-in-research-teams.html"
+  preview: "/standalone/ai-in-research-teams-preview.png"
+  preview_alt: "AI in Research Teams: Lessons from the Field. Seven numbered lessons, three operational and four technical."
+  date: "Jul 2026"
+  datetime: "2026-07-14"
+  kind: "Interactive talk"
+  featured: true
+  short: "Seven lessons about using AI in investment research, built as a single interactive page instead of a slide deck."
+  summary: "Seven lessons about using AI in investment research, three operational and four technical. I built the talk as a single interactive page instead of a slide deck, with a figure you can click through for each lesson."
+  data: "A talk I gave to research teams, plus conversations with teams across the industry."
+  built_with: "Claude Code"
+  post_url: "/2026/07/30/five-lessons-from-putting-ai-into-research-teams.html"
+  post_title: "Five Lessons from Putting AI Into Research Teams"
+
 - title: "The Listening Index"
   slug: "listening-index"
   url: "/standalone/listening-index.html"
@@ -36,22 +52,6 @@
   data: "1,134 signatory records and 70 comment records extracted from the statement site's embedded data payload, snapshotted 28 July 2026. Every figure on the page is computed from that source."
   built_with: "Claude Code"
 
-- title: "AI in Research Teams"
-  slug: "ai-in-research-teams"
-  url: "/standalone/ai-in-research-teams.html"
-  preview: "/standalone/ai-in-research-teams-preview.png"
-  preview_alt: "AI in Research Teams: Lessons from the Field. Seven numbered lessons, three operational and four technical."
-  date: "Jul 2026"
-  datetime: "2026-07-14"
-  kind: "Interactive talk"
-  featured: true
-  short: "Seven lessons about using AI in investment research, built as a single interactive page instead of a slide deck."
-  summary: "Seven lessons about using AI in investment research, three operational and four technical. I built the talk as a single interactive page instead of a slide deck, with a figure you can click through for each lesson."
-  data: "A talk I gave to research teams, plus conversations with teams across the industry."
-  built_with: "Claude Code"
-  post_url: "/2026/07/30/five-lessons-from-putting-ai-into-research-teams.html"
-  post_title: "Five Lessons from Putting AI Into Research Teams"
-
 - title: "WattsOpen"
   slug: "wattsopen"
   url: "https://wattsopen.com/"
@@ -68,6 +68,21 @@
   built_with: "Claude Code, D3"
   post_url: "/2026/06/04/theres-more-public-data-than-people-exploring-it.html"
   post_title: "There's More Public Data Than People Exploring It"
+
+- title: "What Shorewood Said"
+  slug: "what-shorewood-said"
+  url: "/standalone/what-shorewood-said.html"
+  preview: "/standalone/what-shorewood-said-preview.png"
+  preview_alt: "What Shorewood Said: an unofficial reading of the 2026 community survey, with an outline map of Shorewood beside the title."
+  date: "Sep 2026"
+  datetime: "2026-09-09"
+  kind: "Interactive survey analysis"
+  featured: true
+  cta: "Explore the survey"
+  short: "1,459 written comments from Shorewood's 2026 Community Survey, organized by theme, with the numbers behind the charts."
+  summary: "An unofficial exploration of Shorewood's 2026 Community Survey: 1,459 written comments from 624 respondents, organized by theme, with the numbers behind the charts. Each comment includes its page in the original report."
+  data: "The Village of Shorewood's published 2026 Community Survey Results. Claude extracted the comments and chart values and tagged comments by topic, stance, and tone, under human direction and review. Tags are approximate model judgments."
+  built_with: "Claude"
 
 - title: "Shorewood's Choice"
   slug: "shorewoods-choice"
