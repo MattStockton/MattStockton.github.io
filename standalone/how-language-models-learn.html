@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A 90-second animated explanation of how language models make predictions, learn from errors, and generate answers. Built by Matt Stockton.">
+<meta name="color-scheme" content="dark">
+<title>How language models learn | Matt Stockton</title>
+<meta name="author" content="Matt Stockton">
+<meta name="theme-color" content="#0a1019">
+<link rel="canonical" href="https://mattstockton.com/standalone/how-language-models-learn.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Matt Stockton">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://mattstockton.com/standalone/how-language-models-learn.html">
+<meta property="og:title" content="How language models learn">
+<meta property="og:description" content="A 90-second animated explanation of how language models make predictions, learn from errors, and generate answers. Built by Matt Stockton.">
+<meta property="og:image" content="https://mattstockton.com/standalone/how-language-models-learn-preview.png">
+<meta property="og:image:secure_url" content="https://mattstockton.com/standalone/how-language-models-learn-preview.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How language models learn. A small neural network connects numerical signals to next-token probabilities, with a weight changing from 0.50 to 0.59.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mstockton">
+<meta name="twitter:creator" content="@mstockton">
+<meta name="twitter:title" content="How language models learn">
+<meta name="twitter:description" content="A 90-second animated explanation of how language models make predictions, learn from errors, and generate answers. Built by Matt Stockton.">
+<meta name="twitter:image" content="https://mattstockton.com/standalone/how-language-models-learn-preview.png">
+<meta name="twitter:image:alt" content="How language models learn. A small neural network connects numerical signals to next-token probabilities, with a weight changing from 0.50 to 0.59.">
+<script src="https://cdn-cookieyes.com/client_data/cc3cc7c737387cca67e28af5/script.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFEW5N1H7X"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HFEW5N1H7X');
+</script>
+
+<style>
+:root{color-scheme:dark;--bg:#0a1019;--panel:#111b29;--ink:#eef3fa;--muted:#a2b0c3;--line:#304057;--signal:#71dbe5;--weight:#bea6ff;--error:#ffb087;--good:#a3e4bc;--font:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.5}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--signal);outline-offset:5px}button:disabled{opacity:.35;cursor:default}a{color:var(--signal)}
+.player{max-width:1280px;margin:auto;padding:26px 44px 20px;background:radial-gradient(ellipse at 52% 38%,#172236 0%,#0a1019 70%)}
+.masthead{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid #253247;padding-bottom:16px}.brand{font-size:15px;font-weight:600;letter-spacing:.015em}.runtime{font-size:13px;color:var(--muted)}.chapterline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:23px}.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--signal);font-weight:600}.mode{border:1px solid #43556f;border-radius:30px;padding:4px 12px;font-size:12px;color:var(--muted);white-space:nowrap}.mode.learning{color:var(--error);border-color:#815946}.mode.fixed{color:var(--good);border-color:#486b59}
+.player h2{font-size:clamp(27px,3.5vw,45px);font-weight:500;letter-spacing:-.035em;line-height:1.16;margin:13px 0 17px;min-height:1.2em}.sentence-zone{position:relative;min-height:91px;padding-top:5px}.sentence-label{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}.sentence{display:flex;gap:7px;flex-wrap:wrap;align-items:center;font-size:clamp(19px,2.25vw,28px);font-weight:450;letter-spacing:-.025em}.token{padding:4px 8px;border:1px solid transparent;border-radius:5px;position:relative}.token.encoded{border-color:#325368;background:#132b37;color:var(--signal)}.token.attended{background:#213d4b;border-bottom-color:var(--signal)}.token.target{min-width:70px;text-align:center;border:1px dashed #77869b;color:var(--muted)}.token.revealed{border:1px solid var(--good);color:var(--good);background:#172f29}.token.generated{color:var(--signal);border-bottom:2px solid var(--signal)}
+.machine{display:grid;grid-template-columns:160px minmax(0,1fr) 210px;gap:20px;align-items:center;min-height:260px;margin-top:5px}.part-label{color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}.input-values{display:flex;gap:8px;font:500 21px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--signal)}.input-values span{padding:9px 11px;background:#142a37;border:1px solid #315664;border-radius:6px}.input-hint{font-size:13px;color:var(--muted);margin-top:13px;max-width:155px}.network-wrap{position:relative;min-width:0}.network{width:100%;height:250px;display:block;overflow:visible}.network text{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;fill:var(--ink);font-size:14px}.network .layerlabel{font-family:var(--font);font-size:12px;fill:var(--muted)}.network .edge{stroke:var(--weight);stroke-width:1.5}.network .node{fill:#172637;stroke:#67839b;stroke-width:1.5}.network .node.selected{stroke:var(--weight);stroke-width:3;fill:#302545}.network .nodeval{fill:var(--signal)}.network .weight-label{fill:var(--weight);font-size:13px;paint-order:stroke;stroke:#0f1927;stroke-width:6px;stroke-linejoin:round}.direction{text-align:center;font-size:12px;letter-spacing:.05em;color:var(--signal);min-height:18px}.direction.back{color:var(--error)}.prob-row{margin:13px 0}.prob-meta{display:flex;justify-content:space-between;font-size:17px;gap:12px;font-variant-numeric:tabular-nums}.prob-track{height:7px;background:#233044;margin-top:7px;border-radius:4px;overflow:hidden}.prob-fill{height:100%;background:var(--signal);border-radius:4px;width:0}.prob-row.target-row .prob-fill{background:var(--good)}.prob-row.target-row .prob-meta{color:var(--good)}.output-hint{font-size:12px;color:var(--muted);margin-top:11px}
+.focus{min-height:123px;border-top:1px solid #29374d;border-bottom:1px solid #29374d;padding:16px 0;display:flex;align-items:center;gap:24px}.focus-label{flex:0 0 150px;font-size:13px;color:var(--muted)}.focus-content{flex:1;min-width:0}.equation{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font:500 clamp(16px,1.6vw,21px) ui-monospace,SFMono-Regular,Consolas,monospace}.signal{color:var(--signal)}.weight{color:var(--weight)}.error{color:var(--error)}.good{color:var(--good)}.calc-step{opacity:.28}.calc-step.visible{opacity:1}.focus-note{font-size:13px;color:var(--muted);margin-top:8px}.large-detail{font-size:clamp(18px,2vw,24px);letter-spacing:-.015em}.attention{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.attention-word{position:relative;padding:8px 12px;border-bottom:3px solid var(--signal);background:#142c38;font-size:18px}.attention-word.weak{opacity:.4}.arrow{color:var(--muted)}.mini-blocks{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.mini-block{border:1px solid #506077;border-radius:5px;padding:7px 13px;font-size:16px}.mini-block.active{color:var(--signal);border-color:var(--signal)}.examples{font-size:20px;letter-spacing:-.015em}.correction{display:flex;gap:30px;flex-wrap:wrap}.correction small{display:block;font-family:var(--font);font-size:12px;color:var(--muted);margin-bottom:6px}.caption{font-size:clamp(17px,1.65vw,21px);line-height:1.5;min-height:76px;max-width:1020px;padding:16px 0 11px;margin:0;color:#dce5f1}.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted);padding:2px 0 12px}.legend span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;background:var(--signal)}.legend span:nth-child(2):before{background:var(--weight)}.legend span:nth-child(3):before{background:var(--error)}
+.transport{border-top:1px solid #253247;padding-top:15px}.timeline{display:flex;gap:14px;align-items:center}.timeline input{width:100%;accent-color:var(--signal);height:24px;cursor:pointer;min-width:60px}.time{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}.controls{display:flex;align-items:center;gap:9px;margin-top:10px;flex-wrap:wrap}.control{border:1px solid #45516a;border-radius:7px;background:#142032;color:var(--ink);padding:9px 15px;font-size:14px;min-height:42px}.control.primary{background:var(--signal);border-color:var(--signal);color:#08232b;font-weight:650;min-width:103px}.control.quiet{background:transparent}.control:hover:not(:disabled){filter:brightness(1.2)}.fullscreen{margin-left:auto}.chapters{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:18px}.chapter{padding:9px 9px 9px 0;background:transparent;border:0;border-top:2px solid #334155;color:var(--muted);font-size:12px;text-align:left}.chapter[aria-current=true]{color:var(--signal);border-color:var(--signal)}.chapter span{display:block;color:#8495ae;font-size:11px;margin-bottom:2px}.footnote{font-size:12px;color:var(--muted);margin:16px 0 0}.extra{max-width:1192px;padding:0 0 35px;margin:25px auto;color:var(--muted);font-size:15px}.extra details{border-top:1px solid #29374d;padding:16px 0}.extra summary{cursor:pointer;color:var(--ink);font-size:15px}.extra p{max-width:900px}.transcript-item{display:grid;grid-template-columns:65px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #253247}.transcript-item p{margin:0}.transcript-time{font-variant-numeric:tabular-nums;color:var(--signal)}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.player:fullscreen{max-width:none;width:100%;height:100%;overflow:auto;padding:22px max(35px,calc((100vw - 1280px)/2));display:flex;flex-direction:column;justify-content:center}.player:fullscreen .masthead{display:none}.player:fullscreen .chapters,.player:fullscreen .footnote{display:none}
+@media(min-width:1450px){.player{margin-top:20px}.machine{min-height:285px}.network{height:275px}}
+@media(max-width:1000px){.player{padding:22px 25px}.machine{grid-template-columns:120px minmax(0,1fr) 170px;gap:12px}.input-values{font-size:17px}.input-values span{padding:8px}.extra{padding:0 25px 25px}.focus-label{flex-basis:120px}.network{height:220px}}
+@media(max-width:700px){.player{padding:18px}.runtime{font-size:11px}.masthead{gap:10px}.brand{font-size:13px}.chapterline{margin-top:18px}.machine{grid-template-columns:1fr 1fr;gap:8px 20px;min-height:0}.input{grid-column:1;grid-row:2}.network-wrap{grid-column:1/-1;grid-row:1}.network{height:220px}.output{grid-column:2;grid-row:2}.input-hint{max-width:none}.input-values{font-size:19px}.part-label{margin-bottom:7px}.prob-row{margin:8px 0}.prob-meta{font-size:15px}.focus{margin-top:19px;display:block;min-height:158px;padding:14px 0}.focus-label{margin-bottom:10px}.caption{min-height:112px;font-size:17px}.chapters{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.chapter{font-size:10px;overflow-wrap:anywhere}.chapter span{font-size:10px}.sentence{gap:3px}.token{padding:3px 5px}.sentence-zone{min-height:100px}.legend{gap:12px}.control{padding:8px 11px;font-size:13px}.fullscreen{margin-left:0}.extra{padding:0 18px 25px}.correction{gap:18px}.player:fullscreen{padding:15px;display:block}.player:fullscreen .caption{min-height:0}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.overview{min-height:285px;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:18px 0}.overview-flow{display:flex;align-items:center;gap:14px;justify-content:center}.overview-end{font-size:17px;text-align:center;flex:0 1 140px}.transformer-stack{border:1px solid #52637c;border-radius:10px;padding:18px 22px;position:relative;flex:1;max-width:540px;background:#111e2d}.stack-label{font-size:12px;color:var(--muted);margin-bottom:13px}.transformer-parts{display:flex;gap:13px;align-items:center}.transformer-part{padding:14px 12px;border:1px solid #465873;border-radius:6px;flex:1;text-align:center;font-size:17px}.transformer-part.active{border-color:var(--signal);background:#183342;color:var(--signal)}.transformer-part.zoom-target{border-color:var(--weight);background:#2b2440;color:var(--weight)}.overview-note{text-align:center;color:var(--muted);font-size:14px}.sequence{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted)}.sequence .active{color:var(--signal)}.sequence .learning-active{color:var(--error)}.sequence span{padding-bottom:4px;border-bottom:2px solid transparent}.sequence .active,.sequence .learning-active{border-bottom-color:currentColor}.network-context{font-size:12px;color:var(--muted);text-align:center;margin-bottom:3px}.focus{min-height:130px}.focus-label{font-size:14px}.focus-note{font-size:14px}.token-vector{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.weight-example{font:500 27px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--weight)}.focus-content .plain-equation{font-family:var(--font);font-size:19px}.progress-word{color:var(--signal)}.compare-pair{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.compare-value{font-size:29px;letter-spacing:-.025em;font-variant-numeric:tabular-nums}.compare-label{display:block;font-size:13px;color:var(--muted)}.stage-heading{font-size:22px;color:var(--ink);text-align:center;margin-bottom:0}.data-examples{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}.data-example{border-bottom:2px solid #56708a;padding:10px 14px;font-size:17px}.data-example.active{color:var(--signal);border-color:var(--signal)}.heldout{display:flex;gap:22px;align-items:center;justify-content:center}.heldout-set{flex:1;max-width:400px;padding:18px;background:#132333;border-radius:7px}.heldout-set:last-child{background:#172d26}.heldout-set strong{font-weight:500;color:var(--ink);display:block;margin-bottom:10px}.heldout-set p{font-size:16px;margin:0;color:var(--muted)}.caption{min-height:76px}.sentence.prompt{font-size:clamp(17px,1.7vw,22px);display:block}.prompt-text{display:block;color:var(--muted);max-width:950px}.answer-line{margin-top:8px;display:flex;align-items:center;gap:3px;flex-wrap:wrap;min-height:40px;color:var(--ink);font-size:clamp(20px,2vw,27px)}.answer-label{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-right:10px}.sentence-zone:has(.prompt){min-height:136px}.focus-content .labelled-number{display:inline-flex;flex-direction:column;text-align:center;gap:3px}.labelled-number small{font:12px var(--font);color:var(--muted)}.prob-row.selected .prob-meta{color:var(--signal)}.prob-row.selected .prob-track{outline:1px solid var(--signal);outline-offset:3px}.overview[hidden],.machine[hidden]{display:none}.mode{font-size:13px}.chapter{font-size:13px}.chapter span{font-size:12px}.chapters{grid-template-columns:repeat(5,minmax(0,1fr))}.network .weight-label{font-size:15px}.network .layerlabel{font-size:13px}.player:fullscreen .network-context{display:block}
+@media(max-width:700px){.overview-flow{flex-direction:column;gap:9px}.overview-end{flex:auto}.overview-flow>.arrow{transform:rotate(90deg)}.transformer-stack{width:100%;padding:14px}.overview{min-height:340px}.transformer-part{font-size:15px;padding:10px}.focus{min-height:175px}.sequence{gap:7px;font-size:12px}.heldout{flex-direction:column;gap:10px}.heldout-set{width:100%;max-width:none;padding:14px}.heldout>.arrow{transform:rotate(90deg)}.chapter{font-size:11px}.chapter span{font-size:11px}.data-example{font-size:15px}.sentence-zone:has(.prompt){min-height:164px}.network{height:230px}}
+
+.site-nav,.page-intro,.why-built,.page-footer{max-width:1192px;margin-left:auto;margin-right:auto}
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0 16px;font-size:14px}.site-nav a{color:var(--muted);text-decoration:none}.site-nav a:hover{color:var(--signal)}.site-nav .site-name{color:var(--ink);font-weight:600}
+.page-intro{padding:22px 0 25px;border-bottom:1px solid #29374d}.page-intro h1{font-size:clamp(30px,4vw,48px);letter-spacing:-.035em;line-height:1.1;font-weight:500;margin:0 0 16px;min-height:0}.page-intro p{font-size:18px;line-height:1.6;color:var(--muted);max-width:820px;margin:0}.page-intro .intro-actions{margin-top:16px;display:flex;gap:22px;align-items:center;font-size:14px}.intro-actions a{text-decoration:none}.intro-actions .watch-link{font-weight:600}.why-built{padding:30px 0 6px;border-top:1px solid #29374d}.why-built h2{font-size:25px;line-height:1.3;font-weight:500;letter-spacing:-.02em;margin:0 0 18px}.why-built p{max-width:810px;font-size:17px;color:#c1cddd;line-height:1.7;margin:0 0 17px}.page-footer{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;border-top:1px solid #29374d;padding:24px 0 35px;font-size:14px;color:var(--muted)}.page-footer a{text-decoration:none}.extra{margin-top:12px}.player{scroll-margin-top:12px}.skip-link{position:absolute;left:18px;top:-100px;background:var(--bg);padding:10px;z-index:10}.skip-link:focus{top:8px}
+@media(max-width:1280px){.site-nav,.page-intro,.why-built,.page-footer{margin-left:44px;margin-right:44px}}
+@media(max-width:1000px){.site-nav,.page-intro,.why-built,.page-footer{margin-left:25px;margin-right:25px}}
+@media(max-width:700px){.site-nav,.page-intro,.why-built,.page-footer{margin-left:18px;margin-right:18px}.site-nav{padding-top:20px}.page-intro{padding-top:12px}.page-intro p{font-size:16px}.why-built p{font-size:16px}.intro-actions{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#player">Skip to the animation</a>
+<nav class="site-nav" aria-label="Site navigation"><a class="site-name" href="/">Matt Stockton</a><a href="/experiments.html">All experiments →</a></nav>
+<main>
+<header class="page-intro">
+<h1>How language models learn</h1>
+<p>I made this short animation to show how language models learn and produce text. It starts with a small network that calculates a prediction and changes its weights. The last part illustrates how a model writes an answer one token at a time.</p>
+<div class="intro-actions"><a class="watch-link" href="#player">Watch the explainer ↓</a><a href="#why-built">Why I built it</a></div>
+</header>
+
+<section class="player" id="player" aria-label="How language models learn, animated explanation">
+  <header class="masthead"><div class="brand">Watch the process</div><div class="runtime">90 seconds · captions · no audio</div></header>
+  <div class="chapterline"><div class="eyebrow" id="eyebrow">01 / 05 · Text and context</div><div class="mode" id="mode">Training</div></div>
+  <h2 id="title">What could come next?</h2>
+  <div class="sentence-zone"><div class="sentence-label" id="sentenceLabel">An example from training text</div><div class="sentence" id="sentence" aria-label="The shipment arrived three days blank"></div></div>
+  <div class="overview" id="overview"></div>
+  <div class="machine" id="machine" hidden>
+    <div class="input"><div class="part-label" id="inputLabel">Numerical signals</div><div class="input-values"><span id="x0">0.80</span><span id="x1">0.40</span></div><div class="input-hint" id="inputHint">Two example values representing context.</div></div>
+    <div class="network-wrap"><div class="network-context" id="networkContext">A small example of how neural networks learn.</div><svg class="network" id="network" viewBox="0 0 520 250" role="img" aria-labelledby="networkTitle networkDesc"><title id="networkTitle">A small teaching neural network</title><desc id="networkDesc">Two numerical inputs connect to three hidden units, which connect to three output scores. Purple connections represent adjustable weights.</desc><g id="edges"></g><g id="pulses"></g><g id="nodes"></g><g id="weightLabels"></g><text class="layerlabel" x="55" y="242" text-anchor="middle">Inputs</text><text class="layerlabel" x="260" y="242" text-anchor="middle">Calculations</text><text class="layerlabel" x="465" y="242" text-anchor="middle">Scores</text></svg><div class="direction" id="direction">Signals move forward →</div></div>
+    <div class="output"><div class="part-label" id="outputLabel">Next-token probabilities</div><div id="probabilities"></div><div class="output-hint" id="outputHint">Three possible tokens in this teaching model.</div></div>
+  </div>
+  <div class="sequence" id="sequence" aria-label="Current process stage"></div>
+  <div class="focus"><div class="focus-label" id="focusLabel">The learning task</div><div class="focus-content" id="focusContent"></div></div>
+  <p class="caption" id="caption"></p>
+  <div class="legend" aria-label="Diagram legend"><span>Signals</span><span>Learned weights</span><span>Training correction</span></div>
+  <div class="transport"><div class="timeline"><label class="sr-only" for="timeline">Animation position in seconds</label><input id="timeline" type="range" min="0" max="90" step="0.1" value="0"><output class="time" id="time" for="timeline">0:00 / 1:30</output></div><div class="controls"><button class="control primary" id="play" type="button">Play</button><button class="control quiet" id="previous" type="button" aria-label="Previous chapter">← Back</button><button class="control quiet" id="next" type="button" aria-label="Next chapter">Next →</button><button class="control quiet" id="restart" type="button">Restart</button><button class="control quiet fullscreen" id="fullscreen" type="button">Fullscreen</button></div></div>
+  <nav class="chapters" id="chapters" aria-label="Animation chapters"></nav>
+  <p class="footnote">The small network calculates its predictions and weight update. The language-model steps are illustrated.</p>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+</section>
+<section class="why-built" id="why-built" aria-labelledby="why-heading">
+<h2 id="why-heading">Why I built this</h2>
+<p>I think it helps to know a little about what these tools are doing. If you understand what the model learned during training and what it gets from your prompt, it is easier to decide what information to give it and what to check in its answer.</p>
+<p>I wanted a short explanation I could send to someone who is curious about how this works. You can watch it in 90 seconds or pause at each step. I hope it helps people get more comfortable trying the tools and gives them a few more questions to ask.</p>
+<p>The small network does the math shown on screen. The text-generation example is scripted. I used <a href="https://www.3blue1brown.com/lessons/mini-llm/" target="_blank" rel="noopener noreferrer">3Blue1Brown’s explanations</a> as a reference. His videos cover much more of the detail.</p>
+</section>
+<aside class="extra">
+ <details><summary>Read the narration</summary><p>Use this script while presenting, or read it alongside the captions. Space plays or pauses; the arrow keys move five seconds; F toggles fullscreen.</p><div id="transcript"></div></details>
+ <details><summary>What this model simplifies</summary>
+ <p>The small network has two inputs, three hidden units, and three outputs. It calculates the numbers shown in the animation. It uses tanh to transform the signals, softmax to turn scores into probabilities, and cross-entropy to measure prediction error. Backpropagation calculates the changes needed for one gradient-descent step. The starting values were chosen for this example.</p>
+ <p>In a transformer language model, each token is represented by a list of numbers. Attention combines information from earlier tokens, and feedforward layers do further calculations. These steps repeat through many layers. The small network on this page illustrates how weights are used and changed; it is not a piece taken from a transformer. The animation leaves out position information, residual connections, normalization, multiple attention heads, and the full vocabulary.</p>
+ <p>In the calculation, tanh is a nonlinear function that compresses the sum into a value between −1 and 1. Modern transformers commonly use other nonlinear functions. The basic idea of combining signals with learned weights still applies.</p>
+ <p>The animation shows one next-token prediction at a time. During training, models usually predict many positions in parallel, using only the preceding text for each prediction. Training combines errors from batches of examples before updating the weights. An update that helps one example may hurt another, so the model also needs checks on text it was not trained on.</p>
+ <p>The final answer is scripted. This page does not run a language model. In a real model, the learned weights stay fixed during ordinary answering. Attention scores depend on the current context, so they and other internal values can change as tokens are added. Product memory features and later training are separate processes. Further training can use examples and feedback to improve how the model responds.</p>
+ <p>Further reading: 3Blue1Brown’s <a href="https://www.3blue1brown.com/lessons/mini-llm/" target="_blank" rel="noopener noreferrer">brief introduction to language models</a>, <a href="https://www.3blue1brown.com/lessons/backpropagation/" target="_blank" rel="noopener noreferrer">backpropagation explanation</a>, and <a href="https://www.3blue1brown.com/lessons/attention/" target="_blank" rel="noopener noreferrer">attention walkthrough</a>.</p>
+ </details>
+</aside>
+</main>
+<footer class="page-footer"><span>Built by <a href="/my-background.html">Matt Stockton</a></span><a href="/experiments.html">More experiments →</a></footer>
+<noscript><p style="padding:30px">This animation needs JavaScript. Language models learn by adjusting numerical weights to reduce prediction errors. When answering, they use those learned weights to generate one token at a time.</p></noscript>
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const clamp = (x,a=0,b=1) => Math.max(a,Math.min(b,x));
+const smooth = x => {x=clamp(x);return x*x*(3-2*x);};
+const mix = (a,b,t) => a+(b-a)*t;
+const fmt = x => (Math.abs(x)<.005?0:x).toFixed(2);
+const clock = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const input=[.8,.4];
+const initial={w:[[.5,-.3],[-.4,.8],[.6,.2]],b:[.1,-.1,0],v:[[.4,-.3,.2],[-.2,.5,-.4],[.1,.2,.3]],c:[-.15,.35,.05]};
+function forward(m){
+ const z=m.w.map((r,j)=>r.reduce((s,w,i)=>s+w*input[i],m.b[j]));
+ const h=z.map(Math.tanh),scores=m.v.map((r,k)=>r.reduce((s,w,j)=>s+w*h[j],m.c[k]));
+ const max=Math.max(...scores),e=scores.map(x=>Math.exp(x-max)),total=e.reduce((a,b)=>a+b,0);
+ return {z,h,scores,p:e.map(x=>x/total),loss:-Math.log(e[0]/total)};
+}
+function gradients(m){
+ const f=forward(m),d=f.p.map((p,k)=>p-(k===0?1:0));
+ const dh=f.h.map((h,j)=>m.v.reduce((s,r,k)=>s+r[j]*d[k],0)*(1-h*h));
+ return {w:dh.map(x=>input.map(y=>x*y)),b:dh,v:d.map(x=>f.h.map(h=>x*h)),c:d};
+}
+const grad=gradients(initial),rate=.45;
+function updated(amount){return {w:initial.w.map((r,j)=>r.map((x,i)=>x-rate*grad.w[j][i]*amount)),b:initial.b.map((x,j)=>x-rate*grad.b[j]*amount),v:initial.v.map((r,k)=>r.map((x,j)=>x-rate*grad.v[k][j]*amount)),c:initial.c.map((x,k)=>x-rate*grad.c[k]*amount)};}
+const before=forward(initial),after=forward(updated(1));
+const chapters=[
+ {at:0,name:'Text and context',title:'What could come next?'},
+ {at:18,name:'Inside the network',title:'Weights control how signals combine.'},
+ {at:36,name:'Learning from error',title:'Compare the prediction with the text.'},
+ {at:62,name:'Learning at scale',title:'Learn from many different examples.'},
+ {at:75,name:'Generating an answer',title:'Use the facts in the prompt.'}
+];
+const beats=[
+ {at:0,title:'What could come next?',caption:'Training starts with text. Hide the next token, then ask the model to predict it.'},
+ {at:8,title:'Turn text into numbers.',caption:'Tokens are pieces of text. Each becomes numbers the network can calculate with.'},
+ {at:13,title:'Use the earlier words as context.',caption:'Attention mixes information from earlier tokens, changing the signals passed to the next calculation.'},
+ {at:18,title:'Weights control how signals combine.',caption:'Weights are adjustable numbers. They control how much each input contributes to the next calculation.'},
+ {at:24,title:'Multiply, add, then transform.',caption:'Combine weighted signals, add an offset, and apply a curved function. Pass the result onward.'},
+ {at:30,title:'Turn the final scores into probabilities.',caption:'The final calculations score possible next tokens. Those scores become probabilities that add up to 100%.'},
+ {at:36,title:'Compare the prediction with the text.',caption:'The passage continued with “late.” Its assigned probability determines the prediction error.'},
+ {at:41,title:'Work backward to find useful adjustments.',caption:'Trace how the weights contributed to the error. This calculates which small changes would reduce it.'},
+ {at:47,title:'Adjust the weights.',caption:'Watch the highlighted weight change. The bars still show the old prediction.'},
+ {at:52,title:'Run the same input again.',caption:'Send the same input through the updated network to calculate again.'},
+ {at:56,title:'The observed token becomes more likely.',caption:'The probability of “late” rises from 33% to 57%. Other endings remain possible.'},
+ {at:62,title:'Learn from many different examples.',caption:'Training uses many texts to improve predictions across different contexts.'},
+ {at:66,title:'Check text it was not trained on.',caption:'Separate, unfamiliar examples test how well the model uses what it learned.'},
+ {at:70,title:'More training for answering instructions.',caption:'Examples and feedback help train the model to follow instructions.'},
+ {at:75,title:'Use the facts in the prompt.',caption:'The prompt supplies the dates. The model uses its learned weights to begin answering.'},
+ {at:80,title:'Add each new token to the context.',caption:'Each new token joins the context. The network runs again, with the same weights.'},
+ {at:85,title:'Keep the weights fixed while answering.',caption:'The model keeps adding tokens until it stops. The answer can still be wrong.'}
+];
+let time=0,playing=false,last=0,raf=0,currentChapter=-1,currentBeat=-1,sentenceKey='',overviewKey='',focusKey='';
+function indexAt(list,t){let i=0;while(i<list.length-1&&t>=list[i+1].at)i++;return i;}
+const chapterAt=t=>indexAt(chapters,t);
+const positions=[[{x:55,y:78},{x:55,y:166}],[{x:260,y:43},{x:260,y:122},{x:260,y:201}],[{x:465,y:43},{x:465,y:122},{x:465,y:201}]];
+const svgNS='http://www.w3.org/2000/svg';
+function svgEl(tag,attrs,parent){const el=document.createElementNS(svgNS,tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);parent.appendChild(el);return el;}
+const edges=[],nodes=[];
+for(let layer=0;layer<2;layer++)for(let j=0;j<positions[layer+1].length;j++)for(let i=0;i<positions[layer].length;i++){
+ const a=positions[layer][i],b=positions[layer+1][j];
+ const line=svgEl('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:'edge'},$('edges'));
+ const pulse=svgEl('circle',{r:4.5,fill:'var(--signal)',opacity:0},$('pulses'));
+ edges.push({layer,i,j,a,b,line,pulse});
+}
+for(let l=0;l<3;l++)for(let i=0;i<positions[l].length;i++){
+ const p=positions[l][i],circle=svgEl('circle',{cx:p.x,cy:p.y,r:24,class:'node'},$('nodes'));
+ const label=svgEl('text',{x:p.x,y:p.y+5,'text-anchor':'middle',class:l===0?'nodeval':''},$('nodes'));
+ nodes.push({l,i,circle,label});
+}
+const wlabels=[svgEl('text',{x:147,y:47,class:'weight-label','text-anchor':'middle'},$('weightLabels')),svgEl('text',{x:137,y:122,class:'weight-label','text-anchor':'middle'},$('weightLabels'))];
+['late','early','ago'].forEach((word,i)=>{const row=document.createElement('div');row.className='prob-row';row.id=`prob${i}`;row.innerHTML=`<div class="prob-meta"><span id="word${i}">${word}</span><span id="percent${i}"></span></div><div class="prob-track"><div class="prob-fill" id="bar${i}"></div></div>`;$('probabilities').appendChild(row);});
+chapters.forEach(c=>{const b=document.createElement('button');b.type='button';b.className='chapter';b.innerHTML=`<span>${clock(c.at)}</span>${c.name}`;b.addEventListener('click',()=>seek(c.at));$('chapters').appendChild(b);});
+beats.forEach(b=>{const row=document.createElement('div');row.className='transcript-item';row.innerHTML=`<div class="transcript-time">${clock(b.at)}</div><p><strong>${b.title}</strong><br>${b.caption}</p>`;$('transcript').appendChild(row);});
+function generationAt(t){return {count:clamp(Math.floor((t-75)/2),0,6),phase:((t-75)%2+2)%2};}
+function sentenceAt(t){
+ const inference=t>=75,{count}=generationAt(t),encoded=t>=8&&t<18,revealed=t>=36&&t<62;
+ const key=[inference,count,encoded,revealed,t>=13&&t<18,t>=62&&t<75].join();
+ if(key===sentenceKey)return;sentenceKey=key;
+ const el=$('sentence');el.replaceChildren();el.className='sentence'+(inference?' prompt':'');
+ if(inference){
+  const prompt=document.createElement('span');prompt.className='prompt-text';prompt.textContent='Delivery was due Monday and arrived Thursday. Summarize the delay.';el.appendChild(prompt);
+  const answer=document.createElement('span');answer.className='answer-line';const label=document.createElement('span');label.className='answer-label';label.textContent='Answer';answer.appendChild(label);
+  ['The','delivery','was','three','days','late.'].slice(0,count).forEach((word,i)=>{const s=document.createElement('span');s.className='token generated';s.id='generated'+i;s.textContent=word;answer.appendChild(s);});
+  if(count===0){const cursor=document.createElement('span');cursor.className='signal';cursor.textContent='…';answer.appendChild(cursor);}el.appendChild(answer);
+ }else{
+  ['The','shipment','arrived','three','days'].forEach((word,i)=>{const s=document.createElement('span');s.className='token'+(encoded?' encoded':'')+(t>=13&&t<18&&[1,2,4].includes(i)?' attended':'');s.textContent=word;el.appendChild(s);});
+  const s=document.createElement('span');s.className='token target'+(revealed?' revealed':'');s.textContent=revealed?'late':'?';el.appendChild(s);
+ }
+ el.setAttribute('aria-label',inference?'Prompt: Delivery was due Monday and arrived Thursday. Summarize the delay. Answer: '+['The','delivery','was','three','days','late.'].slice(0,count).join(' '):'The shipment arrived three days '+(revealed?'late':'blank'));
+ $('sentenceLabel').textContent=inference?'Facts supplied in the prompt':t>=62?'The same learning process, across many texts':'A passage from training text';
+}
+function overviewAt(t){
+ const shown=t<18||(t>=62&&t<75);$('overview').hidden=!shown;$('machine').hidden=shown;if(!shown)return;
+ const key=t<18?'architecture':t<66?'many':t<70?'heldout':'assistant';
+ if(key!==overviewKey){overviewKey=key;
+  if(key==='architecture')$('overview').innerHTML='<div class="overview-flow"><div class="overview-end" id="encodeStep">Text → numbers</div><span class="arrow">→</span><div class="transformer-stack"><div class="stack-label">INSIDE A TRANSFORMER · REPEATED THROUGH MANY LAYERS</div><div class="transformer-parts"><div class="transformer-part" id="attentionStep">Attention<br><small>mix context</small></div><span class="arrow">→</span><div class="transformer-part" id="calculationStep">Calculations<br><small>combine signals</small></div></div></div><span class="arrow">→</span><div class="overview-end">Next-token probabilities</div></div><div class="overview-note" id="overviewNote">A simplified map. We will look inside one of these calculations.</div>';
+  if(key==='many')$('overview').innerHTML='<div class="stage-heading">Different texts. The same learning cycle.</div><div class="data-examples"><span class="data-example" id="example0">An explanation</span><span class="data-example" id="example1">A conversation</span><span class="data-example" id="example2">A piece of code</span></div><div class="mini-blocks" style="justify-content:center"><span class="mini-block">Predict</span><span class="arrow">→</span><span class="mini-block">Measure error</span><span class="arrow">→</span><span class="mini-block">Adjust weights</span><span class="arrow">↩</span></div><div class="overview-note">Illustrating training at scale; this page computes only the earlier small example.</div>';
+  if(key==='heldout')$('overview').innerHTML='<div class="heldout"><div class="heldout-set"><strong>Training examples</strong><p>Used to adjust the weights.</p></div><span class="arrow">→</span><div class="heldout-set"><strong>Separate, unseen examples</strong><p>Used to check how well the model learned.</p></div></div><div class="overview-note">Better predictions on training text alone do not establish broader ability.</div>';
+  if(key==='assistant')$('overview').innerHTML='<div class="stage-heading">Practice responding as an assistant.</div><div class="mini-blocks" style="justify-content:center"><span class="mini-block">Demonstrations</span><span class="mini-block">Feedback</span><span class="arrow">→</span><span class="mini-block active">Further weight updates</span></div><div class="overview-note">Further training aims to make responses more useful and easier to follow.</div>';
+ }
+ if(t<18){$('attentionStep').className='transformer-part'+(t>=13&&t<16?' active':'');$('calculationStep').className='transformer-part'+(t>=16?' zoom-target':'');$('encodeStep').style.color=t>=8&&t<13?'var(--signal)':'var(--ink)';$('overviewNote').textContent=t>=16?'Next: a small example of how neural networks learn.':'A simplified map. Attention and feedforward calculations repeat through many layers.';}
+ if(t>=62&&t<66){for(let i=0;i<3;i++)$('example'+i).className='data-example'+(i===Math.min(2,Math.floor(t-62))?' active':'');}
+}
+function focusAt(t,m,f){
+ const key=indexAt(beats,t);if(focusKey!==key){focusKey=key;const el=$('focusContent');
+ if(t<8){$('focusLabel').textContent='Where the target comes from';el.innerHTML='<div class="large-detail">The existing text supplies the next token.</div><div class="focus-note">No person needs to label every sentence by hand.</div>';}
+ else if(t<13){$('focusLabel').textContent='Text → numbers';el.innerHTML='<div class="token-vector"><span class="large-detail">“ shipment”</span><span class="arrow">→</span><span class="equation signal">[0.12, −0.34, 0.76, …]</span></div><div class="focus-note">Illustrative values. These numerical representations are learned during training too.</div>';}
+ else if(t<18){$('focusLabel').textContent='Context changes the signal';el.innerHTML='<div class="attention"><span class="attention-word">shipment</span><span class="attention-word">arrived</span><span class="arrow">→</span><span class="attention-word">days</span></div><div class="focus-note">Earlier tokens contribute to the representation of “days.” This attention example is illustrated.</div>';}
+ else if(t<24){$('focusLabel').textContent='Follow one connection';el.innerHTML='<div class="equation"><span class="labelled-number signal">0.80<small>input signal</small></span><span>×</span><span class="labelled-number weight">0.50<small>adjustable weight</small></span><span>=</span><span class="labelled-number signal">0.40<small>contribution</small></span></div><div class="focus-note">A weight sets the strength and direction of a signal’s contribution.</div>';}
+ else if(t<30){$('focusLabel').textContent='One small calculation';el.innerHTML='<div class="equation"><span class="calc-step" id="calc1"><span class="signal">0.80</span> × <span class="weight">0.50</span></span><span class="calc-step" id="calc2">+ <span class="signal">0.40</span> × <span class="weight">−0.30</span></span><span class="calc-step" id="calc3">+ <span class="weight">0.10</span></span><span class="calc-step" id="calc4">= 0.38</span><span class="calc-step" id="calc5">→ transform → <span class="signal">0.36</span></span></div><div class="focus-note">The curved transformation helps layers combine signals into more complex patterns.</div>';}
+ else if(t<36){$('focusLabel').textContent='A range of possible endings';el.innerHTML='<div class="large-detail">late <span class="arrow">·</span> early <span class="arrow">·</span> ago</div><div class="focus-note">Three tokens are shown here. These probabilities describe possible text, not whether a statement is true.</div>';}
+ else if(t<41){$('focusLabel').textContent='Compare';el.innerHTML=`<div class="large-detail">Observed token: <span class="good">late</span> <span class="arrow">·</span> probability assigned: <span class="error">${(before.p[0]*100).toFixed(1)}%</span></div><div class="focus-note">The lower the probability of the observed token, the larger the prediction error.</div>`;}
+ else if(t<47){$('focusLabel').textContent='Trace the effect of weights';el.innerHTML='<div class="equation plain-equation"><span class="weight">earlier weights</span><span class="arrow">←</span><span>earlier calculations</span><span class="arrow">←</span><span class="error">prediction error</span></div><div class="focus-note">The backward calculation tells the training algorithm how to adjust the weights.</div>';}
+ else if(t<52){$('focusLabel').textContent='Change the weights';el.innerHTML='<div class="compare-pair"><div><span class="compare-label">Highlighted weight</span><span class="weight-example">0.50 → <span id="newWeight"></span></span></div><span class="arrow">·</span><span>Other weights and offsets update too.</span></div><div class="focus-note">The probability bars still show the previous prediction. Next, run the calculation again.</div>';}
+ else if(t<56){$('focusLabel').textContent='Same input, updated weights';el.innerHTML='<div class="mini-blocks"><span class="mini-block signal">0.80 / 0.40</span><span class="arrow">→</span><span class="mini-block weight">Updated network</span><span class="arrow">→</span><span>New prediction</span></div><div class="focus-note">Compare the prediction only after the updated calculations finish.</div>';}
+ else if(t<62){$('focusLabel').textContent='Compare before and after';el.innerHTML='<div class="compare-pair"><div><span class="compare-label">Before</span><span class="compare-value" id="beforeProbability"></span></div><span class="arrow">→</span><div><span class="compare-label">After this update</span><span class="compare-value good" id="afterProbability"></span></div><span>probability of “late”</span></div><div class="focus-note">The calculated prediction error falls from 1.10 to 0.57. A single update need not improve every other example.</div>';}
+ else if(t<66){$('focusLabel').textContent='Train on different examples';el.innerHTML='<div class="large-detail">Many examples shape the same set of weights.</div><div class="focus-note">Most weights start from random values. Training combines errors from batches of examples.</div>';}
+ else if(t<70){$('focusLabel').textContent='Try unfamiliar text';el.innerHTML='<div class="large-detail">Can it predict unfamiliar text more accurately?</div><div class="focus-note">Checking unseen examples helps distinguish useful learning from memorizing the training set.</div>';}
+ else if(t<75){$('focusLabel').textContent='Train it to follow instructions';el.innerHTML='<div class="large-detail">Training continues with examples of instructions and responses.</div><div class="focus-note">Examples show how to respond. Feedback helps identify which responses work better.</div>';}
+ else if(t<80){$('focusLabel').textContent='The prompt supplies the facts';el.innerHTML='<div class="large-detail">Due Monday. Arrived Thursday.</div><div class="focus-note">This delivery’s dates come from the prompt. The example answer is scripted for the animation.</div>';}
+ else if(t<85){$('focusLabel').textContent='A growing input';el.innerHTML='<div class="mini-blocks"><span class="mini-block">Prompt + generated text</span><span class="arrow">→</span><span class="mini-block weight">Fixed weights</span><span class="arrow">→</span><span class="mini-block signal">Next token</span></div><div class="focus-note">A token is selected from the probabilities; it does not always have to be the most likely one.</div>';}
+ else{$('focusLabel').textContent='What changes?';el.innerHTML='<div class="compare-pair"><span><span class="weight">Training:</span> the weights change.</span><span><span class="signal">Answering:</span> the context grows.</span></div><div class="focus-note">An answer can read well and still be wrong.</div>';}
+ }
+ if(t>=24&&t<30)for(let i=1;i<=5;i++)$('calc'+i).classList.toggle('visible',t>=24+(i-1)*.9);
+ if(t>=47&&t<52)$('newWeight').textContent=fmt(m.w[0][0]);
+ if(t>=56&&t<62){$('beforeProbability').textContent=`${(before.p[0]*100).toFixed(1)}%`;$('afterProbability').textContent=`${(mix(before.p[0],after.p[0],smooth((t-56)/1.5))*100).toFixed(1)}%`;}
+}
+function processAt(t){
+ if(t<18||t>=62&&t<75){$('sequence').replaceChildren();$('sequence').dataset.state='';return;}
+ const generation=t>=75,{count,phase}=generationAt(t);
+ let stage=generation?(count===6?3:phase<.65?0:phase<1.3?1:phase<1.7?2:3):t<30?0:t<36?1:t<41?2:t<47?3:t<52?4:t<56?0:1;
+ const labels=generation?['Read context','Calculate','Select token','Add to context']:['Calculate','Predict','Compare','Trace backward','Adjust weights'];
+ const key=labels.join()+stage;if($('sequence').dataset.state===key)return;$('sequence').dataset.state=key;
+ $('sequence').innerHTML=labels.map((label,i)=>`<span class="${i===stage?(stage>=2&&!generation?'learning-active':'active'):''}">${i+1}. ${label}</span>`).join('');
+}
+function passAt(t){
+ if(t>=20&&t<24)return {layer:0,start:20,end:24,highlightOnly:true};
+ if(t>=30&&t<32)return {layer:1,start:30,end:32};
+ if(t>=41&&t<44)return {layer:1,start:41,end:44,back:true};
+ if(t>=44&&t<47)return {layer:0,start:44,end:47,back:true};
+ if(t>=52&&t<54)return {layer:0,start:52,end:54};
+ if(t>=54&&t<56)return {layer:1,start:54,end:56};
+ if(t>=75&&t<87){const {phase}=generationAt(t),base=t-phase;if(phase<.65)return {layer:0,start:base,end:base+.65};if(phase<1.3)return {layer:1,start:base+.65,end:base+1.3};}
+ return null;
+}
+function render(){
+ const t=time,c=chapterAt(t),b=indexAt(beats,t),beat=beats[b],inference=t>=75;
+ if(c!==currentChapter){currentChapter=c;$('eyebrow').textContent=`${String(c+1).padStart(2,'0')} / 05 · ${chapters[c].name}`;[...$('chapters').children].forEach((button,i)=>button.setAttribute('aria-current',i===c?'true':'false'));}
+ if(b!==currentBeat){currentBeat=b;$('title').textContent=beat.title;$('caption').textContent=beat.caption;$('announcement').textContent=`${beat.title} ${beat.caption}`;}
+ const update=smooth((t-47)/4),m=updated(update),f=forward(m),pass=passAt(t),{count,phase}=generationAt(t);
+ $('mode').textContent=inference?'Answering · weights fixed':t>=66&&t<70?'Testing · weights fixed':t>=41&&t<52?'Training · adjust weights':'Training';
+ $('mode').className='mode'+(inference||t>=66&&t<70?' fixed':t>=41&&t<52?' learning':'');
+ sentenceAt(t);overviewAt(t);focusAt(t,m,f);processAt(t);
+ $('machine').style.transform=!reduced.matches&&t>=18&&t<19?`scale(${mix(.95,1,smooth(t-18))})`:'none';
+ $('networkContext').textContent=inference?'Generation is illustrated. The purple weight values stay fixed.':'Small example of learning · not a complete language model';
+ $('inputLabel').textContent=inference?'Growing context':'Two input signals';$('x0').textContent=inference?'…':fmt(input[0]);$('x1').textContent=inference?'…':fmt(input[1]);
+ $('inputHint').textContent=inference?'Delivery dates + answer so far.':'Example numbers from inside a network; not literal word meanings.';
+ $('direction').textContent=pass?.back?'← Trace the effect of weights on error':t>=47&&t<52?'Update weights; then calculate again':inference?(count===6?'End-of-turn token completes the answer':phase>=1.7?'↩ Selected token joins the context':'Run the network with the growing context →'):t>=56&&t<62?'Updated calculation complete':pass?'Signals move to the next calculation →':'Follow one calculation at a time';
+ $('direction').className='direction'+(pass?.back?' back':'');
+ const tokenSets=[['The','A','Your'],['delivery','shipment','order'],['was','arrived','is'],['three','two','several'],['days','weeks','hours'],['late.','early.','overdue.'],['[end]','The','It']];
+ const illustrative=[[.68,.22,.1],[.57,.3,.13],[.61,.26,.13],[.52,.29,.19],[.78,.14,.08],[.66,.24,.1],[.88,.08,.04]];
+ const outputReady=t>=32&&t<62||inference&&(phase>=1.3||count===6);
+ const comparison=smooth((t-56)/1.5);
+ const probs=inference?illustrative[count]:before.p.map((p,i)=>mix(p,after.p[i],comparison));
+ const appearance=inference?1:t<33?smooth(t-32):1;
+ $('outputLabel').textContent=inference?(count===6?'End of answer':'Possible next tokens'):t>=47&&t<56?'Previous prediction':'Next-token probabilities';
+ $('outputHint').textContent=inference?(count===6?'An end-of-turn token stops generation.':'Illustrated probabilities. Word-sized tokens shown for clarity.'):'Three outputs in this teaching network.';
+ for(let i=0;i<3;i++){
+  $('word'+i).textContent=inference?tokenSets[count][i]:['late','early','ago'][i];
+  $('percent'+i).textContent=outputReady?`${(probs[i]*100).toFixed(1)}%`:'—';
+  $('bar'+i).style.width=outputReady?`${probs[i]*100*appearance}%`:'0%';
+  $('prob'+i).classList.toggle('target-row',!inference&&i===0&&t>=36&&t<62);
+  $('prob'+i).classList.toggle('selected',inference&&i===0&&phase>=1.7&&count<6);
+ }
+ nodes.forEach(n=>{
+  const hiddenReady=t>=28&&t<47||t>=54;const scoreReady=t>=32&&t<47||t>=56;
+  const shown=n.l===0||n.l===1&&hiddenReady||n.l===2&&scoreReady;
+  const val=n.l===0?input[n.i]:n.l===1?f.h[n.i]:f.scores[n.i];
+  n.label.textContent=!inference&&shown?fmt(val):'';
+  n.circle.setAttribute('class','node'+(n.l===1&&n.i===0&&t>=18&&t<62?' selected':''));
+ });
+ edges.forEach(e=>{
+  const w=e.layer===0?m.w[e.j][e.i]:m.v[e.j][e.i];e.line.style.opacity=String(clamp(.23+Math.abs(w)*.65,.23,.85));e.line.style.strokeWidth=e.layer===0&&e.j===0?'2.5':'1.5';
+  let p=pass?clamp((t-pass.start)/(pass.end-pass.start)):0;if(pass?.back)p=1-p;
+  const visible=pass&&pass.layer===e.layer&&(!pass.highlightOnly||e.j===0)&&!reduced.matches;
+  e.pulse.setAttribute('cx',mix(e.a.x,e.b.x,p));e.pulse.setAttribute('cy',mix(e.a.y,e.b.y,p));e.pulse.setAttribute('fill',pass?.back?'var(--error)':'var(--signal)');e.pulse.setAttribute('opacity',visible?String(Math.sin(p*Math.PI)):'0');
+ });
+ wlabels.forEach((label,i)=>{label.textContent=fmt(m.w[0][i]);label.style.opacity=t>=18?'1':'0';});
+ if(inference&&count>0){const word=$('generated'+(count-1));const elapsed=t-(75+count*2),a=reduced.matches?1:smooth(elapsed/.35);word.style.opacity=String(a);word.style.transform=`translateY(${(1-a)*7}px)`;}
+ $('timeline').value=t;$('timeline').setAttribute('aria-valuetext',`${clock(t)} of 1 minute 30 seconds. ${beat.title}`);$('time').textContent=`${clock(t)} / 1:30`;
+ $('previous').disabled=t===0;$('next').disabled=c===chapters.length-1;$('play').textContent=playing?'Pause':t>=90?'Replay':'Play';$('play').setAttribute('aria-label',playing?'Pause animation':t>=90?'Replay animation':'Play animation');
+}
+function frame(now){if(!playing)return;if(last)time=clamp(time+(now-last)/1000,0,90);last=now;if(time>=90){playing=false;last=0;}render();if(playing)raf=requestAnimationFrame(frame);}
+function pause(){playing=false;last=0;cancelAnimationFrame(raf);render();}
+function toggle(){if(playing){pause();return;}if(time>=90)time=0;playing=true;last=0;render();raf=requestAnimationFrame(frame);}
+function seek(t){pause();time=clamp(t,0,90);render();}
+$('play').addEventListener('click',toggle);$('timeline').addEventListener('input',e=>seek(Number(e.target.value)));
+$('previous').addEventListener('click',()=>{const c=chapterAt(time);seek(time>chapters[c].at+.5?chapters[c].at:chapters[Math.max(0,c-1)].at);});
+$('next').addEventListener('click',()=>seek(chapters[Math.min(chapters.length-1,chapterAt(time)+1)].at));$('restart').addEventListener('click',()=>seek(0));
+async function fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else if($('player').requestFullscreen)await $('player').requestFullscreen();else $('announcement').textContent='Fullscreen is unavailable in this browser. Use the browser’s fullscreen command.';}catch(e){$('announcement').textContent='Fullscreen is unavailable here. Open this page in a browser tab to use fullscreen.';}}
+$('fullscreen').addEventListener('click',fullscreen);document.addEventListener('fullscreenchange',()=>{$('fullscreen').textContent=document.fullscreenElement?'Exit fullscreen':'Fullscreen';});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&playing)pause();});
+document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey||e.target.closest('input,button,a,summary,textarea,select'))return;if(e.code==='Space'){e.preventDefault();toggle();}else if(e.key==='ArrowRight'){e.preventDefault();seek(time+5);}else if(e.key==='ArrowLeft'){e.preventDefault();seek(time-5);}else if(e.key.toLowerCase()==='f'){e.preventDefault();fullscreen();}});
+reduced.addEventListener('change',render);
+render();
+})();
+</script>
+</body>
+</html>
