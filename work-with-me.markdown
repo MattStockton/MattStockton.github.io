@@ -6,9 +6,9 @@ permalink: /work-with-me.html
 
 <style>
   .work-page {
-    max-width: 1040px;
+    max-width: var(--site-width);
     margin: 0 auto;
-    padding: 4.5rem 1.5rem 4rem;
+    padding: var(--page-top) var(--page-gutter) 3rem;
   }
 
   .work-hero {
@@ -33,7 +33,7 @@ permalink: /work-with-me.html
     max-width: 650px;
     margin: 0 0 1.25rem;
     font-family: var(--font-serif);
-    font-size: clamp(2.65rem, 5.3vw, 4rem);
+    font-size: var(--type-title);
     font-weight: 400;
     line-height: 1.02;
     letter-spacing: -0.03em;
@@ -168,7 +168,7 @@ permalink: /work-with-me.html
   }
 
   @media (max-width: 820px) {
-    .work-page { padding: 3rem 1rem; }
+    .work-page { padding: var(--page-top) var(--page-gutter) 3rem; }
     .work-hero { grid-template-columns: 1fr; gap: 2.25rem; padding-bottom: 2.5rem; }
     .work-services { max-width: none; }
     .work-approach { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.5rem 0; }
@@ -176,7 +176,7 @@ permalink: /work-with-me.html
   }
 
   @media (max-width: 520px) {
-    .work-page h1 { font-size: 2.65rem; }
+    .work-page h1 { font-size: var(--type-title); }
     .work-actions { width: 100%; }
     .work-action { justify-content: center; width: 100%; }
   }

@@ -130,9 +130,9 @@ layout: default
   .page__inner-wrap {
     box-sizing: border-box;
     width: 100%;
-    max-width: 1040px;
+    max-width: var(--site-width);
     margin: 0 auto !important;
-    padding: 4.5rem 1.5rem 4rem;
+    padding: var(--page-top) var(--page-gutter) 3rem;
     float: none !important;
     background: transparent;
     border: 0;
@@ -147,14 +147,14 @@ layout: default
   .page__inner-wrap > .social-share,
   .page__inner-wrap > .pagination {
     width: 100% !important;
-    max-width: 760px !important;
+    max-width: var(--reading-width) !important;
     margin-right: auto !important;
     margin-left: auto !important;
     float: none !important;
   }
 
   .page__inner-wrap > header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--color-border);
   }
@@ -163,10 +163,10 @@ layout: default
     margin: 0 0 1rem !important;
     color: var(--color-text) !important;
     font-family: var(--font-serif) !important;
-    font-size: clamp(2.75rem, 6vw, 4.25rem) !important;
+    font-size: var(--type-title) !important;
     font-weight: 400 !important;
     letter-spacing: -0.035em !important;
-    line-height: 1.02 !important;
+    line-height: 1.1 !important;
   }
 
   .page__title a {
@@ -194,8 +194,8 @@ layout: default
   .page__content {
     color: var(--color-text);
     font-family: var(--font-body);
-    font-size: 1.06rem;
-    line-height: 1.75;
+    font-size: var(--type-body);
+    line-height: 1.65;
   }
 
   .page__content h2 {
@@ -419,7 +419,7 @@ layout: default
 
   @media (max-width: 768px) {
     .page__inner-wrap {
-      padding: 3rem 1rem;
+      padding: var(--page-top) var(--page-gutter) 3rem;
     }
 
     .page__inner-wrap > header {
@@ -428,11 +428,11 @@ layout: default
     }
 
     .page__title {
-      font-size: 2.65rem !important;
+      font-size: var(--type-title) !important;
     }
 
     .page__content {
-      font-size: 1rem;
+      font-size: var(--type-body);
     }
 
     .page__content h2 {

@@ -5,20 +5,20 @@ title: Background
 
 <style>
   .background-page {
-    max-width: 1040px;
+    max-width: var(--site-width);
     margin: 0 auto;
-    padding: 4.5rem 1.5rem 4rem;
+    padding: var(--page-top) var(--page-gutter) 3rem;
   }
 
   .background-header {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid var(--color-border);
   }
 
   .background-header h1 {
     margin: 0 0 1rem;
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: var(--type-title);
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.035em;
@@ -195,9 +195,9 @@ title: Background
   }
 
   @media (max-width: 760px) {
-    .background-page { padding: 3rem 1rem; }
+    .background-page { padding: var(--page-top) var(--page-gutter) 3rem; }
     .background-header { padding-bottom: 2.25rem; }
-    .background-header h1 { font-size: 3rem; }
+    .background-header h1 { font-size: var(--type-title); }
     .background-section { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.5rem 0; }
     .background-principles { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 2.5rem; }
     .years { width: 100%; margin: 0.2rem 0 0; }

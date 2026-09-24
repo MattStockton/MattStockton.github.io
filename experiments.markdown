@@ -8,20 +8,20 @@ classes:
 
 <style>
   .experiments-page {
-    max-width: 1040px;
+    max-width: var(--site-width);
     margin: 0 auto;
-    padding: 4.5rem 1.5rem 4rem;
+    padding: var(--page-top) var(--page-gutter) 3rem;
   }
 
   .experiments-header {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid var(--color-border);
   }
 
   .experiments-header h1 {
     margin: 0 0 1rem;
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: var(--type-title);
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.035em;
@@ -242,9 +242,9 @@ classes:
   }
 
   @media (max-width: 820px) {
-    .experiments-page { padding: 3rem 1rem; }
+    .experiments-page { padding: var(--page-top) var(--page-gutter) 3rem; }
     .experiments-header { padding-bottom: 2.25rem; }
-    .experiments-header h1 { font-size: 3rem; }
+    .experiments-header h1 { font-size: var(--type-title); }
     .experiment-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .experiment h2 { font-size: 1.6rem !important; }
     .elsewhere-item { grid-template-columns: 1fr; gap: 0.5rem; }

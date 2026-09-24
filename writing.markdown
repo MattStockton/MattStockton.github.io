@@ -1,26 +1,27 @@
 ---
 layout: splash
 title: Writing
+digest_styles: true
 classes:
   - wide
 ---
 
 <style>
   .writing-page {
-    max-width: 1040px;
+    max-width: var(--site-width);
     margin: 0 auto;
-    padding: 4.5rem 1.5rem 4rem;
+    padding: var(--page-top) var(--page-gutter) 3rem;
   }
 
   .writing-header {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid var(--color-border);
   }
 
   .writing-header h1 {
     margin: 0 0 1rem;
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: var(--type-title);
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.035em;
@@ -151,9 +152,9 @@ classes:
   }
 
   @media (max-width: 700px) {
-    .writing-page { padding: 3rem 1rem; }
+    .writing-page { padding: var(--page-top) var(--page-gutter) 3rem; }
     .writing-header { padding-bottom: 2.25rem; }
-    .writing-header h1 { font-size: 3rem; }
+    .writing-header h1 { font-size: var(--type-title); }
     .post-item { grid-template-columns: 1fr; gap: 0.55rem; padding: 1.35rem 0; }
     .post-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
     .post-category, .featured-badge { display: inline-block; margin-top: 0; }
@@ -163,8 +164,10 @@ classes:
 <div class="writing-page">
   <header class="writing-header">
     <h1>Writing</h1>
-    <p>Longer pieces on software development, applied AI, and machine learning. I post shorter, more current <a href="/notes.html">notes from X</a>.</p>
+    <p>Essays on software development, applied AI, and machine learning, plus a regular digest of what I’m trying, reading, and listening to.</p>
   </header>
+
+  {% include writing-nav.html active="essays" %}
 
   <nav class="category-nav" aria-label="Filter writing by category">
     <button class="category-button active" data-category="recent" aria-pressed="true">Recent</button>

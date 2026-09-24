@@ -126,3 +126,13 @@ social:
 
 head_scripts:
   - https://cdn-cookieyes.com/client_data/cc3cc7c737387cca67e28af5/script.js
+
+collections:
+  digests:
+    output: true
+    permalink: /writing/digest/:name/
+
+feed:
+  collections:
+    digests:
+      path: /writing/digest/feed.xml

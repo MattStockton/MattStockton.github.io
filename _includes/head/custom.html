@@ -19,6 +19,14 @@
 
 /* CSS Custom Properties */
 :root {
+  --site-width: 1120px;
+  --reading-width: 720px;
+  --page-gutter: 24px;
+  --page-top: 48px;
+  --type-body: 1.125rem;
+  --type-title: clamp(2.125rem, 4vw, 3.5rem);
+  --type-section: 2rem;
+
   /* Primary - Deep Teal */
   --color-primary: #0A4D68;
   --color-primary-dark: #062E3F;
@@ -85,14 +93,39 @@
    BASE STYLES
    ================================================================= */
 
+html { font-size: 100%; }
+
 body {
+  font-size: var(--type-body);
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.7;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1 { text-wrap: balance; }
+
+.page__content :is(h1, h2, h3, h4, h5, h6)[id] { scroll-margin-top: 7rem; }
+.header-link { display: inline-block; }
+
+.header-link .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.header-link .fas { display: none; }
+.header-link::after { content: "#"; font-family: var(--font-body); }
+.header-link:focus-visible { opacity: 1; }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
@@ -111,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
-  padding: 0.75rem 0;
+  padding: 0.35rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -123,8 +156,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .masthead__inner-wrap {
-  padding: 0.5rem 2rem;
-  max-width: 1400px;
+  padding: 0.5rem var(--page-gutter);
+  max-width: var(--site-width);
   margin: 0 auto;
 }
 
@@ -489,17 +522,40 @@ h1, h2, h3, h4, h5, h6 {
    ================================================================= */
 
 /* Global container width */
-.page__content,
-#main,
-.page__main {
-  max-width: 1200px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+#main {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  float: none;
 }
 
-#main {
-  width: 100% !important;
-  float: none !important;
+.splash > .page__content {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page__content {
+  font-size: var(--type-body);
+  line-height: 1.6;
+}
+
+.page__content :is(.home-eyebrow, .digest-eyebrow, .work-kicker) {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.page__content :is(.post-excerpt, .experiment-summary, .job-description) {
+  font-size: 1rem;
+}
+
+.page__content .home-intro {
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Hide default sidebar */
@@ -518,7 +574,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 1024px) {
   .masthead__inner-wrap {
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem var(--page-gutter);
   }
 
   .site-title {
@@ -537,13 +593,19 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   :root {
+    --page-gutter: 20px;
+    --page-top: 32px;
+    --type-body: 1.0625rem;
+    --type-section: 1.75rem;
     --space-xl: 1.5rem;
     --space-2xl: 2rem;
     --space-3xl: 3rem;
   }
 
+  .page__content .home-intro { font-size: var(--type-body); }
+
   .masthead__inner-wrap {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem var(--page-gutter);
   }
 
   .site-title {
@@ -592,3 +654,16 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 24px 24px;
 }
 </style>
+
+{% if page.digest_styles or page.layout == 'digest' %}
+<link rel="stylesheet" href="{{ '/docs/assets/css/digest.css' | relative_url }}">
+<link rel="alternate" type="application/atom+xml" title="Matt Stockton | Digest" href="{{ '/writing/digest/feed.xml' | absolute_url }}">
+{% endif %}
+
+<script>
+window.addEventListener('load', function () {
+  document.querySelectorAll('.header-link').forEach(function (link) {
+    link.setAttribute('data-scroll-ignore', '');
+  });
+});
+</script>

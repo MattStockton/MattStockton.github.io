@@ -1,20 +1,21 @@
 ---
 layout: splash
+digest_styles: true
 ---
 
 <style>
   .home-shell {
-    max-width: 1040px;
+    max-width: var(--site-width);
     margin: 0 auto;
-    padding: 0 1.5rem 4rem;
+    padding: 0 var(--page-gutter) 3rem;
   }
 
   .home-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
-    gap: 3.5rem;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 3rem;
     align-items: center;
-    padding: 5rem 0 4rem;
+    padding: var(--page-top) 0 2.5rem;
     border-bottom: 1px solid var(--color-border);
   }
 
@@ -31,9 +32,9 @@ layout: splash
     max-width: 760px;
     margin: 0 0 1.25rem;
     font-family: var(--font-serif);
-    font-size: clamp(2.8rem, 6vw, 4.6rem);
+    font-size: var(--type-title);
     font-weight: 400;
-    line-height: 1.02;
+    line-height: 1.1;
     letter-spacing: -0.035em;
   }
 
@@ -81,15 +82,15 @@ layout: splash
   }
 
   .home-photo {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
     border-radius: 12px;
     object-fit: cover;
     box-shadow: 10px 10px 0 rgba(245, 166, 35, 0.2);
   }
 
   .home-section {
-    padding: 3.75rem 0 0;
+    padding: 2.5rem 0 0;
   }
 
   .home-section-header {
@@ -100,10 +101,12 @@ layout: splash
     margin-bottom: 1.5rem;
   }
 
-  .home-section h2 {
+  .page__content .home-section h2 {
     margin: 0;
+    padding: 0;
+    border: 0;
     font-family: var(--font-serif);
-    font-size: 2.15rem;
+    font-size: var(--type-section);
     font-weight: 400;
     letter-spacing: -0.02em;
   }
@@ -285,19 +288,19 @@ layout: splash
     line-height: 1.6;
   }
 
-  @media (max-width: 760px) {
-    .home-shell { padding: 0 1rem 3rem; }
+  @media (max-width: 900px) {
+    .home-shell { padding: 0 var(--page-gutter) 3rem; }
     .home-hero {
       grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 3rem 0;
+      gap: 1.25rem;
+      padding: var(--page-top) 0 2rem;
     }
     .home-photo {
-      width: 150px;
-      height: 150px;
+      width: 80px;
+      height: 80px;
       grid-row: 1;
     }
-    .home-title { font-size: 2.8rem; }
+    .home-title { font-size: var(--type-title); }
     .home-feature-grid { grid-template-columns: 1fr; }
     .home-feature { min-height: 0; }
     .home-post { grid-template-columns: 1fr; gap: 0.35rem; }
@@ -319,13 +322,49 @@ layout: splash
     <div>
       <p class="home-eyebrow">Software engineering, applied AI, and machine learning</p>
       <h1 class="home-title">I build software and write about what I learn.</h1>
-      <p class="home-intro">I've spent more than 20 years building software and roughly a decade working in ML and AI. I publish longer pieces here. Most of my day-to-day thinking happens <a href="https://x.com/mstockton">on X</a>, where I share working ideas and practical things I'm trying.</p>
+      <p class="home-intro">I've spent more than 20 years building software and roughly a decade working in ML and AI. I write longer pieces here and share what I’m trying, reading, and listening to in a regular <a href="/writing/digest/">digest</a>. You can also find my day-to-day thinking <a href="https://x.com/mstockton">on X</a>.</p>
       <div class="home-actions">
         <a class="home-button" href="/writing.html">Read the writing</a>
         <a class="home-button secondary" href="https://pragmanexus.com">Work with me through PragmaNexus</a>
       </div>
     </div>
     <img class="home-photo" src="/docs/assets/images/matt.jpeg" alt="Matt Stockton">
+  </section>
+
+  {% assign latest_digest = site.digests | sort: "date" | last %}
+  {% if latest_digest %}
+  <section class="home-digest" aria-labelledby="latest-digest-heading">
+    <div class="home-digest__label">Latest digest</div>
+    <div class="home-digest__body">
+      <h2 id="latest-digest-heading"><a href="{{ latest_digest.url | relative_url }}"><time datetime="{{ latest_digest.date | date_to_xmlschema }}">{{ latest_digest.date | date: "%B %-d, %Y" }}</time></a></h2>
+      <p>{{ latest_digest.excerpt | strip_html }}</p>
+      <div class="home-digest__actions">
+        <a href="{{ latest_digest.url | relative_url }}">Read this issue <span aria-hidden="true">&rarr;</span></a>
+        <a href="{{ '/writing/digest/' | relative_url }}">All digests <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="home-section">
+    <div class="home-section-header">
+      <h2>Selected writing</h2>
+      <a class="home-section-link" href="/writing.html">All essays &rarr;</a>
+    </div>
+    <div class="home-post-list">
+      {% assign recent_post = site.posts | slice: 0, 1 %}
+      {% assign featured_posts = site.posts | where: "featured", true | slice: 0, 2 %}
+      {% assign selected_posts = recent_post | concat: featured_posts | uniq %}
+      {% for post in selected_posts limit:3 %}
+      <article class="home-post">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </section>
 
   <section class="home-section">
@@ -347,24 +386,6 @@ layout: splash
         <div>
           <h3><a href="/notes/{{ note.slug }}/">{{ note.title }}</a></h3>
           <p>{{ note.summary }}</p>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="home-section">
-    <div class="home-section-header">
-      <h2>Recent writing</h2>
-      <a class="home-section-link" href="/writing.html">All posts &rarr;</a>
-    </div>
-    <div class="home-post-list">
-      {% for post in site.posts limit:5 %}
-      <article class="home-post">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-        <div>
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
         </div>
       </article>
       {% endfor %}
