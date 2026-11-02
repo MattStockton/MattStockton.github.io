@@ -1,4 +1,6 @@
-<nav class="writing-formats" aria-label="Writing formats">
+<nav class="tabs" aria-label="Writing formats">
   <a href="{{ '/writing.html' | relative_url }}"{% if include.active == 'essays' %} aria-current="page"{% endif %}>Essays</a>
   <a href="{{ '/writing/digest/' | relative_url }}"{% if include.active == 'digest' %} aria-current="page"{% endif %}>Digest</a>
+  <a href="{{ '/notes.html' | relative_url }}"{% if include.active == 'notes' %} aria-current="page"{% endif %}>Notes</a>
+  <a href="{{ '/standalone/listening-index.html' | relative_url }}">Listening</a>
 </nav>

@@ -1,13 +1,13 @@
 main:
-  - title: "Work With Me"
-    url: /work-with-me.html
   - title: "Writing"
     url: /writing.html
+    section: writing
   - title: "Notes"
     url: /notes.html
-  - title: "Listening"
-    url: /standalone/listening-index.html
-  - title: "Experiments"
+    section: notes
+  - title: "Projects"
     url: /experiments.html
-  - title: "Background"
+    section: projects
+  - title: "About"
     url: /my-background.html
+    section: about

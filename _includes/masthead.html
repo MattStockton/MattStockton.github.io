@@ -1,0 +1,18 @@
+{% assign url = page.url %}
+{% if url contains '/notes' or page.layout == 'x-note' %}{% assign current = 'notes' %}
+{% elsif url contains '/writing' or page.layout == 'single' or page.layout == 'digest' %}{% assign current = 'writing' %}
+{% elsif url contains '/experiments' %}{% assign current = 'projects' %}
+{% elsif url contains '/my-background' %}{% assign current = 'about' %}
+{% elsif url contains '/work-with-me' %}{% assign current = 'work' %}
+{% endif %}
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="masthead__name" href="{{ '/' | relative_url }}">Matt Stockton</a>
+    <nav class="masthead__nav" aria-label="Main">
+      {% for link in site.data.navigation.main %}
+      <a href="{{ link.url | relative_url }}"{% if current == link.section %} aria-current="page"{% endif %}>{{ link.title }}</a>
+      {% endfor %}
+      <a href="{{ '/work-with-me.html' | relative_url }}"{% if current == 'work' %} aria-current="page"{% endif %}>Work with me</a>
+    </nav>
+  </div>
+</header>

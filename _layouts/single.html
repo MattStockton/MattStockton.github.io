@@ -2,446 +2,53 @@
 layout: default
 ---
 
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% elsif page.header.video.id and page.header.video.provider %}
-  {% include page__hero_video.html %}
-{% endif %}
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 200 | at_least: 1 %}
 
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
-<div id="main" role="main">
-  <article class="page h-entry" itemscope itemtype="https://schema.org/BlogPosting">
-    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
-    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
-    <meta itemprop="author" content="{{ site.author.name }}">
-
-    {% if page.layout == 'single' and page.date %}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "{{ page.title | escape }}",
-      "description": "{{ page.excerpt | markdownify | strip_html | strip_newlines | escape }}",
-      "author": {
-        "@type": "Person",
-        "name": "{{ site.author.name }}"
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "{{ site.author.name }}"
-      },
-      "datePublished": "{{ page.date | date_to_xmlschema }}",
-      {% if page.last_modified_at %}"dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",{% endif %}
-      "url": "{{ page.url | absolute_url }}",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ page.url | absolute_url }}"
-      }
-    }
-    </script>
+<article class="post h-entry">
+  <header class="post__header">
+    {% if page.date %}
+    <p class="meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span aria-hidden="true">&middot;</span>
+      <span>{{ minutes }} min read</span>
+    </p>
     {% endif %}
+    <h1 class="post__title p-name">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" | strip }}</h1>
+  </header>
 
-    <div class="page__inner-wrap">
-      {% unless page.header.overlay_color or page.header.overlay_image %}
-        <header>
-          {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
-          </h1>{% endif %}
-          {% include page__meta.html %}
-        </header>
-      {% endunless %}
+  <div class="prose e-content">
+    {{ content }}
+  </div>
 
-      <section class="page__content e-content" itemprop="text">
-        {% if page.toc %}
-          <aside class="toc-container">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
-            </nav>
-          </aside>
-        {% endif %}
-        {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
-      </section>
+  {% if page.date %}
+  <aside class="byline">
+    <img src="{{ site.author.avatar | relative_url }}" alt="" width="56" height="56">
+    <p>I'm Matt Stockton. I write a regular <a href="{{ '/writing/digest/' | relative_url }}">digest</a>, post shorter notes <a href="{{ site.author.x }}">on X</a>, and do client work through <a href="{{ site.company.url }}">{{ site.company.name }}</a>.</p>
+  </aside>
 
-      {% if page.related %}
-        {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | where_exp: "post", "post.category == page.category" | sort: "date" | reverse %}
-        {% if related_posts.size == 0 %}
-          {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | sort: "date" | reverse %}
-        {% endif %}
-        {% if related_posts.size > 0 %}
-        <section class="page__related">
-          <h3 class="related-posts-title">Related Posts</h3>
-          <div class="related-posts-grid">
-            {% for post in related_posts limit:3 %}
-              <article class="related-post-item">
-                <h4 class="related-post-title">
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </h4>
-                <p class="related-post-excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 100 }}</p>
-              </article>
-            {% endfor %}
-          </div>
-        </section>
-        {% endif %}
-      {% endif %}
+  {% assign more = site.posts | where_exp: "post", "post.url != page.url" %}
+  <section class="more" aria-labelledby="more-heading">
+    <h2 id="more-heading" class="label">More writing</h2>
+    <ul class="list">
+      {% for post in more limit:3 %}
+      <li class="list__row">
+        <time class="meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <a class="list__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
 
-      <footer class="page__meta">
-        {% if site.data.ui-text[site.locale].meta_label %}
-          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
-        {% endif %}
-        {% include page__taxonomy.html %}
-        {% include page__date.html %}
-      </footer>
-
-      {% if page.share %}{% include social-share.html %}{% endif %}
-
-      {% include post_pagination.html %}
-    </div>
-
-    {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
-      {% include comments.html %}
-    {% endif %}
-  </article>
-</div>
-
-<style>
-  /* Blog posts use the same flat editorial system as the main site pages. */
-  #main,
-  .page {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    float: none !important;
-  }
-
-  .sidebar {
-    display: none !important;
-  }
-
-  .page__inner-wrap {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: var(--site-width);
-    margin: 0 auto !important;
-    padding: var(--page-top) var(--page-gutter) 3rem;
-    float: none !important;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .page__inner-wrap > header,
-  .page__content,
-  .page__related,
-  .page__inner-wrap > footer,
-  .page__inner-wrap > .social-share,
-  .page__inner-wrap > .pagination {
-    width: 100% !important;
-    max-width: var(--reading-width) !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    float: none !important;
-  }
-
-  .page__inner-wrap > header {
-    margin-bottom: 1.75rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .page__title {
-    margin: 0 0 1rem !important;
-    color: var(--color-text) !important;
-    font-family: var(--font-serif) !important;
-    font-size: var(--type-title) !important;
-    font-weight: 400 !important;
-    letter-spacing: -0.035em !important;
-    line-height: 1.1 !important;
-  }
-
-  .page__title a {
-    color: inherit !important;
-    text-decoration: none !important;
-    border: 0 !important;
-  }
-
-  .page__title a:hover {
-    color: var(--color-primary) !important;
-  }
-
-  .page__meta {
-    margin-bottom: 0;
-    padding: 0;
-    border: 0;
-    color: var(--color-text-light);
-    font-size: 0.82rem;
-  }
-
-  .page__meta-title {
-    display: none;
-  }
-
-  .page__content {
-    color: var(--color-text);
-    font-family: var(--font-body);
-    font-size: var(--type-body);
-    line-height: 1.65;
-  }
-
-  .page__content h2 {
-    margin: 3rem 0 1rem;
-    padding: 0;
-    border: 0;
-    color: var(--color-text);
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-  }
-
-  .page__content h3 {
-    margin: 2.25rem 0 0.75rem;
-    color: var(--color-text);
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.3;
-  }
-
-  .page__content h4,
-  .page__content h5,
-  .page__content h6 {
-    margin: 1.75rem 0 0.5rem;
-    color: var(--color-text);
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 700;
-  }
-
-  .page__content p {
-    margin: 0 0 1.35rem;
-  }
-
-  .page__content a:not(.btn) {
-    color: var(--color-primary);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(10, 77, 104, 0.3);
-    transition: border-color var(--transition-fast), color var(--transition-fast);
-  }
-
-  .page__content a:not(.btn):hover {
-    color: var(--color-primary-dark);
-    border-bottom-color: var(--color-primary);
-  }
-
-  .page__content pre {
-    margin: 1.75rem 0;
-    padding: 1.25rem 1.5rem;
-    overflow-x: auto;
-    background: var(--color-surface-elevated);
-    border: 1px solid var(--color-border);
-    border-left: 3px solid var(--color-primary);
-    border-radius: 6px;
-    font-size: 0.88rem;
-    line-height: 1.6;
-  }
-
-  .page__content code {
-    padding: 0.18em 0.4em;
-    background: var(--color-surface-elevated);
-    border-radius: 4px;
-    color: var(--color-primary-dark);
-    font-size: 0.9em;
-  }
-
-  .page__content pre code {
-    padding: 0;
-    background: transparent;
-    color: inherit;
-  }
-
-  .page__content blockquote {
-    margin: 1.75rem 0;
-    padding: 1.1rem 1.4rem;
-    background: var(--color-bg-warm);
-    border: 0;
-    border-left: 3px solid var(--color-secondary);
-    border-radius: 0;
-    color: var(--color-text);
-    font-style: normal;
-  }
-
-  .page__content blockquote p:last-child {
-    margin-bottom: 0;
-  }
-
-  .page__content ul,
-  .page__content ol {
-    margin: 0 0 1.5rem;
-    padding-left: 1.4rem;
-  }
-
-  .page__content li {
-    margin-bottom: 0.5rem;
-    line-height: 1.65;
-  }
-
-  .page__content li::marker {
-    color: var(--color-primary);
-  }
-
-  .page__content img {
-    max-width: 100%;
-    height: auto;
-    margin: 1.75rem 0;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    box-shadow: none;
-  }
-
-  .toc-container {
-    margin-bottom: 2rem;
-    padding: 1.1rem 1.25rem;
-    background: var(--color-surface-elevated);
-    border: 1px solid var(--color-border);
-    border-left: 3px solid var(--color-primary);
-    border-radius: 6px;
-  }
-
-  .toc .nav__title {
-    margin-bottom: 0.65rem;
-    color: var(--color-text);
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 700;
-  }
-
-  .toc__menu a {
-    color: var(--color-text-muted);
-    border: 0 !important;
-    font-size: 0.88rem;
-  }
-
-  .toc__menu a:hover {
-    color: var(--color-primary);
-  }
-
-  .page__related {
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
-    float: none !important;
-    clear: both;
-  }
-
-  .related-posts-title {
-    margin: 0 0 1rem !important;
-    color: var(--color-text) !important;
-    font-family: var(--font-serif) !important;
-    font-size: 1.6rem !important;
-    font-weight: 400 !important;
-  }
-
-  .related-posts-grid {
-    border-top: 1px solid var(--color-border);
-  }
-
-  .related-post-item {
-    display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 1.25rem;
-    padding: 1rem 0;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid var(--color-border);
-    border-radius: 0;
-  }
-
-  .related-post-title {
-    margin: 0 !important;
-    font-size: 0.94rem !important;
-    font-weight: 700 !important;
-    line-height: 1.4 !important;
-  }
-
-  .related-post-title a {
-    color: var(--color-text) !important;
-    font-family: var(--font-display);
-    text-decoration: none !important;
-    border: 0 !important;
-  }
-
-  .related-post-title a:hover {
-    color: var(--color-primary) !important;
-  }
-
-  .related-post-excerpt {
-    margin: 0;
-    color: var(--color-text-muted);
-    font-size: 0.82rem;
-    line-height: 1.5;
-  }
-
-  .page__inner-wrap > footer.page__meta,
-  .page__inner-wrap > .social-share {
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .pagination--pager {
-    padding: 0.75rem 1rem;
-    background: transparent;
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    color: var(--color-primary);
-    font-family: var(--font-display);
-    font-weight: 600;
-  }
-
-  .pagination--pager:hover {
-    background: var(--color-surface-elevated);
-    border-color: var(--color-primary);
-  }
-
-  @media (max-width: 768px) {
-    .page__inner-wrap {
-      padding: var(--page-top) var(--page-gutter) 3rem;
-    }
-
-    .page__inner-wrap > header {
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-    }
-
-    .page__title {
-      font-size: var(--type-title) !important;
-    }
-
-    .page__content {
-      font-size: var(--type-body);
-    }
-
-    .page__content h2 {
-      font-size: 1.75rem;
-    }
-
-    .related-post-item {
-      grid-template-columns: 1fr;
-      gap: 0.35rem;
-    }
-  }
-</style>
+<script>
+document.querySelectorAll('.prose h2[id], .prose h3[id]').forEach(function (h) {
+  var a = document.createElement('a');
+  a.className = 'anchor';
+  a.href = '#' + h.id;
+  a.setAttribute('aria-label', 'Link to this section');
+  a.textContent = '#';
+  h.appendChild(a);
+});
+</script>

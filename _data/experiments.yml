@@ -17,8 +17,8 @@
   kind: "Searchable index"
   featured: true
   cta: "Browse the index"
-  short: "1,404 takeaways from 173 podcast episodes, searchable by topic, show, and speaker."
-  summary: "I built this because I kept losing track of which podcast episode an idea came from. After I finish an episode, a script finds or makes a transcript and a model writes down the ideas I may want to find later. You can search all 1,404 takeaways by topic, show, or speaker. Every one includes an excerpt and a link to the original episode."
+  short: "1,613 takeaways from 196 podcast episodes, searchable by topic, show, and speaker."
+  summary: "I built this because I kept losing track of which podcast episode an idea came from. After I finish an episode, a script finds or makes a transcript and a model writes down the ideas I may want to find later. You can search all 1,613 takeaways by topic, show, or speaker. Every one includes an excerpt and a link to the original episode."
   data: "173 episodes across 24 shows, totaling 165 hours of audio. The script looks for a publisher transcript first, then video captions, then runs Whisper locally. Claude wrote and scored 1,969 takeaways. Code sorts them, checks the quotes, and publishes the 1,404 that scored 3 to 5."
   built_with: "Claude Code, Python, Whisper, a local Apple Podcasts library"
 

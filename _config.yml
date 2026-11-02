@@ -26,27 +26,26 @@ author:
   email: mattstockton@gmail.com
   bio: "Software engineer writing about applied AI, machine learning, and software development."
   avatar: "/docs/assets/images/matt.jpeg"
-  links:
-    - label: "X"
-      icon: "fab fa-fw fa-x-twitter"
-      url: "https://x.com/mstockton"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/mattstockton/"
+  twitter: mstockton
+  x: "https://x.com/mstockton"
+  linkedin: "https://www.linkedin.com/in/mattstockton/"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Writing about software development, applied AI, and machine learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mattstockton.com" # the base hostname & protocol for your site
-og_image: "/docs/assets/images/site/social-card.png"
+
+contact_email: "hello@pragmanexus.com"
+company:
+  name: "PragmaNexus"
+  url: "https://pragmanexus.com"
+  case_studies: "https://pragmanexus.com/case-studies"
 
 # Build settings
-# The remote theme works on GitHub Pages and with local `bundle exec jekyll serve`.
-remote_theme: "mmistakes/minimal-mistakes@4.26.0"
+markdown: kramdown
+highlighter: rouge
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
-  - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-seo-tag
 
@@ -72,8 +71,6 @@ exclude:
   - vendor/ruby/
 
 
-minimal_mistakes_skin: "dirt"
-
 # Permalink structure for posts - explicitly exclude categories
 permalink: /:year/:month/:day/:title.html
 
@@ -84,28 +81,12 @@ defaults:
       path: ""
       type: posts
     values:
-      show_date: true
-      read_time: true
       layout: single
       permalink: /:year/:month/:day/:title.html
-      author_profile: true
-      share: true
-      related: true
-
-# Social sharing configuration
-social_share:
-  twitter: true
-  facebook: true
-  linkedin: true
-
-footer:
-  links:
-    - label: "X"
-      icon: "fab fa-fw fa-x-twitter"
-      url: "https://x.com/mstockton"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/mattstockton/"
+  - scope:
+      path: ""
+    values:
+      image: "/docs/assets/images/site/social-card.png"
 
 analytics:
   provider: "google-gtag"
@@ -116,6 +97,7 @@ analytics:
 # SEO settings
 twitter:
   username: "mstockton"
+  card: summary_large_image
 
 social:
   type: Person

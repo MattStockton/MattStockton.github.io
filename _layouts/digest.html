@@ -1,36 +1,25 @@
 ---
-layout: splash
+layout: default
 ---
 
 {% assign issue_parts = content | split: "<!--more-->" %}
 
-<article class="digest-issue">
-  <nav class="digest-breadcrumb" aria-label="Breadcrumb">
-    <a href="{{ '/writing.html' | relative_url }}">Writing</a>
-    <span aria-hidden="true">/</span>
-    <a href="{{ '/writing/digest/' | relative_url }}">Digest</a>
-  </nav>
-
-  <header class="digest-issue__header">
-    <p class="digest-eyebrow">Digest</p>
-    <h1><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></h1>
-    {% if issue_parts.size > 1 %}
-    {{ issue_parts | first }}
-    {% else %}
-    <p>Things I wrote, tried, listened to, and saved.</p>
-    {% endif %}
+<article class="post digest-issue">
+  <header class="post__header">
+    <p class="meta"><a href="{{ '/writing/digest/' | relative_url }}">Digest</a></p>
+    <h1 class="post__title"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></h1>
+    <div class="post__dek">
+      {% if issue_parts.size > 1 %}{{ issue_parts | first }}{% else %}<p>Things I wrote, tried, listened to, and saved.</p>{% endif %}
+    </div>
   </header>
 
   {% if page.sections %}
-  <nav class="digest-jumps" aria-label="In this issue">
-    <span>In this issue</span>
-    {% for section in page.sections %}
-    <a href="#{{ section.id }}" data-scroll-ignore>{{ section.label }}</a>
-    {% endfor %}
+  <nav class="jumps" aria-label="In this issue">
+    {% for section in page.sections %}<a href="#{{ section.id }}">{{ section.label }}</a>{% endfor %}
   </nav>
   {% endif %}
 
-  <div class="digest-issue__body">
+  <div class="prose">
     {{ issue_parts | last }}
   </div>
 
@@ -45,12 +34,9 @@ layout: splash
       {% break %}
     {% endif %}
   {% endfor %}
-  <footer class="digest-issue__footer">
-    <nav class="digest-neighbors" aria-label="Other issues">
-      {% if older_issue %}<a href="{{ older_issue.url | relative_url }}">&larr; {{ older_issue.date | date: "%B %-d, %Y" }}</a>{% endif %}
-      <a href="{{ '/writing/digest/' | relative_url }}">All digests</a>
-      {% if newer_issue %}<a href="{{ newer_issue.url | relative_url }}">{{ newer_issue.date | date: "%B %-d, %Y" }} &rarr;</a>{% endif %}
-    </nav>
-    <a class="digest-feed" href="{{ '/writing/digest/feed.xml' | relative_url }}">Follow via RSS</a>
+  <footer class="pager">
+    {% if older_issue %}<a href="{{ older_issue.url | relative_url }}">&larr; {{ older_issue.date | date: "%B %-d" }}</a>{% else %}<span></span>{% endif %}
+    <a href="{{ '/writing/digest/' | relative_url }}">All digests</a>
+    {% if newer_issue %}<a href="{{ newer_issue.url | relative_url }}">{{ newer_issue.date | date: "%B %-d" }} &rarr;</a>{% else %}<a href="{{ '/writing/digest/feed.xml' | relative_url }}">RSS</a>{% endif %}
   </footer>
 </article>
