@@ -1,3 +1,76 @@
+- title: "Leading an engineering team through the change"
+  slug: "leading-an-engineering-team-through-change"
+  date: "Oct 31, 2026"
+  datetime: "2026-10-31"
+  theme: "Company adoption"
+  url: "https://x.com/mstockton/status/2116548727473148203"
+  featured: true
+  summary: "Engineering leaders need to get people aligned on how the work changes with these tools."
+  paragraphs:
+    - "The job and the engineering organization need to change to take full advantage of these tools. A lot of that is a human alignment challenge. If you are a leader, your job is to get people working together in this new way."
+    - "Some people want to keep working the old way, and there are incentives to keep doing so. But I think the faster you can get your organization to understand what has changed and agree on how to work now, the less painful it will be long term."
+    - "I believe organizations that fail to make that change will be disrupted by organizations that do."
+
+- title: "Having an agent build the features and demonstrate them"
+  slug: "agent-built-dashboard-and-demo"
+  date: "Oct 30, 2026"
+  datetime: "2026-10-30"
+  theme: "How I work"
+  url: "https://x.com/mstockton/status/2116267370742222896"
+  summary: "I asked Claude Code to choose dashboard visualizations from meeting notes, build them, and make a narrated demo."
+  paragraphs:
+    - "I was adding a new dataset to an internal Streamlit dashboard. I had ideas for how to use it, but I asked Claude Code to look through our CRM and meeting notes and figure out which visualizations would be useful."
+    - "Then I asked it to build the visualizations, check its work in a fresh context window, and create a narrated video clicking through the new functionality."
+    - "It wasn't perfect, but it worked. The visualizations lined up with what we cared about, and the video walked through them well. This is what being more ambitious with the models meant for me that day."
+
+- title: "Give the models concise engineering principles"
+  slug: "concise-engineering-principles"
+  date: "Oct 14, 2026"
+  datetime: "2026-10-14"
+  theme: "Software engineering"
+  url: "https://x.com/mstockton/status/2110509294030315963"
+  summary: "Engineering experience helps you identify the principles that steer a model toward better work."
+  paragraphs:
+    - "I've said to let the models breathe more and be less prescriptive. Lauren Tan put a more coherent version of that into words: encode tried-and-true engineering principles as concisely as possible, so the model can use what it already knows."
+    - "Knowing those principles takes experience and often some battle scars. Classical software engineering skills still matter because they help you recognize when one of those insights will make a big difference in steering the model."
+
+- title: "Using expert interviews to improve the system"
+  slug: "expert-interviews-improve-the-system"
+  date: "Oct 11, 2026"
+  datetime: "2026-10-11"
+  theme: "Agent evaluation"
+  url: "https://x.com/mstockton/status/2109412722643292587"
+  summary: "I record domain experts talking through the outputs, then feed the transcripts into a workflow that improves the system."
+  paragraphs:
+    - "For some of my builds, I've put a workflow around interviewing users and domain experts about the outputs. I prepare structured questions, record and transcribe the interviews, and feed the transcripts into a skill in my custom harness."
+    - "The feedback then flows into improving the system. Getting people to talk through what they like and don't like gives the model a lot to work with."
+    - "It feels weird how easy that part can be. Building the system around it takes work, but once it's in place, it often just works."
+
+- title: "Plausible code can create more work for the team"
+  slug: "plausible-code-and-review-work"
+  date: "Sep 23, 2026"
+  datetime: "2026-09-23"
+  theme: "Software engineering"
+  url: "https://x.com/mstockton/status/2102602343220965872"
+  featured: true
+  summary: "Poorly directed agents can generate plausible code that consumes your strongest engineers' time."
+  paragraphs:
+    - "I've been building software professionally for more than twenty years. Keeping complexity under control has always been a battle, especially once you have more than five or ten people on a team. Having people who are aligned in their software tastes helps a lot."
+    - "With people who know what they're doing and an agreed approach to building with agents, it's much easier to build good things than it used to be. These tools can amplify those skills."
+    - "But getting this wrong has a different cost now. Someone can generate a huge amount of plausible code that distracts the people who have to review it, consumes their time, and makes them jaded."
+
+- title: "When an easier interface makes machine learning useful"
+  slug: "jev-and-the-cost-of-classical-ml"
+  date: "Sep 16, 2026"
+  datetime: "2026-09-16"
+  theme: "Applied AI and ML"
+  url: "https://x.com/mstockton/status/2100039019174281467"
+  summary: "Jev got me thinking about the tradeoff between an easy API and training a model for the problem."
+  paragraphs:
+    - "A lot of business problems are classification or regression problems. Classical ML can solve many of them, but you have to label data, train a model, and host it somewhere. That's a lot more work than calling a text-based API, and companies need to know those methods exist in the first place."
+    - "I've used LLMs to help build classical ML models and clean data that would have taken me much longer without them. Jev got me wondering whether an easier interface could make classification and regression accessible to more people."
+    - "I still want to understand the tradeoff. If using a model like Jev well takes substantial know-how, at what point would you be better off using an LLM to help you build a classical model? I'm interested in trying it, but I don't have a settled answer."
+
 - title: "A five-minute fix for a stuck liftgate"
   slug: "a-five-minute-liftgate-fix"
   date: "Sep 8, 2026"
@@ -64,7 +137,6 @@
   datetime: "2026-08-22"
   theme: "How I work"
   url: "https://x.com/mstockton/status/2091283454881038686"
-  featured: true
   summary: "I built a CLI for my Twitter archive, then asked Claude Code to find twenty longer pieces I'd saved and never gone back to read."
   paragraphs:
     - "I built a CLI to pull down my Twitter data and create searchable embeddings. Claude Code can use the CLI, so I can ask questions about the archive from inside the project."
@@ -77,7 +149,6 @@
   datetime: "2026-08-08"
   theme: "Software engineering"
   url: "https://x.com/mstockton/status/2086274409178788043"
-  featured: true
   summary: "I miss writing code, but the experience I built doing it still shapes how I work with agents."
   paragraphs:
     - "I'm an old-school software engineer: design patterns, domain-driven design, TDD, all the things. I took a class from Ralph Johnson during my CS master's at UIUC. I loved the craft for a long time and still do. I miss writing code, and I also understand that the role has completely changed."
@@ -94,6 +165,8 @@
   paragraphs:
     - "It's easy to ask a model to write a skill for you. But if you're building something you plan to use over and over, do you want it filling in the blanks with a generic set of instructions?"
     - "I like to open a text editor and write the instructions myself. I pretend I'm explaining the work to a new employee. I don't have to specify every step, just the context, constraints, and end goal."
+  update: "In October, I wrote about another way to get this knowledge down: give the model examples of what good looks like and have it interview you. Things that seem obvious to you may never have been explained to the model."
+  update_url: "https://x.com/mstockton/status/2112899296664092746"
 
 - title: "Use deterministic tools for deterministic work"
   slug: "deterministic-tools"
@@ -118,6 +191,7 @@
 
 - title: "Domain expertise still matters"
   slug: "domain-expertise-is-the-moat"
+  archived: true
   date: "Jul 28, 2026"
   datetime: "2026-07-28"
   theme: "Applied AI and ML"
@@ -192,6 +266,7 @@
   datetime: "2026-05-30"
   theme: "Agent design"
   url: "https://x.com/mstockton/status/2060741863221657883"
+  featured: true
   summary: "I run a weekly GitHub Action that uses Claude Code to update architecture docs and turn them into an interactive site the team can explore."
   paragraphs:
     - "For some codebases I'm working in, I have a weekly GitHub Action that runs Claude Code in non-interactive mode with -p. A few custom skills inspect the repos and recent changes, then write an architecture overview, a changes summary, and a map of how the repos or services fit together."
@@ -204,7 +279,6 @@
   datetime: "2026-05-27"
   theme: "AI adoption"
   url: "https://x.com/mstockton/status/2059845493740503105"
-  featured: true
   summary: "In my work with teams, everyone already has a job, and figuring out how AI changes it often belongs to nobody."
   paragraphs:
     - "Even if the tools stopped improving today, it would take companies a long time to use what's already possible. You still need people who know how to use them and understand the work well enough to figure out where they fit."
@@ -213,6 +287,7 @@
 
 - title: "Adopting AI means changing how work gets done"
   slug: "ai-adoption-changes-the-system"
+  archived: true
   date: "May 26, 2026"
   datetime: "2026-05-26"
   theme: "AI adoption"
@@ -247,6 +322,7 @@
 
 - title: "Practical habits for coding with agents"
   slug: "coding-with-agents-practices"
+  archived: true
   date: "Apr 25, 2026"
   datetime: "2026-04-25"
   theme: "Software engineering"
@@ -340,6 +416,7 @@
 
 - title: "We need better ways to direct many agents"
   slug: "ide-for-directing-agents"
+  archived: true
   date: "Mar 11, 2026"
   datetime: "2026-03-11"
   theme: "Software engineering"
@@ -397,6 +474,7 @@
 
 - title: "Start with what the model builders publish"
   slug: "use-published-model-context"
+  archived: true
   date: "Mar 3, 2026"
   datetime: "2026-03-03"
   theme: "Working with models"
@@ -410,6 +488,7 @@
 
 - title: "Use normal work as feedback"
   slug: "closed-loop-agent-improvement"
+  archived: true
   date: "Mar 2, 2026"
   datetime: "2026-03-02"
   theme: "Agent design"
