@@ -27,6 +27,7 @@ description: "Things I built to answer a question I had. Each one is a working p
         {% if item.built_with %}<p class="meta built">Built with {{ item.built_with }}</p>{% endif %}
         <div class="actions">
           <a class="text-link" href="{{ item.url }}"{% if item.external %} rel="noopener noreferrer"{% endif %}>{% if item.cta %}{{ item.cta }}{% elsif item.external %}Explore {{ item.title }}{% else %}Open the page{% endif %} {% if item.external %}&nearr;{% else %}&rarr;{% endif %}</a>
+          {% if item.video_url %}<a class="text-link" href="{{ item.video_url }}" rel="noopener noreferrer">{{ item.video_cta | default: "Watch the film" }} &nearr;</a>{% endif %}
           {% if item.post_url %}<a class="text-link" href="{{ item.post_url }}">Read the post &rarr;</a>{% endif %}
         </div>
       </div>

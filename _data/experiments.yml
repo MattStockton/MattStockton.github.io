@@ -4,8 +4,28 @@
 # (it shows the first 3). `type: appearance` moves an entry out of the card
 # grid and into the "Elsewhere" list at the bottom of the experiments page.
 #
+# `video_url` (with optional `video_cta`) adds a second link to a film of the project.
+#
 # `built_with` and `data` are the build notes. Fill in rough build time where
 # you remember it - that detail is the most useful part for readers.
+
+- title: "Shorewood, 1950"
+  slug: "shorewood-1950"
+  url: "https://shorewood1950.mattstockton.com/"
+  external: true
+  preview: "/docs/assets/images/experiments/shorewood-1950-preview.png"
+  preview_alt: "Shorewood in a census taker's handwriting, above three figures: 16,095 people, 5,289 households, 626 handwritten sheets."
+  date: "Nov 2026"
+  datetime: "2026-11-09"
+  kind: "Census explorer"
+  featured: true
+  cta: "Look up an address"
+  short: "Everyone the 1950 census takers wrote down in Shorewood, Wisconsin: 16,095 people in 5,289 households, searchable by address, name, or job."
+  summary: "Who lived at your address in 1950? The National Archives publishes the handwritten census sheets, so I had Claude Fable 5.2 read all 626 for Shorewood, Wisconsin. You can look up an address, a name, or a job, see each person's line in the original handwriting, and play any block as a short film of the census taker working door to door."
+  data: "626 scanned sheets from the National Archives' 1950 Census release, 23 enumeration districts. Claude Fable 5.2 transcribed the handwriting into 16,095 people in 5,289 households. Nobody has checked the readings against the sheets, so uncertain fields are marked and every person links to their line on the scan. 5,177 households are placed on the map with OpenStreetMap."
+  built_with: "Claude Fable 5.2 in Claude Code, Python, Leaflet, ffmpeg, Cloudflare Pages"
+  video_url: "https://shorewood1950.mattstockton.com/assets/shorewood-1950-downer.mp4"
+  video_cta: "Watch the 2-minute film"
 
 - title: "The Listening Index"
   slug: "listening-index"
