@@ -1,3 +1,39 @@
+- title: "Making handwritten census records explorable"
+  slug: "making-handwritten-census-records-explorable"
+  date: "Nov 10, 2026"
+  datetime: "2026-11-10"
+  theme: "Everyday uses"
+  url: "https://x.com/mstockton/status/2120219954058285487"
+  summary: "I spent a few hours with Fable 5.2 building an interactive explorer for Shorewood's handwritten 1950 census records."
+  paragraphs:
+    - "There's a lot of unstructured data that has been too tedious to make sense of: scanned PDFs, handwriting, weirdly designed tables, or just too much information. I spent a few hours building an app to explore the handwritten 1950 census records for Shorewood, Wisconsin. I was blown away by how much we could do with them."
+    - "My starting prompt was simple: find and use the handwritten census records to build an interactive explorer, and ask me any clarifying questions. Fable 5.2 had the wheel for most of it. I spent two or three hours following up with things like 'what other ideas do you have to visualize this?' and 'change the UX to be easier to understand.'"
+    - "I could have been more specific, but it was more fun to see what it came up with. As a final bit of polish, I had it make a video of a census taker navigating a street. It made me want to try this with more data that had previously felt too tedious to explore."
+
+- title: "Using past sessions to improve project memory"
+  slug: "using-past-sessions-to-improve-project-memory"
+  date: "Nov 6, 2026"
+  datetime: "2026-11-06"
+  theme: "Agent design"
+  url: "https://x.com/mstockton/status/2118841080414134396"
+  summary: "I use a wiki for my projects and mine past sessions to distill learnings in a batch step."
+  paragraphs:
+    - "I use a wiki or knowledge base for my projects, and I mine past sessions to distill learnings as a batch step. A lot of Anthropic's writing about memory matched that experience."
+    - "The idea of 'dreaming' was particularly interesting to me: a periodic process that can read both the raw sessions and the memories created during those sessions. It gets a fresh context window to find mistakes, correct memories, and improve how the information is organized."
+    - "A wiki gives the model a way to navigate the information without loading everything at once. I liked the idea that repeated passes could improve the structure of the wiki itself, rather than having to prescribe that structure up front. There is still a lot to figure out here, including when the model needs to go back to the raw sessions."
+
+- title: "Make your decisions useful to the next agent"
+  slug: "make-your-decisions-useful-to-the-next-agent"
+  date: "Nov 4, 2026"
+  datetime: "2026-11-04"
+  theme: "Software engineering"
+  url: "https://x.com/mstockton/status/2117995062613225631"
+  summary: "When you apply your judgment, feed that decision back into the system so you don't have to make it again."
+  paragraphs:
+    - "One idea I liked in a post about software factories: when you apply your judgment, make sure the decision feeds back into the system. You shouldn't have to keep making the same judgment. It needs to become part of the rules the agents use next time."
+    - "The other part is giving agents ways to verify their own work. If they can measure whether something is correct, they can keep going without waiting for you at every step."
+    - "This is the kind of system I want to build: something that keeps moving and improving, while still being constrained by my judgment and taste. Agents shouldn't be waiting on me, and I shouldn't be waiting on agents."
+
 - title: "Leading an engineering team through the change"
   slug: "leading-an-engineering-team-through-change"
   date: "Oct 31, 2026"
@@ -33,6 +69,8 @@
   paragraphs:
     - "I've said to let the models breathe more and be less prescriptive. Lauren Tan put a more coherent version of that into words: encode tried-and-true engineering principles as concisely as possible, so the model can use what it already knows."
     - "Knowing those principles takes experience and often some battle scars. Classical software engineering skills still matter because they help you recognize when one of those insights will make a big difference in steering the model."
+  update: "In November, I added a more specific version of this: when a model makes the same mistake repeatedly, add the generalized principle to AGENTS.md. Don't keep adding a rule for every little detail. If the model can figure something out by reading the codebase, you may not need to put it in the instructions at all."
+  update_url: "https://x.com/mstockton/status/2119585033048510563"
 
 - title: "Using expert interviews to improve the system"
   slug: "expert-interviews-improve-the-system"
@@ -177,6 +215,8 @@
   summary: "Break the work into smaller steps. If a step can be done reliably with code, make that code available to the agent as a tool."
   paragraphs:
     - "Break what you are trying to do into smaller steps. If code can handle a step reliably, write that code and give it to the agent as a tool. Do not ask a model to imitate a process that ordinary software can do reliably."
+  update: "In October, I expanded on this: skills and instruction-following have gotten much better, but they're still one tool in the toolbox. Understand the job first, then choose the tools for it. Sometimes putting all the complexity into a skill is the wrong answer for the problem you're trying to solve."
+  update_url: "https://x.com/mstockton/status/2111597030212874741"
 
 - title: "Look for problems you can test"
   slug: "verifiable-long-tail-domains"
@@ -391,6 +431,7 @@
 
 - title: "Agentic engineering is not vibe coding"
   slug: "agentic-engineering-is-not-vibe-coding"
+  archived: true
   date: "Mar 14, 2026"
   datetime: "2026-03-14"
   theme: "Software engineering"
